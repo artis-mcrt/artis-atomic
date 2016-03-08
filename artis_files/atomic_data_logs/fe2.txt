@@ -1,0 +1,1608 @@
+==============> Fe II:
+Reading nahar_radiativeatomicdata/fe2.en.ls.txt
+Ionization potential = 1.1782 Ryd
+Core state id of 6Ho index 10 is invalid (=88, Ncorestates=84)
+Core state id of 4Do index 23 is invalid (=89, Ncorestates=84)
+Core state id of 4Fo index 20 is invalid (=90, Ncorestates=84)
+Core state id of 4Fo index 24 is invalid (=91, Ncorestates=84)
+Core state id of 2Po index 9 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Po index 16 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Po index 18 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2De index 1 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2De index 4 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2De index 7 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Do index 21 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Do index 27 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Do index 28 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Do index 42 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Fo index 28 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Fo index 40 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Ge index 35 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Ge index 44 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Go index 27 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Go index 28 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Core state id of 2Go index 38 is invalid (=0, Ncorestates=84)
+(setting the core state to 1 instead)
+Reading hillieratomicdata/FE/II/16nov98/fe2osc_nahar_kurucz.dat
+Read 44831 transitions
+Reading nahar_radiativeatomicdata/fe2.px.txt
+Matched Nahar phixs for 4Fo index 19 '3d54s  (3F ) 4p  h4Fo' (14.293 eV) to <E>=12.530 eV: [3d5(4G)4s4p(3P)v4Fo[7/2] (11.442 eV), 3d5(4G)4s4p(3P)v4Fo[5/2] (11.447 eV), 3d5(4G)4s4p(3P)v4Fo[3/2] (11.451 eV), 3d5(4G)4s4p(3P)v4Fo[9/2] (11.459 eV), 3d5(4D)4s4p(3P)4Fo[3/2] (12.175 eV), 3d5(4D)4s4p(3P)4Fo[5/2] (12.194 eV), 3d5(4D)4s4p(3P)4Fo[7/2] (12.217 eV), 3d5(4D)4s4p(3P)4Fo[9/2] (12.224 eV), 3d5(2D)4s4p(3P)4Fo[3/2] (12.957 eV), 3d5(2D)4s4p(3P)4Fo[5/2] (12.973 eV), 3d5(2D)4s4p(3P)4Fo[7/2] (13.007 eV), 3d5(2D)4s4p(3P)4Fo[9/2] (13.069 eV), 3d5(2F)4s4p(3P)4Fo[9/2] (13.417 eV), 3d5(2F)4s4p(3P)4Fo[7/2] (13.455 eV), 3d5(2F)4s4p(3P)4Fo[5/2] (13.457 eV), 3d5(2F)4s4p(3P)4Fo[3/2] (13.487 eV)]
+Matched Nahar phixs for 2Fo index 8 '3d54s  (3G ) 4p  s2Fo' (12.517 eV) to <E>=12.372 eV: [3d5(4G)4s4p(3P)t2Fo[5/2] (11.937 eV), 3d5(4G)4s4p(3P)t2Fo[7/2] (11.947 eV), 3d5(4D)4s4p(3P)2Fo[7/2] (12.793 eV), 3d5(4D)4s4p(3P)2Fo[5/2] (12.812 eV)]
+Matched Nahar phixs for 6Fo index 3 '3d54s  (5D ) 4p  x6Fo' (10.920 eV) to <E>=11.831 eV: [3d5(4G)4s4p(3P)y6Fo[11/2] (10.829 eV), 3d5(4G)4s4p(3P)y6Fo[9/2] (10.845 eV), 3d5(4G)4s4p(3P)y6Fo[7/2] (10.853 eV), 3d5(4G)4s4p(3P)y6Fo[5/2] (10.858 eV), 3d5(4G)4s4p(3P)y6Fo[3/2] (10.861 eV), 3d5(4G)4s4p(3P)y6Fo[1/2] (10.898 eV), 3d5(4D)4s4p(3P)6Fo[1/2] (11.388 eV), 3d5(4D)4s4p(3P)6Fo[3/2] (11.396 eV), 3d5(4D)4s4p(3P)6Fo[5/2] (11.409 eV), 3d5(4D)4s4p(3P)6Fo[7/2] (11.426 eV), 3d5(4D)4s4p(3P)6Fo[9/2] (11.444 eV), 3d5(4D)4s4p(3P)6Fo[11/2] (11.460 eV), 3d5(4F)4s4p(3P)6Fo[3/2] (13.192 eV), 3d5(4F)4s4p(3P)6Fo[1/2] (13.201 eV), 3d5(4F)4s4p(3P)6Fo[7/2] (13.202 eV), 3d5(4F)4s4p(3P)6Fo[5/2] (13.216 eV), 3d5(4F)4s4p(3P)6Fo[9/2] (13.220 eV), 3d5(4F)4s4p(3P)6Fo[11/2] (13.223 eV)]
+No matched Hillier levels for Nahar cross section of 4Ge index 18 [3d6    (5D ) 8i  r4G ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 13 [3d6    (3F ) 5p  n4Fo] (E_threshold=2.26 eV)
+Matched Nahar phixs for 2Fo index 6 '3d6    (1F ) 4p  u2Fo' (11.390 eV) to <E>=9.241 eV: [3d6(3F2)4pz2Fo[7/2] (7.970 eV), 3d6(3F2)4pz2Fo[5/2] (7.988 eV), 3d6(3G)4py2Fo[7/2] (8.630 eV), 3d6(3G)4py2Fo[5/2] (8.636 eV), 3d6(1G2)4px2Fo[7/2] (9.053 eV), 3d6(1G2)4px2Fo[5/2] (9.058 eV), 3d6(3D)4pw2Fo[7/2] (9.373 eV), 3d6(3D)4pw2Fo[5/2] (9.412 eV), 3d6(1D2)4pv2Fo[5/2] (9.639 eV), 3d6(1D2)4pv2Fo[7/2] (9.688 eV), 3d6(1F)4pu2Fo[7/2] (10.722 eV), 3d6(1F)4pu2Fo[5/2] (10.731 eV)]
+No matched Hillier levels for Nahar cross section of 4Do index 26 [3d6    (5D ) 9p  a4Do] (E_threshold=0.99 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 17 [3d6    (1D ) 5p  j2Do] (E_threshold=3.04 eV)
+No Hillier levels with term 2Le
+No matched Hillier levels for Nahar cross section of 2Le index 1 [3d6    (1I ) 4d  a2L ] (E_threshold=4.00 eV)
+Matched Nahar phixs for 4Fo index 7 '3d6    (3F ) 4p  t4Fo' (11.975 eV) to <E>=8.407 eV: [3d6(5D)4pz4Fo[9/2] (5.484 eV), 3d6(5D)4pz4Fo[7/2] (5.549 eV), 3d6(5D)4pz4Fo[5/2] (5.589 eV), 3d6(5D)4pz4Fo[3/2] (5.615 eV), 3d6(3F2)4py4Fo[7/2] (7.695 eV), 3d6(3F2)4py4Fo[5/2] (7.706 eV), 3d6(3F2)4py4Fo[9/2] (7.707 eV), 3d6(3F2)4py4Fo[3/2] (7.717 eV), 3d6(3G)4px4Fo[9/2] (8.185 eV), 3d6(3G)4px4Fo[7/2] (8.230 eV), 3d6(3G)4px4Fo[5/2] (8.248 eV), 3d6(3G)4px4Fo[3/2] (8.259 eV), 3d6(3D)4pw4Fo[3/2] (8.948 eV), 3d6(3D)4pw4Fo[5/2] (8.956 eV), 3d6(3D)4pw4Fo[7/2] (8.971 eV), 3d6(3D)4pw4Fo[9/2] (9.008 eV), 3d6(3F1)4pu4Fo[3/2] (11.571 eV), 3d6(3F1)4pu4Fo[5/2] (11.580 eV), 3d6(3F1)4pu4Fo[9/2] (11.591 eV), 3d6(3F1)4pu4Fo[7/2] (11.591 eV)]
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 3 [3d6    (5D ) 7g  c6H ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 28 [3d6    (5D ) 8f  Y4Do] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 23 [3d6    (3G ) 4f  d2Do] (E_threshold=2.80 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 1 [3d6    (5D ) 4p  z4Fo] (E_threshold=10.84 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 5 [3d6    (5D ) 8g  e6H ] (E_threshold=0.85 eV)
+Matched Nahar phixs for 4Do index 22 '3d54s  (3D ) 4p  e4Do' (14.725 eV) to <E>=12.707 eV: [3d5(4P)4s4p(3P)4Do[1/2] (11.874 eV), 3d5(4P)4s4p(3P)4Do[3/2] (11.885 eV), 3d5(4P)4s4p(3P)4Do[5/2] (11.902 eV), 3d5(4P)4s4p(3P)4Do[7/2] (11.929 eV), 3d5(4D)4s4p(3P)4Do[7/2] (12.199 eV), 3d5(4D)4s4p(3P)4Do[5/2] (12.213 eV), 3d5(4D)4s4p(3P)4Do[3/2] (12.246 eV), 3d5(4D)4s4p(3P)4Do[1/2] (12.275 eV), 3d5(2D)4s4p(3P)4Do[7/2] (13.271 eV), 3d5(2D)4s4p(3P)4Do[5/2] (13.283 eV), 3d5(2D)4s4p(3P)4Do[3/2] (13.290 eV), 3d5(2D)4s4p(3P)4Do[1/2] (13.323 eV), 3d5(2F)4s4p(3P)4Do[7/2] (13.376 eV), 3d5(2F)4s4p(3P)4Do[5/2] (13.389 eV), 3d5(2F)4s4p(3P)4Do[1/2] (13.489 eV), 3d5(2F)4s4p(3P)4Do[3/2] (13.515 eV)]
+Matched Nahar phixs for 4Ge index 4 '3d6    (3G ) 5s  d4G ' (12.760 eV) to <E>=12.752 eV: [3d6(3G)5sf4Ge[11/2] (12.719 eV), 3d6(3G)5sf4Ge[9/2] (12.751 eV), 3d6(3G)5sf4Ge[7/2] (12.775 eV), 3d6(3G)5sf4Ge[5/2] (12.792 eV)]
+No matched Hillier levels for Nahar cross section of 6Do index 14 [3d6    (5D ) 8f  m6Do] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 1 [3d6    (3P ) 0s  a6S ] (E_threshold=13.54 eV)
+Matched Nahar phixs for 2Do index 3 '3d6    (3D ) 4p  x2Do' (9.571 eV) to <E>=9.472 eV: [3d6(3P2)4pz2Do[5/2] (7.575 eV), 3d6(3P2)4pz2Do[3/2] (7.703 eV), 3d6(3F2)4py2Do[5/2] (8.307 eV), 3d6(3F2)4py2Do[3/2] (8.341 eV), 3d6(3D)4px2Do[3/2] (9.237 eV), 3d6(3D)4px2Do[5/2] (9.250 eV), 3d6(1D2)4pw2Do[3/2] (9.731 eV), 3d6(1D2)4pw2Do[5/2] (9.756 eV), 3d6(1F)4pv2Do[5/2] (10.398 eV), 3d6(1F)4pv2Do[3/2] (10.459 eV), 3d6(3F1)4pu2Do[3/2] (11.433 eV), 3d6(3F1)4pu2Do[5/2] (11.493 eV)]
+Matched Nahar phixs for 2Se index 4 '3d6    (1S ) 4s  d2S ' (14.447 eV) to <E>=4.616 eV: [3d6(1S2)4sa2Se[1/2] (4.616 eV)]
+Matched Nahar phixs for 4Do index 2 '3d6    (3P ) 4p  y4Do' (8.009 eV) to <E>=8.175 eV: [3d6(5D)4pz4Do[7/2] (5.511 eV), 3d6(5D)4pz4Do[5/2] (5.553 eV), 3d6(5D)4pz4Do[3/2] (5.585 eV), 3d6(5D)4pz4Do[1/2] (5.605 eV), 3d6(3P2)4py4Do[7/2] (7.653 eV), 3d6(3P2)4py4Do[5/2] (7.773 eV), 3d6(3P2)4py4Do[1/2] (7.790 eV), 3d6(3F2)4px4Do[7/2] (7.804 eV), 3d6(3P2)4py4Do[3/2] (7.806 eV), 3d6(3F2)4px4Do[5/2] (7.845 eV), 3d6(3F2)4px4Do[3/2] (7.869 eV), 3d6(3F2)4px4Do[1/2] (7.880 eV), 3d6(3D)4pw4Do[1/2] (8.980 eV), 3d6(3D)4pw4Do[3/2] (8.992 eV), 3d6(3D)4pw4Do[5/2] (9.004 eV), 3d6(3D)4pw4Do[7/2] (9.008 eV), 3d6(3P1)4pv4Do[1/2] (10.711 eV), 3d6(3P1)4pv4Do[3/2] (10.730 eV), 3d6(3P1)4pv4Do[5/2] (10.758 eV), 3d6(3P1)4pv4Do[7/2] (10.778 eV)]
+No matched Hillier levels for Nahar cross section of 4Do index 4 [3d6    (3D ) 4p  w4Do] (E_threshold=6.75 eV)
+No matched Hillier levels for Nahar cross section of 4Ke index 3 [3d6    (5D ) 8i  c4K ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 20 [3d6    (3F ) 4f  g2Go] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 22 [3d6    (5D )10d  v4G ] (E_threshold=0.65 eV)
+Matched Nahar phixs for 2Ho index 1 '3d6    (3H ) 4p  z2Ho' (8.178 eV) to <E>=8.650 eV: [3d6(3H)4pz2Ho[11/2] (8.104 eV), 3d6(3H)4pz2Ho[9/2] (8.128 eV), 3d6(3G)4py2Ho[11/2] (8.371 eV), 3d6(3G)4py2Ho[9/2] (8.431 eV), 3d6(1G2)4px2Ho[9/2] (8.943 eV), 3d6(1G2)4px2Ho[11/2] (8.959 eV), 3d6(1I)4pw2Ho[11/2] (9.126 eV), 3d6(1I)4pw2Ho[9/2] (9.144 eV)]
+No matched Hillier levels for Nahar cross section of 6De index 18 [3d6    (5D ) 8g  r6D ] (E_threshold=0.85 eV)
+Matched Nahar phixs for 2Go index 14 '3d54s  (1F ) 4p  m2Go' (14.680 eV) to <E>=13.040 eV: [3d5(4G)4s4p(3P)2Go[7/2] (12.353 eV), 3d5(4G)4s4p(3P)2Go[9/2] (12.355 eV), 3d5(2F)4s4p(3P)2Go[9/2] (13.720 eV), 3d5(2F)4s4p(3P)2Go[7/2] (13.733 eV)]
+No matched Hillier levels for Nahar cross section of 4Pe index 1 [3d6    (5D ) 0s  a4P ] (E_threshold=13.40 eV)
+Matched Nahar phixs for 4Po index 6 '3d6    (3P ) 4p  u4Po' (11.475 eV) to <E>=6.697 eV: [3d6(5D)4pz4Po[5/2] (5.823 eV), 3d6(5D)4pz4Po[3/2] (5.876 eV), 3d6(5D)4pz4Po[1/2] (5.905 eV), 3d6(3P2)4py4Po[5/2] (7.489 eV), 3d6(3P2)4py4Po[1/2] (7.567 eV), 3d6(3P2)4py4Po[3/2] (7.604 eV)]
+Matched Nahar phixs for 2Ho index 11 '3d54s  (3H ) 4p  p2Ho' (14.848 eV) to <E>=12.583 eV: [3d5(4G)4s4p(3P)v2Ho[11/2] (11.910 eV), 3d5(4G)4s4p(3P)v2Ho[9/2] (11.932 eV), 3d5(2I)4s4p(3P)2Ho[11/2] (13.228 eV), 3d5(2I)4s4p(3P)2Ho[9/2] (13.267 eV)]
+No matched Hillier levels for Nahar cross section of 6De index 8 [3d6    (5D ) 5g  h6D ] (E_threshold=2.18 eV)
+Matched Nahar phixs for 2Go index 8 '3d6    (1G ) 4p  s2Go' (13.187 eV) to <E>=9.230 eV: [3d6(3H)4pz2Go[9/2] (7.697 eV), 3d6(3H)4pz2Go[7/2] (7.727 eV), 3d6(3F2)4py2Go[9/2] (8.038 eV), 3d6(3F2)4py2Go[7/2] (8.073 eV), 3d6(3G)4px2Go[9/2] (8.718 eV), 3d6(3G)4px2Go[7/2] (8.744 eV), 3d6(1G2)4pw2Go[9/2] (9.062 eV), 3d6(1G2)4pw2Go[7/2] (9.069 eV), 3d6(1F)4pv2Go[7/2] (10.329 eV), 3d6(1F)4pv2Go[9/2] (10.399 eV), 3d6(3F1)4pu2Go[9/2] (11.428 eV), 3d6(3F1)4pu2Go[7/2] (11.481 eV)]
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 7 [3d6    (5D ) 7h  t6Ho] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 12 [3d6    (3P ) 5p  o4Po] (E_threshold=2.54 eV)
+No matched Hillier levels for Nahar cross section of 2De index 19 [3d6    (3G ) 5d  s2D ] (E_threshold=2.55 eV)
+No matched Hillier levels for Nahar cross section of 6De index 14 [3d6    (5D ) 9s  n6D ] (E_threshold=1.13 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 2 [3d6    (3F ) 4p  y2Go] (E_threshold=10.26 eV)
+Matched Nahar phixs for 4Pe index 3 '3d6    (3P ) 4s  c4P ' (7.166 eV) to <E>=4.415 eV: [3d6(3P2)4sb4Pe[5/2] (2.583 eV), 3d6(3P2)4sb4Pe[3/2] (2.704 eV), 3d6(3P2)4sb4Pe[1/2] (2.778 eV), 3d6(3P1)4sc4Pe[1/2] (6.088 eV), 3d6(3P1)4sc4Pe[3/2] (6.138 eV), 3d6(3P1)4sc4Pe[5/2] (6.226 eV)]
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 1 [3d54s  (5G ) 4p  z6Ho] (E_threshold=6.03 eV)
+No matched Hillier levels for Nahar cross section of 4De index 16 [3d6    (5D ) 8s  p4D ] (E_threshold=1.52 eV)
+No matched Hillier levels for Nahar cross section of 2De index 9 [3d6    (3F ) 4d  i2D ] (E_threshold=4.87 eV)
+No matched Hillier levels for Nahar cross section of 6De index 4 [3d6    (3H ) 0s  d6D ] (E_threshold=3.69 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 2 [3d6    (3P ) 4s  b4P ] (E_threshold=12.67 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 11 [3d6    (5D ) 9f  p6Ho] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 16 [3d6    (5D ) 6f  k4Po] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 2De index 7 [Eqv st (0S ) 0s  g2D ] (E_threshold=6.18 eV)
+Matched Nahar phixs for 4So index 3 '3d54s  (5P ) 4p  x4So' (12.333 eV) to <E>=12.192 eV: [3d5(4P)4s4p(3P)4So[3/2] (12.192 eV)]
+No matched Hillier levels for Nahar cross section of 4Pe index 5 [3d6    (5D ) 4d  e4P ] (E_threshold=5.10 eV)
+Matched Nahar phixs for 4De index 4 '3d6    (5D ) 5s  d4D ' (9.833 eV) to <E>=9.895 eV: [3d6(5D)5se4De[7/2] (9.849 eV), 3d6(5D)5se4De[5/2] (9.905 eV), 3d6(5D)5se4De[3/2] (9.941 eV), 3d6(5D)5se4De[1/2] (9.962 eV)]
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 2 [3d6    (5D ) 4f  y6Go] (E_threshold=3.44 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 4 [3d6    (3P ) 0s  d4P ] (E_threshold=8.61 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 18 [3d6    (3F ) 5d  r2G ] (E_threshold=2.63 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 10 [3d6    (5D ) 6f  q6Fo] (E_threshold=1.52 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 4 [3d6    (5D ) 5f  w6Go] (E_threshold=2.20 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 29 [3d6    (5D )10p  X4Do] (E_threshold=0.78 eV)
+Matched Nahar phixs for 8Po index 1 '3d54s  (7S ) 4p  z8Po' (6.161 eV) to <E>=6.530 eV: [3d5(6S)4s4p(3P)z8Po[5/2] (6.484 eV), 3d5(6S)4s4p(3P)z8Po[7/2] (6.519 eV), 3d5(6S)4s4p(3P)z8Po[9/2] (6.567 eV)]
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 14 [3d6    (5D )10h  m6Go] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 6 [3d6    (3P ) 5s  f4P ] (E_threshold=3.85 eV)
+No matched Hillier levels for Nahar cross section of 6Pe index 3 [3d6    (3H ) 0s  c6P ] (E_threshold=2.49 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 19 [3d54s  (3F ) 4p  h4Do] (E_threshold=1.56 eV)
+No Hillier levels with term 4Lo
+No matched Hillier levels for Nahar cross section of 4Lo index 2 [3d6    (5D ) 9k  y4Lo] (E_threshold=0.67 eV)
+Matched Nahar phixs for 2Io index 5 '3d54s  (1I ) 4p  v2Io' (14.304 eV) to <E>=13.540 eV: [3d5(2I)4s4p(3P)2Io[13/2] (13.533 eV), 3d5(2I)4s4p(3P)2Io[11/2] (13.548 eV)]
+No matched Hillier levels for Nahar cross section of 4Pe index 8 [3d6    (3P ) 4d  h4P ] (E_threshold=3.00 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 6 [3d6    (5D ) 9h  u6Ko] (E_threshold=0.67 eV)
+Matched Nahar phixs for 2Pe index 2 '3d6    (3P ) 4s  b2P ' (4.107 eV) to <E>=5.008 eV: [3d6(3P2)4sb2Pe[3/2] (3.197 eV), 3d6(3P2)4sb2Pe[1/2] (3.339 eV), 3d6(3P1)4sc2Pe[1/2] (6.703 eV), 3d6(3P1)4sc2Pe[3/2] (6.807 eV)]
+No matched Hillier levels for Nahar cross section of 2Io index 3 [3d54s  (3I ) 4p  x2Io] (E_threshold=5.28 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 11 [3d6    (3H ) 0s  k4P ] (E_threshold=1.67 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 4 [3d6    (3P ) 5s  d2P ] (E_threshold=6.22 eV)
+Matched Nahar phixs for 2Do index 8 '3d54s  (3P ) 4p  s2Do' (12.600 eV) to <E>=12.579 eV: [3d5(4P)4s4p(3P)2Do[5/2] (12.448 eV), 3d5(4P)4s4p(3P)2Do[3/2] (12.460 eV), 3d5(4D)4s4p(3P)2Do[5/2] (12.702 eV), 3d5(4D)4s4p(3P)2Do[3/2] (12.709 eV)]
+Matched Nahar phixs for 4Io index 2 '3d54s  (3I ) 4p  y4Io' (12.206 eV) to <E>=13.296 eV: [3d5(2I)4s4p(3P)4Io[9/2] (12.764 eV), 3d5(2I)4s4p(3P)4Io[11/2] (12.768 eV), 3d5(2I)4s4p(3P)4Io[13/2] (12.785 eV), 3d5(2I)4s4p(3P)4Io[15/2] (12.799 eV), 3d5(2H)4s4p(3P)4Io[15/2] (13.762 eV), 3d5(2H)4s4p(3P)4Io[13/2] (13.775 eV), 3d5(2H)4s4p(3P)4Io[9/2] (13.827 eV), 3d5(2H)4s4p(3P)4Io[11/2] (13.907 eV)]
+No matched Hillier levels for Nahar cross section of 2Io index 9 [3d6    (3G ) 4f  r2Io] (E_threshold=2.82 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 16 [3d6    (3F ) 5p  k4Do] (E_threshold=2.09 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 11 [3d6    (3P ) 5p  p2Do] (E_threshold=4.99 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 13 [3d6    (5D ) 7d  m4P ] (E_threshold=1.31 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 7 [3d6    (5D ) 7g  g6G ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 7 [3d6    (5D ) 8d  g4S ] (E_threshold=1.07 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 3 [3d6    (5D ) 8h  x6Io] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 12 [3d6    (3D ) 4d  l4P ] (E_threshold=1.49 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 4 [3d6    (5D ) 6d  d6G ] (E_threshold=2.11 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 13 [3d54s  (3D ) 4p  n2Do] (E_threshold=4.24 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 10 [3d6    (1D ) 4p  q2Do] (E_threshold=5.20 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 21 [3d6    (5D ) 8p  f4Do] (E_threshold=1.41 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 19 [3d6    (5D )11p  h6Po] (E_threshold=0.62 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 17 [3d6    (3F ) 6s  q2F ] (E_threshold=2.86 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 5 [3d6    (5D ) 5d  e4G ] (E_threshold=3.25 eV)
+No Hillier levels with term 6Lo
+No matched Hillier levels for Nahar cross section of 6Lo index 3 [3d6    (5D )10k  x6Lo] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 20 [3d6    (5D ) 6f  g4Do] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 8 [3d6    (5D ) 7i  h6G ] (E_threshold=1.11 eV)
+Matched Nahar phixs for 4Ge index 6 '3d6    (3H ) 4d  f4G ' (13.157 eV) to <E>=10.566 eV: [3d6(5D)4de4Ge[11/2] (10.522 eV), 3d6(5D)4de4Ge[9/2] (10.562 eV), 3d6(5D)4de4Ge[7/2] (10.596 eV), 3d6(5D)4de4Ge[5/2] (10.623 eV)]
+No matched Hillier levels for Nahar cross section of 4Po index 24 [3d54s  (5S ) 5p  c4Po] (E_threshold=0.71 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 11 [3d6    (5D ) 6p  p4Do] (E_threshold=2.90 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 16 [Eqv st (0S ) 0s  k2Po] (E_threshold=2.65 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 22 [3d6    (5D ) 9g  v4F ] (E_threshold=0.67 eV)
+Matched Nahar phixs for 4Ho index 4 '3d54s  (3I ) 4p  w4Ho' (12.485 eV) to <E>=12.902 eV: [3d5(4G)4s4p(3P)x4Ho[7/2] (11.418 eV), 3d5(4G)4s4p(3P)x4Ho[9/2] (11.421 eV), 3d5(4G)4s4p(3P)x4Ho[11/2] (11.427 eV), 3d5(4G)4s4p(3P)x4Ho[13/2] (11.438 eV), 3d5(2I)4s4p(3P)4Ho[13/2] (12.976 eV), 3d5(2I)4s4p(3P)4Ho[11/2] (12.996 eV), 3d5(2I)4s4p(3P)4Ho[9/2] (13.011 eV), 3d5(2I)4s4p(3P)4Ho[7/2] (13.022 eV), 3d5(4G)4s4p(1P)4Ho[13/2] (13.481 eV), 3d5(4G)4s4p(1P)4Ho[11/2] (13.491 eV), 3d5(4G)4s4p(1P)4Ho[9/2] (13.498 eV), 3d5(4G)4s4p(1P)4Ho[7/2] (13.503 eV), 3d5(2G)4s4p(3P)4Ho[13/2] (13.681 eV), 3d5(2G)4s4p(3P)4Ho[11/2] (13.694 eV), 3d5(2G)4s4p(3P)4Ho[9/2] (13.700 eV), 3d5(2G)4s4p(3P)4Ho[7/2] (13.704 eV)]
+Matched Nahar phixs for 4Go index 15 '3d54s  (3G ) 4p  l4Go' (14.487 eV) to <E>=13.105 eV: [3d5(4G)4s4p(3P)w4Go[5/2] (11.653 eV), 3d5(4G)4s4p(3P)w4Go[7/2] (11.664 eV), 3d5(4G)4s4p(3P)w4Go[9/2] (11.673 eV), 3d5(4G)4s4p(3P)w4Go[11/2] (11.678 eV), 3d5(2F)4s4p(3P)4Go[7/2] (13.332 eV), 3d5(2F)4s4p(3P)4Go[9/2] (13.350 eV), 3d5(2F)4s4p(3P)4Go[11/2] (13.356 eV), 3d5(2F)4s4p(3P)4Go[5/2] (13.358 eV), 3d5(4G)4s4p(1P)4Go[11/2] (13.450 eV), 3d5(4G)4s4p(1P)4Go[9/2] (13.461 eV), 3d5(4G)4s4p(1P)4Go[5/2] (13.468 eV), 3d5(4G)4s4p(1P)4Go[7/2] (13.469 eV), 3d5(4F)4s4p(3P)4Go[11/2] (13.929 eV), 3d5(4F)4s4p(3P)4Go[9/2] (13.941 eV), 3d5(4F)4s4p(3P)4Go[7/2] (13.947 eV), 3d5(4F)4s4p(3P)4Go[5/2] (13.952 eV)]
+No matched Hillier levels for Nahar cross section of 6Se index 3 [3d6    (5D ) 5d  c6S ] (E_threshold=3.25 eV)
+Matched Nahar phixs for 4Fe index 8 '3d6    (3P ) 4d  h4F ' (13.054 eV) to <E>=10.711 eV: [3d6(5D)4de4Fe[9/2] (10.678 eV), 3d6(5D)4de4Fe[7/2] (10.714 eV), 3d6(5D)4de4Fe[5/2] (10.737 eV), 3d6(5D)4de4Fe[3/2] (10.751 eV)]
+No matched Hillier levels for Nahar cross section of 4Ho index 10 [3d54s  (3G ) 4p  q4Ho] (E_threshold=1.88 eV)
+No matched Hillier levels for Nahar cross section of 2Ie index 9 [3d6    (3G ) 5d  i2I ] (E_threshold=2.62 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 5 [3d54s  (5G ) 4p  v4Go] (E_threshold=4.20 eV)
+No matched Hillier levels for Nahar cross section of 8Se index 2 [3d54s  (7S ) 6s  b8S ] (E_threshold=3.75 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 11 [3d6    (5D ) 6f  p6Po] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 10 [3d6    (5D ) 9i  j4I ] (E_threshold=0.67 eV)
+Matched Nahar phixs for 4Go index 3 '3d6    (3G ) 4p  x4Go' (8.244 eV) to <E>=7.875 eV: [3d6(3H)4pz4Go[11/2] (7.517 eV), 3d6(3H)4pz4Go[9/2] (7.539 eV), 3d6(3H)4pz4Go[7/2] (7.558 eV), 3d6(3H)4pz4Go[5/2] (7.568 eV), 3d6(3F2)4py4Go[11/2] (7.920 eV), 3d6(3F2)4py4Go[9/2] (7.929 eV), 3d6(3F2)4py4Go[7/2] (7.940 eV), 3d6(3F2)4py4Go[5/2] (7.946 eV), 3d6(3G)4px4Go[11/2] (8.131 eV), 3d6(3G)4px4Go[9/2] (8.145 eV), 3d6(3G)4px4Go[7/2] (8.174 eV), 3d6(3G)4px4Go[5/2] (8.193 eV)]
+No matched Hillier levels for Nahar cross section of 4Do index 8 [3d54s  (5P ) 4p  s4Do] (E_threshold=4.02 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 14 [3d6    (3F ) 4f  m2Po] (E_threshold=2.82 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 4 [3d6    (3P ) 0s  d4F ] (E_threshold=6.64 eV)
+Matched Nahar phixs for 2Ie index 5 '3d6    (1I ) 5s  e2I ' (14.160 eV) to <E>=13.470 eV: [3d6(1I)5se2Ie[11/2] (13.468 eV), 3d6(1I)5se2Ie[13/2] (13.471 eV)]
+No matched Hillier levels for Nahar cross section of 4Ge index 10 [3d6    (5D ) 6d  j4G ] (E_threshold=2.09 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 15 [3d6    (5D ) 5f  l4Do] (E_threshold=2.19 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 8 [3d6    (3P ) 5p  s2Po] (E_threshold=4.89 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 9 [3d6    (5D )10g  i6I ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 6 [3d6    (5D ) 7g  f4I ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 23 [3d6    (5D ) 8h  d4Go] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 14 [3d6    (3P ) 5p  m4Do] (E_threshold=2.45 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 7 [3d6    (5D ) 9g  g6I ] (E_threshold=0.67 eV)
+Matched Nahar phixs for 2So index 1 '3d6    (3P ) 4p  z2So' (8.559 eV) to <E>=8.214 eV: [3d6(3P2)4pz2So[1/2] (8.214 eV)]
+No matched Hillier levels for Nahar cross section of 4Ge index 12 [3d6    (5D ) 6g  l4G ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 34 [3d6    (5D ) 9h  S4Fo] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 18 [3d6    (5D )10p  i6Fo] (E_threshold=0.78 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 4 [3d6    (1D ) 4p  w2Do] (E_threshold=8.11 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 12 [3d54s  (3D ) 4p  o4Do] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 21 [3d6    (3H ) 4f  f2Fo] (E_threshold=2.84 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 8 [3d6    (5D ) 5f  s6Fo] (E_threshold=2.19 eV)
+No matched Hillier levels for Nahar cross section of 2He index 8 [3d6    (1G ) 4d  h2H ] (E_threshold=3.85 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 14 [3d6    (5D ) 7g  n4G ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 22 [3d6    (5D ) 6h  e4Fo] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 19 [3d6    (1D ) 5p  h2Fo] (E_threshold=3.04 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 14 [3d6    (5D ) 7h  m6Fo] (E_threshold=1.11 eV)
+Matched Nahar phixs for 2He index 2 '3d6    (3H ) 4s  b2H ' (3.842 eV) to <E>=3.255 eV: [3d6(3H)4sb2He[11/2] (3.245 eV), 3d6(3H)4sb2He[9/2] (3.267 eV)]
+No matched Hillier levels for Nahar cross section of 6Do index 17 [3d6    (5D )11p  j6Do] (E_threshold=0.63 eV)
+No Hillier levels with term 6Le
+No matched Hillier levels for Nahar cross section of 6Le index 1 [3d6    (5D ) 7i  a6L ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 15 [3d6    (5D ) 7i  o4G ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 16 [3d54s  (3G ) 4p  k4Fo] (E_threshold=2.00 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 9 [3d6    (1G ) 4p  r2Fo] (E_threshold=5.68 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 4 [3d6    (5D ) 5p  w6Fo] (E_threshold=5.00 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 19 [3d6    (5D ) 9d  s4G ] (E_threshold=0.83 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 1 [3d6    (5D ) 4p  z4Do] (E_threshold=10.73 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 7 [3d6    (3F ) 4p  t2Fo] (E_threshold=6.81 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 25 [3d6    (3D ) 5p  b4Do] (E_threshold=1.04 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 16 [3d54s  (1D ) 4p  k2Do] (E_threshold=3.34 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 5 [3d6    (5D ) 4f  v6Do] (E_threshold=3.42 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 4 [3d6    (3D ) 4p  w4Fo] (E_threshold=6.81 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 2 [3d6    (5D ) 6g  b6H ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 9 [3d6    (3F ) 4d  i4P ] (E_threshold=2.50 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 22 [3d6    (3F ) 4f  e2Do] (E_threshold=2.82 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 3 [3d6    (5D ) 5p  x6Do] (E_threshold=5.16 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 4 [3d6    (5D ) 7i  d6H ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 15 [3d6    (5D ) 8d  o4P ] (E_threshold=1.01 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 12 [3d6    (3F ) 5p  o2Do] (E_threshold=4.33 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 9 [3d6    (5D ) 7p  r6Do] (E_threshold=1.94 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 6 [3d54s  (5S ) 5s  f6S ] (E_threshold=1.80 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 2 [3d6    (3F ) 4p  y2Do] (E_threshold=9.96 eV)
+No matched Hillier levels for Nahar cross section of 2Se index 5 [3d6    (3D ) 4d  e2S ] (E_threshold=3.72 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 8 [3d6    (5D ) 8d  h6S ] (E_threshold=1.08 eV)
+No matched Hillier levels for Nahar cross section of 8Pe index 1 [3d6    (3H ) 0s  a8P ] (E_threshold=7.46 eV)
+No matched Hillier levels for Nahar cross section of 2Ke index 3 [3d6    (3H ) 5d  c2K ] (E_threshold=2.72 eV)
+No matched Hillier levels for Nahar cross section of 4Ke index 2 [3d6    (5D ) 7i  b4K ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 19 [3d6    (3H ) 4f  h2Go] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 6 [3d6    (1G ) 4p  u2Ho] (E_threshold=5.74 eV)
+No matched Hillier levels for Nahar cross section of 6De index 19 [3d6    (5D ) 9d  s6D ] (E_threshold=0.84 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 13 [3d6    (3G ) 5p  n2Go] (E_threshold=4.27 eV)
+No matched Hillier levels for Nahar cross section of 4De index 29 [3d6    (5D )10d  C4D ] (E_threshold=0.66 eV)
+No Hillier levels with term 6Ke
+No matched Hillier levels for Nahar cross section of 6Ke index 3 [3d6    (5D ) 9i  c6K ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 6De index 9 [3d6    (5D ) 6d  i6D ] (E_threshold=2.12 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 7 [3d54s  (3G ) 4p  t2Go] (E_threshold=6.21 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 4 [3d6    (5D ) 6f  w6Ho] (E_threshold=1.52 eV)
+No matched Hillier levels for Nahar cross section of 4De index 23 [3d6    (5D )10s  w4D ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2De index 12 [3d6    (3D ) 5s  l2D ] (E_threshold=4.27 eV)
+No matched Hillier levels for Nahar cross section of 6De index 15 [3d6    (5D ) 7g  o6D ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 1 [3d6    (3H ) 4p  z2Go] (E_threshold=10.74 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 14 [3d6    (5D )10f  m6Ho] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 4De index 17 [3d6    (5D ) 6g  q4D ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 2De index 10 [3d6    (3G ) 4d  j2D ] (E_threshold=4.72 eV)
+No matched Hillier levels for Nahar cross section of 6De index 5 [3d6    (5D ) 6s  e6D ] (E_threshold=3.48 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 8 [3d6    (5D ) 8f  s6Ho] (E_threshold=0.85 eV)
+Matched Nahar phixs for 4De index 11 '3d6    (3G ) 4d  k4D ' (13.571 eV) to <E>=10.522 eV: [3d6(5D)4df4De[7/2] (10.500 eV), 3d6(5D)4df4De[5/2] (10.523 eV), 3d6(5D)4df4De[3/2] (10.545 eV), 3d6(5D)4df4De[1/2] (10.560 eV)]
+Matched Nahar phixs for 4So index 2 '3d6    (3P ) 4p  y4So' (11.753 eV) to <E>=7.397 eV: [3d6(3P2)4pz4So[3/2] (7.397 eV)]
+No matched Hillier levels for Nahar cross section of 4De index 5 [3d6    (5D ) 4d  e4D ] (E_threshold=5.75 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 1 [3d54s  (5G ) 4p  z6Go] (E_threshold=6.24 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 11 [3d6    (5D ) 9f  p6Go] (E_threshold=0.68 eV)
+No matched Hillier levels for Nahar cross section of 8Po index 2 [3d54s  (7S ) 5p  y8Po] (E_threshold=5.48 eV)
+No matched Hillier levels for Nahar cross section of 6Pe index 8 [3d6    (5D )10d  h6P ] (E_threshold=0.66 eV)
+No matched Hillier levels for Nahar cross section of 4He index 3 [3d6    (3H ) 4d  c4H ] (E_threshold=2.86 eV)
+No matched Hillier levels for Nahar cross section of 6Pe index 2 [3d6    (5D ) 5d  b6P ] (E_threshold=3.32 eV)
+No matched Hillier levels for Nahar cross section of 4De index 8 [3d6    (3P ) 4d  h4D ] (E_threshold=2.98 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 6 [3d6    (5D ) 9k  u4Ko] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Io index 4 [3d6    (3H ) 5p  w2Io] (E_threshold=4.44 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 7 [3d6    (5D )10k  t6Ko] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 1 [3d6    (5D ) 0s  a2P ] (E_threshold=14.93 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 7 [3d6    (5D ) 8h  t4Io] (E_threshold=0.85 eV)
+Matched Nahar phixs for 2Io index 2 '3d6    (1I ) 4p  y2Io' (9.316 eV) to <E>=8.458 eV: [3d6(3H)4pz2Io[13/2] (7.723 eV), 3d6(3H)4pz2Io[11/2] (7.769 eV), 3d6(1I)4py2Io[13/2] (9.171 eV), 3d6(1I)4py2Io[11/2] (9.171 eV)]
+No matched Hillier levels for Nahar cross section of 2Pe index 11 [3d6    (3F ) 5d  k2P ] (E_threshold=2.60 eV)
+Matched Nahar phixs for 4Io index 1 '3d6    (3H ) 4p  z4Io' (7.602 eV) to <E>=7.623 eV: [3d6(3H)4pz4Io[15/2] (7.606 eV), 3d6(3H)4pz4Io[9/2] (7.627 eV), 3d6(3H)4pz4Io[13/2] (7.628 eV), 3d6(3H)4pz4Io[11/2] (7.636 eV)]
+No matched Hillier levels for Nahar cross section of 2Io index 8 [3d6    (3F ) 4f  s2Io] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 2Io index 6 [3d6    (1I ) 5p  u2Io] (E_threshold=3.23 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 7 [3d6    (3H ) 0s  g2G ] (E_threshold=5.26 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 11 [3d6    (5D )10k  p4Io] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 6De index 16 [3d6    (5D ) 8d  p6D ] (E_threshold=1.09 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 9 [3d6    (3F ) 4d  i2G ] (E_threshold=5.00 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 5 [3d6    (5D ) 6g  e6G ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 16 [3d6    (5D ) 8f  k6Po] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 16 [3d6    (3P ) 5d  p2F ] (E_threshold=3.20 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 5 [3d6    (5D ) 6g  e6F ] (E_threshold=1.51 eV)
+No Hillier levels with term 6Lo
+No matched Hillier levels for Nahar cross section of 6Lo index 2 [3d6    (5D ) 9k  y6Lo] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 19 [3d6    (5D ) 8g  s4F ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 9 [3d6    (5D ) 8d  i6G ] (E_threshold=1.08 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 3 [3d6    (5D ) 5g  c6F ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 21 [3d6    (3P ) 5d  u4F ] (E_threshold=0.72 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 12 [3d6    (1G ) 4d  l2F ] (E_threshold=3.80 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 9 [3d6    (5D ) 8g  i6F ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 14 [3d54s  (3H ) 4p  m4Go] (E_threshold=1.74 eV)
+No Hillier levels with term 2Lo
+No matched Hillier levels for Nahar cross section of 2Lo index 1 [3d6    (3H ) 4f  z2Lo] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 4 [3d6    (3D ) 4p  w4Po] (E_threshold=6.81 eV)
+No Hillier levels with term 4Le
+No matched Hillier levels for Nahar cross section of 4Le index 1 [3d6    (5D ) 7i  a4L ] (E_threshold=1.11 eV)
+Matched Nahar phixs for 6Po index 6 '3d54s  (5D ) 4p  u6Po' (11.345 eV) to <E>=10.084 eV: [3d5(6S)4s4p(3P)y6Po[3/2] (7.684 eV), 3d5(6S)4s4p(3P)y6Po[5/2] (7.693 eV), 3d5(6S)4s4p(3P)y6Po[7/2] (7.708 eV), 3d5(6S)4s4p(1P)x6Po[3/2] (9.825 eV), 3d5(6S)4s4p(1P)x6Po[5/2] (9.830 eV), 3d5(6S)4s4p(1P)x6Po[7/2] (9.836 eV), 3d5(4P)4s4p(3P)6Po[7/2] (11.051 eV), 3d5(4P)4s4p(3P)6Po[5/2] (11.090 eV), 3d5(4P)4s4p(3P)6Po[3/2] (11.112 eV), 3d5(4D)4s4p(3P)6Po[3/2] (11.680 eV), 3d5(4D)4s4p(3P)6Po[5/2] (11.739 eV), 3d5(4D)4s4p(3P)6Po[7/2] (11.749 eV)]
+No matched Hillier levels for Nahar cross section of 4Ho index 11 [3d54s  (5G ) 5p  p4Ho] (E_threshold=1.82 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 4 [3d6    (3F ) 4p  w4Go] (E_threshold=4.73 eV)
+Matched Nahar phixs for 2Po index 5 '3d6    (3P ) 4p  v2Po' (12.081 eV) to <E>=9.094 eV: [3d6(3P2)4pz2Po[1/2] (8.035 eV), 3d6(3P2)4pz2Po[3/2] (8.038 eV), 3d6(3D)4py2Po[1/2] (9.074 eV), 3d6(3D)4py2Po[3/2] (9.074 eV), 3d6(1S2)4px2Po[3/2] (9.439 eV), 3d6(1S2)4px2Po[1/2] (9.494 eV), 3d6(1D2)4pw2Po[1/2] (9.775 eV), 3d6(1D2)4pw2Po[3/2] (9.825 eV)]
+No matched Hillier levels for Nahar cross section of 4Fe index 1 [3d6    (5D ) 0s  a4F ] (E_threshold=14.70 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 11 [3d6    (5D )10g  k4I ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 10 [3d54s  (1I ) 4p  q2Ho] (E_threshold=3.99 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 2 [3d6    (3F ) 4p  y4Go] (E_threshold=7.95 eV)
+No matched Hillier levels for Nahar cross section of 4De index 28 [3d6    (5D ) 9g  B4D ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 15 [3d6    (3G ) 4f  l2Po] (E_threshold=2.81 eV)
+No Hillier levels with term 6So
+No matched Hillier levels for Nahar cross section of 6So index 1 [3d54s  (5P ) 4p  z6So] (E_threshold=5.55 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 24 [3d6    (5D ) 9f  c4Go] (E_threshold=0.67 eV)
+Matched Nahar phixs for 4Po index 7 '3d54s  (5P ) 4p  t4Po' (12.116 eV) to <E>=11.526 eV: [3d5(6S)4s4p(3P)x4Po[5/2] (8.568 eV), 3d5(6S)4s4p(3P)x4Po[3/2] (8.592 eV), 3d5(6S)4s4p(3P)x4Po[1/2] (8.608 eV), 3d5(4P)4s4p(3P)4Po[5/2] (11.681 eV), 3d5(4P)4s4p(3P)4Po[3/2] (11.746 eV), 3d5(4P)4s4p(3P)4Po[1/2] (11.764 eV), 3d5(4D)4s4p(3P)4Po[1/2] (12.572 eV), 3d5(4D)4s4p(3P)4Po[3/2] (12.594 eV), 3d5(4D)4s4p(3P)4Po[5/2] (12.610 eV), 3d5(2D)4s4p(3P)4Po[5/2] (13.177 eV), 3d5(2D)4s4p(3P)4Po[1/2] (13.224 eV), 3d5(2D)4s4p(3P)4Po[3/2] (13.247 eV)]
+No matched Hillier levels for Nahar cross section of 2Po index 9 [Eqv st (0S ) 0s  r2Po] (E_threshold=4.44 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 7 [3d6    (5D ) 8g  g4I ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 8 [3d6    (3G ) 5p  s2Ho] (E_threshold=4.41 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 22 [3d6    (5D ) 8f  e4Go] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 14 [3d54s  (3F ) 4p  m2Do] (E_threshold=3.51 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 9 [3d6    (3H ) 5p  r2Ho] (E_threshold=4.35 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 1 [3d6    (5D ) 4p  z4Po] (E_threshold=10.49 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 35 [3d6    (5D )11p  R4Fo] (E_threshold=0.62 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 24 [3d6    (3G ) 4f  c2Fo] (E_threshold=2.80 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 19 [3d6    (5D ) 9f  h6Fo] (E_threshold=0.68 eV)
+No matched Hillier levels for Nahar cross section of 2He index 13 [3d6    (3H ) 5d  m2H ] (E_threshold=2.51 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 14 [3d6    (3H ) 4f  m2Ho] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 2 [3d6    (3P ) 4p  y4Po] (E_threshold=8.16 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 29 [3d6    (3P ) 4f  X4Fo] (E_threshold=0.93 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 22 [3d54s  (1D ) 4p  e2Fo] (E_threshold=2.84 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 9 [3d6    (5D ) 7p  r6Fo] (E_threshold=1.92 eV)
+No matched Hillier levels for Nahar cross section of 2He index 7 [3d6    (3G ) 4d  g2H ] (E_threshold=4.69 eV)
+No matched Hillier levels for Nahar cross section of 2De index 17 [3d6    (3P ) 5d  q2D ] (E_threshold=3.06 eV)
+No matched Hillier levels for Nahar cross section of 4De index 25 [3d6    (5D ) 9d  y4D ] (E_threshold=0.83 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 23 [3d6    (5D ) 8p  d4Fo] (E_threshold=1.34 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 12 [3d6    (3F ) 5p  o2Fo] (E_threshold=4.41 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 15 [3d6    (5D ) 9p  l6Fo] (E_threshold=1.01 eV)
+No matched Hillier levels for Nahar cross section of 2He index 1 [3d6    (5D ) 0s  a2H ] (E_threshold=15.03 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 16 [3d6    (5D ) 9f  k6Do] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 12 [3d6    (1I ) 5p  o2Ho] (E_threshold=3.13 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 4 [3d6    (1G ) 4p  w2Go] (E_threshold=9.13 eV)
+No matched Hillier levels for Nahar cross section of 4De index 22 [3d54s  (5S ) 4d  v4D ] (E_threshold=0.95 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 17 [3d54s  (3F ) 4p  j4Fo] (E_threshold=1.93 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 10 [3d54s  (3D ) 4p  q2Fo] (E_threshold=5.34 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 5 [3d6    (5D ) 4f  v6Fo] (E_threshold=3.43 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 20 [3d6    (5D ) 9g  t4G ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 13 [3d6    (1G ) 5p  n2Ho] (E_threshold=3.07 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 13 [3d6    (5D ) 5f  n4Po] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 11 [3d6    (5D ) 6p  p4Fo] (E_threshold=2.93 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 24 [3d6    (5D ) 7f  c4Do] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 19 [3d6    (3P ) 6p  h2Do] (E_threshold=2.94 eV)
+Matched Nahar phixs for 6Do index 4 '3d54s  (5D ) 4p  w6Do' (11.299 eV) to <E>=11.999 eV: [3d5(4P)4s4p(3P)6Do[1/2] (10.865 eV), 3d5(4P)4s4p(3P)6Do[3/2] (10.906 eV), 3d5(4P)4s4p(3P)6Do[5/2] (10.918 eV), 3d5(4P)4s4p(3P)6Do[7/2] (10.937 eV), 3d5(4P)4s4p(3P)6Do[9/2] (10.987 eV), 3d5(4D)4s4p(3P)6Do[5/2] (11.634 eV), 3d5(4D)4s4p(3P)6Do[3/2] (11.635 eV), 3d5(4D)4s4p(3P)6Do[7/2] (11.653 eV), 3d5(4D)4s4p(3P)6Do[1/2] (11.658 eV), 3d5(4D)4s4p(3P)6Do[9/2] (11.662 eV), 3d5(4F)4s4p(3P)6Do[9/2] (13.386 eV), 3d5(4F)4s4p(3P)6Do[5/2] (13.406 eV), 3d5(4F)4s4p(3P)6Do[3/2] (13.414 eV), 3d5(4F)4s4p(3P)6Do[1/2] (13.419 eV), 3d5(4F)4s4p(3P)6Do[7/2] (13.420 eV)]
+No matched Hillier levels for Nahar cross section of 4De index 20 [3d6    (5D ) 7g  t4D ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 5 [3d6    (5D ) 5p  v4Fo] (E_threshold=4.97 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 1 [3d6    (5D ) 5g  a6H ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 18 [3d54s  (3F ) 4p  i4Do] (E_threshold=1.80 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 9 [3d54s  (3D ) 4p  r2Do] (E_threshold=5.72 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 2 [3d54s  (5P ) 4p  y6Do] (E_threshold=5.60 eV)
+No matched Hillier levels for Nahar cross section of 4De index 21 [3d6    (5D ) 8d  u4D ] (E_threshold=1.08 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 14 [3d6    (3P ) 6s  n4P ] (E_threshold=1.02 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 15 [3d6    (3P ) 4f  l2Do] (E_threshold=3.42 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 8 [3d6    (5D ) 5f  s6Do] (E_threshold=2.19 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 16 [3d6    (3G ) 4f  k2Ho] (E_threshold=2.81 eV)
+No matched Hillier levels for Nahar cross section of 4De index 18 [3d6    (5D ) 7d  r4D ] (E_threshold=1.46 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 7 [3d6    (5D ) 7d  g6S ] (E_threshold=1.46 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 5 [3d6    (1F ) 4p  v2Do] (E_threshold=7.42 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 17 [3d54s  (3G ) 4p  j2Ho] (E_threshold=2.73 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 9 [3d6    (5D ) 4f  r4Po] (E_threshold=3.39 eV)
+No matched Hillier levels for Nahar cross section of 2Se index 2 [3d6    (5D ) 0s  b2S ] (E_threshold=7.17 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 9 [3d6    (5D ) 9d  i6S ] (E_threshold=0.83 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 20 [3d6    (5D ) 7f  g4Po] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 10 [3d54s  (3D ) 4p  q4Po] (E_threshold=2.90 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 11 [3d6    (5D ) 6p  p4Po] (E_threshold=2.86 eV)
+No matched Hillier levels for Nahar cross section of 6De index 24 [3d6    (5D )12s  x6D ] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 2Ke index 2 [3d6    (1I ) 4d  b2K ] (E_threshold=3.93 eV)
+No matched Hillier levels for Nahar cross section of 4De index 14 [3d6    (5D ) 6d  n4D ] (E_threshold=2.10 eV)
+No matched Hillier levels for Nahar cross section of 4Ke index 1 [3d6    (3H ) 4d  a4K ] (E_threshold=2.88 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 18 [3d54s  (3F ) 4p  i2Go] (E_threshold=3.01 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 1 [3d6    (3P ) 4p  z2Do] (E_threshold=10.57 eV)
+No matched Hillier levels for Nahar cross section of 4De index 15 [3d6    (3D ) 4d  o4D ] (E_threshold=1.59 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 7 [3d54s  (3I ) 4p  t2Ho] (E_threshold=5.42 eV)
+No matched Hillier levels for Nahar cross section of 6De index 20 [3d6    (5D )11s  t6D ] (E_threshold=0.68 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 12 [3d54s  (3H ) 4p  o2Go] (E_threshold=4.30 eV)
+No matched Hillier levels for Nahar cross section of 4De index 26 [3d6    (3P ) 5d  z4D ] (E_threshold=0.74 eV)
+No Hillier levels with term 6Ke
+No matched Hillier levels for Nahar cross section of 6Ke index 2 [3d6    (5D ) 8i  b6K ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6De index 10 [3d54s  (7S ) 4d  j6D ] (E_threshold=1.97 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 6 [3d6    (3F ) 4p  u2Go] (E_threshold=6.41 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 5 [3d6    (5D ) 6h  v6Ho] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 14 [3d6    (5D ) 7p  m4Po] (E_threshold=1.92 eV)
+No matched Hillier levels for Nahar cross section of 2De index 13 [3d6    (1G ) 4d  m2D ] (E_threshold=3.71 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 15 [3d6    (5D ) 9k  l6Ho] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4De index 10 [3d6    (3D ) 5s  j4D ] (E_threshold=2.53 eV)
+No matched Hillier levels for Nahar cross section of 2De index 11 [3d6    (1D ) 5s  k2D ] (E_threshold=4.32 eV)
+No matched Hillier levels for Nahar cross section of 6De index 6 [3d6    (5D ) 5d  f6D ] (E_threshold=3.30 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 9 [3d6    (5D ) 8h  r6Ho] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 17 [3d54s  (3D ) 4p  j4Po] (E_threshold=1.40 eV)
+No matched Hillier levels for Nahar cross section of 2De index 1 [Eqv st (0S ) 0s  a2D ] (E_threshold=14.59 eV)
+No matched Hillier levels for Nahar cross section of 4So index 5 [3d54s  (3P ) 4p  v4So] (E_threshold=1.55 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 18 [3d6    (3H ) 5d  r2F ] (E_threshold=2.74 eV)
+Matched Nahar phixs for 4De index 2 '3d6    (3D ) 4s  b4D ' (4.467 eV) to <E>=2.464 eV: [3d6(5D)4sa4De[7/2] (0.986 eV), 3d6(5D)4sa4De[5/2] (1.040 eV), 3d6(5D)4sa4De[3/2] (1.076 eV), 3d6(5D)4sa4De[1/2] (1.097 eV), 3d6(3D)4sb4De[3/2] (3.889 eV), 3d6(3D)4sb4De[1/2] (3.889 eV), 3d6(3D)4sb4De[5/2] (3.892 eV), 3d6(3D)4sb4De[7/2] (3.903 eV)]
+No matched Hillier levels for Nahar cross section of 4He index 14 [3d6    (5D )10g  n4H ] (E_threshold=0.54 eV)
+No Hillier levels with term 4Mo
+No matched Hillier levels for Nahar cross section of 4Mo index 1 [3d6    (5D ) 8k  z4Mo] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4De index 9 [3d6    (3F ) 4d  i4D ] (E_threshold=2.64 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 10 [3d6    (5D ) 8h  q6Go] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Pe index 7 [3d6    (5D ) 9d  g6P ] (E_threshold=0.83 eV)
+Matched Nahar phixs for 4He index 2 '3d6    (3H ) 5s  b4H ' (12.759 eV) to <E>=12.191 eV: [3d6(3H)5se4He[13/2] (12.167 eV), 3d6(3H)5se4He[11/2] (12.187 eV), 3d6(3H)5se4He[9/2] (12.206 eV), 3d6(3H)5se4He[7/2] (12.221 eV)]
+No matched Hillier levels for Nahar cross section of 6Pe index 1 [3d6    (5D ) 4d  a6P ] (E_threshold=5.74 eV)
+No matched Hillier levels for Nahar cross section of 4He index 13 [3d6    (5D ) 9i  m4H ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 7 [3d6    (5D ) 9h  t4Ko] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 20 [3d6    (5D ) 9h  g6Fo] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Io index 7 [3d6    (3H ) 4f  t2Io] (E_threshold=2.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 15 [3d6    (5D ) 6g  o4F ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4He index 12 [3d6    (5D ) 9g  l4H ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 10 [3d6    (5D ) 4f  q4Do] (E_threshold=3.41 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 6 [3d6    (5D ) 7d  f6G ] (E_threshold=1.47 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 6 [3d6    (5D ) 7h  u4Io] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 8De index 1 [3d54s  (7S ) 4d  a8D ] (E_threshold=6.86 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 10 [3d6    (3P ) 5d  j2P ] (E_threshold=3.04 eV)
+Matched Nahar phixs for 2Ge index 2 '3d6    (3G ) 4s  b2G ' (4.239 eV) to <E>=5.070 eV: [3d6(3G)4sb2Ge[9/2] (3.768 eV), 3d6(3G)4sb2Ge[7/2] (3.814 eV), 3d6(1G2)4sc2Ge[9/2] (4.149 eV), 3d6(1G2)4sc2Ge[7/2] (4.154 eV), 3d6(1G1)4sd2Ge[9/2] (7.269 eV), 3d6(1G1)4sd2Ge[7/2] (7.274 eV)]
+No matched Hillier levels for Nahar cross section of 4Ge index 11 [3d6    (3D ) 4d  k4G ] (E_threshold=1.60 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 12 [3d6    (1F ) 4d  l2P ] (E_threshold=2.57 eV)
+No matched Hillier levels for Nahar cross section of 4De index 3 [3d6    (3P ) 0s  c4D ] (E_threshold=8.42 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 10 [3d6    (5D ) 9k  q4Io] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4He index 9 [3d6    (5D ) 7i  i4H ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 1 [3d6    (5D ) 4d  a4S ] (E_threshold=5.64 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 14 [3d6    (3D ) 4d  n2G ] (E_threshold=3.47 eV)
+No matched Hillier levels for Nahar cross section of 4He index 8 [3d6    (5D ) 7g  h4H ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 2 [3d6    (5D ) 5d  b6G ] (E_threshold=3.29 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 16 [3d6    (3G ) 6s  p2G ] (E_threshold=2.86 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 16 [3d6    (5D )10g  p6G ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4He index 11 [3d6    (5D ) 8i  k4H ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 24 [3d6    (5D )10g  x4F ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 19 [3d6    (3F ) 5d  s2F ] (E_threshold=2.67 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 4 [3d6    (5D ) 6d  d6F ] (E_threshold=2.13 eV)
+No Hillier levels with term 6Lo
+No matched Hillier levels for Nahar cross section of 6Lo index 1 [3d6    (5D ) 8k  z6Lo] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4He index 10 [3d6    (5D ) 8g  j4H ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 18 [3d6    (5D ) 8d  r4F ] (E_threshold=1.05 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 9 [3d6    (3H ) 4d  i2F ] (E_threshold=5.29 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 2 [3d6    (5D ) 5d  b6F ] (E_threshold=3.34 eV)
+No matched Hillier levels for Nahar cross section of 4He index 5 [3d6    (3G ) 4d  e4H ] (E_threshold=2.49 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 20 [3d6    (5D ) 9d  t4F ] (E_threshold=0.82 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 15 [3d6    (1D ) 4d  o2F ] (E_threshold=3.24 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 8 [3d6    (5D ) 8d  h6F ] (E_threshold=1.09 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 9 [3d54s  (5F ) 4p  r4Go] (E_threshold=2.42 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 4 [3d6    (1G ) 4s  d2G ] (E_threshold=9.99 eV)
+No Hillier levels with term 4Le
+No matched Hillier levels for Nahar cross section of 4Le index 2 [3d6    (5D ) 8i  b4L ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 14 [3d6    (3D ) 4d  n4F ] (E_threshold=1.57 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 5 [3d6    (3P ) 0s  e2F ] (E_threshold=9.12 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 7 [3d54s  (3F ) 4p  t4Go] (E_threshold=2.88 eV)
+No matched Hillier levels for Nahar cross section of 4He index 7 [3d6    (5D ) 6g  g4H ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 9 [3d6    (5D ) 5f  r6Po] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 8 [3d6    (5D ) 8i  h4I ] (E_threshold=0.85 eV)
+Matched Nahar phixs for 2Ie index 1 '3d6    (1I ) 4s  a2I ' (4.491 eV) to <E>=4.078 eV: [3d6(1I)4sa2Ie[13/2] (4.076 eV), 3d6(1I)4sa2Ie[11/2] (4.080 eV)]
+No matched Hillier levels for Nahar cross section of 2Po index 12 [3d6    (1D ) 5p  o2Po] (E_threshold=3.00 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 2 [3d6    (3G ) 4d  b4I ] (E_threshold=2.47 eV)
+No matched Hillier levels for Nahar cross section of 2Ie index 7 [3d6    (1G ) 4d  g2I ] (E_threshold=3.81 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 27 [3d6    (5D )10h  Z4Go] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 10 [3d54s  (3D ) 4p  q4Fo] (E_threshold=3.22 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 4 [3d6    (5D ) 6g  d4I ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 17 [3d6    (5D ) 6f  j4Go] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 22 [3d6    (5D ) 8f  e4Po] (E_threshold=0.85 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 1 [3d6    (5D ) 5g  a6I ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 32 [3d6    (5D )10p  U4Fo] (E_threshold=0.78 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 25 [3d6    (1D ) 5p  b2Fo] (E_threshold=2.59 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 13 [3d6    (5D )10f  n6Go] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 2He index 12 [3d6    (3G ) 5d  l2H ] (E_threshold=2.66 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 26 [3d6    (5D ) 7f  a4Fo] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 23 [3d6    (3F ) 4f  d2Fo] (E_threshold=2.83 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 12 [3d6    (5D ) 9h  o6Go] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 6 [3d6    (3G ) 5s  f2G ] (E_threshold=5.63 eV)
+Matched Nahar phixs for 2Ko index 1 '3d6    (1I ) 4p  z2Ko' (8.941 eV) to <E>=8.831 eV: [3d6(1I)4pz2Ko[13/2] (8.801 eV), 3d6(1I)4pz2Ko[15/2] (8.857 eV)]
+No matched Hillier levels for Nahar cross section of 4Fo index 20 [Eqv st (0S ) 0s  g4Fo] (E_threshold=1.55 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 13 [3d54s  (3D ) 4p  n2Fo] (E_threshold=4.32 eV)
+Matched Nahar phixs for 2Ko index 2 '3d54s  (3I ) 4p  y2Ko' (12.753 eV) to <E>=13.188 eV: [3d5(2I)4s4p(3P)2Ko[13/2] (13.165 eV), 3d5(2I)4s4p(3P)2Ko[15/2] (13.207 eV)]
+No matched Hillier levels for Nahar cross section of 4Fo index 14 [3d6    (5D ) 5f  m4Fo] (E_threshold=2.19 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 11 [3d6    (1D ) 4p  p2Fo] (E_threshold=4.83 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 6 [3d54s  (5F ) 4p  u6Fo] (E_threshold=3.10 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 21 [3d6    (5D ) 9i  u4G ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Ko index 3 [3d6    (1I ) 5p  x2Ko] (E_threshold=3.30 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 8 [3d54s  (5D ) 4p  s4Fo] (E_threshold=3.84 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 1 [3d6    (3F ) 4p  z2Fo] (E_threshold=10.37 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 31 [3d6    (5D )11p  V4Do] (E_threshold=0.62 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 18 [3d6    (3D ) 5p  i2Do] (E_threshold=3.02 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 7 [3d54s  (5F ) 4p  t6Do] (E_threshold=2.88 eV)
+No matched Hillier levels for Nahar cross section of 2Ko index 4 [3d54s  (1I ) 4p  w2Ko] (E_threshold=3.06 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 2 [3d6    (3F ) 4p  y4Fo] (E_threshold=8.09 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 17 [3d6    (5D ) 7p  j4Do] (E_threshold=1.91 eV)
+Matched Nahar phixs for 4Ge index 1 '3d6    (3G ) 4s  a4G ' (3.557 eV) to <E>=3.194 eV: [3d6(3G)4sa4Ge[11/2] (3.153 eV), 3d6(3G)4sa4Ge[9/2] (3.199 eV), 3d6(3G)4sa4Ge[7/2] (3.221 eV), 3d6(3G)4sa4Ge[5/2] (3.230 eV)]
+No matched Hillier levels for Nahar cross section of 6Do index 13 [3d6    (5D ) 9p  n6Do] (E_threshold=1.02 eV)
+No matched Hillier levels for Nahar cross section of 2Ko index 5 [3d6    (3H ) 4f  v2Ko] (E_threshold=2.83 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 2 [3d6    (5D ) 4d  b6S ] (E_threshold=5.62 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 7 [3d6    (3F ) 4d  g4G ] (E_threshold=2.65 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 11 [3d6    (5D ) 8p  p6Do] (E_threshold=1.37 eV)
+No matched Hillier levels for Nahar cross section of 2Ko index 6 [3d6    (3G ) 4f  u2Ko] (E_threshold=2.80 eV)
+No Hillier levels with term 4Lo
+No matched Hillier levels for Nahar cross section of 4Lo index 1 [3d6    (5D ) 8k  z4Lo] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 13 [3d54s  (3F ) 4p  n4Do] (E_threshold=2.70 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 13 [3d6    (5D ) 7d  m4G ] (E_threshold=1.46 eV)
+No matched Hillier levels for Nahar cross section of 2Se index 3 [3d6    (1S ) 5s  c2S ] (E_threshold=4.35 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 7 [3d6    (3F ) 4p  t4Do] (E_threshold=4.22 eV)
+No matched Hillier levels for Nahar cross section of 4He index 4 [3d6    (3F ) 4d  d4H ] (E_threshold=2.64 eV)
+Matched Nahar phixs for 4Ko index 1 '3d54s  (3I ) 4p  z4Ko' (12.150 eV) to <E>=12.732 eV: [3d5(2I)4s4p(3P)4Ko[11/2] (12.689 eV), 3d5(2I)4s4p(3P)4Ko[13/2] (12.707 eV), 3d5(2I)4s4p(3P)4Ko[15/2] (12.752 eV), 3d5(2I)4s4p(3P)4Ko[17/2] (12.764 eV)]
+No matched Hillier levels for Nahar cross section of 2Ho index 2 [3d6    (3G ) 4p  y2Ho] (E_threshold=10.08 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 17 [3d6    (1G ) 5p  j2Go] (E_threshold=3.08 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 23 [3d6    (5D )10p  d4Po] (E_threshold=0.77 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 13 [3d6    (5D ) 6d  m4F ] (E_threshold=1.90 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 4 [3d6    (1I ) 4p  w2Ho] (E_threshold=9.12 eV)
+No matched Hillier levels for Nahar cross section of 6De index 21 [3d6    (5D ) 9g  u6D ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 11 [3d6    (3F ) 5p  p2Go] (E_threshold=4.39 eV)
+No matched Hillier levels for Nahar cross section of 4De index 27 [3d6    (5D )11s  A4D ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2De index 16 [3d6    (1D ) 4d  p2D ] (E_threshold=3.26 eV)
+No matched Hillier levels for Nahar cross section of 6De index 11 [3d6    (5D ) 8s  k6D ] (E_threshold=1.54 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 5 [3d6    (1F ) 4p  v2Go] (E_threshold=7.53 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 2 [3d6    (5D ) 4f  y6Ho] (E_threshold=3.41 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 15 [3d54s  (3P ) 4p  l4Po] (E_threshold=1.65 eV)
+No matched Hillier levels for Nahar cross section of 2De index 14 [3d6    (3D ) 4d  n2D ] (E_threshold=3.54 eV)
+Matched Nahar phixs for 6De index 1 '3d6    (5D ) 4s  a6D ' (-0.001 eV) to <E>=0.052 eV: [3d6(5D)4sa6De[9/2] (0.000 eV), 3d6(5D)4sa6De[7/2] (0.048 eV), 3d6(5D)4sa6De[5/2] (0.083 eV), 3d6(5D)4sa6De[3/2] (0.107 eV), 3d6(5D)4sa6De[1/2] (0.121 eV)]
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 12 [3d6    (5D ) 9h  o6Ho] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 21 [3d6    (5D ) 9p  f4Po] (E_threshold=0.99 eV)
+No matched Hillier levels for Nahar cross section of 2De index 4 [Eqv st (0S ) 0s  d2D ] (E_threshold=10.82 eV)
+No matched Hillier levels for Nahar cross section of 6De index 7 [3d6    (5D ) 7s  g6D ] (E_threshold=2.23 eV)
+No matched Hillier levels for Nahar cross section of 2Io index 1 [3d6    (3H ) 4p  z2Io] (E_threshold=10.80 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 19 [3d6    (3D ) 5p  h4Po] (E_threshold=1.16 eV)
+Matched Nahar phixs for 2De index 2 '3d6    (3D ) 4s  b2D ' (5.192 eV) to <E>=4.611 eV: [3d6(3D)4sb2De[3/2] (4.479 eV), 3d6(3D)4sb2De[5/2] (4.495 eV), 3d6(1D2)4sc2De[5/2] (4.732 eV), 3d6(1D2)4sc2De[3/2] (4.738 eV)]
+No matched Hillier levels for Nahar cross section of 4So index 4 [3d6    (3P ) 5p  w4So] (E_threshold=2.61 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 25 [3d6    (5D ) 9f  b4Po] (E_threshold=0.67 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 7 [3d6    (5D ) 7f  t6Go] (E_threshold=1.12 eV)
+No Hillier levels with term 4Mo
+No matched Hillier levels for Nahar cross section of 4Mo index 2 [3d6    (5D ) 9k  y4Mo] (E_threshold=0.67 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 9 [3d6    (5D ) 8f  r6Go] (E_threshold=0.86 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 8 [3d6    (5D )10k  s4Ko] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 6Pe index 6 [3d6    (5D ) 8d  f6P ] (E_threshold=1.08 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 10 [3d6    (3G ) 4d  j2G ] (E_threshold=4.71 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 2 [3d6    (5D ) 6h  y4Ko] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 4 [3d6    (5D ) 8h  w4Ko] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 8Se index 1 [3d54s  (7S ) 5s  a8S ] (E_threshold=7.07 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 15 [3d6    (5D )10d  o6G ] (E_threshold=0.66 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 1 [3d6    (5D ) 6h  z6Ko] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 7 [3d6    (3D ) 4d  g2P ] (E_threshold=3.70 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 5 [3d6    (5D ) 6h  v4Io] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 9 [3d6    (1D ) 4d  i2P ] (E_threshold=3.28 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 3 [3d6    (1G ) 4s  c2G ] (E_threshold=13.79 eV)
+No matched Hillier levels for Nahar cross section of 2Io index 10 [3d54s  (1H ) 4p  q2Io] (E_threshold=2.78 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 4 [3d54s  (5S ) 5s  d4S ] (E_threshold=1.79 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 5 [3d6    (3P ) 0s  e2G ] (E_threshold=8.55 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 9 [3d6    (5D ) 9h  r4Io] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 2 [3d6    (5D ) 5d  b4S ] (E_threshold=3.23 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 4 [3d6    (5D ) 8k  w6Io] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 3 [3d6    (5D ) 5g  c6G ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 8 [3d6    (5D ) 9d  h4S ] (E_threshold=0.82 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 17 [3d6    (3H ) 5d  q2G ] (E_threshold=2.69 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 13 [3d6    (5D ) 9g  m6G ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 7 [3d6    (5D ) 7g  g6F ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 17 [3d6    (5D ) 7g  q4F ] (E_threshold=1.11 eV)
+Matched Nahar phixs for 4Ho index 1 '3d6    (3H ) 4p  z4Ho' (7.604 eV) to <E>=7.901 eV: [3d6(3H)4pz4Ho[13/2] (7.543 eV), 3d6(3H)4pz4Ho[11/2] (7.549 eV), 3d6(3H)4pz4Ho[9/2] (7.562 eV), 3d6(3H)4pz4Ho[7/2] (7.582 eV), 3d6(3G)4py4Ho[13/2] (8.234 eV), 3d6(3G)4py4Ho[11/2] (8.240 eV), 3d6(3G)4py4Ho[9/2] (8.256 eV), 3d6(3G)4py4Ho[7/2] (8.266 eV)]
+No matched Hillier levels for Nahar cross section of 6Fe index 13 [3d6    (5D )10g  m6F ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 2 [3d54s  (7S ) 4p  y6Po] (E_threshold=8.97 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 7 [3d6    (3H ) 5p  t4Ho] (E_threshold=2.48 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 11 [3d6    (5D ) 9g  k6F ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 8 [3d54s  (3G ) 4p  s4Go] (E_threshold=2.65 eV)
+No Hillier levels with term 4Le
+No matched Hillier levels for Nahar cross section of 4Le index 3 [3d6    (5D ) 9i  c4L ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 4 [3d54s  (5P ) 4p  w6Po] (E_threshold=5.40 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 13 [3d6    (5D ) 6h  n4Ho] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 6 [3d6    (5D ) 4f  u4Go] (E_threshold=3.43 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 3 [3d6    (1S ) 4p  x2Po] (E_threshold=8.51 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 7 [3d6    (5D ) 5d  g4F ] (E_threshold=3.23 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 9 [3d6    (5D ) 9g  i4I ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Ie index 2 [3d54s  (3I ) 0s  b2I ] (E_threshold=10.12 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 13 [3d6    (3P ) 6p  n2Po] (E_threshold=2.87 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 3 [3d6    (5D ) 5g  c4I ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 26 [3d6    (5D )10f  a4Go] (E_threshold=0.55 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 4 [3d6    (5D ) 7g  d6I ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 5 [3d6    (5D ) 7i  e4I ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 16 [3d6    (5D ) 6h  k4Go] (E_threshold=1.51 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 2 [3d6    (5D ) 6g  b6I ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 2So index 6 [3d6    (3F ) 4f  u2So] (E_threshold=2.81 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 12 [3d6    (5D ) 9d  l6G ] (E_threshold=0.83 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 33 [3d6    (5D ) 9f  T4Fo] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4He index 6 [3d6    (5D ) 5g  f4H ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 21 [3d6    (5D )11p  f6Fo] (E_threshold=0.63 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 8 [3d6    (3H ) 4d  h2G ] (E_threshold=5.22 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 27 [3d6    (5D ) 7h  Z4Fo] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 16 [3d6    (3P ) 4f  k2Fo] (E_threshold=3.42 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 11 [3d6    (5D ) 6h  p6Fo] (E_threshold=1.51 eV)
+No Hillier levels with term 6Mo
+No matched Hillier levels for Nahar cross section of 6Mo index 1 [3d6    (5D ) 8k  z6Mo] (E_threshold=0.85 eV)
+No Hillier levels with term 6Le
+No matched Hillier levels for Nahar cross section of 6Le index 2 [3d6    (5D ) 8i  b6L ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 21 [3d6    (5D ) 6f  f4Fo] (E_threshold=1.52 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 14 [3d6    (3G ) 5p  m2Fo] (E_threshold=4.26 eV)
+Matched Nahar phixs for 6Fo index 1 '3d6    (5D ) 4p  z6Fo' (4.904 eV) to <E>=5.228 eV: [3d6(5D)4pz6Fo[11/2] (5.203 eV), 3d6(5D)4pz6Fo[9/2] (5.222 eV), 3d6(5D)4pz6Fo[7/2] (5.237 eV), 3d6(5D)4pz6Fo[5/2] (5.249 eV), 3d6(5D)4pz6Fo[3/2] (5.257 eV), 3d6(5D)4pz6Fo[1/2] (5.262 eV)]
+No matched Hillier levels for Nahar cross section of 4Ge index 16 [3d6    (5D ) 8d  p4G ] (E_threshold=1.08 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 18 [3d6    (5D )10f  i6Do] (E_threshold=0.55 eV)
+Matched Nahar phixs for 4Fe index 3 '3d6    (3F ) 4s  c4F ' (7.239 eV) to <E>=4.523 eV: [3d6(3F2)4sb4Fe[9/2] (2.807 eV), 3d6(3F2)4sb4Fe[7/2] (2.828 eV), 3d6(3F2)4sb4Fe[5/2] (2.844 eV), 3d6(3F2)4sb4Fe[3/2] (2.856 eV), 3d6(3F1)4sc4Fe[3/2] (6.209 eV), 3d6(3F1)4sc4Fe[5/2] (6.217 eV), 3d6(3F1)4sc4Fe[9/2] (6.219 eV), 3d6(3F1)4sc4Fe[7/2] (6.222 eV)]
+No matched Hillier levels for Nahar cross section of 4Fo index 15 [3d6    (3G ) 5p  l4Fo] (E_threshold=2.14 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 4 [3d6    (3D ) 4p  w2Fo] (E_threshold=8.75 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 7 [3d6    (5D ) 6p  t6Fo] (E_threshold=2.92 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 15 [3d6    (1D ) 4d  o2G ] (E_threshold=3.28 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 9 [3d6    (5D ) 4f  r4Fo] (E_threshold=3.43 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 2 [3d6    (3G ) 4p  y2Fo] (E_threshold=9.67 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 30 [3d6    (5D ) 9f  W4Do] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 21 [Eqv st (0S ) 0s  f2Do] (E_threshold=2.84 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 6 [3d6    (5D ) 6p  u6Do] (E_threshold=2.99 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 3 [3d6    (3G ) 4p  x4Fo] (E_threshold=7.68 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 7 [3d6    (5D ) 9g  g6H ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 10 [3d6    (5D ) 6d  j4P ] (E_threshold=2.02 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 2 [3d6    (3P ) 0s  b4G ] (E_threshold=9.41 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 12 [3d6    (5D ) 7f  o6Do] (E_threshold=1.12 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 9 [3d6    (5D )10g  i6H ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 16 [3d6    (5D ) 9d  p4P ] (E_threshold=0.79 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 8 [3d6    (3G ) 4d  h4G ] (E_threshold=2.49 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 10 [3d6    (5D ) 6f  q6Do] (E_threshold=1.52 eV)
+No matched Hillier levels for Nahar cross section of 2Se index 6 [3d6    (1D ) 4d  f2S ] (E_threshold=3.32 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 5 [3d6    (5D ) 6d  e6S ] (E_threshold=2.09 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 7 [3d6    (3F ) 4p  t2Do] (E_threshold=6.15 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 6 [3d6    (3P ) 4p  u4Do] (E_threshold=4.63 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 2 [3d6    (5D ) 7h  y6Io] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 15 [3d6    (3F ) 4f  l2Ho] (E_threshold=2.82 eV)
+No matched Hillier levels for Nahar cross section of 4Ke index 5 [3d6    (5D )10i  e4K ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 3 [3d6    (1G ) 4p  x2Ho] (E_threshold=9.30 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 14 [3d6    (5D ) 9i  n6G ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 16 [3d6    (3P ) 4f  k2Go] (E_threshold=3.42 eV)
+No matched Hillier levels for Nahar cross section of 4De index 30 [3d6    (5D )12s  D4D ] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 2Ho index 5 [3d54s  (3G ) 4p  v2Ho] (E_threshold=6.81 eV)
+No matched Hillier levels for Nahar cross section of 6De index 22 [3d6    (5D )10d  v6D ] (E_threshold=0.66 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 10 [3d6    (3H ) 5p  q2Go] (E_threshold=4.46 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 17 [3d6    (5D )10p  j6Po] (E_threshold=0.78 eV)
+No matched Hillier levels for Nahar cross section of 4De index 24 [3d6    (5D ) 8g  x4D ] (E_threshold=0.85 eV)
+No Hillier levels with term 6Ke
+No matched Hillier levels for Nahar cross section of 6Ke index 4 [3d6    (5D )10i  d6K ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 6De index 12 [3d6    (5D ) 6g  l6D ] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 32 [3d6    (5D )10f  U4Do] (E_threshold=0.55 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 3 [3d6    (5D ) 5f  x6Ho] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 8 [3d54s  (5D ) 4p  s4Po] (E_threshold=3.48 eV)
+No matched Hillier levels for Nahar cross section of 2De index 15 [3d6    (1S ) 4d  o2D ] (E_threshold=3.37 eV)
+Matched Nahar phixs for 6De index 2 '3d6    (5D ) 5s  b6D ' (9.653 eV) to <E>=9.705 eV: [3d6(5D)5se6De[9/2] (9.654 eV), 3d6(5D)5se6De[7/2] (9.700 eV), 3d6(5D)5se6De[5/2] (9.736 eV), 3d6(5D)5se6De[3/2] (9.761 eV), 3d6(5D)5se6De[1/2] (9.775 eV)]
+No matched Hillier levels for Nahar cross section of 4Po index 18 [3d6    (5D ) 8p  i4Po] (E_threshold=1.29 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 13 [3d6    (5D ) 8k  n6Ho] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4De index 12 [3d6    (5D ) 7s  l4D ] (E_threshold=2.20 eV)
+No matched Hillier levels for Nahar cross section of 2De index 5 [3d54s  (3D ) 4s  e2D ] (E_threshold=9.24 eV)
+No matched Hillier levels for Nahar cross section of 4So index 1 [3d6    (3P ) 4p  z4So] (E_threshold=8.26 eV)
+No matched Hillier levels for Nahar cross section of 4De index 6 [3d6    (5D ) 6s  f4D ] (E_threshold=3.44 eV)
+No matched Hillier levels for Nahar cross section of 2De index 3 [3d6    (1D ) 4s  c2D ] (E_threshold=12.78 eV)
+No matched Hillier levels for Nahar cross section of 4So index 7 [3d6    (3F ) 4f  t4So] (E_threshold=0.33 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 26 [3d6    (5D )11p  a4Po] (E_threshold=0.62 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 6 [3d6    (5D ) 6h  u6Go] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 17 [3d6    (3P ) 5d  q4P ] (E_threshold=0.75 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 8 [3d6    (5D ) 7h  s6Go] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 6Pe index 5 [3d6    (5D ) 7d  e6P ] (E_threshold=1.46 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 3 [3d6    (5D ) 7h  x4Ko] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 8 [3d6    (3P ) 4d  h2F ] (E_threshold=5.46 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 4 [3d6    (5D ) 8h  w6Ko] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Ko index 5 [3d6    (5D ) 8k  v4Ko] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 2 [3d6    (3G ) 4p  y4Ho] (E_threshold=7.71 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 23 [3d6    (5D )10d  w4F ] (E_threshold=0.64 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 2 [3d6    (5D ) 7h  y6Ko] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 6 [3d6    (3F ) 4d  f2P ] (E_threshold=4.73 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 4 [3d54s  (3H ) 4p  w4Io] (E_threshold=1.96 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 3 [3d54s  (5G ) 4p  x4Ho] (E_threshold=5.03 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 5 [3d6    (5D ) 9h  v6Io] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 18 [3d6    (5D )10f  i4Ho] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 8 [3d6    (3P ) 6s  h2P ] (E_threshold=3.46 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 13 [3d6    (3D ) 4d  m2F ] (E_threshold=3.61 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 5 [3d6    (3D ) 4d  e4S ] (E_threshold=1.62 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 1 [3d6    (5D ) 6h  z6Io] (E_threshold=1.51 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 8 [3d6    (5D ) 8k  s4Io] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 5 [3d6    (5D ) 4f  v4Ho] (E_threshold=3.41 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 16 [3d6    (5D ) 8f  k4Ho] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 3 [3d6    (5D ) 6d  c4S ] (E_threshold=2.08 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 7 [3d6    (5D )10k  t6Io] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 6 [3d54s  (3G ) 4p  u4Ho] (E_threshold=2.73 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 11 [3d6    (3G ) 4d  k4F ] (E_threshold=2.31 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 9 [3d6    (5D )10d  i4S ] (E_threshold=0.65 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 4 [3d54s  (7S ) 5s  d6S ] (E_threshold=2.88 eV)
+Matched Nahar phixs for 2Fe index 14 '3d6    (1F ) 5s  n2F ' (15.064 eV) to <E>=12.473 eV: [3d6(3F2)5se2Fe[7/2] (12.459 eV), 3d6(3F2)5se2Fe[5/2] (12.491 eV)]
+No matched Hillier levels for Nahar cross section of 6Po index 3 [3d54s  (5S ) 4p  x6Po] (E_threshold=6.51 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 10 [3d6    (5D ) 8g  j6G ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 6 [3d6    (5D ) 7d  f6F ] (E_threshold=1.48 eV)
+Matched Nahar phixs for 2Fe index 1 '3d6    (3F ) 4s  a2F ' (3.914 eV) to <E>=5.259 eV: [3d6(3F2)4sa2Fe[7/2] (3.387 eV), 3d6(3F2)4sa2Fe[5/2] (3.424 eV), 3d6(1F)4sc2Fe[7/2] (5.569 eV), 3d6(1F)4sc2Fe[5/2] (5.571 eV), 3d6(3F1)4sd2Fe[5/2] (6.803 eV), 3d6(3F1)4sd2Fe[7/2] (6.807 eV)]
+No matched Hillier levels for Nahar cross section of 4Fe index 16 [3d6    (5D ) 7d  p4F ] (E_threshold=1.39 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 11 [3d6    (3G ) 4d  k2F ] (E_threshold=4.55 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 12 [3d6    (5D )10d  l6F ] (E_threshold=0.66 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 13 [3d6    (3G ) 5p  n4Go] (E_threshold=1.91 eV)
+Matched Nahar phixs for 6Po index 1 '3d6    (5D ) 4p  z6Po' (4.995 eV) to <E>=5.339 eV: [3d6(5D)4pz6Po[7/2] (5.289 eV), 3d6(5D)4pz6Po[5/2] (5.361 eV), 3d6(5D)4pz6Po[3/2] (5.408 eV)]
+No matched Hillier levels for Nahar cross section of 4Fe index 10 [3d6    (3F ) 4d  j4F ] (E_threshold=2.55 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 8 [3d6    (5D ) 5f  s4Ho] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 6Fe index 10 [3d6    (5D ) 9d  j6F ] (E_threshold=0.84 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 11 [3d6    (3H ) 5p  p4Go] (E_threshold=2.16 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 3 [3d6    (1F ) 4s  c2F ] (E_threshold=11.88 eV)
+Matched Nahar phixs for 2Po index 6 '3d54s  (3P ) 4p  u2Po' (12.583 eV) to <E>=12.629 eV: [3d5(4P)4s4p(3P)2Po[3/2] (12.067 eV), 3d5(4P)4s4p(3P)2Po[1/2] (12.079 eV), 3d5(4D)4s4p(3P)2Po[1/2] (13.157 eV), 3d5(4D)4s4p(3P)2Po[3/2] (13.202 eV)]
+Matched Nahar phixs for 6Po index 5 '3d6    (5D ) 5p  v6Po' (11.158 eV) to <E>=11.339 eV: [3d6(5D)5pw6Po[7/2] (11.303 eV), 3d6(5D)5pw6Po[5/2] (11.354 eV), 3d6(5D)5pw6Po[3/2] (11.387 eV)]
+No matched Hillier levels for Nahar cross section of 4Ho index 14 [3d6    (5D ) 7f  m4Ho] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 1 [3d6    (3H ) 4p  z4Go] (E_threshold=8.39 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 2 [3d6    (5D ) 0s  b2F ] (E_threshold=13.15 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 7 [3d6    (5D ) 4f  t6Po] (E_threshold=3.40 eV)
+Matched Nahar phixs for 4Fe index 6 '3d6    (3F ) 5s  f4F ' (12.764 eV) to <E>=12.362 eV: [3d6(3F2)5sf4Fe[9/2] (12.346 eV), 3d6(3F2)5sf4Fe[7/2] (12.360 eV), 3d6(3F2)5sf4Fe[5/2] (12.377 eV), 3d6(3F2)5sf4Fe[3/2] (12.388 eV)]
+No matched Hillier levels for Nahar cross section of 2Ie index 3 [3d6    (3H ) 4d  c2I ] (E_threshold=5.29 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 12 [3d6    (5D ) 6f  o4Ho] (E_threshold=1.52 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 10 [3d6    (1S ) 5p  q2Po] (E_threshold=3.15 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 21 [3d6    (3P ) 4f  f4Go] (E_threshold=0.93 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 4 [3d6    (3F ) 4s  d2F ] (E_threshold=10.64 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 12 [3d6    (5D ) 5g  l4F ] (E_threshold=2.18 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 5 [3d6    (5D ) 8i  e6I ] (E_threshold=0.85 eV)
+Matched Nahar phixs for 2So index 3 '3d54s  (3P ) 4p  x2So' (13.142 eV) to <E>=12.890 eV: [3d5(4P)4s4p(3P)2So[1/2] (12.890 eV)]
+No matched Hillier levels for Nahar cross section of 4Go index 19 [3d6    (5D ) 7f  h4Go] (E_threshold=1.12 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 7 [3d6    (3F ) 5s  g2F ] (E_threshold=5.63 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 36 [3d6    (5D )10f  Q4Fo] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 16 [3d6    (5D ) 8f  k6Fo] (E_threshold=0.86 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 3 [3d6    (5D ) 7i  c6I ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2So index 5 [3d6    (3P ) 6p  v2So] (E_threshold=2.86 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 4 [3d6    (1D ) 4p  w2Po] (E_threshold=8.10 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 15 [3d6    (5D ) 7h  l4Ho] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 30 [3d6    (5D ) 8f  W4Fo] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 2 [3d6    (3F ) 4s  b4F ] (E_threshold=12.69 eV)
+No matched Hillier levels for Nahar cross section of 2He index 10 [3d6    (3H ) 6s  j2H ] (E_threshold=2.87 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 24 [Eqv st (0S ) 0s  c4Fo] (E_threshold=1.26 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 17 [3d54s  (3G ) 4p  j2Fo] (E_threshold=3.39 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 8 [3d6    (5D ) 6p  s6Po] (E_threshold=2.89 eV)
+Matched Nahar phixs for 2He index 4 '3d6    (3H ) 5s  d2H ' (12.869 eV) to <E>=12.299 eV: [3d6(3H)5se2He[11/2] (12.286 eV), 3d6(3H)5se2He[9/2] (12.316 eV)]
+No Hillier levels with term 6Le
+No matched Hillier levels for Nahar cross section of 6Le index 3 [3d6    (5D ) 9i  c6L ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 2 [3d6    (3D ) 4p  y2Po] (E_threshold=9.09 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 18 [3d6    (5D ) 7p  i4Fo] (E_threshold=1.84 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 15 [3d54s  (3F ) 4p  l2Fo] (E_threshold=3.66 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 2 [3d54s  (5G ) 4p  y6Fo] (E_threshold=5.81 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 17 [3d6    (5D ) 8g  q4G ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Ge index 11 [3d6    (5D ) 8i  k6G ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 12 [3d54s  (3F ) 4p  o4Fo] (E_threshold=2.75 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 5 [3d6    (1D ) 4p  v2Fo] (E_threshold=8.21 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 27 [3d6    (3P ) 4f  Z4Do] (E_threshold=0.94 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 23 [3d6    (5D )10g  w4G ] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 6 [3d54s  (5G ) 4p  u4Fo] (E_threshold=4.92 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 3 [3d6    (1G ) 4p  x2Fo] (E_threshold=9.16 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 7 [3d6    (5D ) 5d  g4P ] (E_threshold=3.08 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 20 [3d6    (3H ) 4f  g2Do] (E_threshold=2.85 eV)
+Matched Nahar phixs for 6Do index 1 '3d6    (5D ) 4p  z6Do' (4.511 eV) to <E>=4.799 eV: [3d6(5D)4pz6Do[9/2] (4.768 eV), 3d6(5D)4pz6Do[7/2] (4.793 eV), 3d6(5D)4pz6Do[5/2] (4.818 eV), 3d6(5D)4pz6Do[3/2] (4.837 eV), 3d6(5D)4pz6Do[1/2] (4.849 eV)]
+No matched Hillier levels for Nahar cross section of 6Po index 15 [3d6    (5D ) 9p  l6Po] (E_threshold=1.01 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 6 [3d6    (5D ) 8i  f6H ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 23 [Eqv st (0S ) 0s  d4Do] (E_threshold=1.19 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 3 [3d6    (5D ) 4d  c4G ] (E_threshold=5.71 eV)
+No matched Hillier levels for Nahar cross section of 6Do index 15 [3d6    (5D )10p  l6Do] (E_threshold=0.79 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 3 [3d6    (3F ) 4p  x4Do] (E_threshold=7.97 eV)
+No Hillier levels with term 6He
+No matched Hillier levels for Nahar cross section of 6He index 8 [3d6    (5D ) 9i  h6H ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 9 [3d54s  (5D ) 4p  r4Do] (E_threshold=3.78 eV)
+No matched Hillier levels for Nahar cross section of 4Ge index 9 [3d6    (5D ) 5g  i4G ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 2Ie index 4 [3d6    (3G ) 4d  d2I ] (E_threshold=4.91 eV)
+No matched Hillier levels for Nahar cross section of 6Se index 10 [3d6    (5D )10d  j6S ] (E_threshold=0.66 eV)
+No matched Hillier levels for Nahar cross section of 2Do index 6 [3d6    (3P ) 4p  u2Do] (E_threshold=6.36 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 25 [3d6    (5D ) 9h  b4Go] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Se index 1 [3d6    (1S ) 4s  a2S ] (E_threshold=13.21 eV)
+No matched Hillier levels for Nahar cross section of 4Do index 5 [3d6    (5D ) 5p  v4Do] (E_threshold=4.94 eV)
+No matched Hillier levels for Nahar cross section of 2Ie index 6 [3d6    (1I ) 4d  f2I ] (E_threshold=3.92 eV)
+No matched Hillier levels for Nahar cross section of 2Ke index 1 [3d6    (3H ) 4d  a2K ] (E_threshold=5.33 eV)
+No matched Hillier levels for Nahar cross section of 4Ke index 4 [3d6    (5D ) 9i  d4K ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 21 [3d6    (3G ) 4f  f2Go] (E_threshold=2.81 eV)
+No matched Hillier levels for Nahar cross section of 6De index 17 [3d6    (5D )10s  q6D ] (E_threshold=0.86 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 15 [3d54s  (3F ) 4p  l2Go] (E_threshold=3.54 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 5 [3d6    (5D ) 5p  v4Po] (E_threshold=4.86 eV)
+No Hillier levels with term 6Ke
+No matched Hillier levels for Nahar cross section of 6Ke index 1 [3d6    (5D ) 7i  a6K ] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 6De index 23 [3d54s  (5S ) 4d  w6D ] (E_threshold=0.60 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 9 [3d54s  (3F ) 4p  r2Go] (E_threshold=4.96 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 6 [3d6    (5D ) 7f  u6Ho] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4Po index 3 [3d54s  (5S ) 4p  x4Po] (E_threshold=7.80 eV)
+No matched Hillier levels for Nahar cross section of 2De index 18 [3d6    (3F ) 5d  r2D ] (E_threshold=2.60 eV)
+No matched Hillier levels for Nahar cross section of 6De index 13 [3d6    (5D ) 7d  m6D ] (E_threshold=1.47 eV)
+No matched Hillier levels for Nahar cross section of 2Go index 3 [3d6    (3G ) 4p  x2Go] (E_threshold=9.64 eV)
+No matched Hillier levels for Nahar cross section of 4De index 19 [3d6    (5D ) 9s  s4D ] (E_threshold=1.12 eV)
+No matched Hillier levels for Nahar cross section of 2De index 8 [3d6    (3P ) 4d  h2D ] (E_threshold=5.35 eV)
+No matched Hillier levels for Nahar cross section of 6De index 3 [3d6    (5D ) 4d  c6D ] (E_threshold=5.81 eV)
+No Hillier levels with term 6Ho
+No matched Hillier levels for Nahar cross section of 6Ho index 10 [Eqv st (0S ) 0s  q6Ho] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 4De index 13 [3d6    (5D ) 5g  m4D ] (E_threshold=2.18 eV)
+No matched Hillier levels for Nahar cross section of 2De index 6 [3d6    (1D ) 4s  f2D ] (E_threshold=7.25 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 14 [3d6    (5D ) 7f  m6Po] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 4De index 7 [3d6    (5D ) 5d  g4D ] (E_threshold=3.27 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 3 [3d54s  (5F ) 4p  x6Go] (E_threshold=3.24 eV)
+No matched Hillier levels for Nahar cross section of 4So index 6 [3d6    (3P ) 6p  u4So] (E_threshold=0.42 eV)
+No matched Hillier levels for Nahar cross section of 4De index 1 [3d6    (5D ) 4s  a4D ] (E_threshold=15.05 eV)
+No Hillier levels with term 6Go
+No matched Hillier levels for Nahar cross section of 6Go index 5 [3d6    (5D ) 6f  v6Go] (E_threshold=1.52 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 12 [3d54s  (7S ) 5p  o6Po] (E_threshold=1.42 eV)
+Matched Nahar phixs for 4He index 1 '3d6    (3H ) 4s  a4H ' (2.926 eV) to <E>=2.661 eV: [3d6(3H)4sa4He[13/2] (2.635 eV), 3d6(3H)4sa4He[11/2] (2.657 eV), 3d6(3H)4sa4He[9/2] (2.676 eV), 3d6(3H)4sa4He[7/2] (2.692 eV)]
+No matched Hillier levels for Nahar cross section of 6Pe index 4 [3d6    (5D ) 6d  d6P ] (E_threshold=2.08 eV)
+No Hillier levels with term 4Lo
+No matched Hillier levels for Nahar cross section of 4Lo index 3 [3d6    (5D )10k  x4Lo] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 4Pe index 18 [3d6    (5D )10d  r4P ] (E_threshold=0.63 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 5 [3d6    (5D ) 9k  v6Ko] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 3 [3d6    (3P ) 4s  c2P ] (E_threshold=10.61 eV)
+No Hillier levels with term 6Ko
+No matched Hillier levels for Nahar cross section of 6Ko index 3 [3d6    (5D ) 8k  x6Ko] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Pe index 5 [3d6    (3P ) 4d  e2P ] (E_threshold=5.33 eV)
+No matched Hillier levels for Nahar cross section of 4Io index 3 [3d6    (3H ) 5p  x4Io] (E_threshold=2.38 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 1 [3d6    (5D ) 0s  a2G ] (E_threshold=15.25 eV)
+No matched Hillier levels for Nahar cross section of 4Se index 6 [3d6    (5D ) 7d  f4S ] (E_threshold=1.45 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 11 [3d6    (1G ) 5s  k2G ] (E_threshold=4.34 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 17 [3d6    (5D ) 9f  j4Ho] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 2Ge index 13 [3d6    (1G ) 4d  m2G ] (E_threshold=3.78 eV)
+No Hillier levels with term 6Io
+No matched Hillier levels for Nahar cross section of 6Io index 6 [3d6    (5D ) 9k  u6Io] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 18 [3d6    (5D ) 9f  i6Po] (E_threshold=0.67 eV)
+Matched Nahar phixs for 6Ge index 1 '3d6    (5D ) 4d  a6G ' (10.285 eV) to <E>=10.469 eV: [3d6(5D)4de6Ge[13/2] (10.419 eV), 3d6(5D)4de6Ge[11/2] (10.451 eV), 3d6(5D)4de6Ge[9/2] (10.480 eV), 3d6(5D)4de6Ge[7/2] (10.503 eV), 3d6(5D)4de6Ge[5/2] (10.519 eV), 3d6(5D)4de6Ge[3/2] (10.531 eV)]
+No matched Hillier levels for Nahar cross section of 2Ge index 12 [3d6    (1I ) 4d  l2G ] (E_threshold=3.93 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 20 [3d6    (5D )10f  g6Po] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 20 [3d6    (3G ) 5d  t2F ] (E_threshold=2.48 eV)
+Matched Nahar phixs for 6Fe index 1 '3d6    (5D ) 4d  a6F ' (10.163 eV) to <E>=10.302 eV: [3d6(5D)4de6Fe[11/2] (10.273 eV), 3d6(5D)4de6Fe[9/2] (10.288 eV), 3d6(5D)4de6Fe[7/2] (10.308 eV), 3d6(5D)4de6Fe[5/2] (10.329 eV), 3d6(5D)4de6Fe[3/2] (10.348 eV), 3d6(5D)4de6Fe[1/2] (10.360 eV)]
+No matched Hillier levels for Nahar cross section of 2He index 11 [3d6    (3F ) 5d  k2H ] (E_threshold=2.67 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 22 [3d6    (5D )10f  e6Fo] (E_threshold=0.55 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 10 [3d6    (3F ) 4d  j2F ] (E_threshold=5.10 eV)
+No Hillier levels with term 6Mo
+No matched Hillier levels for Nahar cross section of 6Mo index 2 [3d6    (5D ) 9k  y6Mo] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 12 [3d6    (3F ) 5p  o4Go] (E_threshold=2.04 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 28 [3d6    (5D ) 9p  Y4Fo] (E_threshold=1.00 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 9 [3d6    (3H ) 4d  i4F ] (E_threshold=2.73 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 9 [3d6    (3G ) 5p  r4Ho] (E_threshold=1.98 eV)
+No matched Hillier levels for Nahar cross section of 2Ie index 8 [3d6    (3H ) 5d  h2I ] (E_threshold=2.71 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 10 [3d6    (5D ) 5f  q4Go] (E_threshold=2.20 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 7 [3d54s  (3D ) 4p  t2Po] (E_threshold=5.21 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 10 [3d6    (5D ) 7p  q6Po] (E_threshold=1.91 eV)
+No matched Hillier levels for Nahar cross section of 2Fe index 6 [3d54s  (5G ) 0s  f2F ] (E_threshold=7.99 eV)
+No matched Hillier levels for Nahar cross section of 6Po index 13 [3d6    (5D ) 8p  n6Po] (E_threshold=1.33 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 1 [3d6    (3P ) 4p  z2Po] (E_threshold=10.15 eV)
+No matched Hillier levels for Nahar cross section of 4Fe index 5 [3d6    (5D ) 4d  e4F ] (E_threshold=5.35 eV)
+No matched Hillier levels for Nahar cross section of 4Ho index 19 [3d6    (5D ) 8k  h4Ho] (E_threshold=0.54 eV)
+No matched Hillier levels for Nahar cross section of 2Po index 11 [3d6    (3D ) 5p  p2Po] (E_threshold=3.07 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 8 [3d6    (5D ) 9i  h6I ] (E_threshold=0.67 eV)
+No matched Hillier levels for Nahar cross section of 4Ie index 1 [3d6    (3H ) 4d  a4I ] (E_threshold=2.87 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 20 [3d6    (5D ) 7h  g4Go] (E_threshold=1.11 eV)
+No matched Hillier levels for Nahar cross section of 2He index 6 [3d6    (3H ) 4d  f2H ] (E_threshold=5.06 eV)
+No Hillier levels with term 6Ie
+No matched Hillier levels for Nahar cross section of 6Ie index 6 [3d6    (5D ) 8g  f6I ] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2So index 2 [3d6    (3P ) 4p  y2So] (E_threshold=6.85 eV)
+No matched Hillier levels for Nahar cross section of 4Go index 18 [3d54s  (3F ) 4p  i4Go] (E_threshold=1.22 eV)
+No matched Hillier levels for Nahar cross section of 2He index 5 [3d6    (3F ) 4d  e2H ] (E_threshold=5.09 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 17 [3d6    (5D ) 8h  j6Fo] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 12 [3d6    (5D ) 8p  o6Fo] (E_threshold=1.36 eV)
+No matched Hillier levels for Nahar cross section of 2So index 4 [3d6    (3P ) 5p  w2So] (E_threshold=4.82 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 31 [3d6    (5D ) 8h  V4Fo] (E_threshold=0.85 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 20 [3d6    (3D ) 5p  g2Fo] (E_threshold=2.99 eV)
+No matched Hillier levels for Nahar cross section of 2He index 9 [3d6    (1I ) 4d  i2H ] (E_threshold=3.62 eV)
+No matched Hillier levels for Nahar cross section of 4Fo index 25 [3d6    (3D ) 5p  b4Fo] (E_threshold=1.14 eV)
+No matched Hillier levels for Nahar cross section of 2Fo index 18 [3d6    (1G ) 5p  i2Fo] (E_threshold=3.11 eV)
+No matched Hillier levels for Nahar cross section of 6Fo index 13 [3d6    (5D ) 7f  n6Fo] (E_threshold=1.12 eV)
+No matched Hillier levels for Nahar cross section of 2He index 3 [3d6    (3P ) 0s  c2H ] (E_threshold=8.73 eV)
+Included 827 levels from Hillier dataset and added 680 levels from Nahar phixs tables for a total of 1507 levels
+writing to 'adata.txt'
+writing to 'transitiondata.txt'
+Forbidden transition: lambda_angstrom= 259800.0, 3d6(5D)4sa6De[9/2]        to 3d6(5D)4sa6De[7/2]       
+Forbidden transition: lambda_angstrom= 12566.8, 3d6(5D)4sa6De[9/2]        to 3d6(5D)4sa4De[7/2]       
+Forbidden transition: lambda_angstrom=  4632.3, 3d6(5D)4sa6De[9/2]        to 3d6(3H)4sa4He[9/2]       
+Forbidden transition: lambda_angstrom=  4416.3, 3d6(5D)4sa6De[9/2]        to 3d6(3F2)4sb4Fe[9/2]      
+Forbidden transition: lambda_angstrom=  4382.7, 3d6(5D)4sa6De[9/2]        to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4287.4, 3d6(5D)4sa6De[9/2]        to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  3874.1, 3d6(5D)4sa6De[9/2]        to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom=  3175.4, 3d6(5D)4sa6De[9/2]        to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom= 353400.0, 3d6(5D)4sa6De[7/2]        to 3d6(5D)4sa6De[5/2]       
+Forbidden transition: lambda_angstrom= 13205.5, 3d6(5D)4sa6De[7/2]        to 3d6(5D)4sa4De[7/2]       
+Forbidden transition: lambda_angstrom=  7637.5, 3d6(5D)4sa6De[7/2]        to 3d7a4Pe[5/2]             
+Forbidden transition: lambda_angstrom=  4965.8, 3d6(5D)4sa6De[7/2]        to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom=  4889.6, 3d6(5D)4sa6De[7/2]        to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  4492.6, 3d6(5D)4sa6De[7/2]        to 3d6(3F2)4sb4Fe[9/2]      
+Forbidden transition: lambda_angstrom=  4457.9, 3d6(5D)4sa6De[7/2]        to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4432.4, 3d6(5D)4sa6De[7/2]        to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4359.3, 3d6(5D)4sa6De[7/2]        to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  3932.7, 3d6(5D)4sa6De[7/2]        to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom=  3905.6, 3d6(5D)4sa6De[7/2]        to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  3224.5, 3d6(5D)4sa6De[7/2]        to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  3214.7, 3d6(5D)4sa6De[7/2]        to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom= 12942.7, 3d6(5D)4sa6De[5/2]        to 3d6(5D)4sa4De[5/2]       
+Forbidden transition: lambda_angstrom=  7686.9, 3d6(5D)4sa6De[5/2]        to 3d7a4Pe[3/2]             
+Forbidden transition: lambda_angstrom=  4958.2, 3d6(5D)4sa6De[5/2]        to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  4728.1, 3d6(5D)4sa6De[5/2]        to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4514.9, 3d6(5D)4sa6De[5/2]        to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4488.7, 3d6(5D)4sa6De[5/2]        to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4470.3, 3d6(5D)4sa6De[5/2]        to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  4413.8, 3d6(5D)4sa6De[5/2]        to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  3979.8, 3d6(5D)4sa6De[5/2]        to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  3949.3, 3d6(5D)4sa6De[5/2]        to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  3937.8, 3d6(5D)4sa6De[5/2]        to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom=  3256.7, 3d6(5D)4sa6De[5/2]        to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3254.2, 3d6(5D)4sa6De[5/2]        to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  3244.2, 3d6(5D)4sa6De[5/2]        to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom= 13277.8, 3d6(5D)4sa6De[3/2]        to 3d6(5D)4sa4De[5/2]       
+Forbidden transition: lambda_angstrom= 12787.8, 3d6(5D)4sa6De[3/2]        to 3d6(5D)4sa4De[3/2]       
+Forbidden transition: lambda_angstrom=  7665.3, 3d6(5D)4sa6De[3/2]        to 3d7a4Pe[1/2]             
+Forbidden transition: lambda_angstrom=  5006.6, 3d6(5D)4sa6De[3/2]        to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  4772.1, 3d6(5D)4sa6De[3/2]        to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4639.7, 3d6(5D)4sa6De[3/2]        to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  4528.4, 3d6(5D)4sa6De[3/2]        to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4509.6, 3d6(5D)4sa6De[3/2]        to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  4452.1, 3d6(5D)4sa6De[3/2]        to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  3834.7, 3d6(5D)4sa6De[3/2]        to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom=  3277.5, 3d6(5D)4sa6De[3/2]        to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3277.1, 3d6(5D)4sa6De[3/2]        to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  3275.0, 3d6(5D)4sa6De[3/2]        to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom= 12977.7, 3d6(5D)4sa6De[1/2]        to 3d6(5D)4sa4De[3/2]       
+Forbidden transition: lambda_angstrom= 12703.5, 3d6(5D)4sa6De[1/2]        to 3d6(5D)4sa4De[1/2]       
+Forbidden transition: lambda_angstrom=  7733.2, 3d6(5D)4sa6De[1/2]        to 3d7a4Pe[1/2]             
+Forbidden transition: lambda_angstrom=  4798.3, 3d6(5D)4sa6De[1/2]        to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4664.4, 3d6(5D)4sa6De[1/2]        to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  4533.0, 3d6(5D)4sa6De[1/2]        to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  4474.9, 3d6(5D)4sa6De[1/2]        to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  3289.9, 3d6(5D)4sa6De[1/2]        to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3289.5, 3d6(5D)4sa6De[1/2]        to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom= 179300.0, 3d7a4Fe[9/2]              to 3d7a4Fe[7/2]             
+Forbidden transition: lambda_angstrom= 16435.5, 3d7a4Fe[9/2]              to 3d6(5D)4sa4De[7/2]       
+Forbidden transition: lambda_angstrom= 15334.7, 3d7a4Fe[9/2]              to 3d6(5D)4sa4De[5/2]       
+Forbidden transition: lambda_angstrom=  8617.0, 3d7a4Fe[9/2]              to 3d7a4Pe[5/2]             
+Forbidden transition: lambda_angstrom=  7155.2, 3d7a4Fe[9/2]              to 3d7a2Ge[9/2]             
+Forbidden transition: lambda_angstrom=  6896.2, 3d7a4Fe[9/2]              to 3d7a2Ge[7/2]             
+Forbidden transition: lambda_angstrom=  5362.1, 3d7a4Fe[9/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom=  5280.3, 3d7a4Fe[9/2]              to 3d7a2He[9/2]             
+Forbidden transition: lambda_angstrom=  5273.3, 3d7a4Fe[9/2]              to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  5158.8, 3d7a4Fe[9/2]              to 3d6(3H)4sa4He[13/2]      
+Forbidden transition: lambda_angstrom=  5111.6, 3d7a4Fe[9/2]              to 3d6(3H)4sa4He[11/2]      
+Forbidden transition: lambda_angstrom=  5072.4, 3d7a4Fe[9/2]              to 3d6(3H)4sa4He[9/2]       
+Forbidden transition: lambda_angstrom=  5039.1, 3d7a4Fe[9/2]              to 3d6(3H)4sa4He[7/2]       
+Forbidden transition: lambda_angstrom=  4814.5, 3d7a4Fe[9/2]              to 3d6(3F2)4sb4Fe[9/2]      
+Forbidden transition: lambda_angstrom=  4774.7, 3d7a4Fe[9/2]              to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4745.5, 3d7a4Fe[9/2]              to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4244.0, 3d7a4Fe[9/2]              to 3d6(3G)4sa4Ge[11/2]      
+Forbidden transition: lambda_angstrom=  4177.2, 3d7a4Fe[9/2]              to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom=  4146.6, 3d7a4Fe[9/2]              to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  4114.5, 3d7a4Fe[9/2]              to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom=  4083.8, 3d7a4Fe[9/2]              to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom=  3929.3, 3d7a4Fe[9/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  3505.8, 3d7a4Fe[9/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  3387.1, 3d7a4Fe[9/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  3376.2, 3d7a4Fe[9/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  3318.4, 3d7a4Fe[9/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  3164.3, 3d7a4Fe[9/2]              to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  2907.8, 3d7a4Fe[9/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom= 245100.0, 3d7a4Fe[7/2]              to 3d7a4Fe[5/2]             
+Forbidden transition: lambda_angstrom= 18093.9, 3d7a4Fe[7/2]              to 3d6(5D)4sa4De[7/2]       
+Forbidden transition: lambda_angstrom= 16768.8, 3d7a4Fe[7/2]              to 3d6(5D)4sa4De[5/2]       
+Forbidden transition: lambda_angstrom= 15994.7, 3d7a4Fe[7/2]              to 3d6(5D)4sa4De[3/2]       
+Forbidden transition: lambda_angstrom=  9051.9, 3d7a4Fe[7/2]              to 3d7a4Pe[5/2]             
+Forbidden transition: lambda_angstrom=  8891.9, 3d7a4Fe[7/2]              to 3d7a4Pe[3/2]             
+Forbidden transition: lambda_angstrom=  7452.5, 3d7a4Fe[7/2]              to 3d7a2Ge[9/2]             
+Forbidden transition: lambda_angstrom=  7172.0, 3d7a4Fe[7/2]              to 3d7a2Ge[7/2]             
+Forbidden transition: lambda_angstrom=  6275.5, 3d7a4Fe[7/2]              to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom=  5527.3, 3d7a4Fe[7/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom=  5433.1, 3d7a4Fe[7/2]              to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  5261.6, 3d7a4Fe[7/2]              to 3d6(3H)4sa4He[11/2]      
+Forbidden transition: lambda_angstrom=  5220.1, 3d7a4Fe[7/2]              to 3d6(3H)4sa4He[9/2]       
+Forbidden transition: lambda_angstrom=  5184.8, 3d7a4Fe[7/2]              to 3d6(3H)4sa4He[7/2]       
+Forbidden transition: lambda_angstrom=  5158.0, 3d7a4Fe[7/2]              to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4947.4, 3d7a4Fe[7/2]              to 3d6(3F2)4sb4Fe[9/2]      
+Forbidden transition: lambda_angstrom=  4905.3, 3d7a4Fe[7/2]              to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4874.5, 3d7a4Fe[7/2]              to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4852.7, 3d7a4Fe[7/2]              to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  4346.9, 3d7a4Fe[7/2]              to 3d6(3G)4sa4Ge[11/2]      
+Forbidden transition: lambda_angstrom=  4280.1, 3d7a4Fe[7/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4276.8, 3d7a4Fe[7/2]              to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom=  4244.8, 3d7a4Fe[7/2]              to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  4231.6, 3d7a4Fe[7/2]              to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom=  4211.1, 3d7a4Fe[7/2]              to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom=  4179.0, 3d7a4Fe[7/2]              to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom=  4017.4, 3d7a4Fe[7/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  3968.7, 3d7a4Fe[7/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  3575.7, 3d7a4Fe[7/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  3528.3, 3d7a4Fe[7/2]              to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  3455.1, 3d7a4Fe[7/2]              to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3452.3, 3d7a4Fe[7/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  3441.0, 3d7a4Fe[7/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  3402.5, 3d7a4Fe[7/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  3381.0, 3d7a4Fe[7/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  3217.5, 3d7a4Fe[7/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  2955.7, 3d7a4Fe[7/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  2797.6, 3d7a4Fe[7/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 357700.0, 3d7a4Fe[5/2]              to 3d7a4Fe[3/2]             
+Forbidden transition: lambda_angstrom= 18000.2, 3d7a4Fe[5/2]              to 3d6(5D)4sa4De[5/2]       
+Forbidden transition: lambda_angstrom= 17111.3, 3d7a4Fe[5/2]              to 3d6(5D)4sa4De[3/2]       
+Forbidden transition: lambda_angstrom= 16637.7, 3d7a4Fe[5/2]              to 3d6(5D)4sa4De[1/2]       
+Forbidden transition: lambda_angstrom=  9399.0, 3d7a4Fe[5/2]              to 3d7a4Pe[5/2]             
+Forbidden transition: lambda_angstrom=  9226.6, 3d7a4Fe[5/2]              to 3d7a4Pe[3/2]             
+Forbidden transition: lambda_angstrom=  9033.5, 3d7a4Fe[5/2]              to 3d7a4Pe[1/2]             
+Forbidden transition: lambda_angstrom=  7388.2, 3d7a4Fe[5/2]              to 3d7a2Ge[7/2]             
+Forbidden transition: lambda_angstrom=  6440.4, 3d7a4Fe[5/2]              to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom=  6229.3, 3d7a4Fe[5/2]              to 3d7a2Pe[1/2]             
+Forbidden transition: lambda_angstrom=  5654.9, 3d7a4Fe[5/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom=  5556.3, 3d7a4Fe[5/2]              to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  5412.7, 3d7a4Fe[5/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom=  5333.6, 3d7a4Fe[5/2]              to 3d6(3H)4sa4He[9/2]       
+Forbidden transition: lambda_angstrom=  5296.8, 3d7a4Fe[5/2]              to 3d6(3H)4sa4He[7/2]       
+Forbidden transition: lambda_angstrom=  5268.9, 3d7a4Fe[5/2]              to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  5107.9, 3d7a4Fe[5/2]              to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  5005.5, 3d7a4Fe[5/2]              to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4973.4, 3d7a4Fe[5/2]              to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4950.7, 3d7a4Fe[5/2]              to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  4356.1, 3d7a4Fe[5/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4352.8, 3d7a4Fe[5/2]              to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom=  4319.6, 3d7a4Fe[5/2]              to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  4305.9, 3d7a4Fe[5/2]              to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom=  4251.4, 3d7a4Fe[5/2]              to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom=  4149.1, 3d7a4Fe[5/2]              to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom=  4084.3, 3d7a4Fe[5/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4034.0, 3d7a4Fe[5/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  3628.7, 3d7a4Fe[5/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  3579.8, 3d7a4Fe[5/2]              to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  3504.5, 3d7a4Fe[5/2]              to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3504.0, 3d7a4Fe[5/2]              to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  3501.6, 3d7a4Fe[5/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  3490.0, 3d7a4Fe[5/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  3450.4, 3d7a4Fe[5/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  3428.2, 3d7a4Fe[5/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  3260.3, 3d7a4Fe[5/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  3003.2, 3d7a4Fe[5/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  2991.8, 3d7a4Fe[5/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  2829.9, 3d7a4Fe[5/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  2825.9, 3d7a4Fe[5/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 17971.0, 3d7a4Fe[3/2]              to 3d6(5D)4sa4De[3/2]       
+Forbidden transition: lambda_angstrom= 17449.4, 3d7a4Fe[3/2]              to 3d6(5D)4sa4De[1/2]       
+Forbidden transition: lambda_angstrom=  9470.9, 3d7a4Fe[3/2]              to 3d7a4Pe[3/2]             
+Forbidden transition: lambda_angstrom=  9267.6, 3d7a4Fe[3/2]              to 3d7a4Pe[1/2]             
+Forbidden transition: lambda_angstrom=  6558.5, 3d7a4Fe[3/2]              to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom=  5745.7, 3d7a4Fe[3/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom=  5644.0, 3d7a4Fe[3/2]              to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  5495.8, 3d7a4Fe[3/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom=  5376.5, 3d7a4Fe[3/2]              to 3d6(3H)4sa4He[7/2]       
+Forbidden transition: lambda_angstrom=  5347.7, 3d7a4Fe[3/2]              to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  5181.9, 3d7a4Fe[3/2]              to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  5043.5, 3d7a4Fe[3/2]              to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  5020.2, 3d7a4Fe[3/2]              to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  4409.9, 3d7a4Fe[3/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  4372.4, 3d7a4Fe[3/2]              to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  4358.4, 3d7a4Fe[3/2]              to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom=  4197.8, 3d7a4Fe[3/2]              to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom=  4131.5, 3d7a4Fe[3/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  4080.0, 3d7a4Fe[3/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  3539.2, 3d7a4Fe[3/2]              to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3538.7, 3d7a4Fe[3/2]              to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  3536.2, 3d7a4Fe[3/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  3524.4, 3d7a4Fe[3/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  3484.0, 3d7a4Fe[3/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  3290.3, 3d7a4Fe[3/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  3028.6, 3d7a4Fe[3/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  2852.5, 3d7a4Fe[3/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  2848.4, 3d7a4Fe[3/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 229000.0, 3d6(5D)4sa4De[7/2]        to 3d6(5D)4sa4De[5/2]       
+Forbidden transition: lambda_angstrom= 18113.9, 3d6(5D)4sa4De[7/2]        to 3d7a4Pe[5/2]             
+Forbidden transition: lambda_angstrom= 17484.2, 3d6(5D)4sa4De[7/2]        to 3d7a4Pe[3/2]             
+Forbidden transition: lambda_angstrom=  7764.7, 3d6(5D)4sa4De[7/2]        to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  7214.7, 3d6(5D)4sa4De[7/2]        to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  6809.2, 3d6(5D)4sa4De[7/2]        to 3d6(3F2)4sb4Fe[9/2]      
+Forbidden transition: lambda_angstrom=  6729.9, 3d6(5D)4sa4De[7/2]        to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  6671.9, 3d6(5D)4sa4De[7/2]        to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  5545.9, 3d6(5D)4sa4De[7/2]        to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  5164.0, 3d6(5D)4sa4De[7/2]        to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  5083.7, 3d6(5D)4sa4De[7/2]        to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4383.0, 3d6(5D)4sa4De[7/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  4266.3, 3d6(5D)4sa4De[7/2]        to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  4249.1, 3d6(5D)4sa4De[7/2]        to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  4157.9, 3d6(5D)4sa4De[7/2]        to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  3913.4, 3d6(5D)4sa4De[7/2]        to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  3532.9, 3d6(5D)4sa4De[7/2]        to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom= 346500.0, 3d6(5D)4sa4De[5/2]        to 3d6(5D)4sa4De[3/2]       
+Forbidden transition: lambda_angstrom= 18134.4, 3d6(5D)4sa4De[5/2]        to 3d7a4Pe[1/2]             
+Forbidden transition: lambda_angstrom= 10028.6, 3d6(5D)4sa4De[5/2]        to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom=  8037.3, 3d6(5D)4sa4De[5/2]        to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  7131.8, 3d6(5D)4sa4De[5/2]        to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  6933.7, 3d6(5D)4sa4De[5/2]        to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom=  6872.2, 3d6(5D)4sa4De[5/2]        to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  6829.0, 3d6(5D)4sa4De[5/2]        to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  5747.0, 3d6(5D)4sa4De[5/2]        to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  5683.6, 3d6(5D)4sa4De[5/2]        to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom=  5659.8, 3d6(5D)4sa4De[5/2]        to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom=  5283.1, 3d6(5D)4sa4De[5/2]        to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  5199.2, 3d6(5D)4sa4De[5/2]        to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4468.5, 3d6(5D)4sa4De[5/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  4351.8, 3d6(5D)4sa4De[5/2]        to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  4351.0, 3d6(5D)4sa4De[5/2]        to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  4329.4, 3d6(5D)4sa4De[5/2]        to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  4268.7, 3d6(5D)4sa4De[5/2]        to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  4234.8, 3d6(5D)4sa4De[5/2]        to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  3604.6, 3d6(5D)4sa4De[5/2]        to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  3588.2, 3d6(5D)4sa4De[5/2]        to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  3357.9, 3d6(5D)4sa4De[5/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  9795.2, 3d6(5D)4sa4De[3/2]        to 3d7a2Pe[1/2]             
+Forbidden transition: lambda_angstrom=  8228.1, 3d6(5D)4sa4De[3/2]        to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom=  7613.1, 3d6(5D)4sa4De[3/2]        to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  7281.6, 3d6(5D)4sa4De[3/2]        to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  7011.2, 3d6(5D)4sa4De[3/2]        to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom=  6966.3, 3d6(5D)4sa4De[3/2]        to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  5843.9, 3d6(5D)4sa4De[3/2]        to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  5753.8, 3d6(5D)4sa4De[3/2]        to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom=  5477.2, 3d6(5D)4sa4De[3/2]        to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom=  5278.4, 3d6(5D)4sa4De[3/2]        to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  4406.4, 3d6(5D)4sa4De[3/2]        to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  4402.6, 3d6(5D)4sa4De[3/2]        to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  4321.9, 3d6(5D)4sa4De[3/2]        to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  3642.5, 3d6(5D)4sa4De[3/2]        to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  3625.8, 3d6(5D)4sa4De[3/2]        to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  3390.7, 3d6(5D)4sa4De[3/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  3384.9, 3d6(5D)4sa4De[3/2]        to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom=  9957.4, 3d6(5D)4sa4De[1/2]        to 3d7a2Pe[1/2]             
+Forbidden transition: lambda_angstrom=  7710.8, 3d6(5D)4sa4De[1/2]        to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom=  7370.9, 3d6(5D)4sa4De[1/2]        to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom=  7048.0, 3d6(5D)4sa4De[1/2]        to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  5901.3, 3d6(5D)4sa4De[1/2]        to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  5527.6, 3d6(5D)4sa4De[1/2]        to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom=  4439.7, 3d6(5D)4sa4De[1/2]        to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  3664.7, 3d6(5D)4sa4De[1/2]        to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  3404.1, 3d6(5D)4sa4De[1/2]        to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 20460.1, 3d7a4Pe[5/2]              to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom= 14195.5, 3d7a4Pe[5/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom= 11990.5, 3d7a4Pe[5/2]              to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom= 10910.7, 3d7a4Pe[5/2]              to 3d6(3F2)4sb4Fe[9/2]      
+Forbidden transition: lambda_angstrom= 10708.4, 3d7a4Pe[5/2]              to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom= 10156.5, 3d7a4Pe[5/2]              to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  5588.2, 3d7a4Pe[5/2]              to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  5586.9, 3d7a4Pe[5/2]              to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  5580.8, 3d7a4Pe[5/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  5551.3, 3d7a4Pe[5/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  4413.4, 3d7a4Pe[5/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  4388.9, 3d7a4Pe[5/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  4208.8, 3d7a4Pe[5/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  4049.1, 3d7a4Pe[5/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  4040.9, 3d7a4Pe[5/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 21327.7, 3d7a4Pe[3/2]              to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom= 14607.8, 3d7a4Pe[3/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom= 13967.7, 3d7a4Pe[3/2]              to 3d6(3P2)4sb4Pe[5/2]      
+Forbidden transition: lambda_angstrom= 13094.2, 3d7a4Pe[3/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom= 11442.9, 3d7a4Pe[3/2]              to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom= 10941.3, 3d7a4Pe[3/2]              to 3d6(3F2)4sb4Fe[7/2]      
+Forbidden transition: lambda_angstrom= 10789.0, 3d7a4Pe[3/2]              to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom= 10683.0, 3d7a4Pe[3/2]              to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom= 10365.8, 3d7a4Pe[3/2]              to 3d54s2a6Se[5/2]          
+Forbidden transition: lambda_angstrom=  8252.4, 3d7a4Pe[3/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  7539.7, 3d7a4Pe[3/2]              to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom=  7328.4, 3d7a4Pe[3/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  5650.9, 3d7a4Pe[3/2]              to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  5649.7, 3d7a4Pe[3/2]              to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  5643.4, 3d7a4Pe[3/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  5613.3, 3d7a4Pe[3/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  4452.5, 3d7a4Pe[3/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  4427.5, 3d7a4Pe[3/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  4244.3, 3d7a4Pe[3/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  4082.0, 3d7a4Pe[3/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  4073.6, 3d7a4Pe[3/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 22436.4, 3d7a4Pe[1/2]              to 3d7a2Pe[3/2]             
+Forbidden transition: lambda_angstrom= 20067.0, 3d7a4Pe[1/2]              to 3d7a2Pe[1/2]             
+Forbidden transition: lambda_angstrom= 13504.0, 3d7a4Pe[1/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom= 11065.6, 3d7a4Pe[1/2]              to 3d6(3F2)4sb4Fe[5/2]      
+Forbidden transition: lambda_angstrom= 10954.1, 3d7a4Pe[1/2]              to 3d6(3F2)4sb4Fe[3/2]      
+Forbidden transition: lambda_angstrom=  5725.9, 3d7a4Pe[1/2]              to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  5724.6, 3d7a4Pe[1/2]              to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  5718.2, 3d7a4Pe[1/2]              to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  4498.9, 3d7a4Pe[1/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  4286.5, 3d7a4Pe[1/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  4121.0, 3d7a4Pe[1/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  4112.4, 3d7a4Pe[1/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 190500.0, 3d7a2Ge[9/2]              to 3d7a2Ge[7/2]             
+Forbidden transition: lambda_angstrom= 22237.7, 3d7a2Ge[9/2]              to 3d7a2He[11/2]            
+Forbidden transition: lambda_angstrom= 20151.2, 3d7a2Ge[9/2]              to 3d7a2He[9/2]             
+Forbidden transition: lambda_angstrom=  9682.1, 3d7a2Ge[9/2]              to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom=  9513.8, 3d7a2Ge[9/2]              to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom=  8715.8, 3d7a2Ge[9/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  8489.7, 3d7a2Ge[9/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  6873.8, 3d7a2Ge[9/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  6700.6, 3d7a2Ge[9/2]              to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  6261.1, 3d7a2Ge[9/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  6188.6, 3d7a2Ge[9/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  5870.0, 3d7a2Ge[9/2]              to 3d6(1I)4sa2Ie[13/2]      
+Forbidden transition: lambda_angstrom=  5858.2, 3d7a2Ge[9/2]              to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom=  5673.2, 3d7a2Ge[9/2]              to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  5662.0, 3d7a2Ge[9/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  4898.6, 3d7a2Ge[9/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  4479.1, 3d7a2Ge[9/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 22534.6, 3d7a2Ge[7/2]              to 3d7a2He[9/2]             
+Forbidden transition: lambda_angstrom= 10321.3, 3d7a2Ge[7/2]              to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom= 10200.4, 3d7a2Ge[7/2]              to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom= 10013.9, 3d7a2Ge[7/2]              to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom=  9133.6, 3d7a2Ge[7/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom=  8885.6, 3d7a2Ge[7/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  7131.1, 3d7a2Ge[7/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  6944.9, 3d7a2Ge[7/2]              to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  6473.9, 3d7a2Ge[7/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  6396.3, 3d7a2Ge[7/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  6044.1, 3d7a2Ge[7/2]              to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom=  5847.3, 3d7a2Ge[7/2]              to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  5835.4, 3d7a2Ge[7/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  5060.1, 3d7a2Ge[7/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  5027.9, 3d7a2Ge[7/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  4587.0, 3d7a2Ge[7/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  4576.4, 3d7a2Ge[7/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 190000.0, 3d7a2Pe[3/2]              to 3d7a2Pe[1/2]             
+Forbidden transition: lambda_angstrom= 46362.8, 3d7a2Pe[3/2]              to 3d7a2De[5/2]             
+Forbidden transition: lambda_angstrom= 33919.0, 3d7a2Pe[3/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom= 13460.8, 3d7a2Pe[3/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom= 11662.6, 3d7a2Pe[3/2]              to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom= 11164.8, 3d7a2Pe[3/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom= 10796.5, 3d7a2Pe[3/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  7685.6, 3d7a2Pe[3/2]              to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  7432.2, 3d7a2Pe[3/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  7330.2, 3d7a2Pe[3/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  6602.9, 3d7a2Pe[3/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  5627.2, 3d7a2Pe[3/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  5587.5, 3d7a2Pe[3/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  5298.9, 3d7a2Pe[3/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  5048.2, 3d7a2Pe[3/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  5035.4, 3d7a2Pe[3/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 41289.6, 3d7a2Pe[1/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom= 14487.1, 3d7a2Pe[1/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom= 11446.9, 3d7a2Pe[1/2]              to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom=  7734.8, 3d7a2Pe[1/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  5799.0, 3d7a2Pe[1/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  5756.7, 3d7a2Pe[1/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  5450.9, 3d7a2Pe[1/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  5186.0, 3d7a2Pe[1/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  5172.5, 3d7a2Pe[1/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 214800.0, 3d7a2He[11/2]             to 3d7a2He[9/2]             
+Forbidden transition: lambda_angstrom= 17148.3, 3d7a2He[11/2]             to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom=  9949.3, 3d7a2He[11/2]             to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  9590.4, 3d7a2He[11/2]             to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  8574.9, 3d7a2He[11/2]             to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  7975.2, 3d7a2He[11/2]             to 3d6(1I)4sa2Ie[13/2]      
+Forbidden transition: lambda_angstrom=  7953.5, 3d7a2He[11/2]             to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom=  7616.3, 3d7a2He[11/2]             to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 126400.0, 3d7a2De[5/2]              to 3d7a2De[3/2]             
+Forbidden transition: lambda_angstrom= 77193.4, 3d7a2De[5/2]              to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom= 18967.9, 3d7a2De[5/2]              to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom= 15582.3, 3d7a2De[5/2]              to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom= 14706.3, 3d7a2De[5/2]              to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom= 10127.3, 3d7a2De[5/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  9116.4, 3d7a2De[5/2]              to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  8851.2, 3d7a2De[5/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  8706.8, 3d7a2De[5/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  7720.2, 3d7a2De[5/2]              to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  7699.5, 3d7a2De[5/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  6404.6, 3d7a2De[5/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  6353.1, 3d7a2De[5/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  5982.7, 3d7a2De[5/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  5665.0, 3d7a2De[5/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  5648.9, 3d7a2De[5/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 18022.9, 3d7a2He[9/2]              to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom= 10432.5, 3d7a2He[9/2]              to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 10038.7, 3d7a2He[9/2]              to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  9083.4, 3d7a2He[9/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  8931.5, 3d7a2He[9/2]              to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  8259.4, 3d7a2He[9/2]              to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom=  7896.3, 3d7a2He[9/2]              to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  7874.7, 3d7a2He[9/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  6471.9, 3d7a2He[9/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom= 101900.0, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3P2)4sb4Pe[3/2]      
+Forbidden transition: lambda_angstrom= 20167.9, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom=  9490.6, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom=  9469.5, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  9384.8, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  6535.9, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  6482.3, 3d6(3P2)4sb4Pe[5/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  6097.1, 3d6(3P2)4sb4Pe[5/2]       to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  5767.5, 3d6(3P2)4sb4Pe[5/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  5750.8, 3d6(3P2)4sb4Pe[5/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 23933.1, 3d6(3H)4sa4He[13/2]       to 3d6(3G)4sa4Ge[11/2]      
+Forbidden transition: lambda_angstrom= 20325.6, 3d6(3H)4sa4He[13/2]       to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom=  8600.5, 3d6(3H)4sa4He[13/2]       to 3d6(1I)4sa2Ie[13/2]      
+Forbidden transition: lambda_angstrom=  8575.2, 3d6(3H)4sa4He[13/2]       to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom= 17773.8, 3d7a2De[3/2]              to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom= 10571.9, 3d7a2De[3/2]              to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  9517.8, 3d7a2De[3/2]              to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom=  8199.0, 3d7a2De[3/2]              to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  6746.5, 3d7a2De[3/2]              to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  6689.4, 3d7a2De[3/2]              to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  6280.0, 3d7a2De[3/2]              to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  5930.9, 3d7a2De[3/2]              to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  5913.3, 3d7a2De[3/2]              to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 25003.0, 3d6(3H)4sa4He[11/2]       to 3d6(3G)4sa4Ge[11/2]      
+Forbidden transition: lambda_angstrom= 22851.1, 3d6(3H)4sa4He[11/2]       to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom= 11159.9, 3d6(3H)4sa4He[11/2]       to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom=  8734.8, 3d6(3H)4sa4He[11/2]       to 3d6(1I)4sa2Ie[13/2]      
+Forbidden transition: lambda_angstrom=  8708.8, 3d6(3H)4sa4He[11/2]       to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom=  8306.1, 3d6(3H)4sa4He[11/2]       to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 23669.5, 3d6(3H)4sa4He[9/2]        to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom= 22721.1, 3d6(3H)4sa4He[9/2]        to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom= 21787.5, 3d6(3H)4sa4He[9/2]        to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom= 17437.2, 3d6(3H)4sa4He[9/2]        to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom= 11351.6, 3d6(3H)4sa4He[9/2]        to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 10886.9, 3d6(3H)4sa4He[9/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  9596.7, 3d6(3H)4sa4He[9/2]        to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  8825.1, 3d6(3H)4sa4He[9/2]        to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom=  8411.8, 3d6(3H)4sa4He[9/2]        to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  8387.2, 3d6(3H)4sa4He[9/2]        to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom= 23414.4, 3d6(3H)4sa4He[7/2]        to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom= 23016.6, 3d6(3H)4sa4He[7/2]        to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom= 21541.9, 3d6(3H)4sa4He[7/2]        to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom= 17842.7, 3d6(3H)4sa4He[7/2]        to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom= 11043.6, 3d6(3H)4sa4He[7/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom=  8505.0, 3d6(3H)4sa4He[7/2]        to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  8479.9, 3d6(3H)4sa4He[7/2]        to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom= 167200.0, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3P2)4sb4Pe[1/2]      
+Forbidden transition: lambda_angstrom= 25146.9, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom= 19523.3, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom= 10465.7, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom= 10461.3, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom= 10440.0, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  6984.1, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  6922.9, 3d6(3P2)4sb4Pe[3/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  6485.3, 3d6(3P2)4sb4Pe[3/2]       to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  6113.7, 3d6(3P2)4sb4Pe[3/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  6095.0, 3d6(3P2)4sb4Pe[3/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 29597.5, 3d6(3P2)4sb4Pe[1/2]       to 3d6(3P2)4sb2Pe[3/2]      
+Forbidden transition: lambda_angstrom= 22103.7, 3d6(3P2)4sb4Pe[1/2]       to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom= 11159.4, 3d6(3P2)4sb4Pe[1/2]       to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  6746.9, 3d6(3P2)4sb4Pe[1/2]       to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  6325.5, 3d6(3P2)4sb4Pe[1/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 35812.3, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3G)4sa4Ge[11/2]      
+Forbidden transition: lambda_angstrom= 31555.8, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom= 29892.4, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom= 28297.0, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom= 26906.5, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom= 21372.1, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom= 12897.5, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 11301.5, 3d6(3F2)4sb4Fe[9/2]       to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom=  9231.7, 3d6(3F2)4sb4Fe[9/2]       to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  9202.1, 3d6(3F2)4sb4Fe[9/2]       to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom= 33380.2, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom= 31524.5, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom= 30807.6, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom= 28221.7, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3H)4sb2He[9/2]       
+Forbidden transition: lambda_angstrom= 13192.2, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 12568.6, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 11527.1, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom= 10880.0, 3d6(3F2)4sb4Fe[7/2]       to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  9381.7, 3d6(3F2)4sb4Fe[7/2]       to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom=  9351.2, 3d6(3F2)4sb4Fe[7/2]       to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  7437.0, 3d6(3F2)4sb4Fe[7/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  6511.2, 3d6(3F2)4sb4Fe[7/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 32861.2, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3G)4sa4Ge[7/2]       
+Forbidden transition: lambda_angstrom= 32083.0, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom= 21356.9, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom= 12775.9, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 11866.1, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom= 11860.4, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom= 11833.1, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom= 11701.2, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom= 11034.9, 3d6(3F2)4sb4Fe[5/2]       to 3d7b2Fe[7/2]             
+Forbidden transition: lambda_angstrom=  9465.4, 3d6(3F2)4sb4Fe[5/2]       to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  7509.1, 3d6(3F2)4sb4Fe[5/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  6566.4, 3d6(3F2)4sb4Fe[5/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  6544.8, 3d6(3F2)4sb4Fe[5/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 33058.4, 3d6(3F2)4sb4Fe[3/2]       to 3d6(3G)4sa4Ge[5/2]       
+Forbidden transition: lambda_angstrom= 11997.0, 3d6(3F2)4sb4Fe[3/2]       to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom= 11991.2, 3d6(3F2)4sb4Fe[3/2]       to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom=  7561.3, 3d6(3F2)4sb4Fe[3/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  6606.3, 3d6(3F2)4sb4Fe[3/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  6584.4, 3d6(3F2)4sb4Fe[3/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 265500.0, 3d6(3G)4sa4Ge[11/2]       to 3d6(3G)4sa4Ge[9/2]       
+Forbidden transition: lambda_angstrom= 134800.0, 3d6(3G)4sa4Ge[11/2]       to 3d6(3H)4sb2He[11/2]      
+Forbidden transition: lambda_angstrom= 13363.3, 3d6(3G)4sa4Ge[11/2]       to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom= 12438.0, 3d6(3G)4sa4Ge[11/2]       to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 87301.0, 3d6(3P2)4sb2Pe[3/2]       to 3d6(3P2)4sb2Pe[1/2]      
+Forbidden transition: lambda_angstrom= 17851.2, 3d6(3P2)4sb2Pe[3/2]       to 3d6(3D)4sb4De[5/2]       
+Forbidden transition: lambda_angstrom=  9669.7, 3d6(3P2)4sb2Pe[3/2]       to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  9552.7, 3d6(3P2)4sb2Pe[3/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  8739.1, 3d6(3P2)4sb2Pe[3/2]       to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  8077.5, 3d6(3P2)4sb2Pe[3/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  8044.8, 3d6(3P2)4sb2Pe[3/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 66224.9, 3d6(3G)4sa4Ge[9/2]        to 3d6(3F2)4sa2Fe[7/2]      
+Forbidden transition: lambda_angstrom= 21812.8, 3d6(3G)4sa4Ge[9/2]        to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 13049.3, 3d6(3G)4sa4Ge[9/2]        to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 61004.3, 3d6(3G)4sa4Ge[7/2]        to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom= 20902.3, 3d6(3G)4sa4Ge[7/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 17147.4, 3d6(3G)4sa4Ge[7/2]        to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom= 13294.9, 3d6(3G)4sa4Ge[7/2]        to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  8206.2, 3d6(3G)4sa4Ge[7/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 63880.8, 3d6(3G)4sa4Ge[5/2]        to 3d6(3F2)4sa2Fe[5/2]      
+Forbidden transition: lambda_angstrom= 21229.9, 3d6(3G)4sa4Ge[5/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 13426.7, 3d6(3G)4sa4Ge[5/2]        to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom=  8256.2, 3d6(3G)4sa4Ge[5/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 23699.4, 3d6(3H)4sb2He[11/2]       to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 14909.1, 3d6(3H)4sb2He[11/2]       to 3d6(1I)4sa2Ie[13/2]      
+Forbidden transition: lambda_angstrom= 14833.3, 3d6(3H)4sb2He[11/2]       to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom= 13701.9, 3d6(3H)4sb2He[11/2]       to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 24771.6, 3d6(3H)4sb2He[9/2]        to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 22660.7, 3d6(3H)4sb2He[9/2]        to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 15246.4, 3d6(3H)4sb2He[9/2]        to 3d6(1I)4sa2Ie[11/2]      
+Forbidden transition: lambda_angstrom= 14053.5, 3d6(3H)4sb2He[9/2]        to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 13985.2, 3d6(3H)4sb2He[9/2]        to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom= 22558.6, 3d6(3P2)4sb2Pe[1/2]       to 3d6(3D)4sb4De[3/2]       
+Forbidden transition: lambda_angstrom= 22538.2, 3d6(3P2)4sb2Pe[1/2]       to 3d6(3D)4sb4De[1/2]       
+Forbidden transition: lambda_angstrom= 10874.1, 3d6(3P2)4sb2Pe[1/2]       to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom=  9711.2, 3d6(3P2)4sb2Pe[1/2]       to 3d6(1S2)4sa2Se[1/2]      
+Forbidden transition: lambda_angstrom=  8861.4, 3d6(3P2)4sb2Pe[1/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 32526.1, 3d6(3F2)4sa2Fe[7/2]       to 3d6(3G)4sb2Ge[9/2]       
+Forbidden transition: lambda_angstrom= 28981.3, 3d6(3F2)4sa2Fe[7/2]       to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 23984.3, 3d6(3F2)4sa2Fe[7/2]       to 3d6(3D)4sb4De[7/2]       
+Forbidden transition: lambda_angstrom= 22231.5, 3d6(3F2)4sa2Fe[7/2]       to 3d7b2Fe[5/2]             
+Forbidden transition: lambda_angstrom= 16251.6, 3d6(3F2)4sa2Fe[7/2]       to 3d6(1G2)4sc2Ge[9/2]      
+Forbidden transition: lambda_angstrom= 16160.3, 3d6(3F2)4sa2Fe[7/2]       to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom= 11185.1, 3d6(3F2)4sa2Fe[7/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  9214.7, 3d6(3F2)4sa2Fe[7/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 31797.2, 3d6(3F2)4sa2Fe[5/2]       to 3d6(3G)4sb2Ge[7/2]       
+Forbidden transition: lambda_angstrom= 16999.7, 3d6(3F2)4sa2Fe[5/2]       to 3d6(1G2)4sc2Ge[7/2]      
+Forbidden transition: lambda_angstrom= 11753.2, 3d6(3F2)4sa2Fe[5/2]       to 3d6(3D)4sb2De[3/2]       
+Forbidden transition: lambda_angstrom= 11581.0, 3d6(3F2)4sa2Fe[5/2]       to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom=  9481.7, 3d6(3F2)4sa2Fe[5/2]       to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom=  9436.6, 3d6(3F2)4sa2Fe[5/2]       to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 14702.4, 3d6(3D)4sb4De[3/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 14594.4, 3d6(3D)4sb4De[3/2]        to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 14603.0, 3d6(3D)4sb4De[1/2]        to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 14753.4, 3d6(3D)4sb4De[5/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 14644.7, 3d6(3D)4sb4De[5/2]        to 3d6(1D2)4sc2De[3/2]      
+Forbidden transition: lambda_angstrom= 20959.8, 3d6(3D)4sb4De[7/2]        to 3d6(3D)4sb2De[5/2]       
+Forbidden transition: lambda_angstrom= 14963.7, 3d6(3D)4sb4De[7/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 49059.0, 3d6(3D)4sb2De[3/2]        to 3d6(1D2)4sc2De[5/2]      
+Forbidden transition: lambda_angstrom= 50965.2, 3d6(3D)4sb2De[5/2]        to 3d6(1D2)4sc2De[3/2]      
+Included 44831 transitions, of which 560 are forbidden
+writing to 'phixsdata2.txt'
+Downsampling cross sections assuming T=3000 Kelvin
+Matched core state 1 '3d6_5D' to upper ion level 1 '3d6_5De[4]'
+Matched core state 1 '3d6_5D' to upper ion level 2 '3d6_5De[3]'
+Matched core state 1 '3d6_5D' to upper ion level 3 '3d6_5De[2]'
+Matched core state 1 '3d6_5D' to upper ion level 4 '3d6_5De[1]'
+Matched core state 1 '3d6_5D' to upper ion level 5 '3d6_5De[0]'
+Matched core state 8 '3d6_3D' to upper ion level 20 '3d6_3De[2]'
+Matched core state 8 '3d6_3D' to upper ion level 21 '3d6_3De[1]'
+Matched core state 8 '3d6_3D' to upper ion level 22 '3d6_3De[3]'
+No upper level matched core state 2 '3d6_3P' (reduced string: '3d6_3Pe')
+No upper level matched core state 14 '3d6_3P' (reduced string: '3d6_3Pe')
+Matched core state 3 '3d6_3H' to upper ion level 7 '3d6_3He[6]'
+Matched core state 3 '3d6_3H' to upper ion level 8 '3d6_3He[5]'
+Matched core state 3 '3d6_3H' to upper ion level 9 '3d6_3He[4]'
+No upper level matched core state 15 '3d6_3F' (reduced string: '3d6_3Fe')
+Matched core state 5 '3d6_3G' to upper ion level 15 '3d6_3Ge[5]'
+Matched core state 5 '3d6_3G' to upper ion level 16 '3d6_3Ge[4]'
+Matched core state 5 '3d6_3G' to upper ion level 17 '3d6_3Ge[3]'
+No upper level matched core state 4 '3d6_3F' (reduced string: '3d6_3Fe')
+Matched core state 7 '3d6_1I' to upper ion level 19 '3d6_1Ie[6]'
+Matched core state 40 '3d6_1S' to upper ion level 115 '3d6_1Se[0]'
+No upper level matched core state 9 '3d6_1G' (reduced string: '3d6_1Ge')
+Matched core state 10 '3d6_1S' to upper ion level 115 '3d6_1Se[0]'
+Matched core state 11 '3d6_1D' to upper ion level 67 '3d6_1De[2]'
+Matched core state 6 '3d54s_7S' to upper ion level 18 '3d5(6S)4s_7Se[3]'
+Matched core state 13 '3d6_1F' to upper ion level 31 '3d6_1Fe[3]'
+Matched core state 19 '3d54s_5D' to upper ion level 55 '3d5(4D)4s_5De[4]'
+Matched core state 19 '3d54s_5D' to upper ion level 56 '3d5(4D)4s_5De[0]'
+Matched core state 19 '3d54s_5D' to upper ion level 57 '3d5(4D)4s_5De[1]'
+Matched core state 19 '3d54s_5D' to upper ion level 58 '3d5(4D)4s_5De[3]'
+Matched core state 19 '3d54s_5D' to upper ion level 59 '3d5(4D)4s_5De[2]'
+No upper level matched core state 16 '3d6_1G' (reduced string: '3d6_1Ge')
+Matched core state 12 '3d54s_5S' to upper ion level 30 '3d5(6S)4s_5Se[2]'
+Matched core state 23 '3d54s_3I' to upper ion level 71 '3d5(2I)4s_3Ie[7]'
+Matched core state 23 '3d54s_3I' to upper ion level 72 '3d5(2I)4s_3Ie[6]'
+Matched core state 23 '3d54s_3I' to upper ion level 73 '3d5(2I)4s_3Ie[5]'
+Matched core state 18 '3d54s_5P' to upper ion level 52 '3d5(4P)4s_5Pe[3]'
+Matched core state 18 '3d54s_5P' to upper ion level 53 '3d5(4P)4s_5Pe[2]'
+Matched core state 18 '3d54s_5P' to upper ion level 54 '3d5(4P)4s_5Pe[1]'
+Matched core state 22 '3d54s_3D' to upper ion level 68 '3d5(4D)4s_3De[3]'
+Matched core state 22 '3d54s_3D' to upper ion level 69 '3d5(4D)4s_3De[1]'
+Matched core state 22 '3d54s_3D' to upper ion level 70 '3d5(4D)4s_3De[2]'
+Matched core state 22 '3d54s_3D' to upper ion level 77 '3d5(2D3)4s_3De[3]'
+Matched core state 22 '3d54s_3D' to upper ion level 78 '3d5(2D3)4s_3De[2]'
+Matched core state 22 '3d54s_3D' to upper ion level 79 '3d5(2D3)4s_3De[1]'
+Matched core state 22 '3d54s_3D' to upper ion level 90 '3d5    (4D ) 4s  b3D '
+Matched core state 22 '3d54s_3D' to upper ion level 106 '3d5    (2D ) 4s  c3D '
+Matched core state 22 '3d54s_3D' to upper ion level 121 '3d5(2D2)4s_3De[1]'
+Matched core state 22 '3d54s_3D' to upper ion level 122 '3d5(2D2)4s_3De[2]'
+Matched core state 22 '3d54s_3D' to upper ion level 123 '3d5(2D2)4s_3De[3]'
+Matched core state 22 '3d54s_3D' to upper ion level 146 '3d5    (2D ) 4s  d3D '
+Matched core state 22 '3d54s_3D' to upper ion level 267 '3d5(2D)4s_3De[3]'
+Matched core state 22 '3d54s_3D' to upper ion level 268 '3d5(2D)4s_3De[2]'
+Matched core state 22 '3d54s_3D' to upper ion level 269 '3d5(2D)4s_3De[1]'
+Matched core state 17 '3d54s_5G' to upper ion level 45 '3d5(4G)4s_5Ge[6]'
+Matched core state 17 '3d54s_5G' to upper ion level 46 '3d5(4G)4s_5Ge[5]'
+Matched core state 17 '3d54s_5G' to upper ion level 47 '3d5(4G)4s_5Ge[4]'
+Matched core state 17 '3d54s_5G' to upper ion level 48 '3d5(4G)4s_5Ge[3]'
+Matched core state 17 '3d54s_5G' to upper ion level 49 '3d5(4G)4s_5Ge[2]'
+Matched core state 25 '3d6_1D' to upper ion level 67 '3d6_1De[2]'
+Matched core state 37 '3d54s_3F' to upper ion level 87 '3d5(2F2)4s_3Fe[4]'
+Matched core state 37 '3d54s_3F' to upper ion level 88 '3d5(2F2)4s_3Fe[2]'
+Matched core state 37 '3d54s_3F' to upper ion level 89 '3d5(2F2)4s_3Fe[3]'
+Matched core state 37 '3d54s_3F' to upper ion level 102 '3d5(4F)4s_3Fe[2]'
+Matched core state 37 '3d54s_3F' to upper ion level 103 '3d5(4F)4s_3Fe[4]'
+Matched core state 37 '3d54s_3F' to upper ion level 104 '3d5(4F)4s_3Fe[3]'
+Matched core state 37 '3d54s_3F' to upper ion level 109 '3d5(2F1)4s_3Fe[4]'
+Matched core state 37 '3d54s_3F' to upper ion level 110 '3d5(2F1)4s_3Fe[3]'
+Matched core state 37 '3d54s_3F' to upper ion level 111 '3d5(2F1)4s_3Fe[2]'
+Matched core state 37 '3d54s_3F' to upper ion level 117 '3d5    (4F ) 4s  d3F '
+Matched core state 37 '3d54s_3F' to upper ion level 120 '3d5    (2F ) 4s  e3F '
+Matched core state 34 '3d54s_3G' to upper ion level 60 '3d5(4G)4s_3Ge[5]'
+Matched core state 34 '3d54s_3G' to upper ion level 61 '3d5(4G)4s_3Ge[3]'
+Matched core state 34 '3d54s_3G' to upper ion level 62 '3d5(4G)4s_3Ge[4]'
+Matched core state 34 '3d54s_3G' to upper ion level 74 '3d5    (4G ) 4s  b3G '
+Matched core state 34 '3d54s_3G' to upper ion level 99 '3d5(2G2)4s_3Ge[3]'
+Matched core state 34 '3d54s_3G' to upper ion level 100 '3d5(2G2)4s_3Ge[4]'
+Matched core state 34 '3d54s_3G' to upper ion level 101 '3d5(2G2)4s_3Ge[5]'
+Matched core state 34 '3d54s_3G' to upper ion level 118 '3d5    (2G ) 4s  c3G '
+Matched core state 34 '3d54s_3G' to upper ion level 132 '3d5(2G1)4s_3Ge[5]'
+Matched core state 34 '3d54s_3G' to upper ion level 133 '3d5(2G1)4s_3Ge[4]'
+Matched core state 34 '3d54s_3G' to upper ion level 134 '3d5(2G1)4s_3Ge[3]'
+Matched core state 20 '3d54s_3G' to upper ion level 60 '3d5(4G)4s_3Ge[5]'
+Matched core state 20 '3d54s_3G' to upper ion level 61 '3d5(4G)4s_3Ge[3]'
+Matched core state 20 '3d54s_3G' to upper ion level 62 '3d5(4G)4s_3Ge[4]'
+Matched core state 20 '3d54s_3G' to upper ion level 74 '3d5    (4G ) 4s  b3G '
+Matched core state 20 '3d54s_3G' to upper ion level 99 '3d5(2G2)4s_3Ge[3]'
+Matched core state 20 '3d54s_3G' to upper ion level 100 '3d5(2G2)4s_3Ge[4]'
+Matched core state 20 '3d54s_3G' to upper ion level 101 '3d5(2G2)4s_3Ge[5]'
+Matched core state 20 '3d54s_3G' to upper ion level 118 '3d5    (2G ) 4s  c3G '
+Matched core state 20 '3d54s_3G' to upper ion level 132 '3d5(2G1)4s_3Ge[5]'
+Matched core state 20 '3d54s_3G' to upper ion level 133 '3d5(2G1)4s_3Ge[4]'
+Matched core state 20 '3d54s_3G' to upper ion level 134 '3d5(2G1)4s_3Ge[3]'
+Matched core state 42 '3d54s_3D' to upper ion level 68 '3d5(4D)4s_3De[3]'
+Matched core state 42 '3d54s_3D' to upper ion level 69 '3d5(4D)4s_3De[1]'
+Matched core state 42 '3d54s_3D' to upper ion level 70 '3d5(4D)4s_3De[2]'
+Matched core state 42 '3d54s_3D' to upper ion level 77 '3d5(2D3)4s_3De[3]'
+Matched core state 42 '3d54s_3D' to upper ion level 78 '3d5(2D3)4s_3De[2]'
+Matched core state 42 '3d54s_3D' to upper ion level 79 '3d5(2D3)4s_3De[1]'
+Matched core state 42 '3d54s_3D' to upper ion level 90 '3d5    (4D ) 4s  b3D '
+Matched core state 42 '3d54s_3D' to upper ion level 106 '3d5    (2D ) 4s  c3D '
+Matched core state 42 '3d54s_3D' to upper ion level 121 '3d5(2D2)4s_3De[1]'
+Matched core state 42 '3d54s_3D' to upper ion level 122 '3d5(2D2)4s_3De[2]'
+Matched core state 42 '3d54s_3D' to upper ion level 123 '3d5(2D2)4s_3De[3]'
+Matched core state 42 '3d54s_3D' to upper ion level 146 '3d5    (2D ) 4s  d3D '
+Matched core state 42 '3d54s_3D' to upper ion level 267 '3d5(2D)4s_3De[3]'
+Matched core state 42 '3d54s_3D' to upper ion level 268 '3d5(2D)4s_3De[2]'
+Matched core state 42 '3d54s_3D' to upper ion level 269 '3d5(2D)4s_3De[1]'
+Matched core state 32 '3d54s_3H' to upper ion level 93 '3d5(2H)4s_3He[4]'
+Matched core state 32 '3d54s_3H' to upper ion level 94 '3d5(2H)4s_3He[5]'
+Matched core state 32 '3d54s_3H' to upper ion level 95 '3d5(2H)4s_3He[6]'
+Matched core state 21 '3d54s_3P' to upper ion level 64 '3d5(4P)4s_3Pe[2]'
+Matched core state 21 '3d54s_3P' to upper ion level 65 '3d5(4P)4s_3Pe[1]'
+Matched core state 21 '3d54s_3P' to upper ion level 66 '3d5(4P)4s_3Pe[0]'
+Matched core state 21 '3d54s_3P' to upper ion level 208 '3d5(2P)4s_3Pe[2]'
+Matched core state 21 '3d54s_3P' to upper ion level 210 '3d5(2P)4s_3Pe[1]'
+Matched core state 21 '3d54s_3P' to upper ion level 211 '3d5(2P)4s_3Pe[0]'
+Matched core state 21 '3d54s_3P' to upper ion level 304 '3d5    (2P ) 4s  d3P '
+Matched core state 31 '3d54s_1F' to upper ion level 92 '3d5(2F2)4s_1Fe[3]'
+Matched core state 31 '3d54s_1F' to upper ion level 114 '3d5(2F1)4s_1Fe[3]'
+Matched core state 31 '3d54s_1F' to upper ion level 124 '3d5    (2F ) 4s  c1F '
+Matched core state 27 '3d54s_5F' to upper ion level 81 '3d5(4F)4s_5Fe[5]'
+Matched core state 27 '3d54s_5F' to upper ion level 82 '3d5(4F)4s_5Fe[4]'
+Matched core state 27 '3d54s_5F' to upper ion level 83 '3d5(4F)4s_5Fe[3]'
+Matched core state 27 '3d54s_5F' to upper ion level 84 '3d5(4F)4s_5Fe[2]'
+Matched core state 27 '3d54s_5F' to upper ion level 86 '3d5(4F)4s_5Fe[1]'
+Matched core state 26 '3d54s_3D' to upper ion level 68 '3d5(4D)4s_3De[3]'
+Matched core state 26 '3d54s_3D' to upper ion level 69 '3d5(4D)4s_3De[1]'
+Matched core state 26 '3d54s_3D' to upper ion level 70 '3d5(4D)4s_3De[2]'
+Matched core state 26 '3d54s_3D' to upper ion level 77 '3d5(2D3)4s_3De[3]'
+Matched core state 26 '3d54s_3D' to upper ion level 78 '3d5(2D3)4s_3De[2]'
+Matched core state 26 '3d54s_3D' to upper ion level 79 '3d5(2D3)4s_3De[1]'
+Matched core state 26 '3d54s_3D' to upper ion level 90 '3d5    (4D ) 4s  b3D '
+Matched core state 26 '3d54s_3D' to upper ion level 106 '3d5    (2D ) 4s  c3D '
+Matched core state 26 '3d54s_3D' to upper ion level 121 '3d5(2D2)4s_3De[1]'
+Matched core state 26 '3d54s_3D' to upper ion level 122 '3d5(2D2)4s_3De[2]'
+Matched core state 26 '3d54s_3D' to upper ion level 123 '3d5(2D2)4s_3De[3]'
+Matched core state 26 '3d54s_3D' to upper ion level 146 '3d5    (2D ) 4s  d3D '
+Matched core state 26 '3d54s_3D' to upper ion level 267 '3d5(2D)4s_3De[3]'
+Matched core state 26 '3d54s_3D' to upper ion level 268 '3d5(2D)4s_3De[2]'
+Matched core state 26 '3d54s_3D' to upper ion level 269 '3d5(2D)4s_3De[1]'
+Matched core state 29 '3d54s_3F' to upper ion level 87 '3d5(2F2)4s_3Fe[4]'
+Matched core state 29 '3d54s_3F' to upper ion level 88 '3d5(2F2)4s_3Fe[2]'
+Matched core state 29 '3d54s_3F' to upper ion level 89 '3d5(2F2)4s_3Fe[3]'
+Matched core state 29 '3d54s_3F' to upper ion level 102 '3d5(4F)4s_3Fe[2]'
+Matched core state 29 '3d54s_3F' to upper ion level 103 '3d5(4F)4s_3Fe[4]'
+Matched core state 29 '3d54s_3F' to upper ion level 104 '3d5(4F)4s_3Fe[3]'
+Matched core state 29 '3d54s_3F' to upper ion level 109 '3d5(2F1)4s_3Fe[4]'
+Matched core state 29 '3d54s_3F' to upper ion level 110 '3d5(2F1)4s_3Fe[3]'
+Matched core state 29 '3d54s_3F' to upper ion level 111 '3d5(2F1)4s_3Fe[2]'
+Matched core state 29 '3d54s_3F' to upper ion level 117 '3d5    (4F ) 4s  d3F '
+Matched core state 29 '3d54s_3F' to upper ion level 120 '3d5    (2F ) 4s  e3F '
+Matched core state 28 '3d54s_1I' to upper ion level 85 '3d5(2I)4s_1Ie[6]'
+Matched core state 35 '3d54s_3F' to upper ion level 87 '3d5(2F2)4s_3Fe[4]'
+Matched core state 35 '3d54s_3F' to upper ion level 88 '3d5(2F2)4s_3Fe[2]'
+Matched core state 35 '3d54s_3F' to upper ion level 89 '3d5(2F2)4s_3Fe[3]'
+Matched core state 35 '3d54s_3F' to upper ion level 102 '3d5(4F)4s_3Fe[2]'
+Matched core state 35 '3d54s_3F' to upper ion level 103 '3d5(4F)4s_3Fe[4]'
+Matched core state 35 '3d54s_3F' to upper ion level 104 '3d5(4F)4s_3Fe[3]'
+Matched core state 35 '3d54s_3F' to upper ion level 109 '3d5(2F1)4s_3Fe[4]'
+Matched core state 35 '3d54s_3F' to upper ion level 110 '3d5(2F1)4s_3Fe[3]'
+Matched core state 35 '3d54s_3F' to upper ion level 111 '3d5(2F1)4s_3Fe[2]'
+Matched core state 35 '3d54s_3F' to upper ion level 117 '3d5    (4F ) 4s  d3F '
+Matched core state 35 '3d54s_3F' to upper ion level 120 '3d5    (2F ) 4s  e3F '
+Matched core state 30 '3d54s_1D' to upper ion level 91 '3d5(2D3)4s_1De[2]'
+Matched core state 30 '3d54s_1D' to upper ion level 108 '3d5    (2D ) 4s  b1D '
+Matched core state 30 '3d54s_1D' to upper ion level 125 '3d5(2D2)4s_1De[2]'
+Matched core state 30 '3d54s_1D' to upper ion level 165 '3d5    (2D ) 4s  d1D '
+Matched core state 30 '3d54s_1D' to upper ion level 297 '3d5(2D)4s_1De[2]'
+Matched core state 36 '3d54s_1H' to upper ion level 107 '3d5(2H)4s_1He[5]'
