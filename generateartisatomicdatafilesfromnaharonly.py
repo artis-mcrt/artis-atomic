@@ -166,7 +166,7 @@ if __name__ == "__main__":
         print('==============> {0} {1}:'.format(elsymbols[atomicnumber],romannumerals[ionizationstage]))
         
         #read Nahar energy level file
-        pathnaharen = 'nahar_radiativeatomicdata/{0}{1:d}.en.ls.txt'.format(elsymbols[atomicnumber].lower(),ionizationstage)
+        pathnaharen = 'atomic-data-nahar/{0}{1:d}.en.ls.txt'.format(elsymbols[atomicnumber].lower(),ionizationstage)
         print('Reading ' + pathnaharen)
         
         with open(pathnaharen, 'r') as fenlist:
@@ -285,7 +285,7 @@ if __name__ == "__main__":
         
         #read Nahar linelist
         """
-        pathnaharf = 'nahar_radiativeatomicdata/{0}{1:d}.f.ls.txt'.format(elsymbols[atomicnumber].lower(),ionizationstage)
+        pathnaharf = 'atomic-data-nahar/{0}{1:d}.f.ls.txt'.format(elsymbols[atomicnumber].lower(),ionizationstage)
         print('Reading ' + pathnaharen)
         with open(pathnaharf,'r') as fnaharf:
             for line in fnaharf:
