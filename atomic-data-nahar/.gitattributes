@@ -1,5 +1,0 @@
-*px.txt filter=lfs diff=lfs merge=lfs -text
-*.f.ls.txt filter=lfs diff=lfs merge=lfs -text
-*.f.fs.txt filter=lfs diff=lfs merge=lfs -text
-*.f.rrc.ls.txt filter=lfs diff=lfs merge=lfs -text
-*.f.rrc.txt filter=lfs diff=lfs merge=lfs -text

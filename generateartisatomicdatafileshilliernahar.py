@@ -151,11 +151,11 @@ def main():
 
           with open(os.path.join(output_folder_artis,output_folder_logs,'{0}{1:d}.txt'.format(elsymbols[atomic_number].lower(),ionization_stage)), 'w') as flog:
           
-            hillier_ion_folder = 'hillieratomicdata/' + atomic_number_to_hillier_code[atomic_number] + '/' + roman_numerals[ionization_stage] + '/'
+            hillier_ion_folder = 'atomic-data-hillier/atomic/' + atomic_number_to_hillier_code[atomic_number] + '/' + roman_numerals[ionization_stage] + '/'
 
             logprint('==============> {0} {1}:'.format(elsymbols[atomic_number],roman_numerals[ionization_stage]))
             
-            path_nahar_energy_file = 'nahar_radiativeatomicdata/{0}{1:d}.en.ls.txt'.format(elsymbols[atomic_number].lower(),ionization_stage)
+            path_nahar_energy_file = 'atomic-data-nahar/{0}{1:d}.en.ls.txt'.format(elsymbols[atomic_number].lower(),ionization_stage)
             logprint('Reading ' + path_nahar_energy_file)
             read_nahar_energy_level_file(path_nahar_energy_file)
             
@@ -163,7 +163,7 @@ def main():
             read_hillier_levels_and_transitions_file(hillier_ion_folder, path_hillier_osc_file, hillier_row_format_energy_level)
             
             if i < len(listions)-1: # don't get cross sections for top ion
-                path_nahar_px_file = 'nahar_radiativeatomicdata/{0}{1:d}.px.txt'.format(elsymbols[atomic_number].lower(),ionization_stage)
+                path_nahar_px_file = 'atomic-data-nahar/{0}{1:d}.px.txt'.format(elsymbols[atomic_number].lower(),ionization_stage)
                 logprint('Reading ' + path_nahar_px_file)
                 read_nahar_phixs_tables(path_nahar_px_file)
             
