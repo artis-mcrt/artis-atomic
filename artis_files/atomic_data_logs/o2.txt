@@ -1,9 +1,9 @@
 ==============> O II:
-Reading nahar_radiativeatomicdata/o2.en.ls.txt
+Reading atomic-data-nahar/o2.en.ls.txt
 Ionization potential = 2.5966 Ryd
-Reading hillieratomicdata/OXY/II/23mar05/o2osc_fin.dat
+Reading atomic-data-hillier/atomic/OXY/II/23mar05/o2osc_fin.dat
 Read 8937 transitions
-Reading nahar_radiativeatomicdata/o2.px.txt
+Reading atomic-data-nahar/o2.px.txt
 Matched Nahar phixs for 2Pe index 16 '2s22p2 (3P ) 9s  p2P ' (34.521 eV) to <E>=34.311 eV: [2s2_2p2(3Pe)9s_2Pe (34.311 eV)]
 No Hillier levels with term 2Ko
 No matched Hillier levels for Nahar cross section of 2Ko index 2 [2s22p2 (3P ) 9k  y2Ko] (E_threshold=0.67 eV)

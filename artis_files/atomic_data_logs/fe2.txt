@@ -1,5 +1,5 @@
 ==============> Fe II:
-Reading nahar_radiativeatomicdata/fe2.en.ls.txt
+Reading atomic-data-nahar/fe2.en.ls.txt
 Ionization potential = 1.1782 Ryd
 Core state id of 6Ho index 10 is invalid (=88, Ncorestates=84)
 Core state id of 4Do index 23 is invalid (=89, Ncorestates=84)
@@ -39,9 +39,9 @@ Core state id of 2Go index 28 is invalid (=0, Ncorestates=84)
 (setting the core state to 1 instead)
 Core state id of 2Go index 38 is invalid (=0, Ncorestates=84)
 (setting the core state to 1 instead)
-Reading hillieratomicdata/FE/II/16nov98/fe2osc_nahar_kurucz.dat
+Reading atomic-data-hillier/atomic/FE/II/16nov98/fe2osc_nahar_kurucz.dat
 Read 44831 transitions
-Reading nahar_radiativeatomicdata/fe2.px.txt
+Reading atomic-data-nahar/fe2.px.txt
 Matched Nahar phixs for 4Fo index 19 '3d54s  (3F ) 4p  h4Fo' (14.293 eV) to <E>=12.530 eV: [3d5(4G)4s4p(3P)v4Fo[7/2] (11.442 eV), 3d5(4G)4s4p(3P)v4Fo[5/2] (11.447 eV), 3d5(4G)4s4p(3P)v4Fo[3/2] (11.451 eV), 3d5(4G)4s4p(3P)v4Fo[9/2] (11.459 eV), 3d5(4D)4s4p(3P)4Fo[3/2] (12.175 eV), 3d5(4D)4s4p(3P)4Fo[5/2] (12.194 eV), 3d5(4D)4s4p(3P)4Fo[7/2] (12.217 eV), 3d5(4D)4s4p(3P)4Fo[9/2] (12.224 eV), 3d5(2D)4s4p(3P)4Fo[3/2] (12.957 eV), 3d5(2D)4s4p(3P)4Fo[5/2] (12.973 eV), 3d5(2D)4s4p(3P)4Fo[7/2] (13.007 eV), 3d5(2D)4s4p(3P)4Fo[9/2] (13.069 eV), 3d5(2F)4s4p(3P)4Fo[9/2] (13.417 eV), 3d5(2F)4s4p(3P)4Fo[7/2] (13.455 eV), 3d5(2F)4s4p(3P)4Fo[5/2] (13.457 eV), 3d5(2F)4s4p(3P)4Fo[3/2] (13.487 eV)]
 Matched Nahar phixs for 2Fo index 8 '3d54s  (3G ) 4p  s2Fo' (12.517 eV) to <E>=12.372 eV: [3d5(4G)4s4p(3P)t2Fo[5/2] (11.937 eV), 3d5(4G)4s4p(3P)t2Fo[7/2] (11.947 eV), 3d5(4D)4s4p(3P)2Fo[7/2] (12.793 eV), 3d5(4D)4s4p(3P)2Fo[5/2] (12.812 eV)]
 Matched Nahar phixs for 6Fo index 3 '3d54s  (5D ) 4p  x6Fo' (10.920 eV) to <E>=11.831 eV: [3d5(4G)4s4p(3P)y6Fo[11/2] (10.829 eV), 3d5(4G)4s4p(3P)y6Fo[9/2] (10.845 eV), 3d5(4G)4s4p(3P)y6Fo[7/2] (10.853 eV), 3d5(4G)4s4p(3P)y6Fo[5/2] (10.858 eV), 3d5(4G)4s4p(3P)y6Fo[3/2] (10.861 eV), 3d5(4G)4s4p(3P)y6Fo[1/2] (10.898 eV), 3d5(4D)4s4p(3P)6Fo[1/2] (11.388 eV), 3d5(4D)4s4p(3P)6Fo[3/2] (11.396 eV), 3d5(4D)4s4p(3P)6Fo[5/2] (11.409 eV), 3d5(4D)4s4p(3P)6Fo[7/2] (11.426 eV), 3d5(4D)4s4p(3P)6Fo[9/2] (11.444 eV), 3d5(4D)4s4p(3P)6Fo[11/2] (11.460 eV), 3d5(4F)4s4p(3P)6Fo[3/2] (13.192 eV), 3d5(4F)4s4p(3P)6Fo[1/2] (13.201 eV), 3d5(4F)4s4p(3P)6Fo[7/2] (13.202 eV), 3d5(4F)4s4p(3P)6Fo[5/2] (13.216 eV), 3d5(4F)4s4p(3P)6Fo[9/2] (13.220 eV), 3d5(4F)4s4p(3P)6Fo[11/2] (13.223 eV)]

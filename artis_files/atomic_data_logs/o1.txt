@@ -1,5 +1,5 @@
 ==============> O I:
-Reading nahar_radiativeatomicdata/o1.en.ls.txt
+Reading atomic-data-nahar/o1.en.ls.txt
 Ionization potential = 0.99122 Ryd
 Core state id of 3Pe index 1 is invalid (=0, Ncorestates=9)
 (setting the core state to 1 instead)
@@ -9,9 +9,9 @@ Core state id of 1Se index 1 is invalid (=0, Ncorestates=9)
 (setting the core state to 1 instead)
 Core state id of 1De index 1 is invalid (=0, Ncorestates=9)
 (setting the core state to 1 instead)
-Reading hillieratomicdata/OXY/I/20sep11/oi_osc_mchf
+Reading atomic-data-hillier/atomic/OXY/I/20sep11/oi_osc_mchf
 Read 4193 transitions
-Reading nahar_radiativeatomicdata/o1.px.txt
+Reading atomic-data-nahar/o1.px.txt
 Matched Nahar phixs for 5Pe index 1 '2s22p3 (4So) 3p  a5P ' (10.594 eV) to <E>=10.741 eV: [2s2_2p3(4So)3p_5Pe[1] (10.740 eV), 2s2_2p3(4So)3p_5Pe[2] (10.740 eV), 2s2_2p3(4So)3p_5Pe[3] (10.741 eV)]
 No Hillier levels with term 3Go
 No matched Hillier levels for Nahar cross section of 3Go index 2 [2s22p3 (4So) 6g  y3Go] (E_threshold=0.38 eV)

@@ -11,7 +11,7 @@ c   = 299792.458      # km / s
 
 plot_xmin = 3500        # plot range in angstroms
 plot_xmax = 7000
-T_K = 9000.0            # temperature in Kelvin (to determine level populations)
+T_K = 5000.0            # temperature in Kelvin (to determine level populations)
 sigma_v = 500.0        # Gaussian width in km/s
 Fe3overFe2 = 2.3        # number ratio of these ions
 
@@ -27,13 +27,15 @@ plot_xmax_wide = plot_xmax * (1 + gaussian_window * sigma_v / c)
 
 ion = namedtuple('ion', 'Z ion_stage number_fraction')
 
-#elsymbol = 'Fe'
-#ions = [ion(26, 2, 1/(1 + Fe3overFe2)),
-#        ion(26, 3, Fe3overFe2/(1 + Fe3overFe2))]
+elsymbol = 'Fe'
+ions = [ion(26, 1, 0.3),
+        ion(26, 2, 1/(1 + Fe3overFe2)),
+        ion(26, 3, Fe3overFe2/(1 + Fe3overFe2))]
 
-elsymbol = 'O'
-ions = [ion(8, 2, 1/(1 + Fe3overFe2)),
-        ion(8, 3, Fe3overFe2/(1 + Fe3overFe2))]
+#elsymbol = 'O'
+#ions = [
+#        ion(8, 2, 1/(1 + Fe3overFe2)),
+#        ion(8, 3, Fe3overFe2/(1 + Fe3overFe2))]
 
 elsymbols = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P',
              'S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
@@ -54,9 +56,9 @@ def main():
     #filter the line list
     transitions = transitions[
         (transitions[:]['lambda_angstroms'] >= plot_xmin_wide) &
-        (transitions[:]['lambda_angstroms'] <= plot_xmax_wide) &
-        (transitions[:]['forbidden'] == 1) &
-        (transitions[:]['upper_has_permitted'] == 0)
+        (transitions[:]['lambda_angstroms'] <= plot_xmax_wide)# &
+        #(transitions[:]['forbidden'] == 1) &
+        #(transitions[:]['upper_has_permitted'] == 0)
     ]
 
     print('{:d} matching lines in plot range'.format(len(transitions)))

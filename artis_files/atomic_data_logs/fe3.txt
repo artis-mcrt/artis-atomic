@@ -1,5 +1,5 @@
 ==============> Fe III:
-Reading nahar_radiativeatomicdata/fe3.en.ls.txt
+Reading atomic-data-nahar/fe3.en.ls.txt
 Ionization potential = 2.249 Ryd
 Core state id of 7Fe index 1 is invalid (=51, Ncorestates=50)
 Core state id of 7Fe index 2 is invalid (=52, Ncorestates=50)
@@ -27,7 +27,7 @@ Core state id of 3Ho index 32 is invalid (=84, Ncorestates=50)
 Core state id of 3Le index 8 is invalid (=90, Ncorestates=50)
 Core state id of 1Po index 22 is invalid (=0, Ncorestates=50)
 (setting the core state to 1 instead)
-Reading hillieratomicdata/FE/III/30oct12/FeIII_OSC
+Reading atomic-data-hillier/atomic/FE/III/30oct12/FeIII_OSC
 Can't find term in Hillier level name '3d5(4D)4po[3]'
 Can't find term in Hillier level name '3d5(4P)4po[2]'
 Can't find term in Hillier level name '3d5(4P)4po[1]'
@@ -35,7 +35,7 @@ Can't find term in Hillier level name '3d5(a2D)4po[2]'
 Can't find term in Hillier level name '3d5(a2D)4po[3]'
 Can't find term in Hillier level name '3d5(b2F)4po[4]'
 Read 136060 transitions
-Reading nahar_radiativeatomicdata/fe3.px.txt
+Reading atomic-data-nahar/fe3.px.txt
 Matched Nahar phixs for 1Fo index 6 '3d5    (2G ) 4p  u1Fo' (22.195 eV) to <E>=19.850 eV: [3d5(a2F)4p_1Fo[3] (17.414 eV), 3d5(a2G)4p_1Fo[3] (17.982 eV), 3d5(b2F)4p_1Fo[3] (18.679 eV), 3d5(b2D)4p_1Fo[3] (19.775 eV), 3d5(b2G)4p_1Fo[3] (21.116 eV), 3d5(2D)4p_1Fo[3] (24.135 eV)]
 Matched Nahar phixs for 5Fo index 11 '3d5    (6S ) 6f  p5Fo' (27.173 eV) to <E>=27.092 eV: [3d5(6S)6f_5Fo[1] (27.065 eV), 3d5(6S)6f_5Fo[2] (27.077 eV), 3d5(6S)6f_5Fo[3] (27.087 eV), 3d5(6S)6f_5Fo[4] (27.096 eV), 3d5(6S)6f_5Fo[5] (27.104 eV)]
 Matched Nahar phixs for 1Ge index 3 '3d5    (2G ) 4s  c1G ' (13.076 eV) to <E>=13.109 eV: [3d5(2G2)4s_1Ge[4] (11.594 eV), 3d5(2G1)4s_1Ge[4] (14.624 eV)]

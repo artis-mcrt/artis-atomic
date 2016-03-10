@@ -1,13 +1,13 @@
 ==============> Fe I:
-Reading nahar_radiativeatomicdata/fe1.en.ls.txt
+Reading atomic-data-nahar/fe1.en.ls.txt
 Ionization potential = 0.56999 Ryd
 Core state id of 5De index 1 is invalid (=0, Ncorestates=53)
 (setting the core state to 1 instead)
 Core state id of 1Se index 1 is invalid (=0, Ncorestates=53)
 (setting the core state to 1 instead)
-Reading hillieratomicdata/FE/I/29apr04/fei_osc
+Reading atomic-data-hillier/atomic/FE/I/29apr04/fei_osc
 Read 141821 transitions
-Reading nahar_radiativeatomicdata/fe1.px.txt
+Reading atomic-data-nahar/fe1.px.txt
 Matched Nahar phixs for 5Fo index 11 '3d7    (4F ) 6p  p5Fo' (7.149 eV) to <E>=7.272 eV: [3d7(4F)6p_5Fo[5] (7.222 eV), 3d7(4F)6p_5Fo[4] (7.250 eV), 3d7(4F)6p_5Fo[3] (7.293 eV), 3d7(4F)6p_5Fo[2] (7.337 eV), 3d7(4F)6p_5Fo[1] (7.369 eV)]
 Matched Nahar phixs for 5Pe index 1 '3d7    (4P ) 4s  a5P ' (1.921 eV) to <E>=2.193 eV: [3d7(4P)4s_a5Pe[3] (2.176 eV), 3d7(4P)4s_a5Pe[2] (2.198 eV), 3d7(4P)4s_a5Pe[1] (2.223 eV)]
 Matched Nahar phixs for 5Pe index 3 '3d7    (4F ) 4d  c5P ' (6.693 eV) to <E>=6.627 eV: [3d7(4F)4d_f5Pe[3] (6.591 eV), 3d7(4F)4d_f5Pe[2] (6.642 eV), 3d7(4F)4d_f5Pe[1] (6.686 eV)]

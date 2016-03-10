@@ -1,5 +1,5 @@
 ==============> Fe IV:
-Reading nahar_radiativeatomicdata/fe4.en.ls.txt
+Reading atomic-data-nahar/fe4.en.ls.txt
 Ionization potential = 4.02 Ryd
 Core state id of 6Se index 1 is invalid (=0, Ncorestates=17)
 (setting the core state to 1 instead)
@@ -31,7 +31,7 @@ Core state id of 2He index 1 is invalid (=0, Ncorestates=17)
 (setting the core state to 1 instead)
 Core state id of 2Ie index 1 is invalid (=0, Ncorestates=17)
 (setting the core state to 1 instead)
-Reading hillieratomicdata/FE/IV/18oct00/feiv_osc_rev2.dat
+Reading atomic-data-hillier/atomic/FE/IV/18oct00/feiv_osc_rev2.dat
 Can't find term in Hillier level name '3d4(3P2)4po[1/2]'
 Can't find term in Hillier level name '3d4(3F2)4po[5/2]'
 Can't find term in Hillier level name '3d4(3P2)4po[3/2]'
@@ -40,7 +40,7 @@ Can't find term in Hillier level name '3d4(3G)4po[9/2]'
 Can't find term in Hillier level name '3d4(3P1)4po[5/2]'
 Can't find term in Hillier level name '3d4(3P1)4po[3/2]'
 Read 72223 transitions
-Reading nahar_radiativeatomicdata/fe4.px.txt
+Reading atomic-data-nahar/fe4.px.txt
 No matched Hillier levels for Nahar cross section of 4Fo index 19 [3d4    (5D ) 7p  h4Fo] (E_threshold=6.57 eV)
 Matched Nahar phixs for 6Fo index 3 '3d4    (5D ) 4f  x6Fo' (40.947 eV) to <E>=40.904 eV: [3d4(5D)4f_6Fo[1/2] (40.859 eV), 3d4(5D)4f_6Fo[3/2] (40.878 eV), 3d4(5D)4f_6Fo[11/2] (40.881 eV), 3d4(5D)4f_6Fo[5/2] (40.906 eV), 3d4(5D)4f_6Fo[7/2] (40.921 eV), 3d4(5D)4f_6Fo[9/2] (40.935 eV)]
 No matched Hillier levels for Nahar cross section of 4Ge index 18 [3d4    (5D ) 6g  r4G ] (E_threshold=6.04 eV)

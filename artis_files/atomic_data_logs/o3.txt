@@ -1,7 +1,7 @@
 ==============> O III:
-Reading nahar_radiativeatomicdata/o3.en.ls.txt
+Reading atomic-data-nahar/o3.en.ls.txt
 Ionization potential = 4.0661 Ryd
-Reading hillieratomicdata/OXY/III/15mar08/oiiiosc
+Reading atomic-data-hillier/atomic/OXY/III/15mar08/oiiiosc
 Read 6516 transitions
 Included 343 levels from Hillier dataset and added 0 levels from Nahar phixs tables for a total of 343 levels
 writing to 'adata.txt'
