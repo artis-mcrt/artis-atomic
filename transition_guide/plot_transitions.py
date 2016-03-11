@@ -4,7 +4,7 @@ import math
 #import matplotlib.ticker as ticker
 from collections import namedtuple
 import numpy as np
-import pandas as pd
+#import pandas as pd
 
 K_B = 8.617332478e-5  # eV / K
 c   = 299792.458      # km / s
