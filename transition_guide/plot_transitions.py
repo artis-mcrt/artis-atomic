@@ -4,14 +4,14 @@ import math
 #import matplotlib.ticker as ticker
 from collections import namedtuple
 import numpy as np
-#import pandas as pd
+import pandas as pd
 
 K_B = 8.617332478e-5  # eV / K
 c   = 299792.458      # km / s
 
 plot_xmin = 3500        # plot range in angstroms
 plot_xmax = 7000
-T_K = 5000.0            # temperature in Kelvin (to determine level populations)
+T_K = 6000.0            # temperature in Kelvin (to determine level populations)
 sigma_v = 500.0        # Gaussian width in km/s
 Fe3overFe2 = 2.3        # number ratio of these ions
 
@@ -25,17 +25,19 @@ gaussian_window = 4     # Gaussian line profile are zero beyond __ sigmas from t
 plot_xmin_wide = plot_xmin * (1 - gaussian_window * sigma_v / c)
 plot_xmax_wide = plot_xmax * (1 + gaussian_window * sigma_v / c)
 
-ion = namedtuple('ion', 'Z ion_stage number_fraction')
+ion = namedtuple('ion', 'ion_stage number_fraction')
 
-elsymbol = 'Fe'
-ions = [ion(26, 1, 0.3),
-        ion(26, 2, 1/(1 + Fe3overFe2)),
-        ion(26, 3, Fe3overFe2/(1 + Fe3overFe2))]
+fe_ions = [
+           ion(1, 0.3),
+           ion(2, 1/(1 + Fe3overFe2)),
+           ion(3, Fe3overFe2/(1 + Fe3overFe2)),
+           ion(4, 0)
+          ]
 
-#elsymbol = 'O'
-#ions = [
-#        ion(8, 2, 1/(1 + Fe3overFe2)),
-#        ion(8, 3, Fe3overFe2/(1 + Fe3overFe2))]
+o_ions = [ion(1, 0.5),
+          ion(2, 0.5)]
+
+elementslist = [(8,o_ions),(26,fe_ions)]
 
 elsymbols = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P',
              'S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
@@ -50,28 +52,29 @@ roman_numerals = ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XI
                   'XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX')
 
 def main():
-    print('Loading transitions...')
-    transitions = load_transitions()
+    for (atomic_number,ions) in elementslist:
+        elsymbol = elsymbols[atomic_number]
+        transition_file = 'transitions_{}.txt'.format(elsymbol)
+        print('Loading {:}...'.format(transition_file))
+        transitions = load_transitions(transition_file)
 
-    #filter the line list
-    transitions = transitions[
-        (transitions[:]['lambda_angstroms'] >= plot_xmin_wide) &
-        (transitions[:]['lambda_angstroms'] <= plot_xmax_wide)# &
-        #(transitions[:]['forbidden'] == 1) &
-        #(transitions[:]['upper_has_permitted'] == 0)
-    ]
+        #filter the line list
+        transitions = transitions[
+            (transitions[:]['lambda_angstroms'] >= plot_xmin_wide) &
+            (transitions[:]['lambda_angstroms'] <= plot_xmax_wide) &
+            (transitions[:]['forbidden'] == 1) #&
+            #(transitions[:]['upper_has_permitted'] == 0)
+        ]
 
-    print('{:d} matching lines in plot range'.format(len(transitions)))
+        print('{:d} matching lines in plot range'.format(len(transitions)))
 
-    print('Generating spectra...')
-    xvalues, yvalues = generate_spectra(transitions)
+        print('Generating spectra...')
+        xvalues, yvalues = generate_spectra(transitions,atomic_number,ions)
 
-    print('Plotting...')
-    make_plot(xvalues, yvalues)
+        print('Plotting...')
+        make_plot(xvalues,yvalues,elsymbol,ions)
 
-def load_transitions():
-    transition_file = 'transitions_{}.txt'.format(elsymbol)
-
+def load_transitions(transition_file):
     if os.path.isfile(transition_file + '.tmp'):
         #read the sorted binary file (fast)
         transitions = pd.read_pickle(transition_file + '.tmp')
@@ -81,11 +84,11 @@ def load_transitions():
         transitions.sort_values(by='lambda_angstroms', inplace=True)
 
         #save the dataframe in binary format for next time
-        #transitions.to_pickle(transition_file + '.tmp')
+        transitions.to_pickle(transition_file + '.tmp')
 
     return transitions
 
-def generate_spectra(transitions):
+def generate_spectra(transitions,atomic_number,ions):
     xvalues = np.arange(plot_xmin_wide,plot_xmax_wide,step=plot_resolution)
     yvalues = np.zeros((len(ions), len(xvalues)))
 
@@ -95,7 +98,7 @@ def generate_spectra(transitions):
 
         ion_index = -1
         for tmpion_index in range(len(ions)):
-            if ions[tmpion_index].Z == line['Z'] and ions[tmpion_index].ion_stage == line['ion_stage']:
+            if atomic_number == line['Z'] and ions[tmpion_index].ion_stage == line['ion_stage']:
                 ion_index = tmpion_index
                 break
 
@@ -126,7 +129,7 @@ def print_line_details(line):
         ['upper state has no permitted lines','upper state has permitted lines'][line['upper_has_permitted']]))
     return
 
-def make_plot(xvalues, yvalues):
+def make_plot(xvalues,yvalues,elsymbol,ions):
     import matplotlib
     matplotlib.use('PDF')
     import matplotlib.pyplot as plt
@@ -136,24 +139,27 @@ def make_plot(xvalues, yvalues):
     yvalues_combined = np.zeros(len(xvalues))
     for ion_index in range(len(ions)+1):
         if ion_index < len(ions): #an ion subplot
-            yvalues_normalised = yvalues[ion_index] / max(yvalues[ion_index])
-            yvalues_combined += yvalues_normalised * ions[ion_index][2]
+            if max(yvalues[ion_index]) > 0.0:
+                yvalues_normalised = yvalues[ion_index] / max(yvalues[ion_index])
+                yvalues_combined += yvalues_normalised * ions[ion_index].number_fraction
+            else:
+                yvalues_normalised = yvalues[ion_index]
             ax[ion_index].plot(xvalues, yvalues_normalised, linewidth=1.5,
-                               label='{0} {1}'.format(elsymbols[ions[ion_index][0]], roman_numerals[ions[ion_index][1]]))
+                               label='{0} {1}'.format(elsymbol, roman_numerals[ions[ion_index].ion_stage]))
 
         else: # the subplot showing combined spectrum of multiple ions and observational data
             dir = os.path.dirname(__file__)
-            obsfile = 'dop_dered_SN2013aa_20140208_fc_final.txt'
-            obsdata = pd.read_csv(obsfile, delim_whitespace=True, header=None, names=['lambda_angstroms','flux'])
+            obsspectra = [('dop_dered_SN2013aa_20140208_fc_final.txt','SN2013aa +360d (Maguire)','0.3'),
+                        ('2010lp_20110928_fors2.txt','SN2010lp +264d (Taubenberger et al. 2013)','0.1')]
 
-            obsdata = obsdata[(obsdata[:]['lambda_angstroms'] > plot_xmin) & (obsdata[:]['lambda_angstroms'] < plot_xmax)]
+            for (filename, serieslabel, linecolor) in obsspectra:
+              obsfile = os.path.join(dir, 'spectra',filename)
+              obsdata = pd.read_csv(obsfile, delim_whitespace=True, header=None, names=['lambda_angstroms','flux'])
+              obsdata = obsdata[(obsdata[:]['lambda_angstroms'] > plot_xmin) & (obsdata[:]['lambda_angstroms'] < plot_xmax)]
+              obsyvalues = obsdata[:]['flux'] * max(yvalues_combined) / max(obsdata[:]['flux'])
+              ax[-1].plot(obsdata[:]['lambda_angstroms'], obsyvalues, lw=1, color='black', label=serieslabel, zorder=-1)
 
-            obsyvalues = obsdata[:]['flux'] * max(yvalues_combined) / max(obsdata[:]['flux'])
-#            import scipy.signal
-#            obsyvalues = scipy.signal.savgol_filter(obsyvalues, 15, 3)
-            ax[-1].plot(obsdata[:]['lambda_angstroms'], obsyvalues, lw=1, color='black', label='SN2013aa +360d (Maguire)', zorder=-1)
-
-            combined_label = ' + '.join(['({0:.1f} * {1} {2})'.format(ion[2], elsymbols[ion[0]], roman_numerals[ion[1]]) for ion in ions])
+            combined_label = ' + '.join(['({0:.1f} * {1} {2})'.format(ion.number_fraction, elsymbol, roman_numerals[ion.ion_stage]) for ion in ions])
             ax[-1].plot(xvalues, yvalues_combined, lw=1.5, label=combined_label)
             ax[-1].set_xlabel(r'Wavelength ($\AA$)')
 
