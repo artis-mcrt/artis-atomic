@@ -449,7 +449,8 @@ No matched Hillier levels for Nahar cross section of 6Do index 7 [3d4    (5D ) 6
 No matched Hillier levels for Nahar cross section of 4De index 50 [3d4    (5D )10g  X4D ] (E_threshold=2.20 eV)
 No matched Hillier levels for Nahar cross section of 4Fo index 2 [3d4    (3F ) 4p  y4Fo] (E_threshold=26.28 eV)
 No matched Hillier levels for Nahar cross section of 4Pe index 11 [3d4    (5D ) 5d  k4P ] (E_threshold=11.50 eV)
-No matched Hillier levels for Nahar cross section of 4Ge index 1 [Eqv st (0S ) 0s  a4G ] (E_threshold=49.86 eV)
+Replacing Nahar configuration of 'Eqv st (0S ) 0s  a4G ' with '3d5_4Ge'
+Matched Nahar phixs for 4Ge index 1 '3d5_4Ge' (4.002 eV) to <E>=4.002 eV: [3d5_4Ge[11/2] (3.998 eV), 3d5_4Ge[9/2] (4.004 eV), 3d5_4Ge[5/2] (4.005 eV), 3d5_4Ge[7/2] (4.005 eV)]
 No matched Hillier levels for Nahar cross section of 6Do index 13 [3d4    (5D ) 9f  n6Do] (E_threshold=2.72 eV)
 Matched Nahar phixs for 6Pe index 2 '3d4    (5D ) 5d  b6P ' (42.776 eV) to <E>=42.802 eV: [3d4(5D)5d_6Pe[5/2] (42.792 eV), 3d4(5D)5d_6Pe[3/2] (42.793 eV), 3d4(5D)5d_6Pe[7/2] (42.813 eV)]
 Matched Nahar phixs for 6Se index 2 '3d4    (5D ) 4d  b6S ' (35.670 eV) to <E>=36.298 eV: [3d4(5D)4d_6Se[5/2] (36.298 eV)]
@@ -847,7 +848,7 @@ No matched Hillier levels for Nahar cross section of 4Ge index 38 [3d4    (3P ) 
 No matched Hillier levels for Nahar cross section of 4Fo index 25 [3d4    (3G ) 6p  b4Fo] (E_threshold=6.04 eV)
 No matched Hillier levels for Nahar cross section of 6Fo index 13 [3d4    (5D ) 8f  n6Fo] (E_threshold=3.44 eV)
 No matched Hillier levels for Nahar cross section of 4Ge index 44 [3d4    (3H ) 7d  R4G ] (E_threshold=2.33 eV)
-Included 1000 levels from Hillier dataset and added 666 levels from Nahar phixs tables for a total of 1666 levels
+Included 1000 levels from Hillier dataset and added 665 levels from Nahar phixs tables for a total of 1665 levels
 No Hiller or Nahar state to match with photoionization crosssection of 6Lo index 3
 No Hiller or Nahar state to match with photoionization crosssection of 6Le index 1
 No Hiller or Nahar state to match with photoionization crosssection of 6Lo index 2
