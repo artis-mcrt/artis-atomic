@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import math
-#import matplotlib.ticker as ticker
+# import matplotlib.ticker as ticker
 from collections import namedtuple
 import numpy as np
 import pandas as pd
@@ -12,7 +12,7 @@ c   = 299792.458      # km / s
 plot_xmin = 3500        # plot range in angstroms
 plot_xmax = 7000
 T_K = 6000.0            # temperature in Kelvin (to determine level populations)
-sigma_v = 500.0        # Gaussian width in km/s
+sigma_v = 500.0         # Gaussian width in km/s
 Fe3overFe2 = 2.3        # number ratio of these ions
 
 print_lines = True     # output the details of each transition in the plot range to the standard output
@@ -21,7 +21,7 @@ plot_resolution = int((plot_xmax-plot_xmin)/1000) # resolution of the plot in An
 
 gaussian_window = 4     # Gaussian line profile are zero beyond __ sigmas from the centre
 
-#also calculate wavelengths outside the plot range to include lines whose edges pass through the plot range
+# also calculate wavelengths outside the plot range to include lines whose edges pass through the plot range
 plot_xmin_wide = plot_xmin * (1 - gaussian_window * sigma_v / c)
 plot_xmax_wide = plot_xmax * (1 + gaussian_window * sigma_v / c)
 
