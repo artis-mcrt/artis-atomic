@@ -153,7 +153,8 @@ def f_flux_factor(line, T_K):
 
 def print_line_details(line, T_K):
     print('lambda {:7.1f}, Flux {:8.2E}, {:2s} {:3s} {:}, {:}'.format(
-        line['lambda_angstroms'], f_flux_factor(line, T_K), elsymbols[line['Z']],
+        line['lambda_angstroms'], f_flux_factor(line, T_K),
+        elsymbols[line['Z']],
         roman_numerals[line['ion_stage']], [
             'permitted', 'forbidden'][line['forbidden']],
         ['upper state has no permitted lines',
@@ -188,28 +189,32 @@ def make_plot(xvalues, yvalues, elsymbol, ions, args):
         else:
             # the subplot showing combined spectrum of multiple ions
             # and observational data
-            dir = os.path.dirname(__file__)
+            scriptdir = os.path.dirname(__file__)
             obsspectra = [
-                # ('dop_dered_SN2013aa_20140208_fc_final.txt','SN2013aa +360d (Maguire)','0.3'),
-                # ('2010lp_20110928_fors2.txt','SN2010lp +264d (Taubenberger et al. 2013)','0.1'),
+                # ('dop_dered_SN2013aa_20140208_fc_final.txt',
+                #  'SN2013aa +360d (Maguire)','0.3'),
+                # ('2010lp_20110928_fors2.txt',
+                #  'SN2010lp +264d (Taubenberger et al. 2013)','0.1'),
                 ('2003du_20031213_3219_8822_00.txt',
                  'SN2003du +221.3d (Stanishev et al. 2007)', '0.0'),
             ]
 
             for (filename, serieslabel, linecolor) in obsspectra:
-                obsfile = os.path.join(dir, 'spectra', filename)
+                obsfile = os.path.join(scriptdir, 'spectra', filename)
                 obsdata = pd.read_csv(obsfile, delim_whitespace=True,
                                       header=None, names=[
-                                        'lambda_angstroms', 'flux'])
-                obsdata = obsdata[(obsdata[:]['lambda_angstroms'] > args.xmin) & (
-                    obsdata[:]['lambda_angstroms'] < args.xmax)]
+                                          'lambda_angstroms', 'flux'])
+                obsdata = obsdata[
+                    (obsdata[:]['lambda_angstroms'] > args.xmin) &
+                    (obsdata[:]['lambda_angstroms'] < args.xmax)]
                 obsyvalues = obsdata[:][
                     'flux'] * max(yvalues_combined) / max(obsdata[:]['flux'])
                 ax[-1].plot(obsdata[:]['lambda_angstroms'], obsyvalues,
                             lw=1, color='black', label=serieslabel, zorder=-1)
 
             combined_label = ' + '.join(['({0:.1f} * {1} {2})'.format(
-                ion.number_fraction, elsymbol, roman_numerals[ion.ion_stage]) for ion in ions])
+                ion.number_fraction, elsymbol, roman_numerals[ion.ion_stage])
+                for ion in ions])
             ax[-1].plot(xvalues, yvalues_combined,
                         lw=1.5, label=combined_label)
             ax[-1].set_xlabel(r'Wavelength ($\AA$)')
