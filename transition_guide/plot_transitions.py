@@ -10,12 +10,12 @@ K_B = 8.617332478e-5  # eV / K
 c   = 299792.458      # km / s
 
 plot_xmin = 3500        # plot range in angstroms
-plot_xmax = 7000
-T_K = 6000.0            # temperature in Kelvin (to determine level populations)
-sigma_v = 500.0         # Gaussian width in km/s
+plot_xmax = 8000
+T_K = 8000.0            # temperature in Kelvin (to determine level populations)
+sigma_v = 2500.0         # Gaussian width in km/s
 Fe3overFe2 = 2.3        # number ratio of these ions
 
-print_lines = True     # output the details of each transition in the plot range to the standard output
+print_lines = False     # output the details of each transition in the plot range to the standard output
 
 plot_resolution = int((plot_xmax-plot_xmin)/1000) # resolution of the plot in Angstroms
 
@@ -37,7 +37,9 @@ fe_ions = [
 o_ions = [ion(1, 0.5),
           ion(2, 0.5)]
 
-elementslist = [(8,o_ions),(26,fe_ions)]
+co_ions = [ion(2, 1.0)]
+
+elementslist = [(8,o_ions),(26,fe_ions),(27,co_ions)]
 
 elsymbols = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P',
              'S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
@@ -84,7 +86,7 @@ def load_transitions(transition_file):
         transitions.sort_values(by='lambda_angstroms', inplace=True)
 
         #save the dataframe in binary format for next time
-        transitions.to_pickle(transition_file + '.tmp')
+        # transitions.to_pickle(transition_file + '.tmp')
 
     return transitions
 
@@ -134,7 +136,7 @@ def make_plot(xvalues,yvalues,elsymbol,ions):
     matplotlib.use('PDF')
     import matplotlib.pyplot as plt
 
-    fig, ax = plt.subplots(len(ions)+1, 1, sharex=True, figsize=(8,10), tight_layout={"pad":0.2, "w_pad":0.0, "h_pad":0.0})
+    fig, ax = plt.subplots(len(ions)+1, 1, sharex=True, figsize=(6,6), tight_layout={"pad":0.2, "w_pad":0.0, "h_pad":0.0})
 
     yvalues_combined = np.zeros(len(xvalues))
     for ion_index in range(len(ions)+1):
@@ -149,8 +151,11 @@ def make_plot(xvalues,yvalues,elsymbol,ions):
 
         else: # the subplot showing combined spectrum of multiple ions and observational data
             dir = os.path.dirname(__file__)
-            obsspectra = [('dop_dered_SN2013aa_20140208_fc_final.txt','SN2013aa +360d (Maguire)','0.3'),
-                        ('2010lp_20110928_fors2.txt','SN2010lp +264d (Taubenberger et al. 2013)','0.1')]
+            obsspectra = [
+                #('dop_dered_SN2013aa_20140208_fc_final.txt','SN2013aa +360d (Maguire)','0.3'),
+                #('2010lp_20110928_fors2.txt','SN2010lp +264d (Taubenberger et al. 2013)','0.1'),
+                ('2003du_20031213_3219_8822_00.txt', 'SN2003du +221.3d (Stanishev et al. 2007)','0.0'),
+                         ]
 
             for (filename, serieslabel, linecolor) in obsspectra:
               obsfile = os.path.join(dir, 'spectra',filename)
@@ -164,7 +169,7 @@ def make_plot(xvalues,yvalues,elsymbol,ions):
             ax[-1].set_xlabel(r'Wavelength ($\AA$)')
 
         ax[ion_index].set_xlim(xmin=plot_xmin, xmax=plot_xmax)
-        ax[ion_index].legend(loc='best', handlelength=2, frameon=False, numpoints=1, prop={'size': 13})
+        ax[ion_index].legend(loc='best', handlelength=2, frameon=False, numpoints=1, prop={'size': 10})
         ax[ion_index].set_ylabel(r'$\propto$ F$_\lambda$')
 
     #ax.set_ylim(ymin=-0.05,ymax=1.1)
