@@ -212,8 +212,10 @@ def make_plot(xvalues, yvalues, elsymbol, ions, args):
                 ax[-1].plot(obsdata[:]['lambda_angstroms'], obsyvalues,
                             lw=1, color='black', label=serieslabel, zorder=-1)
 
-            combined_label = ' + '.join(['({0:.1f} * {1} {2})'.format(
-                ion.number_fraction, elsymbol, roman_numerals[ion.ion_stage])
+            combined_label = ' + '.join([
+                '({0:.1f} * {1} {2})'.format(
+                    ion.number_fraction, elsymbol,
+                    roman_numerals[ion.ion_stage])
                 for ion in ions])
             ax[-1].plot(xvalues, yvalues_combined,
                         lw=1.5, label=combined_label)
