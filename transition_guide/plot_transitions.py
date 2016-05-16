@@ -1,29 +1,19 @@
 #!/usr/bin/env python3
 import os
 import math
+import argparse
 # import matplotlib.ticker as ticker
+from astropy import constants as const
+from astropy import units as u
 from collections import namedtuple
 import numpy as np
 import pandas as pd
 
-K_B = 8.617332478e-5  # eV / K
-c   = 299792.458      # km / s
+K_B = const.k_B.to('eV / K').value
+c   = const.c.to('km / s').value
 
-plot_xmin = 3500        # plot range in angstroms
-plot_xmax = 8000
-T_K = 8000.0            # temperature in Kelvin (to determine level populations)
-sigma_v = 2500.0         # Gaussian width in km/s
 Fe3overFe2 = 2.3        # number ratio of these ions
 
-print_lines = False     # output the details of each transition in the plot range to the standard output
-
-plot_resolution = int((plot_xmax-plot_xmin)/1000) # resolution of the plot in Angstroms
-
-gaussian_window = 4     # Gaussian line profile are zero beyond __ sigmas from the centre
-
-# also calculate wavelengths outside the plot range to include lines whose edges pass through the plot range
-plot_xmin_wide = plot_xmin * (1 - gaussian_window * sigma_v / c)
-plot_xmax_wide = plot_xmax * (1 + gaussian_window * sigma_v / c)
 
 ion = namedtuple('ion', 'ion_stage number_fraction')
 
@@ -54,6 +44,27 @@ roman_numerals = ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XI
                   'XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX')
 
 def main():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+        description='Plot estimated spectra from bound-bound transitions.')
+    parser.add_argument('-xmin', type=int, default=3500,
+        help='Plot range: minimum wavelength in Angstroms')
+    parser.add_argument('-xmax', type=int, default=8000,
+        help='Plot range: maximum wavelength in Angstroms')
+    parser.add_argument('-T', type=float, dest='T', default=8000.0,
+        help='Temperature in Kelvin')
+    parser.add_argument('-sigma_v', type=float, default=8000.0,
+        help='Gaussian width in km/s')
+    parser.add_argument('-gaussian_window', type=float, default=4,
+        help='Gaussian line profile are zero beyond __ sigmas from the centre')
+    parser.add_argument('--print-lines', action='store_true',
+        help='Temperature in Kelvin')
+    args = parser.parse_args()
+
+    # also calculate wavelengths outside the plot range to include lines whose edges pass through the plot range
+    plot_xmin_wide = args.xmin * (1 - args.gaussian_window * args.sigma_v / c)
+    plot_xmax_wide = args.xmax * (1 + args.gaussian_window * args.sigma_v / c)
+
     for (atomic_number,ions) in elementslist:
         elsymbol = elsymbols[atomic_number]
         transition_file = 'transitions_{}.txt'.format(elsymbol)
@@ -71,10 +82,10 @@ def main():
         print('{:d} matching lines in plot range'.format(len(transitions)))
 
         print('Generating spectra...')
-        xvalues, yvalues = generate_spectra(transitions,atomic_number,ions)
+        xvalues, yvalues = generate_spectra(transitions,atomic_number,ions,plot_xmin_wide,plot_xmax_wide,args)
 
         print('Plotting...')
-        make_plot(xvalues,yvalues,elsymbol,ions)
+        make_plot(xvalues,yvalues,elsymbol,ions,args)
 
 def load_transitions(transition_file):
     if os.path.isfile(transition_file + '.tmp'):
@@ -90,13 +101,15 @@ def load_transitions(transition_file):
 
     return transitions
 
-def generate_spectra(transitions,atomic_number,ions):
-    xvalues = np.arange(plot_xmin_wide,plot_xmax_wide,step=plot_resolution)
+def generate_spectra(transitions,atomic_number,ions,plot_xmin_wide,plot_xmax_wide,args):
+    plot_resolution = int((args.xmax - args.xmin)/1000) # resolution of the plot in Angstroms
+
+    xvalues = np.arange(args.xmin,args.xmax,step=plot_resolution)
     yvalues = np.zeros((len(ions), len(xvalues)))
 
-    #iterate over lines
+    # iterate over lines
     for index, line in transitions.iterrows():
-        flux_factor = f_flux_factor(line)
+        flux_factor = f_flux_factor(line,args.T)
 
         ion_index = -1
         for tmpion_index in range(len(ions)):
@@ -105,23 +118,24 @@ def generate_spectra(transitions,atomic_number,ions):
                 break
 
         if ion_index != -1:
-            if print_lines:
+            if args.print_lines:
                 print_line_details(line)
 
-            #contribute the Gaussian line profile to the discrete flux bins
+            # contribute the Gaussian line profile to the discrete flux bins
 
-            centre_index = int(round((line['lambda_angstroms'] - plot_xmin_wide) / plot_resolution))
-            sigma_angstroms = line['lambda_angstroms'] * sigma_v / c
+            centre_index = int(round((line['lambda_angstroms'] - args.xmin) / plot_resolution))
+            sigma_angstroms = line['lambda_angstroms'] * args.sigma_v / c
             sigma_gridpoints = int(math.ceil(sigma_angstroms / plot_resolution))
-            window_left_index = max(int(centre_index - gaussian_window * sigma_gridpoints), 0)
-            window_right_index = min(int(centre_index + gaussian_window * sigma_gridpoints), len(xvalues))
+            window_left_index = max(int(centre_index - args.gaussian_window * sigma_gridpoints), 0)
+            window_right_index = min(int(centre_index + args.gaussian_window * sigma_gridpoints), len(xvalues))
 
-            for x in range(window_left_index,window_right_index):
-                yvalues[ion_index][x] += flux_factor * math.exp(-((x - centre_index)*plot_resolution/sigma_angstroms) ** 2) / sigma_angstroms
+            for x in range(window_left_index, window_right_index):
+                if (0 < x < len(xvalues)):
+                    yvalues[ion_index][x] += flux_factor * math.exp(-((x - centre_index) * plot_resolution/sigma_angstroms) ** 2) / sigma_angstroms
 
     return xvalues, yvalues
 
-def f_flux_factor(line):
+def f_flux_factor(line,T_K):
     return line['A'] * line['upper_statweight'] * math.exp(-line['upper_energy_Ev']/K_B/T_K)
 
 def print_line_details(line):
@@ -131,7 +145,7 @@ def print_line_details(line):
         ['upper state has no permitted lines','upper state has permitted lines'][line['upper_has_permitted']]))
     return
 
-def make_plot(xvalues,yvalues,elsymbol,ions):
+def make_plot(xvalues,yvalues,elsymbol,ions,args):
     import matplotlib
     matplotlib.use('PDF')
     import matplotlib.pyplot as plt
@@ -160,7 +174,7 @@ def make_plot(xvalues,yvalues,elsymbol,ions):
             for (filename, serieslabel, linecolor) in obsspectra:
               obsfile = os.path.join(dir, 'spectra',filename)
               obsdata = pd.read_csv(obsfile, delim_whitespace=True, header=None, names=['lambda_angstroms','flux'])
-              obsdata = obsdata[(obsdata[:]['lambda_angstroms'] > plot_xmin) & (obsdata[:]['lambda_angstroms'] < plot_xmax)]
+              obsdata = obsdata[(obsdata[:]['lambda_angstroms'] > args.xmin) & (obsdata[:]['lambda_angstroms'] < args.xmax)]
               obsyvalues = obsdata[:]['flux'] * max(yvalues_combined) / max(obsdata[:]['flux'])
               ax[-1].plot(obsdata[:]['lambda_angstroms'], obsyvalues, lw=1, color='black', label=serieslabel, zorder=-1)
 
@@ -168,7 +182,7 @@ def make_plot(xvalues,yvalues,elsymbol,ions):
             ax[-1].plot(xvalues, yvalues_combined, lw=1.5, label=combined_label)
             ax[-1].set_xlabel(r'Wavelength ($\AA$)')
 
-        ax[ion_index].set_xlim(xmin=plot_xmin, xmax=plot_xmax)
+        ax[ion_index].set_xlim(xmin=args.xmin, xmax=args.xmax)
         ax[ion_index].legend(loc='best', handlelength=2, frameon=False, numpoints=1, prop={'size': 10})
         ax[ion_index].set_ylabel(r'$\propto$ F$_\lambda$')
 
