@@ -19,16 +19,16 @@ Fe3overFe2 = 2.3        # number ratio of these ions
 iontuple = namedtuple('ion', 'ion_stage number_fraction')
 
 fe_ions = [
-    iontuple(1, 0.3),
-    iontuple(2, 1 / (1 + Fe3overFe2)),
-    iontuple(3, Fe3overFe2 / (1 + Fe3overFe2)),
-    iontuple(4, 0)
+    iontuple(1, 0.2),
+    iontuple(2, 0.3),
+    iontuple(3, 0.7),
+    iontuple(4, 0.1)
 ]
 
 o_ions = [iontuple(1, 0.5),
           iontuple(2, 0.5)]
 
-co_ions = [iontuple(2, 1.0)]
+co_ions = [iontuple(3, 1.0)]
 
 elementslist = [(8, o_ions), (26, fe_ions), (27, co_ions)]
 
@@ -43,11 +43,11 @@ def main():
         description='Plot estimated spectra from bound-bound transitions.')
     parser.add_argument('-xmin', type=int, default=3500,
                         help='Plot range: minimum wavelength in Angstroms')
-    parser.add_argument('-xmax', type=int, default=8000,
+    parser.add_argument('-xmax', type=int, default=7000,
                         help='Plot range: maximum wavelength in Angstroms')
-    parser.add_argument('-T', type=float, dest='T', default=8000.0,
+    parser.add_argument('-T', type=float, dest='T', default=7500.0,
                         help='Temperature in Kelvin')
-    parser.add_argument('-sigma_v', type=float, default=8000.0,
+    parser.add_argument('-sigma_v', type=float, default=4000.0,  # 4000 matches the data
                         help='Gaussian width in km/s')
     parser.add_argument('-gaussian_window', type=float, default=4,
                         help='Gaussian line profile are zero beyond _n_ sigmas'
@@ -109,9 +109,10 @@ def generate_spectra(transitions, atomic_number, ions, plot_xmin_wide,
     xvalues = np.arange(args.xmin, args.xmax, step=plot_resolution)
     yvalues = np.zeros((len(ions), len(xvalues)))
 
+    transitions['flux_factor'] = transitions.apply(f_flux_factor, axis=1, args=(args.T,))
+
     # iterate over lines
     for _, line in transitions.iterrows():
-        flux_factor = f_flux_factor(line, args.T)
 
         ion_index = -1
         for tmpion_index, ion in enumerate(ions):
@@ -126,22 +127,20 @@ def generate_spectra(transitions, atomic_number, ions, plot_xmin_wide,
 
             # contribute the Gaussian line profile to the discrete flux bins
 
+            flux_factor = line['flux_factor']
             centre_index = int(round((line['lambda_angstroms'] - args.xmin) /
                                      plot_resolution))
             sigma_angstroms = line['lambda_angstroms'] * args.sigma_v / c
-            sigma_gridpoints = int(
-                math.ceil(sigma_angstroms / plot_resolution))
-            window_left_index = max(
-                int(centre_index - args.gaussian_window * sigma_gridpoints), 0)
+            sigma_gridpoints = int(math.ceil(sigma_angstroms / plot_resolution))
+            window_left_index = max(int(centre_index - args.gaussian_window * sigma_gridpoints), 0)
             window_right_index = min(
                 int(centre_index + args.gaussian_window * sigma_gridpoints),
                 len(xvalues))
 
             for x in range(window_left_index, window_right_index):
                 if 0 < x < len(xvalues):
-                    yvalues[ion_index][x] += flux_factor * math.exp(-(
-                        (x - centre_index) * plot_resolution / sigma_angstroms
-                        ) ** 2) / sigma_angstroms
+                    yvalues[ion_index][x] += flux_factor * math.exp(
+                        -((x - centre_index) * plot_resolution / sigma_angstroms) ** 2) / sigma_angstroms
 
     return xvalues, yvalues
 
@@ -152,13 +151,14 @@ def f_flux_factor(line, T_K):
 
 
 def print_line_details(line, T_K):
-    print('lambda {:7.1f}, Flux {:8.2E}, {:2s} {:3s} {:}, {:}'.format(
-        line['lambda_angstroms'], f_flux_factor(line, T_K),
+    print('lambda {:7.1f}, Flux {:8.2E}, {:2s} {:3s} {:}, {:}, {:}, {:}'.format(
+        line['lambda_angstroms'], line['flux_factor'],
         elsymbols[line['Z']],
-        roman_numerals[line['ion_stage']], [
-            'permitted', 'forbidden'][line['forbidden']],
-        ['upper state has no permitted lines',
-         'upper state has permitted lines'][line['upper_has_permitted']]))
+        roman_numerals[line['ion_stage']],
+        ['permitted', 'forbidden'][line['forbidden']],
+        ['upper metastable', 'upper not metastable'][line['upper_has_permitted']],
+        line['lower_level'],
+        line['upper_level']))
     return
 
 
