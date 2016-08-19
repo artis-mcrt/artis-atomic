@@ -30,7 +30,8 @@ o_ions = [iontuple(1, 0.5),
 
 co_ions = [iontuple(3, 1.0)]
 
-elementslist = [(8, o_ions), (26, fe_ions), (27, co_ions)]
+#elementslist = [(8, o_ions), (26, fe_ions), (27, co_ions)]
+elementslist = [(26, fe_ions),]
 
 roman_numerals = ('', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX',
                   'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII',
@@ -45,7 +46,7 @@ def main():
                         help='Plot range: minimum wavelength in Angstroms')
     parser.add_argument('-xmax', type=int, default=7000,
                         help='Plot range: maximum wavelength in Angstroms')
-    parser.add_argument('-T', type=float, dest='T', default=7500.0,
+    parser.add_argument('-T', type=float, dest='T', default=3000.0,
                         help='Temperature in Kelvin')
     parser.add_argument('-sigma_v', type=float, default=4000.0,  # 4000 matches the data
                         help='Gaussian width in km/s')
