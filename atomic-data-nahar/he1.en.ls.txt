@@ -1,0 +1,435 @@
+C************************** 786 ******************************************c
+
+Ref. "Photoionization and Electron-Ion Recombination of He I",
+     Sultana N. Nahar, New Astronomy 15, 417-426 (2010)
+
+C************************************************************************c
+
+
+  He I : Calculated LS term energies for (n-max=10, l-max=7)
+
+
+ File contents
+ -------------
+
+ i) Table of target/core states in the wavefunction expansion
+
+ii) Table of bound (negative) state energies (with spectroscopic notation)
+
+iii) Table of complete set (both negative and positive) of energies
+
+
+--------------------------------------------------------------------------
+
+ i) Table of target/core states in the wavefunction expansion
+-------------------------------------------------------------
+
+ Z =  2, no of target/core electrons=  1
+
+ no of target/core states in WF = 10
+
+ target states and energies:
+
+  1  1s       2S    0.00000E+00
+  2  2s       2S    3.00000E+00
+  3  2p       2Po   3.00000E+00
+  4  3d       2D    3.55560E+00
+  5  3p       2Po   3.55560E+00
+  6  3s       2S    3.55560E+00
+  7  4f       2Fo   3.75000E+00
+  8  4d       2D    3.75000E+00
+  9  4p       2Po   3.75000E+00
+ 10  4s       2S    3.75000E+00
+
+------------------------------------------------------------------------
+
+ii) Table of bound (negative) state energies (with spectroscopic notation)
+-------------------------------------------------------------------------
+
+ Ion ground state = 10000200.0000, Eo(Ry) = -1.7738E+00 =-IP
+
+ lmax(for the outer electron) =   7
+ Total number of bound states below threshold (with n= 10 & lmax= 9) =  99
+
+ SPECTROSCOPIC ENERGY TABLE:
+
+ i) Table lists only the bound states below the ionization threshold
+ However,  results include both the negative and positive energies
+ ii) Each LS-term is preceded by an alphabetic character to represent 
+ the seniority of the state. The states of an even parity symmetry 
+ have an ascending order and of an odd parity symmetry have a
+ descending order of alphabets. The alphabetic order starts with lower
+ case and continues in to upper case.
+ iii) The states with an valence electron represented by "0s" is an
+ equivalent electron state for which the core configuration is to be 
+ corrected manually.
+ iv) All energies listed below are relative to the core ground state.
+ Hence, for a state that does not couple to core ground state, the
+ ionization energy is sum of (this energy + energy of the core that 
+ couples to the the state)
+
+       State                 E(Ry)
+
+ 1s2              a1S        -1.77376
+ 1s     (2S ) 2s  b1S        -0.28900
+ 1s     (2S ) 3s  c1S        -0.12170
+ 1s     (2S ) 4s  d1S        -0.06682
+ 1s     (2S ) 5s  e1S        -0.04218
+ 1s     (2S ) 6s  f1S        -0.02902
+ 1s     (2S ) 7s  g1S        -0.02119
+ 1s     (2S ) 8s  h1S        -0.01614
+ 1s     (2S ) 9s  i1S        -0.01271
+ 1s     (2S )10s  j1S        -0.01026
+ 1s     (2S ) 3d  a1D        -0.11123
+ 1s     (2S ) 4d  b1D        -0.06255
+ 1s     (2S ) 5d  c1D        -0.04003
+ 1s     (2S ) 6d  d1D        -0.02779
+ 1s     (2S ) 7d  e1D        -0.02042
+ 1s     (2S ) 8d  f1D        -0.01563
+ 1s     (2S ) 9d  g1D        -0.01235
+ 1s     (2S )10d  h1D        -0.01000
+ 1s     (2S ) 5g  a1G        -0.04000
+ 1s     (2S ) 6g  b1G        -0.02778
+ 1s     (2S ) 7g  c1G        -0.02041
+ 1s     (2S ) 8g  d1G        -0.01563
+ 1s     (2S ) 9g  e1G        -0.01235
+ 1s     (2S )10g  f1G        -0.01000
+ 1s     (2S ) 7i  a1I        -0.02041
+ 1s     (2S ) 8i  b1I        -0.01562
+ 1s     (2S ) 9i  c1I        -0.01235
+ 1s     (2S )10i  d1I        -0.01000
+ 1s     (2S ) 2p  z1Po       -0.24697
+ 1s     (2S ) 3p  y1Po       -0.11005
+ 1s     (2S ) 4p  x1Po       -0.06203
+ 1s     (2S ) 5p  w1Po       -0.03975
+ 1s     (2S ) 6p  v1Po       -0.02763
+ 1s     (2S ) 7p  u1Po       -0.02032
+ 1s     (2S ) 8p  t1Po       -0.01556
+ 1s     (2S ) 9p  s1Po       -0.01230
+ 1s     (2S ) 4f  z1Fo       -0.06251
+ 1s     (2S ) 5f  y1Fo       -0.04001
+ 1s     (2S ) 6f  x1Fo       -0.02778
+ 1s     (2S ) 7f  w1Fo       -0.02041
+ 1s     (2S ) 8f  v1Fo       -0.01563
+ 1s     (2S ) 9f  u1Fo       -0.01235
+ 1s     (2S )10f  t1Fo       -0.01000
+ 1s     (2S ) 6h  z1Ho       -0.02778
+ 1s     (2S ) 7h  y1Ho       -0.02041
+ 1s     (2S ) 8h  x1Ho       -0.01563
+ 1s     (2S ) 9h  w1Ho       -0.01235
+ 1s     (2S )10h  v1Ho       -0.01000
+ 1s     (2S ) 2s  a3S        -0.35030
+ 1s     (2S ) 3s  b3S        -0.13734
+ 1s     (2S ) 4s  c3S        -0.07300
+ 1s     (2S ) 5s  d3S        -0.04524
+ 1s     (2S ) 6s  e3S        -0.03075
+ 1s     (2S ) 7s  f3S        -0.02225
+ 1s     (2S ) 8s  g3S        -0.01685
+ 1s     (2S ) 9s  h3S        -0.01320
+ 1s     (2S )10s  i3S        -0.01062
+ 1s     (2S ) 3d  a3D        -0.11126
+ 1s     (2S ) 4d  b3D        -0.06257
+ 1s     (2S ) 5d  c3D        -0.04004
+ 1s     (2S ) 6d  d3D        -0.02780
+ 1s     (2S ) 7d  e3D        -0.02042
+ 1s     (2S ) 8d  f3D        -0.01563
+ 1s     (2S ) 9d  g3D        -0.01235
+ 1s     (2S )10d  h3D        -0.01000
+ 1s     (2S ) 5g  a3G        -0.04000
+ 1s     (2S ) 6g  b3G        -0.02778
+ 1s     (2S ) 7g  c3G        -0.02041
+ 1s     (2S ) 8g  d3G        -0.01563
+ 1s     (2S ) 9g  e3G        -0.01235
+ 1s     (2S )10g  f3G        -0.01000
+ 1s     (2S ) 7i  a3I        -0.02041
+ 1s     (2S ) 8i  b3I        -0.01562
+ 1s     (2S ) 9i  c3I        -0.01235
+ 1s     (2S )10i  d3I        -0.01000
+ 1s     (2S ) 2p  z3Po       -0.26557
+ 1s     (2S ) 3p  y3Po       -0.11592
+ 1s     (2S ) 4p  x3Po       -0.06455
+ 1s     (2S ) 5p  w3Po       -0.04105
+ 1s     (2S ) 6p  v3Po       -0.02839
+ 1s     (2S ) 7p  u3Po       -0.02079
+ 1s     (2S ) 8p  t3Po       -0.01588
+ 1s     (2S ) 9p  s3Po       -0.01252
+ 1s     (2S )10p  r3Po       -0.01013
+ 1s     (2S ) 4f  z3Fo       -0.06251
+ 1s     (2S ) 5f  y3Fo       -0.04001
+ 1s     (2S ) 6f  x3Fo       -0.02778
+ 1s     (2S ) 7f  w3Fo       -0.02041
+ 1s     (2S ) 8f  v3Fo       -0.01563
+ 1s     (2S ) 9f  u3Fo       -0.01235
+ 1s     (2S )10f  t3Fo       -0.01000
+ 1s     (2S ) 6h  z3Ho       -0.02778
+ 1s     (2S ) 7h  y3Ho       -0.02041
+ 1s     (2S ) 8h  x3Ho       -0.01563
+ 1s     (2S ) 9h  w3Ho       -0.01235
+ 1s     (2S )10h  v3Ho       -0.01000
+ 1s     (2S ) 8k  z3Ko       -0.01562
+ 1s     (2S ) 9k  y3Ko       -0.01235
+ 1s     (2S )10k  x3Ko       -0.01000
+
+---------------------------------------------------------------------------
+
+iii) Table of complete set (both negative and positive) of energies
+-------------------------------------------------------------------
+
+In conveninent numerical format for various applications
+
+Table explanation:
+
+Line 1:  Z nelc typ -> Nuclear charge, number of core electrons, E=energy file
+
+This line is followed by sets of energies belonging to various SLpi
+symmetries. Each SLpi has the follwoing lines.
+
+Line : (2S+1) L pi(=0 for even, =1 for odd parities) Ne (number of states)
+
+Line : Core state (see target table) and energy
+
+Lines - Ne number of lines: Index, T(valence electron state)/C(equivalent
+     electron state), Core state number, n, l, energy (Ry)
+
+Ex: 1  T  1  3 0  -3.33037E-01 -> energy 1, Valence electron state, first
+core state (that is the ground state), n=3, l=0 (=s), energy in Ry
+
+------------------------------------------------------
+
+    2    1    E
+    1    0    0   10
+    1  0.000000E+00
+    1  C  0  0 0  -1.77376E+00
+    2  T  1  2 0  -2.89001E-01
+    3  T  1  3 0  -1.21703E-01
+    4  T  1  4 0  -6.68176E-02
+    5  T  1  5 0  -4.21786E-02
+    6  T  1  6 0  -2.90231E-02
+    7  T  1  7 0  -2.11860E-02
+    8  T  1  8 0  -1.61433E-02
+    9  T  1  9 0  -1.27082E-02
+   10  T  1 10 0  -1.02635E-02
+    1    1    0    8
+    3  3.000000E+00
+    1  T  3  3 1   2.83954E+00
+    2  T  3  4 1   2.91994E+00
+    3  T  3  5 1   2.95165E+00
+    4  T  3  6 1   2.96761E+00
+    5  T  3  7 1   2.97677E+00
+    6  T  3  8 1   2.98252E+00
+    7  T  3  9 1   2.98637E+00
+    8  T  3 10 1   2.98907E+00
+    1    2    0    8
+    1  0.000000E+00
+    1  T  1  3 2  -1.11229E-01
+    2  T  1  4 2  -6.25505E-02
+    3  T  1  5 2  -4.00322E-02
+    4  T  1  6 2  -2.77937E-02
+    5  T  1  7 2  -2.04172E-02
+    6  T  1  8 2  -1.56308E-02
+    7  T  1  9 2  -1.23496E-02
+    8  T  1 10 2  -1.00029E-02
+    1    3    0    7
+    3  3.000000E+00
+    1  T  3  4 3   2.93604E+00
+    2  T  3  5 3   2.95925E+00
+    3  T  3  6 3   2.97180E+00
+    4  T  3  7 3   2.97933E+00
+    5  T  3  8 3   2.98420E+00
+    6  T  3  9 3   2.98753E+00
+    7  T  3 10 3   2.98991E+00
+    1    4    0    6
+    1  0.000000E+00
+    1  T  1  5 4  -4.00011E-02
+    2  T  1  6 4  -2.77785E-02
+    3  T  1  7 4  -2.04087E-02
+    4  T  1  8 4  -1.56253E-02
+    5  T  1  9 4  -1.23459E-02
+    6  T  1 10 4  -1.00002E-02
+    1    5    0    5
+    3  3.000000E+00
+    1  T  3  6 5   2.97215E+00
+    2  T  3  7 5   2.97954E+00
+    3  T  3  8 5   2.98434E+00
+    4  T  3  9 5   2.98763E+00
+    5  T  3 10 5   2.98998E+00
+    1    6    0    4
+    1  0.000000E+00
+    1  T  1  7 6  -2.04082E-02
+    2  T  1  8 6  -1.56250E-02
+    3  T  1  9 6  -1.23457E-02
+    4  T  1 10 6  -1.00000E-02
+    1    1    1    8
+    1  0.000000E+00
+    1  T  1  2 1  -2.46966E-01
+    2  T  1  3 1  -1.10045E-01
+    3  T  1  4 1  -6.20285E-02
+    4  T  1  5 1  -3.97536E-02
+    5  T  1  6 1  -2.76334E-02
+    6  T  1  7 1  -2.03163E-02
+    7  T  1  8 1  -1.55630E-02
+    8  T  1  9 1  -1.23020E-02
+    1    2    1    8
+    3  3.000000E+00
+    1  T  3  3 2   2.87265E+00
+    2  T  3  4 2   2.93098E+00
+    3  T  3  5 2   2.95676E+00
+    4  T  3  6 2   2.97039E+00
+    5  T  3  7 2   2.97845E+00
+    6  T  3  8 2   2.98362E+00
+    7  T  3  9 2   2.98713E+00
+    8  T  3 10 2   2.98962E+00
+    1    3    1    7
+    1  0.000000E+00
+    1  T  1  4 3  -6.25078E-02
+    2  T  1  5 3  -4.00099E-02
+    3  T  1  6 3  -2.77796E-02
+    4  T  1  7 3  -2.04087E-02
+    5  T  1  8 3  -1.56253E-02
+    6  T  1  9 3  -1.23460E-02
+    7  T  1 10 3  -1.00002E-02
+    1    4    1    6
+    3  3.000000E+00
+    1  T  3  5 4   2.95969E+00
+    2  T  3  6 4   2.97206E+00
+    3  T  3  7 4   2.97949E+00
+    4  T  3  8 4   2.98430E+00
+    5  T  3  9 4   2.98760E+00
+    6  T  3 10 4   2.98996E+00
+    1    5    1    5
+    1  0.000000E+00
+    1  T  1  6 5  -2.77780E-02
+    2  T  1  7 5  -2.04083E-02
+    3  T  1  8 5  -1.56251E-02
+    4  T  1  9 5  -1.23457E-02
+    5  T  1 10 5  -1.00001E-02
+    1    6    1    4
+    3  3.000000E+00
+    1  T  3  7 6   2.97958E+00
+    2  T  3  8 6   2.98436E+00
+    3  T  3  9 6   2.98764E+00
+    4  T  3 10 6   2.98999E+00
+    3    0    0    9
+    1  0.000000E+00
+    1  T  1  2 0  -3.50302E-01
+    2  T  1  3 0  -1.37336E-01
+    3  T  1  4 0  -7.30024E-02
+    4  T  1  5 0  -4.52407E-02
+    5  T  1  6 0  -3.07478E-02
+    6  T  1  7 0  -2.22534E-02
+    7  T  1  8 0  -1.68496E-02
+    8  T  1  9 0  -1.31997E-02
+    9  T  1 10 0  -1.06192E-02
+    3    1    0    9
+    3  3.000000E+00
+    1  T  3  3 1   2.58143E+00
+    2  T  3  4 1   2.86522E+00
+    3  T  3  5 1   2.92862E+00
+    4  T  3  6 1   2.95567E+00
+    5  T  3  7 1   2.96980E+00
+    6  T  3  8 1   2.97809E+00
+    7  T  3  9 1   2.98338E+00
+    8  T  3 10 1   2.98696E+00
+    9  T  3 11 1   2.98950E+00
+    3    2    0    8
+    1  0.000000E+00
+    1  T  1  3 2  -1.11261E-01
+    2  T  1  4 2  -6.25686E-02
+    3  T  1  5 2  -4.00428E-02
+    4  T  1  6 2  -2.78001E-02
+    5  T  1  7 2  -2.04214E-02
+    6  T  1  8 2  -1.56336E-02
+    7  T  1  9 2  -1.23517E-02
+    8  T  1 10 2  -1.00044E-02
+    3    3    0    7
+    3  3.000000E+00
+    1  T  3  4 3   2.93606E+00
+    2  T  3  5 3   2.95926E+00
+    3  T  3  6 3   2.97181E+00
+    4  T  3  7 3   2.97933E+00
+    5  T  3  8 3   2.98420E+00
+    6  T  3  9 3   2.98753E+00
+    7  T  3 10 3   2.98991E+00
+    3    4    0    6
+    1  0.000000E+00
+    1  T  1  5 4  -4.00011E-02
+    2  T  1  6 4  -2.77785E-02
+    3  T  1  7 4  -2.04087E-02
+    4  T  1  8 4  -1.56253E-02
+    5  T  1  9 4  -1.23459E-02
+    6  T  1 10 4  -1.00002E-02
+    3    5    0    5
+    3  3.000000E+00
+    1  T  3  6 5   2.97215E+00
+    2  T  3  7 5   2.97954E+00
+    3  T  3  8 5   2.98434E+00
+    4  T  3  9 5   2.98763E+00
+    5  T  3 10 5   2.98998E+00
+    3    6    0    4
+    1  0.000000E+00
+    1  T  1  7 6  -2.04082E-02
+    2  T  1  8 6  -1.56250E-02
+    3  T  1  9 6  -1.23457E-02
+    4  T  1 10 6  -1.00000E-02
+    3    7    0    3
+    3  3.000000E+00
+    1  T  3  8 7   2.98437E+00
+    2  T  3  9 7   2.98765E+00
+    3  T  3 10 7   2.99000E+00
+    3    1    1    9
+    1  0.000000E+00
+    1  T  1  2 1  -2.65575E-01
+    2  T  1  3 1  -1.15924E-01
+    3  T  1  4 1  -6.45453E-02
+    4  T  1  5 1  -4.10535E-02
+    5  T  1  6 1  -2.83857E-02
+    6  T  1  7 1  -2.07900E-02
+    7  T  1  8 1  -1.58803E-02
+    8  T  1  9 1  -1.25248E-02
+    9  T  1 10 1  -1.01305E-02
+    3    2    1    8
+    3  3.000000E+00
+    1  T  3  3 2   2.88152E+00
+    2  T  3  4 2   2.93476E+00
+    3  T  3  5 2   2.95866E+00
+    4  T  3  6 2   2.97147E+00
+    5  T  3  7 2   2.97913E+00
+    6  T  3  8 2   2.98407E+00
+    7  T  3  9 2   2.98744E+00
+    8  T  3 10 2   2.98984E+00
+    3    3    1    7
+    1  0.000000E+00
+    1  T  1  4 3  -6.25078E-02
+    2  T  1  5 3  -4.00099E-02
+    3  T  1  6 3  -2.77796E-02
+    4  T  1  7 3  -2.04087E-02
+    5  T  1  8 3  -1.56254E-02
+    6  T  1  9 3  -1.23460E-02
+    7  T  1 10 3  -1.00003E-02
+    3    4    1    6
+    3  3.000000E+00
+    1  T  3  5 4   2.95969E+00
+    2  T  3  6 4   2.97206E+00
+    3  T  3  7 4   2.97949E+00
+    4  T  3  8 4   2.98430E+00
+    5  T  3  9 4   2.98760E+00
+    6  T  3 10 4   2.98996E+00
+    3    5    1    5
+    1  0.000000E+00
+    1  T  1  6 5  -2.77780E-02
+    2  T  1  7 5  -2.04083E-02
+    3  T  1  8 5  -1.56251E-02
+    4  T  1  9 5  -1.23457E-02
+    5  T  1 10 5  -1.00001E-02
+    3    6    1    4
+    3  3.000000E+00
+    1  T  3  7 6   2.97958E+00
+    2  T  3  8 6   2.98436E+00
+    3  T  3  9 6   2.98764E+00
+    4  T  3 10 6   2.98999E+00
+    3    7    1    3
+    1  0.000000E+00
+    1  T  1  8 7  -1.56250E-02
+    2  T  1  9 7  -1.23457E-02
+    3  T  1 10 7  -1.00000E-02
+    0    0    0    0
