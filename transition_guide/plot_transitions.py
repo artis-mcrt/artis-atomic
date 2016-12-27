@@ -64,8 +64,8 @@ def main():
 
     for (atomic_number, ions) in elementslist:
         elsymbol = elsymbols[atomic_number]
-        transition_file = 'transitions_{}.txt'.format(elsymbol)
-        print('Loading {:}...'.format(transition_file))
+        transition_file = f'transitions_{elsymbol}.txt'
+        print(f'Loading {transition_file}...')
         transitions = load_transitions(transition_file)
 
         # filter the line list
@@ -76,7 +76,7 @@ def main():
             # (transitions[:]['upper_has_permitted'] == 0)
         ]
 
-        print('{:d} matching lines in plot range'.format(len(transitions)))
+        print(f'{len(transitions):d} matching lines in plot range')
 
         print('Generating spectra...')
         xvalues, yvalues = generate_spectra(
@@ -183,9 +183,7 @@ def make_plot(xvalues, yvalues, elsymbol, ions, args):
             else:
                 yvalues_normalised = yvalues[ion_index]
             ax[ion_index].plot(xvalues, yvalues_normalised, linewidth=1.5,
-                               label='{0} {1}'.format(
-                                   elsymbol,
-                                   roman_numerals[ions[ion_index].ion_stage]))
+                               label=f'{elsymbol} {roman_numerals[ions[ion_index].ion_stage]}')
 
         else:
             # the subplot showing combined spectrum of multiple ions
@@ -214,9 +212,7 @@ def make_plot(xvalues, yvalues, elsymbol, ions, args):
                             lw=1, color='black', label=serieslabel, zorder=-1)
 
             combined_label = ' + '.join([
-                '({0:.1f} * {1} {2})'.format(
-                    ion.number_fraction, elsymbol,
-                    roman_numerals[ion.ion_stage])
+                f'({ion.number_fraction:.1f} * {elsymbol} {roman_numerals[ion.ion_stage]})'
                 for ion in ions])
             ax[-1].plot(xvalues, yvalues_combined,
                         lw=1.5, label=combined_label)
@@ -229,7 +225,7 @@ def make_plot(xvalues, yvalues, elsymbol, ions, args):
 
     # ax.set_ylim(ymin=-0.05,ymax=1.1)
 
-    fig.savefig('transitions_{}.pdf'.format(elsymbol), format='pdf')
+    fig.savefig(f'transitions_{elsymbol}.pdf', format='pdf')
     plt.close()
 
 main()
