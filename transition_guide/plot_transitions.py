@@ -12,7 +12,7 @@ from astropy import constants as const
 K_B = const.k_B.to('eV / K').value
 c = const.c.to('km / s').value
 
-elsymbols = ['n'] + list(pd.read_csv('../elements.csv')['symbol'].values)
+elsymbols = ['n'] + list(pd.read_csv('elements.csv')['symbol'].values)
 
 Fe3overFe2 = 2.3        # number ratio of these ions
 
