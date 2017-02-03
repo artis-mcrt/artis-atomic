@@ -53,8 +53,10 @@ def main():
     parser.add_argument('-gaussian_window', type=float, default=4,
                         help='Gaussian line profile are zero beyond _n_ sigmas'
                              ' from the centre')
+    parser.add_argument('--forbidden-only', action='store_true',
+                        help='Only consider forbidden lines')
     parser.add_argument('--print-lines', action='store_true',
-                        help='Temperature in Kelvin')
+                        help='Print matching line details to standard out')
     args = parser.parse_args()
 
     # also calculate wavelengths outside the plot range to include lines whose
@@ -68,23 +70,25 @@ def main():
         print(f'Loading {transition_file}...')
         transitions = load_transitions(transition_file)
 
+        ion_stage_list = [ion.ion_stage for ion in ions]
         # filter the line list
         transitions = transitions[
             (transitions[:]['lambda_angstroms'] >= plot_xmin_wide) &
             (transitions[:]['lambda_angstroms'] <= plot_xmax_wide) &
-            (transitions[:]['forbidden'] == 1)  # &
+            (transitions['ion_stage'].isin(ion_stage_list))
             # (transitions[:]['upper_has_permitted'] == 0)
         ]
+        if args.forbidden_only:
+            transitions = transitions[transitions[:]['forbidden'] == 1]
 
-        print(f'{len(transitions):d} matching lines in plot range')
+        print(f'{len(transitions):d} {elsymbol} lines in plot range')
 
-        print('Generating spectra...')
-        xvalues, yvalues = generate_spectra(
-            transitions, atomic_number, ions, plot_xmin_wide, plot_xmax_wide,
-            args)
+        if len(transitions) > 0:
+            print('Generating spectra...')
+            xvalues, yvalues = generate_spectra(
+                transitions, atomic_number, ions, plot_xmin_wide, plot_xmax_wide, args)
 
-        print('Plotting...')
-        make_plot(xvalues, yvalues, elsymbol, ions, args)
+            make_plot(xvalues, yvalues, elsymbol, ions, args)
 
 
 def load_transitions(transition_file):
@@ -152,14 +156,14 @@ def f_flux_factor(line, T_K):
 
 
 def print_line_details(line, T_K):
-    print('lambda {:7.1f}, Flux {:8.2E}, {:2s} {:3s} {:}, {:}, {:}, {:}'.format(
+    print('lambda: {:7.1f} flux: {:8.2E} {:2s} {:3s} {:}, {:}, lower: {:25s} upper: {:}'.format(
         line['lambda_angstroms'], line['flux_factor'],
         elsymbols[line['Z']],
         roman_numerals[line['ion_stage']],
         ['permitted', 'forbidden'][line['forbidden']],
-        ['upper metastable', 'upper not metastable'][line['upper_has_permitted']],
-        line['lower_level'],
-        line['upper_level']))
+        ['upper is metastable', 'upper not metastable'][line['upper_has_permitted']],
+        line['lower_level'], line['upper_level']))
+
     return
 
 
@@ -224,8 +228,10 @@ def make_plot(xvalues, yvalues, elsymbol, ions, args):
         ax[ion_index].set_ylabel(r'$\propto$ F$_\lambda$')
 
     # ax.set_ylim(ymin=-0.05,ymax=1.1)
-
-    fig.savefig(f'transitions_{elsymbol}.pdf', format='pdf')
+    outfilename = f'transitions_{elsymbol}.pdf'
+    print(f"Saving '{outfilename}'")
+    fig.savefig(outfilename, format='pdf')
     plt.close()
+
 
 main()
