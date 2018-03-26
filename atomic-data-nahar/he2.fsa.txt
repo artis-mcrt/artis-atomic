@@ -1,0 +1,317 @@
+C************************** 786 ******************************************c
+
+Ref. "Photoionization and Electron-Ion Recombination of He I",
+     Sultana N. Nahar, New Astronomy (in press, 2009)
+
+C************************************************************************c
+
+
+ He II  : Energies, Oscillator strengths and decay rates for allowed (E1)
+         and forbidden (E2,E3,M1,m2) transitions  (1s to 4f)
+
+          Process: He II  + h\nu <-> He II*
+
+
+
+Contents of the file (contains both LS and fine structure transitions):
+---------------------
+
+i) Table 1 - Ion Information and Configuration Set:
+
+ii) LS Term Energies (Relative to the ground)
+
+iii) Transitions in pure LS coupling - Oscillator Strengths:
+
+iv) Fine Structure energies: relativistic(BP):
+
+v-a) Same Spin-Multiplicity Dipole allowed E1 (E1d) fine structure transitions
+
+v-b) Fine structure intercombination (E1i) transitions
+
+vi) Forbidden Electric Octupole E3 & Magnetic Quadrupole M2 transitions:
+
+vii) Forbidden Electric Quadrupole E2 & Magnetic Dipole M1 transitions:
+
+---------------------------------------------------------------------------
+
+i) Table 1 - Ion Information and Configuration Set:
+ ---------------------------------------------------
+
+ Ion: nz =  2, nelc =  1
+
+ Total No of LS terms=   10
+
+ Configuration set:
+
+  10 configurations: first**** spectroscopic, rest**** correlation
+
+ 1s         2s         2p         3s         3p        
+ 3d         4s         4p         4d         4f        
+
+ Number of orbitals = 10
+
+ Scaling parameters of the orbitals:
+
+   1.00000(1s)  1.00000(2s)  1.00000(2p)  1.00000(3s)  0.00000(3p)  1.00000(3d)
+   1.00000(4s)  1.00000(4p)  1.00000(4d)  1.00000(4f)
+
+--------------------------------------------------------------------------
+ 
+ii) LS Term Energies (Relative to the ground)
+ ----------------------------------------------
+
+ LS energies:
+
+  i                                           SLP   E(Rel,Ry)  cfg#
+
+   1                                          2Se     0.000000   1
+   2                                          2Po     3.000000   3
+   3                                          2Se     3.000002   2
+   4                                          2De     3.555556   6
+   5                                          2Po     3.555556   5
+   6                                          2Se     3.555556   4
+   7                                          2Fo     3.750000  10
+   8                                          2De     3.750000   9
+   9                                          2Po     3.750000   8
+  10                                          2Se     3.750000   7
+
+ No of first LS terms optimized =  10
+
+--------------------------------------------------------------------------
+
+iii) Transitions in pure LS coupling - Oscillator Strengths:
+------------------------------------------------------------
+
+Table Explanation:
+------------------
+
+LSi:CFi -> Initial LS term & configuration number as in Table 1
+
+LSf:CFf -> Final LS term & configuration number as in Table 1
+
+fL, fV -> oscillator strengths in length and velocity forms
+--------------------
+
+
+ Ni LSi:CFi  Nf LSf:CFf    Ei        Ef      aji(s-1)   fL       fV      %diff
+
+   1 2Se: 1   2 2Po: 3    0.0000    3.0000   1.003E+10 4.16E-01 4.16E-01 0.0E+00
+   1 2Se: 1   5 2Po: 5    0.0000    3.5556   2.677E+09 7.91E-02 7.91E-02 0.0E+00
+   1 2Se: 1   9 2Po: 8    0.0000    3.7500   1.092E+09 2.90E-02 2.90E-02 1.7E-02
+   2 2Po: 3   4 2De: 6    3.0000    3.5556   1.035E+09 6.96E-01 6.96E-01 2.4E-04
+   2 2Po: 3   6 2Se: 4    3.0000    3.5556   1.011E+08 1.36E-02 1.36E-02 2.5E-02
+   2 2Po: 3   8 2De: 9    3.0000    3.7500   3.302E+08 1.22E-01 1.22E-01 1.0E-06
+   2 2Po: 3  10 2Se: 7    3.0000    3.7500   4.127E+07 3.04E-03 3.05E-03 1.6E-01
+   3 2Se: 2   5 2Po: 5    3.0000    3.5556   3.593E+08 4.35E-01 4.35E-01 1.1E-03
+   3 2Se: 2   9 2Po: 8    3.0000    3.7500   1.548E+08 1.03E-01 1.03E-01 4.9E-03
+   4 2De: 6   7 2Fo:10    3.5556    3.7500   2.207E+08 1.02E+00 1.02E+00 4.7E-06
+   4 2De: 6   9 2Po: 8    3.5556    3.7500   5.563E+06 1.10E-02 1.10E-02 2.5E-06
+   5 2Po: 5   8 2De: 9    3.5556    3.7500   1.127E+08 6.18E-01 6.18E-01 2.7E-04
+   5 2Po: 5  10 2Se: 7    3.5556    3.7500   2.938E+07 3.22E-02 3.22E-02 1.9E-06
+   6 2Se: 4   9 2Po: 8    3.5556    3.7500   4.907E+07 4.85E-01 4.85E-01 1.0E-03
+
+ LS transitions: Number of oscillator strengths =   14
+
+
+-----------------------------------------------------------------------------
+ 
+iv) Fine Structure energies: relativistic(BP):
+-----------------------------------------------
+
+
+ Fine Structure energies: relativistic(BP):
+
+   ie  SLp(cf#)   g     k*cm       E(Ry)
+
+    1  2Se( 1)   2          0.0   0.00000E+00
+    2  2Po( 3)   2     329228.0   3.00015E+00
+    3  2Se( 2)   2     329228.0   3.00015E+00
+    4  2Po( 3)   4     329234.0   3.00020E+00
+    5  2Po( 5)   2     390198.0   3.55575E+00
+    6  2Se( 4)   2     390198.0   3.55575E+00
+    7  2De( 6)   4     390200.0   3.55576E+00
+    8  2Po( 5)   4     390200.0   3.55576E+00
+    9  2De( 6)   6     390200.0   3.55577E+00
+   10  2Po( 8)   2     411537.0   3.75020E+00
+   11  2Se( 7)   2     411537.0   3.75020E+00
+   12  2De( 9)   4     411538.0   3.75021E+00
+   13  2Po( 8)   4     411538.0   3.75021E+00
+   14  2Fo(10)   6     411538.0   3.75021E+00
+   15  2De( 9)   6     411538.0   3.75021E+00
+   16  2Fo(10)   8     411538.0   3.75021E+00
+
+------------------------------------------------------------------------
+
+v-a) Same Spin-Multiplicity Dipole allowed E1 (E1d) fine structure transitions
+--------------------------------------------------------
+
+Table Explanation:
+-----------------
+
+SLpCi -> initial symmetry (2S+1)Lpi(parity) & configuration number as in Table 1
+
+SLpCi -> final symmetry (2S+1)Lpi(parity) & configuration number as in Table 1
+
+fij, S, aji -> Oscillator strength fij, line strengh S & transition
+     probability aji for electic dipole E1 same-spin transition
+------------------------
+
+
+ Nj  Ni SLpCj SLpCi gj gi     wl(A)  Ej(Ry)   Ei(Ry)   fij     S      aji(s-1)
+
+  2   1 2Po 3 2Se 1  2  2    303.74    3.00    0.00 1.39E-01  2.774E-01 1.00E+10
+  4   1 2Po 3 2Se 1  4  2    303.74    3.00    0.00 2.77E-01 -5.548E-01 1.00E+10
+  5   1 2Po 5 2Se 1  2  2    256.28    3.56    0.00 2.64E-02  4.447E-02 2.68E+09
+  5   3 2Po 5 2Se 2  2  2   1640.16    3.56    3.00 1.45E-01  1.565E+00 3.59E+08
+  6   2 2Se 4 2Po 3  2  2   1640.15    3.56    3.00 1.36E-02  1.467E-01 3.37E+07
+  6   4 2Se 4 2Po 3  2  4   1640.31    3.56    3.00 1.36E-02  2.937E-01 6.74E+07
+  7   2 2De 6 2Po 3  4  2   1640.11    3.56    3.00 6.96E-01 -7.513E+00 8.62E+08
+  7   4 2De 6 2Po 3  4  4   1640.26    3.56    3.00 6.96E-02  1.503E+00 1.72E+08
+  8   1 2Po 5 2Se 1  4  2    256.28    3.56    0.00 5.27E-02 -8.895E-02 2.68E+09
+  8   3 2Po 5 2Se 2  4  2   1640.11    3.56    3.00 2.90E-01 -3.130E+00 3.59E+08
+  9   4 2De 6 2Po 3  6  4   1640.25    3.56    3.00 6.26E-01 -1.353E+01 1.04E+09
+ 10   1 2Po 8 2Se 1  2  2    242.99    3.75    0.00 9.65E-03  1.544E-02 1.09E+09
+ 10   3 2Po 8 2Se 2  2  2   1214.94    3.75    3.00 3.42E-02  2.738E-01 1.55E+08
+ 10   6 2Po 8 2Se 4  2  2   4686.21    3.75    3.56 1.62E-01  4.984E+00 4.91E+07
+ 10   7 2Po 8 2De 6  2  4   4686.59    3.75    3.56 9.16E-03  5.654E-01 5.56E+06
+ 11   2 2Se 7 2Po 3  2  2   1214.93    3.75    3.00 3.04E-03  2.429E-02 1.37E+07
+ 11   4 2Se 7 2Po 3  2  4   1215.02    3.75    3.00 3.04E-03  4.870E-02 2.75E+07
+ 11   5 2Se 7 2Po 5  2  2   4686.21    3.75    3.56 3.22E-02  9.943E-01 9.79E+06
+ 11   8 2Se 7 2Po 5  2  4   4686.59    3.75    3.56 3.22E-02  1.991E+00 1.96E+07
+ 12   2 2De 9 2Po 3  4  2   1214.92    3.75    3.00 1.22E-01 -9.740E-01 2.75E+08
+ 12   4 2De 9 2Po 3  4  4   1215.01    3.75    3.00 1.22E-02  1.948E-01 5.50E+07
+ 12   5 2De 9 2Po 5  4  2   4686.05    3.75    3.56 6.18E-01 -1.907E+01 9.39E+07
+ 12   8 2De 9 2Po 5  4  4   4686.43    3.75    3.56 6.18E-02  3.815E+00 1.88E+07
+ 13   1 2Po 8 2Se 1  4  2    242.99    3.75    0.00 1.93E-02 -3.089E-02 1.09E+09
+ 13   3 2Po 8 2Se 2  4  2   1214.92    3.75    3.00 6.84E-02 -5.477E-01 1.55E+08
+ 13   6 2Po 8 2Se 4  4  2   4686.05    3.75    3.56 3.23E-01 -9.965E+00 4.90E+07
+ 13   7 2Po 8 2De 6  4  4   4686.43    3.75    3.56 1.83E-03  1.130E-01 5.56E+05
+ 13   9 2Po 8 2De 6  4  6   4686.55    3.75    3.56 1.10E-02  1.018E+00 5.01E+06
+ 14   7 2Fo10 2De 6  6  4   4686.37    3.75    3.56 1.02E+00 -6.279E+01 2.06E+08
+ 14   9 2Fo10 2De 6  6  6   4686.50    3.75    3.56 4.84E-02  4.485E+00 1.47E+07
+ 15   4 2De 9 2Po 3  6  4   1215.00    3.75    3.00 1.10E-01 -1.754E+00 3.30E+08
+ 15   8 2De 9 2Po 5  6  4   4686.37    3.75    3.56 5.57E-01 -3.434E+01 1.13E+08
+ 16   9 2Fo10 2De 6  8  6   4686.47    3.75    3.56 9.69E-01 -8.970E+01 2.21E+08
+
+ No of non-zero E1 transitions =     33  (I1 =         33)
+ No of E1 transitions including (SD=0)=       33
+ No of lines in the table =       51
+
+v-b) Fine structure intercombination (E1i) transitions 
+------------------------------------------------------
+ 
+ Fine structure E1i intercombination transitions in Breit-Pauli approx: 
+ 
+ Ni  Nj SLpCi SLpCj gi gj     wl(A)  Ei(Ry)   Ej(Ry)   fij       S      aji(s-1)
+ 
+ 
+ Number of intercombination transitions, E1i =      0
+ 
+------------------------------------------------------------------------------
+
+vi) Forbidden Electric Octupole E3 & Magnetic Quadrupole M2 transitions:
+------------------------------------------------------
+
+Table Explanation:
+-----------------
+
+SLpCi -> initial symmetry (2S+1)Lpi(parity) & configuration number as in Table 1
+
+SLpCi -> final symmetry (2S+1)Lpi(parity) & configuration number as in Table 1
+
+SE3, AE3 -> line strengh S & transition probability A for electic octupole
+       E3 transition
+
+SM2, AM2 -> line strengh S & transition probability A for magnetic quadrupole
+       M2 transition
+------------------------
+
+ Ni  Nj SLpCi SLpCj gi gj   wl(A)     SE3       AE3      SM2      AM2 
+                                                 s-1               s-1
+
+  9   2 2De 6 2Po 3  6  2   1640.09 -3.05E+03 5.01E-03  1.92E+02 4.03E-02
+ 10   9 2Po 8 2De 6  2  6   4686.71 -5.91E+04 1.87E-04  1.45E+01 4.77E-05
+ 14   1 2Fo10 2Se 1  6  2    242.99  7.27E-02 7.62E-02  0.00E+00 0.00E+00
+ 14   3 2Fo10 2Se 2  6  2   1214.92 -2.34E+03 3.14E-02  0.00E+00 0.00E+00
+ 14   6 2Fo10 2Se 4  6  2   4686.00  2.71E+05 2.86E-04  0.00E+00 0.00E+00
+ 15   2 2De 9 2Po 3  6  2   1214.92  1.23E-03 1.65E-08  2.49E+01 2.34E-02
+ 15   5 2De 9 2Po 5  6  2   4685.99 -2.63E+05 2.78E-04  4.88E+02 5.37E-04
+ 16   1 2Fo10 2Se 1  8  2    242.99 -9.69E-02 7.62E-02  0.00E+00 0.00E+00
+ 16   3 2Fo10 2Se 2  8  2   1214.92  3.12E+03 3.14E-02  0.00E+00 0.00E+00
+ 16   6 2Fo10 2Se 4  8  2   4685.97 -3.62E+05 2.86E-04  0.00E+00 0.00E+00
+ 16   7 2Fo10 2De 6  8  4   4686.35 -9.80E+04 7.76E-05  0.00E+00 1.26E-03
+
+ No of non-zero M2/E3 transitions =     11
+ Total number of M2/E3 transitions =     11
+
+----------------------------------------------------------------------------
+
+vii) Forbidden Electric Quadrupole E2 & Magnetic Dipole M1 transitions:
+-----------------------------------------------------    
+
+Table Explanation:
+----------------- 
+
+SLpCi -> initial symmetry (2S+1)Lpi(parity) & configuration number as in Table 1
+
+SLpCi -> final symmetry (2S+1)Lpi(parity) & configuration number as in Table 1
+
+SE2, AE2 -> line strengh S & transition probability A for electric quadrupole
+       E2 transition
+
+SM1, AM1 -> line strengh S & transition probability A for magnetic dipole
+       M1 transition
+------------------------
+
+ Ni  Nj SLpCi SLpCj gi gj     wl      SE2      AE2       SM1      AM1
+                                A               s-1                s-1
+
+  3   1 2Se 1 2Se 2  2  2    303.74  0.00E+00 0.00E+00 -5.31E-09 2.56E-03
+  5   2 2Po 3 2Po 5  2  2   1640.15  0.00E+00 0.00E+00 -1.64E-10 5.02E-07
+  5   4 2Po 3 2Po 5  4  2   1640.31 -2.16E+01 1.53E+03 -4.74E-09 1.45E-05
+  6   1 2Se 1 2Se 4  2  2    256.28  0.00E+00 0.00E+00 -1.42E-09 1.14E-03
+  6   3 2Se 2 2Se 4  2  2   1640.16  0.00E+00 0.00E+00 -6.29E-10 1.92E-06
+  7   1 2Se 1 2De 6  2  4    256.28 -1.00E-01 3.80E+04  4.92E-11 1.97E-05
+  7   3 2Se 2 2De 6  2  4   1640.11  9.23E+01 3.27E+03 -1.36E-10 2.07E-07
+  8   2 2Po 3 2Po 5  2  4   1640.11  2.16E+01 7.65E+02 -1.97E-09 3.02E-06
+  8   4 2Po 3 2Po 5  4  4   1640.26  2.16E+01 7.65E+02 -2.37E-09 3.62E-06
+  9   1 2Se 1 2De 6  2  6    256.28  1.50E-01 3.80E+04  0.00E+00 0.00E+00
+  9   3 2Se 2 2De 6  2  6   1640.10 -1.38E+02 3.27E+03  0.00E+00 0.00E+00
+ 10   2 2Po 3 2Po 8  2  2   1214.93  0.00E+00 0.00E+00 -5.24E-11 3.94E-07
+ 10   4 2Po 3 2Po 8  4  2   1215.02 -2.08E+00 6.58E+02 -1.15E-09 8.65E-06
+ 10   5 2Po 5 2Po 8  2  2   4686.21  0.00E+00 0.00E+00 -5.01E-11 6.56E-09
+ 10   8 2Po 5 2Po 8  4  2   4686.59 -4.39E+02 1.63E+02 -4.36E-09 5.71E-07
+ 11   1 2Se 1 2Se 7  2  2    242.99  0.00E+00 0.00E+00 -5.83E-10 5.48E-04
+ 11   3 2Se 2 2Se 7  2  2   1214.94  0.00E+00 0.00E+00 -2.20E-10 1.66E-06
+ 11   6 2Se 4 2Se 7  2  2   4686.21  0.00E+00 0.00E+00 -1.60E-10 2.10E-08
+ 11   7 2De 6 2Se 7  4  2   4686.59 -7.09E+01 2.63E+01 -1.76E-14 2.31E-12
+ 11   9 2De 6 2Se 7  6  2   4686.71 -1.06E+02 3.95E+01  0.00E+00 0.00E+00
+ 12   1 2Se 1 2De 9  2  4    242.99 -4.24E-02 2.10E+04  2.67E-11 1.25E-05
+ 12   3 2Se 2 2De 9  2  4   1214.92  2.08E+00 3.29E+02 -3.57E-11 1.34E-07
+ 12   6 2Se 4 2De 9  2  4   4686.05  1.30E+03 2.41E+02 -1.34E-11 8.80E-10
+ 12   7 2De 6 2De 9  4  4   4686.43  2.87E+02 5.33E+01 -2.85E-10 1.87E-08
+ 12   9 2De 6 2De 9  6  4   4686.55 -1.23E+02 2.29E+01 -9.30E-10 6.09E-08
+ 13   2 2Po 3 2Po 8  2  4   1214.92  2.07E+00 3.29E+02 -3.94E-10 1.48E-06
+ 13   4 2Po 3 2Po 8  4  4   1215.01  2.08E+00 3.29E+02 -7.55E-10 2.84E-06
+ 13   5 2Po 5 2Po 8  2  4   4686.05  4.39E+02 8.16E+01 -2.86E-09 1.88E-07
+ 13   8 2Po 5 2Po 8  4  4   4686.43  4.39E+02 8.16E+01 -7.21E-10 4.73E-08
+ 14   2 2Po 3 2Fo10  2  6   1214.92  2.91E+01 3.08E+03  0.00E+00 0.00E+00
+ 14   4 2Po 3 2Fo10  4  6   1215.00 -8.31E+00 8.79E+02  3.75E-11 9.39E-08
+ 14   5 2Po 5 2Fo10  2  6   4685.99 -2.32E+03 2.88E+02  0.00E+00 0.00E+00
+ 14   8 2Po 5 2Fo10  4  6   4686.38  6.64E+02 8.23E+01 -5.63E-11 2.46E-09
+ 15   1 2Se 1 2De 9  2  6    242.99  6.36E-02 2.10E+04  0.00E+00 0.00E+00
+ 15   3 2Se 2 2De 9  2  6   1214.92 -3.11E+00 3.29E+02  0.00E+00 0.00E+00
+ 15   6 2Se 4 2De 9  2  6   4686.00 -1.94E+03 2.41E+02  0.00E+00 0.00E+00
+ 15   7 2De 6 2De 9  4  6   4686.37  1.23E+02 1.52E+01 -2.89E-10 1.26E-08
+ 15   9 2De 6 2De 9  6  6   4686.50  4.92E+02 6.09E+01 -1.42E-09 6.21E-08
+ 16   4 2Po 3 2Fo10  4  8   1215.00  4.99E+01 3.96E+03  0.00E+00 0.00E+00
+ 16   8 2Po 5 2Fo10  4  8   4686.35 -3.99E+03 3.70E+02  0.00E+00 0.00E+00
+
+ Number of E2,M1 transitions =     40
+ Total number of transitions (including non-spectroscopic) =     40
+
+ NT= total number of forbidden (E2,M1,E3,M2) transitions
+   =     40 +      11 =      51
+
+ Net allowed (E1) and forbidden (E2,M1,E3,M2) transitions =
+   =     33 +      51 =      84
