@@ -1012,6 +1012,8 @@ def reduce_phixs_tables_worker(
 
 
 def check_forbidden(levela, levelb) -> bool:
+    if levela.parity is None or levelb.parity is None:
+        return False
     return levela.parity == levelb.parity
 
 
@@ -1545,7 +1547,7 @@ def write_transition_data(
     for transition in transitions:
         levelid_lower = transition.lowerlevel
         levelid_upper = transition.upperlevel
-        forbidden = energy_levels[levelid_lower].parity == energy_levels[levelid_upper].parity
+        forbidden = check_forbidden(energy_levels[levelid_lower], energy_levels[levelid_upper])
 
         if not forbidden:
             level_ids_with_permitted_down_transitions.add(levelid_upper)
@@ -1559,7 +1561,7 @@ def write_transition_data(
         if coll_str > 0:
             num_collision_strengths_applied += 1
 
-        forbidden = energy_levels[levelid_lower].parity == energy_levels[levelid_upper].parity
+        forbidden = check_forbidden(energy_levels[levelid_lower], energy_levels[levelid_upper])
 
         if forbidden:
             num_forbidden_transitions += 1
