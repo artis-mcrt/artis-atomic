@@ -102,7 +102,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     )
 
     ionization_energy_in_ev = artisatomic.get_nist_ionization_energies_ev()[(atomic_number, ion_stage)]
-    artisatomic.log_and_print(flog, f"ionization energy: {ionization_energy_in_ev} eV")
+    artisatomic.log_and_print(flog, f"ionization energy: {ionization_energy_in_ev} eV (from NIST)")
 
     # get energy of upper level of transition
     energy_levels_lower_ev = energy_levels_lower_percm * hc_in_ev_cm
