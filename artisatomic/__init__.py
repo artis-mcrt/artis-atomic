@@ -89,10 +89,10 @@ def get_ion_handlers() -> list[tuple[int, list[int | tuple[int, str]]]]:
     #     (39, [(1, "carsus"), (2, "carsus")]),
     #     (40, [(1, "carsus"), (2, "carsus"), (3, "carsus")]),
     #     (70, [(5, "gsnist")]),
+    #     (57, [(5, "mons")]),
     #     (92, [(2, "fac"), (3, "fac")]),
     #     (94, [(2, "fac"), (3, "fac")]),
     # ]
-        (57, [(5, "mons")]),
 
     # include everything we have data for
     # ion_handlers = readhillierdata.extend_ion_list(ion_handlers, maxionstage=5, include_hydrogen=False)
