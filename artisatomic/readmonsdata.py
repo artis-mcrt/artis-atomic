@@ -30,7 +30,6 @@ class TransitionTuple(t.NamedTuple):
 
 datafilepath = Path(os.path.dirname(os.path.abspath(__file__)), "..", "atomic-data-mons")
 
-
 # outggf_Ln_V-VII.zip folder:
 #     45 files outggf for each lanthanide between the V and VII spectra:
 #     first column is wavelength of the E1 transition (A),
@@ -41,6 +40,35 @@ datafilepath = Path(os.path.dirname(os.path.abspath(__file__)), "..", "atomic-da
 #     45 files outglv for each lanthanide between the V and VII spectra:
 #     first column is the energy of levels (1000 cm^-1)
 #     second column is the total angular momentum (J-value)
+
+
+def extend_ion_list(ion_handlers):
+    # Data files contain La-Lu V-VII ions
+    Z_indatafile = list(range(57, 72))
+    ions_indatafile = [5, 6, 7]
+
+    for Z in Z_indatafile:
+        for ion in ions_indatafile:
+            atomic_number = Z
+            ion_stage = ion
+            found_element = False
+            for tmp_atomic_number, list_ions_handlers in ion_handlers:
+                if tmp_atomic_number == atomic_number:
+                    # add an ion that is not present in the element's list
+                    if ion_stage not in [x[0] if hasattr(x, "__getitem__") else x for x in list_ions_handlers]:
+                        list_ions_handlers.append((ion_stage, "mons"))
+                        list_ions_handlers.sort(key=lambda x: x[0] if hasattr(x, "__getitem__") else x)
+                    found_element = True
+
+            if not found_element:
+                ion_handlers.append(
+                    (
+                        atomic_number,
+                        [(ion_stage, "mons")],
+                    )
+                )
+    ion_handlers.sort(key=lambda x: x[0])
+    return ion_handlers
 
 
 def read_levels_and_transitions(atomic_number, ion_stage, flog):
