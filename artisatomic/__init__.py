@@ -32,6 +32,7 @@ from artisatomic import readhillierdata
 from artisatomic import readnahardata
 from artisatomic import readqubdata
 from artisatomic import readtanakajpltdata
+from artisatomic import readmonsdata
 from artisatomic import groundstatesonlynist
 from artisatomic.manual_matches import hillier_name_replacements
 from artisatomic.manual_matches import nahar_configuration_replacements
@@ -91,6 +92,7 @@ def get_ion_handlers() -> list[tuple[int, list[int | tuple[int, str]]]]:
     #     (92, [(2, "fac"), (3, "fac")]),
     #     (94, [(2, "fac"), (3, "fac")]),
     # ]
+        (57, [(5, "mons")]),
 
     # include everything we have data for
     # ion_handlers = readhillierdata.extend_ion_list(ion_handlers, maxionstage=5, include_hydrogen=False)
@@ -486,6 +488,14 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                         transitions[i],
                         transition_count_of_level_name[i],
                     ) = readtanakajpltdata.read_levels_and_transitions(atomic_number, ion_stage, flog)
+
+                elif handler == "mons":  # Lanthanide data ions V-VII from MONS
+                    (
+                        ionization_energy_ev[i],
+                        energy_levels[i],
+                        transitions[i],
+                        transition_count_of_level_name[i],
+                    ) = readmonsdata.read_levels_and_transitions(atomic_number, ion_stage, flog)
 
                 elif handler == "gsnist":  # ground states taken from NIST
                     (
