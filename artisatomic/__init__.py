@@ -1022,7 +1022,7 @@ def reduce_phixs_tables_worker(
 
 
 def check_forbidden(levela, levelb) -> bool:
-    if levela.parity is None or levelb.parity is None:
+    if levela is None or levela.parity is None or levelb.parity is None:
         return False
     return levela.parity == levelb.parity
 
