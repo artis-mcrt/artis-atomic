@@ -139,7 +139,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
 
     # If ionisation potential in data does not match NIST to within 1 decimal place
     # then use NIST instead (probably more accurate?)
-    if not round(ionization_energy_in_ev, 1) == round(ionization_energy_in_ev_nist, 1):
+    if round(ionization_energy_in_ev, 1) != round(ionization_energy_in_ev_nist, 1):
         ionization_energy_in_ev = ionization_energy_in_ev_nist
         artisatomic.log_and_print(
             flog, f"Energies do not match -- using NIST value of {ionization_energy_in_ev_nist} eV"
