@@ -49,7 +49,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     datafilename_energylevels = (
         f"outglv_Ln_V--VII/outglv_0_{artisatomic.elsymbols[atomic_number]}_{artisatomic.roman_numerals[ion_stage]}"
     )
-    # datafilename_energylevels = "outglv_Ln_V--VII/outglv_0_La_V"
 
     with ziparchive_outglv.open(datafilename_energylevels) as datafile_energylevels:
         energy_levels1000percm, j_arr = np.loadtxt(datafile_energylevels, unpack=True, delimiter=",")
@@ -79,7 +78,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     datafilename_transitions = (
         f"outggf_Ln_V--VII/outggf_sorted_{artisatomic.elsymbols[atomic_number]}_{artisatomic.roman_numerals[ion_stage]}"
     )
-    # datafilename_transitions = "outggf_Ln_V--VII/outggf_sorted_La_V"
 
     with ziparchive_outggf.open(datafilename_transitions) as datafile_transitions:
         transition_wavelength_A, energy_levels_lower_1000percm, oscillator_strength = np.loadtxt(
