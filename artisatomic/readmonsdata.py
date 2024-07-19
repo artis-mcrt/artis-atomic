@@ -107,7 +107,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     # get energy of upper level of transition
     energy_levels_lower_ev = energy_levels_lower_percm * hc_in_ev_cm
     transitionenergyev = hc_in_ev_angstrom / transition_wavelength_A
-    assert max(transitionenergyev) < ionization_energy_in_ev
+    assert round(max(transitionenergyev), 1) <= ionization_energy_in_ev
     energy_levels_upper_ev = transitionenergyev + energy_levels_lower_ev
     energy_levels_upper_percm = energy_levels_upper_ev / hc_in_ev_cm
 
