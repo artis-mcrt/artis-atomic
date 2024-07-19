@@ -67,7 +67,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     g_arr = dfenergylevels["g"].values
 
     parity = None  # Only E1 so always allowed transitions.
-    energy_levels = []
+    energy_levels = [None]
 
     for levelindex, (g, energyabovegsinpercm) in enumerate(zip(g_arr, energiesabovegsinpercm, strict=False)):
         energy_levels.append(
