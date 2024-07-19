@@ -132,9 +132,19 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     # get energy of upper level of transition
     energy_levels_lower_ev = energy_levels_lower_percm * hc_in_ev_cm
     transitionenergyev = hc_in_ev_angstrom / transition_wavelength_A
-    assert round(max(transitionenergyev), 1) == round(ionization_energy_in_ev_nist, 1)
     ionization_energy_in_ev = max(transitionenergyev)
-    artisatomic.log_and_print(flog, f"ionization energy: {ionization_energy_in_ev} eV")
+    artisatomic.log_and_print(
+        flog, f"ionization energy: {ionization_energy_in_ev} eV (NIST: {ionization_energy_in_ev_nist} eV)"
+    )
+
+    # If ionisation potential in data does not match NIST to within 1 decimal place
+    # then use NIST instead (probably more accurate?)
+    if not round(ionization_energy_in_ev, 1) == round(ionization_energy_in_ev_nist, 1):
+        ionization_energy_in_ev = ionization_energy_in_ev_nist
+        artisatomic.log_and_print(
+            flog, f"Energies do not match -- using NIST value of {ionization_energy_in_ev_nist} eV"
+        )
+
     energy_levels_upper_ev = transitionenergyev + energy_levels_lower_ev
     energy_levels_upper_percm = energy_levels_upper_ev / hc_in_ev_cm
 
