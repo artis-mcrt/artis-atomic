@@ -83,13 +83,10 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         energy_levels1000percm, j_arr = np.loadtxt(datafile_energylevels, unpack=True, delimiter=",")
     artisatomic.log_and_print(flog, f"levels: {len(energy_levels1000percm)}")
 
-    energiesabovegsinpercm = energy_levels1000percm * 1000
-
-    g_arr = 2 * j_arr + 1
-
     # Sort table by energy levels
-    dfenergylevels = pd.DataFrame.from_dict({"energiesabovegsinpercm": energiesabovegsinpercm, "g": g_arr})
-    dfenergylevels = dfenergylevels.sort_values("energiesabovegsinpercm")
+    dfenergylevels = pd.DataFrame.from_dict(
+        {"energiesabovegsinpercm": energy_levels1000percm * 1000, "g": 2 * j_arr + 1}
+    ).sort_values("energiesabovegsinpercm")
 
     energiesabovegsinpercm = dfenergylevels["energiesabovegsinpercm"].to_numpy()
     g_arr = dfenergylevels["g"].to_numpy()
