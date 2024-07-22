@@ -44,7 +44,7 @@ datafilepath = Path(os.path.dirname(os.path.abspath(__file__)), "..", "atomic-da
 
 def extend_ion_list(ion_handlers):
     # Data files contain La-Lu V-VII ions
-    Z_indatafile = list(range(57, 72))
+    Z_indatafile = range(57, 72)
     ions_indatafile = [5, 6, 7]
 
     for Z in Z_indatafile:
