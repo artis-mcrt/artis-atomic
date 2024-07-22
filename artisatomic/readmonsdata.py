@@ -106,9 +106,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         for g, energyabovegsinpercm in zip(g_arr, energiesabovegsinpercm, strict=True)
     ]
 
-    for i, en in enumerate(energy_levels[1:15], 1):
-        print(i, en.energyabovegsinpercm)
-
     # Read next file
     ziparchive_outggf = zipfile.ZipFile(datafilepath / "outggf_Ln_V--VII.zip", "r")
     datafilename_transitions = (
