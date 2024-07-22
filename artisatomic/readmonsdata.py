@@ -1,12 +1,13 @@
 import os.path
-from pathlib import Path
 import typing as t
+import zipfile
+from collections import defaultdict
+from pathlib import Path
+
+import numpy as np
 import pandas as pd
 from astropy import constants as const
 from astropy import units as u
-from collections import defaultdict
-import numpy as np
-import zipfile
 
 import artisatomic
 
@@ -94,12 +95,19 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     g_arr = dfenergylevels["g"].to_numpy()
 
     parity = None  # Only E1 so always allowed transitions.
-    energy_levels = [None]
 
-    for levelindex, (g, energyabovegsinpercm) in enumerate(zip(g_arr, energiesabovegsinpercm, strict=False)):
-        energy_levels.append(
-            EnergyLevel(levelname=str(levelindex), parity=parity, g=g, energyabovegsinpercm=energyabovegsinpercm)
+    energy_levels = [None] + [
+        EnergyLevel(
+            levelname=str(energyabovegsinpercm),
+            parity=parity,
+            g=g,
+            energyabovegsinpercm=energyabovegsinpercm,
         )
+        for g, energyabovegsinpercm in zip(g_arr, energiesabovegsinpercm, strict=True)
+    ]
+
+    for i, en in enumerate(energy_levels[1:15], 1):
+        print(i, en.energyabovegsinpercm)
 
     # Read next file
     ziparchive_outggf = zipfile.ZipFile(datafilepath / "outggf_Ln_V--VII.zip", "r")
@@ -116,16 +124,12 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     energy_levels_lower_percm = energy_levels_lower_1000percm * 1000
 
     # Get index of lower level of transition
-    lowerlevel = np.array(
-        [
-            (
-                np.abs(
-                    energiesabovegsinpercm - energylevellower
-                )  # get closest energy in energy level array to lower level
-            ).argmin()  # then get the index with argmin()
-            for energylevellower in energy_levels_lower_percm
-        ]
-    )
+    lowerlevels = [
+        (
+            np.abs(energiesabovegsinpercm - energylevellower)  # get closest energy in energy level array to lower level
+        ).argmin()  # then get the index with argmin()
+        for energylevellower in energy_levels_lower_percm
+    ]
 
     ionization_energy_in_ev_nist = artisatomic.get_nist_ionization_energies_ev()[(atomic_number, ion_stage)]
 
@@ -149,44 +153,39 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     energy_levels_upper_percm = energy_levels_upper_ev / hc_in_ev_cm
 
     # Get index of upper level of transition
-    upperlevel = np.array(
-        [
-            (
-                np.abs(energiesabovegsinpercm - energylevelupper)  # get closest energy in energy level array
-            ).argmin()  # then get the index with argmin()
-            for energylevelupper in energy_levels_upper_percm
-        ]
-    )
+    upperlevels = [
+        (
+            np.abs(energiesabovegsinpercm - energylevelupper)  # get closest energy in energy level array
+        ).argmin()  # then get the index with argmin()
+        for energylevelupper in energy_levels_upper_percm
+    ]
 
     # Get A value from oscillator strength
+    OSCSTRENGTHCONVERSION = 1.3473837e21
+    c_angps = 2.99792458e18
     A_ul = np.array(
         [
-            (
-                (8 * np.pi**2 * const.e.value**2)
-                / (const.m_e.value * const.c.value * (lambda_A / 1e10) ** 2)  # convert wavelength from angstrom to m
-                * (g_arr[lower] / g_arr[upper])
-                * osc
-            )
+            osc / (g_arr[upper] / g_arr[lower] * OSCSTRENGTHCONVERSION / (c_angps / lambda_A) ** 2)
             for lambda_A, osc, lower, upper in zip(
-                transition_wavelength_A, oscillator_strength, lowerlevel, upperlevel, strict=False
+                transition_wavelength_A, oscillator_strength, lowerlevels, upperlevels, strict=False
             )
         ]
     )
 
     transitions = [
         TransitionTuple(
-            lowerlevel=lower,
-            upperlevel=upper,
+            lowerlevel=lower + 1,
+            upperlevel=upper + 1,
             A=A,
             coll_str=-1,
         )
-        for A, lower, upper in zip(A_ul, lowerlevel, upperlevel, strict=False)
+        for A, lower, upper in zip(A_ul, lowerlevels, upperlevels, strict=False)
     ]
 
     transition_count_of_level_name = defaultdict(int)
-    for level_number_lower, level_number_upper in zip(lowerlevel, upperlevel, strict=False):
-        transition_count_of_level_name[level_number_lower] += 1
-        transition_count_of_level_name[level_number_upper] += 1
+    for lower, upper in zip(lowerlevels, upperlevels, strict=True):
+        transition_count_of_level_name[energy_levels[lower + 1].levelname] += 1
+        transition_count_of_level_name[energy_levels[upper + 1].levelname] += 1
 
     assert len(transitions) == len(
         energy_levels_lower_1000percm
