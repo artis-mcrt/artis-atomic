@@ -163,13 +163,13 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         [
             (
                 (8 * np.pi**2 * const.e.value**2)
-                / (
-                    const.m_e.value * const.c.value * (transition_wavelength_A[transitionnumber] / 1e10) ** 2
-                )  # convert wavelength from angstrom to m
+                / (const.m_e.value * const.c.value * (lambda_A / 1e10) ** 2)  # convert wavelength from angstrom to m
                 * (g_arr[lower] / g_arr[upper])
-                * oscillator_strength[transitionnumber]
+                * osc
             )
-            for transitionnumber, (lower, upper) in enumerate(zip(lowerlevel, upperlevel, strict=False))
+            for lambda_A, osc, lower, upper in zip(
+                transition_wavelength_A, oscillator_strength, lowerlevel, upperlevel, strict=False
+            )
         ]
     )
 
