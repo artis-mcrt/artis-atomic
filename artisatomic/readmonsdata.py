@@ -90,8 +90,8 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     dfenergylevels = pd.DataFrame.from_dict({"energiesabovegsinpercm": energiesabovegsinpercm, "g": g_arr})
     dfenergylevels = dfenergylevels.sort_values("energiesabovegsinpercm")
 
-    energiesabovegsinpercm = dfenergylevels["energiesabovegsinpercm"].values
-    g_arr = dfenergylevels["g"].values
+    energiesabovegsinpercm = dfenergylevels["energiesabovegsinpercm"]to_numpy()
+    g_arr = dfenergylevels["g"]to_numpy()
 
     parity = None  # Only E1 so always allowed transitions.
     energy_levels = [None]
