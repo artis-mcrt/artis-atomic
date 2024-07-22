@@ -175,12 +175,12 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
 
     transitions = [
         TransitionTuple(
-            lowerlevel=lowerlevel[transitionnumber],
-            upperlevel=upperlevel[transitionnumber],
-            A=A_ul[transitionnumber],
+            lowerlevel=lower,
+            upperlevel=upper,
+            A=A,
             coll_str=-1,
         )
-        for transitionnumber, _ in enumerate(lowerlevel)
+        for A, lower, upper in zip(A_ul, lowerlevel, upperlevel, strict=False)
     ]
 
     transition_count_of_level_name = defaultdict(int)
