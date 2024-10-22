@@ -859,7 +859,7 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                 photoionization_targetconfig_fractions[levelid] = phixs_targetconfigfractions_of_levelname[levelname_b]
 
                 # photoionization_thresholds_ev[levelid] = energy_level.thresholdenergyev
-                photoionization_thresholds_ev[levelid] = hc_in_ev_angstrom / float(energy_level.lambdaangstrom)
+                photoionization_thresholds_ev[levelid] = float(energy_level.thresholdenergyev)
 
     return photoionization_crosssections, photoionization_targetconfig_fractions, photoionization_thresholds_ev
 
