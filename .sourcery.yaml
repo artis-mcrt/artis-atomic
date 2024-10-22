@@ -18,6 +18,7 @@ rule_settings:
         - default
         - gpsg-standard-import-alias
     disable:
+        - ensure-file-closed
         - move-assign
         - remove-redundant-if
         - inline-immediately-returned-variable
