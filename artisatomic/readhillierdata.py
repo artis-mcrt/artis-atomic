@@ -1301,7 +1301,7 @@ def read_hyd_phixsdata():
                 continue
 
             n, num_points = (int(x) for x in line.split())
-            e_threshold_ev = hc_in_ev_angstrom / float(hillier_energy_levels[n].thresholdenergyev)
+            e_threshold_ev = float(hillier_energy_levels[n].thresholdenergyev)
 
             gaunt_values = []
             for line in fhyd:
