@@ -21,7 +21,7 @@ hillier_rowformat_a = (
 hillier_rowformat_b = (
     "levelname g energyabovegsinpercm freqtentothe15hz thresholdenergyev lambdaangstrom hillierlevelid arad c4 c6"
 )
-hillier_rowformat_c = "levelname g energyabovegsinpercm freqtentothe15hz lambdaangstrom hillierlevelid"
+hillier_rowformat_c = "levelname g energyabovegsinpercm thresholdenergyev lambdaangstrom hillierlevelid"
 hillier_rowformat_d = (
     "levelname g energyabovegsinpercm thresholdenergyev freqtentothe15hz lambdaangstrom hillierlevelid"
 )
@@ -568,7 +568,8 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                     if len(row) == 1 and row_is_all_floats and numpointsexpected > 0:
                         fitcoefficients.append(float(row[0].replace("D", "E")))
                         if len(fitcoefficients) == 3:
-                            lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                            lambda_angstrom = hc_in_ev_angstrom / float(energy_levels[lowerlevelid].thresholdenergyev)
+                            assert lambda_angstrom > 0
                             phixstables[filenum][lowerlevelname] = get_seaton_phixstable(  # type: ignore
                                 lambda_angstrom, *fitcoefficients
                             )
@@ -585,7 +586,10 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                                     flog, "ERROR: can't have l_end = {} > n - 1 = {}".format(l_end, n - 1)
                                 )
                             else:
-                                lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                                lambda_angstrom = hc_in_ev_angstrom / float(
+                                    energy_levels[lowerlevelid].thresholdenergyev
+                                )
+                                assert lambda_angstrom > 0
                                 phixstables[filenum][lowerlevelname] = get_hydrogenic_nl_phixstable(
                                     lambda_angstrom, n, l_start, l_end
                                 )
@@ -598,7 +602,8 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                         if len(fitcoefficients) == 2:
                             scale, n = fitcoefficients
                             n = int(n)
-                            lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                            lambda_angstrom = hc_in_ev_angstrom / float(energy_levels[lowerlevelid].thresholdenergyev)
+                            assert lambda_angstrom > 0
                             phixstables[filenum][lowerlevelname] = scale * get_hydrogenic_n_phixstable(
                                 lambda_angstrom, n
                             )
@@ -613,7 +618,8 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                     if len(row) == 1 and row_is_all_floats and numpointsexpected > 0:
                         fitcoefficients.append(float(row[0].replace("D", "E")))
                         if len(fitcoefficients) == 5:
-                            lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                            lambda_angstrom = hc_in_ev_angstrom / float(energy_levels[lowerlevelid].thresholdenergyev)
+                            assert lambda_angstrom > 0
                             phixstables[filenum][lowerlevelname] = get_opproject_phixstable(
                                 lambda_angstrom, *fitcoefficients
                             )
@@ -625,7 +631,8 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                     if len(row) == 1 and row_is_all_floats and numpointsexpected > 0:
                         fitcoefficients.append(float(row[0].replace("D", "E")))
                         if len(fitcoefficients) == 8:
-                            lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                            lambda_angstrom = hc_in_ev_angstrom / float(energy_levels[lowerlevelid].thresholdenergyev)
+                            assert lambda_angstrom > 0
                             phixstables[filenum][lowerlevelname] = get_hummer_phixstable(
                                 lambda_angstrom, *fitcoefficients
                             )
@@ -642,7 +649,8 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                     if len(row) == 1 and row_is_all_floats and numpointsexpected > 0:
                         fitcoefficients.append(float(row[0].replace("D", "E")))
                         if len(fitcoefficients) == 4:
-                            lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                            lambda_angstrom = hc_in_ev_angstrom / float(energy_levels[lowerlevelid].thresholdenergyev)
+                            assert lambda_angstrom > 0
                             phixstables[filenum][lowerlevelname] = get_seaton_phixstable(
                                 lambda_angstrom, *fitcoefficients
                             )
@@ -663,12 +671,19 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                             if l_end > n - 1:
                                 artisatomic.log_and_print(flog, f"ERROR: can't have l_end = {l_end} > n - 1 = {n - 1}")
                             else:
-                                lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
-                                phixstables[filenum][lowerlevelname] = get_hydrogenic_nl_phixstable(
-                                    lambda_angstrom, n, l_start, l_end, nu_o=nu_o
+                                lambda_angstrom = hc_in_ev_angstrom / float(
+                                    energy_levels[lowerlevelid].thresholdenergyev
                                 )
-                                # log_and_print(flog, 'Using offset Hydrogenic split l formula values for level {0}'.format(lowerlevelname))
-                                numpointsexpected = len(phixstables[filenum][lowerlevelname])
+                                if not lambda_angstrom > 0:
+                                    print(
+                                        f"ERROR: lambda_angstrom = {lambda_angstrom:.3f} is not > 0 for {lowerlevelname}"
+                                    )
+                                else:
+                                    phixstables[filenum][lowerlevelname] = get_hydrogenic_nl_phixstable(
+                                        lambda_angstrom, n, l_start, l_end, nu_o=nu_o
+                                    )
+                                    # log_and_print(flog, 'Using offset Hydrogenic split l formula values for level {0}'.format(lowerlevelname))
+                                    numpointsexpected = len(phixstables[filenum][lowerlevelname])
 
                 elif crosssectiontype == 9:
                     if len(row) == 8 and numpointsexpected > 0:
@@ -677,7 +692,8 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                         )
 
                         if len(fitcoefficients) * 8 == numpointsexpected:
-                            lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
+                            lambda_angstrom = hc_in_ev_angstrom / float(energy_levels[lowerlevelid].thresholdenergyev)
+                            assert lambda_angstrom > 0
                             phixstables[filenum][lowerlevelname] = get_vy95_phixstable(lambda_angstrom, fitcoefficients)
                             numpointsexpected = len(phixstables[filenum][lowerlevelname])
                             # artisatomic.log_and_print(flog, 'Using Verner & Yakolev 1995 formula values for level {0}'.format(lowerlevelname))
@@ -687,8 +703,9 @@ def read_phixs_tables(atomic_number, ion_stage, energy_levels, args, flog):
                         if lowerlevelname not in phixstables[filenum]:
                             phixstables[filenum][lowerlevelname] = np.zeros((numpointsexpected, 2))
 
-                        lambda_angstrom = abs(float(energy_levels[lowerlevelid].lambdaangstrom))
-                        thresholdenergyryd = hc_in_ev_angstrom / lambda_angstrom / ryd_to_ev
+                        thresholdenergyev = float(energy_levels[lowerlevelid].thresholdenergyev)
+                        assert thresholdenergyev > 0
+                        thresholdenergyryd = thresholdenergyev / ryd_to_ev
                         enryd = float(row[0].replace("D", "E"))
 
                         if crosssectiontype in [
@@ -1284,7 +1301,7 @@ def read_hyd_phixsdata():
                 continue
 
             n, num_points = (int(x) for x in line.split())
-            e_threshold_ev = hc_in_ev_angstrom / float(hillier_energy_levels[n].lambdaangstrom)
+            e_threshold_ev = hc_in_ev_angstrom / float(hillier_energy_levels[n].thresholdenergyev)
 
             gaunt_values = []
             for line in fhyd:
