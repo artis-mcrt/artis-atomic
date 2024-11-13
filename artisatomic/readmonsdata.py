@@ -184,13 +184,11 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     if parquet_filepath.is_file():
         df_transitions = pd.read_parquet(parquet_filepath, engine="pyarrow")
         n_transitions = len(df_transitions)
-        artisatomic.log_and_print(
-            flog, f"Read from {parquet_filename} \n"
-                  f"transitions: {n_transitions}"
-        )
+        artisatomic.log_and_print(flog, f"Read from {parquet_filename} \n" f"transitions: {n_transitions}")
     else:
-        df_transitions, n_transitions = get_transition_data(atomic_number, ion_stage,
-                                                            energiesabovegsinpercm, g_arr, parquet_filepath, flog)
+        df_transitions, n_transitions = get_transition_data(
+            atomic_number, ion_stage, energiesabovegsinpercm, g_arr, parquet_filepath, flog
+        )
 
     # Get ionization energy
     ionization_energy_in_ev_nist = artisatomic.get_nist_ionization_energies_ev()[(atomic_number, ion_stage)]
@@ -275,8 +273,8 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     #     transition_count_of_level_name[energy_levels[lower + 1].levelname] += 1
     #     transition_count_of_level_name[energy_levels[upper + 1].levelname] += 1
     for row in df_transitions.iter_rows(named=True):
-        lower = (row["lowerlevels"])
-        upper = (row["upperlevels"])
+        lower = row["lowerlevels"]
+        upper = row["upperlevels"]
         transition_count_of_level_name[energy_levels[lower + 1].levelname] += 1
         transition_count_of_level_name[energy_levels[upper + 1].levelname] += 1
 
