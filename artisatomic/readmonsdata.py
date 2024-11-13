@@ -173,6 +173,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         "oscillator_strength": oscillator_strength,
         "g_lower": [g_arr[lower] for lower in lowerlevels],
         "A_ul": A_ul,
+        "energy_lower_level_ev": [energy_levels_lower_ev[lower] for lower in lowerlevels],
     }
     # df_transitions = pd.DataFrame.from_dict(dict_transitions)
     df_transitions = pl.DataFrame(dict_transitions)
@@ -198,6 +199,25 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             f"Cut placed to reduce number of transitions: log(gf) > {cut_value} \n"
             f"{n_transitions} transitions reduced to {n_new_transitions} transitions"
             f" (removed {n_transitions-n_new_transitions})",
+        )
+
+    cut_on_excitation_energy = True
+    if cut_on_excitation_energy:
+        cut_temperature = 50000  # K
+
+        KB = 8.617e-5  # /// Boltzmann constant eV/K
+        thermal_energy = KB * cut_temperature
+
+        n_old_transitions = df_transitions.shape[0]
+        # df_transitions = df_transitions[df_transitions["energy_lower_level_ev"] < thermal_energy]
+        df_transitions = df_transitions.filter(pl.col("energy_lower_level_ev") < thermal_energy)
+        n_new_transitions = df_transitions.shape[0]
+        artisatomic.log_and_print(
+            flog,
+            f"Cut placed to reduce number of transitions: lower level energy < kT "
+            f"(T={cut_temperature} K, kT={thermal_energy} eV) \n"
+            f"{n_old_transitions} transitions reduced to {n_new_transitions} transitions"
+            f" (removed {n_old_transitions - n_new_transitions})",
         )
 
     # transitions = [
