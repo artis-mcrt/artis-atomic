@@ -174,8 +174,8 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         "A_ul": A_ul,
     }
     df_transitions = pd.DataFrame.from_dict(dict_transitions)
-    n_old_transitions = len(df_transitions)
-    assert n_old_transitions == len(
+    n_transitions = len(df_transitions)
+    assert n_transitions == len(
         energy_levels_lower_1000percm
     )  # check number of transitions is the same as the number read in
 
@@ -189,8 +189,8 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         artisatomic.log_and_print(
             flog,
             f"Cut placed to reduce number of transitions: log(gf) > {cut_value} \n"
-            f"{n_old_transitions} transitions reduced to {n_new_transitions} transitions"
-            f" (removed {n_old_transitions-n_new_transitions})",
+            f"{n_transitions} transitions reduced to {n_new_transitions} transitions"
+            f" (removed {n_transitions-n_new_transitions})",
         )
 
     transitions = [
@@ -211,7 +211,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     if cut_on_log_gf:
         assert len(transitions) == n_new_transitions
     else:
-        assert len(transitions) == n_old_transitions
+        assert len(transitions) == n_transitions
     # check number of transitions is what we expect
 
     return ionization_energy_in_ev, energy_levels, transitions, transition_count_of_level_name
