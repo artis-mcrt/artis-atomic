@@ -73,7 +73,7 @@ def extend_ion_list(ion_handlers):
     return ion_handlers
 
 
-def get_transition_data(atomic_number, ion_stage, energiesabovegsinpercm, g_arr, flog):
+def get_transition_data(atomic_number, ion_stage, energiesabovegsinpercm, g_arr, parquet_filepath, flog):
     ziparchive_outggf = zipfile.ZipFile(datafilepath / "outggf_Ln_V--VII.zip", "r")
     datafilename_transitions = (
         f"outggf_Ln_V--VII/outggf_sorted_{artisatomic.elsymbols[atomic_number]}_{artisatomic.roman_numerals[ion_stage]}"
@@ -139,6 +139,11 @@ def get_transition_data(atomic_number, ion_stage, energiesabovegsinpercm, g_arr,
         energy_levels_lower_1000percm
     )  # check number of transitions is the same as the number read in
 
+    # Save DataFrame to a Parquet file
+    df_transitions.to_parquet(parquet_filepath, engine="pyarrow")  # or engine="fastparquet"
+    print(f"Parquet file created ({parquet_filepath})")
+    # quit()
+
     return df_transitions, n_transitions
 
 
@@ -174,7 +179,18 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     ]
 
     # Get next file
-    df_transitions, n_transitions = get_transition_data(atomic_number, ion_stage, energiesabovegsinpercm, g_arr, flog)
+    parquet_filename = f"outggf_{atomic_number}_{ion_stage}.parquet"
+    parquet_filepath = datafilepath / parquet_filename
+    if parquet_filepath.is_file():
+        df_transitions = pd.read_parquet(parquet_filepath, engine="pyarrow")
+        n_transitions = len(df_transitions)
+        artisatomic.log_and_print(
+            flog, f"Read from {parquet_filename} \n"
+                  f"transitions: {n_transitions}"
+        )
+    else:
+        df_transitions, n_transitions = get_transition_data(atomic_number, ion_stage,
+                                                            energiesabovegsinpercm, g_arr, parquet_filepath, flog)
 
     # Get ionization energy
     ionization_energy_in_ev_nist = artisatomic.get_nist_ionization_energies_ev()[(atomic_number, ion_stage)]
@@ -191,6 +207,9 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         artisatomic.log_and_print(
             flog, f"Energies do not match -- using NIST value of {ionization_energy_in_ev_nist} eV"
         )
+        if abs(ionization_energy_in_ev - ionization_energy_in_ev_nist) > 5:
+            print("Energies really do not match -- check using correct parquet file")
+            quit()
 
     df_transitions = pl.from_pandas(df_transitions)
 
