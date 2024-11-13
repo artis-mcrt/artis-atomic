@@ -184,7 +184,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     if parquet_filepath.is_file():
         df_transitions = pd.read_parquet(parquet_filepath, engine="pyarrow")
         n_transitions = len(df_transitions)
-        artisatomic.log_and_print(flog, f"Read from {parquet_filename} \n" f"transitions: {n_transitions}")
+        artisatomic.log_and_print(flog, f"transitions: {n_transitions} \n Read transitions from {parquet_filename}")
     else:
         df_transitions, n_transitions = get_transition_data(
             atomic_number, ion_stage, energiesabovegsinpercm, g_arr, parquet_filepath, flog
