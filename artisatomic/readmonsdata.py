@@ -166,14 +166,42 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         ]
     )
 
+    dict_transitions = {
+        "lowerlevels": lowerlevels,
+        "upperlevels": upperlevels,
+        "oscillator_strength": oscillator_strength,
+        "g_lower": [g_arr[lower] for lower in lowerlevels],
+        "A_ul": A_ul,
+    }
+    df_transitions = pd.DataFrame.from_dict(dict_transitions)
+    n_old_transitions = len(df_transitions)
+    assert n_old_transitions == len(
+        energy_levels_lower_1000percm
+    )  # check number of transitions is the same as the number read in
+
+    cut_on_log_gf = True
+    if cut_on_log_gf:
+        df_transitions["log(gf)"] = np.log10(df_transitions["oscillator_strength"] * df_transitions["g_lower"])
+
+        cut_value = -3
+        df_transitions = df_transitions[df_transitions["log(gf)"] >= cut_value]
+        n_new_transitions = len(df_transitions)
+        artisatomic.log_and_print(
+            flog,
+            f"Cut placed to reduce number of transitions: log(gf) > {cut_value} \n"
+            f"{n_old_transitions} transitions reduced to {n_new_transitions} transitions"
+            f" (removed {n_old_transitions-n_new_transitions})",
+        )
+
     transitions = [
         TransitionTuple(
-            lowerlevel=lower + 1,
-            upperlevel=upper + 1,
+            lowerlevel=int(lower) + 1,
+            upperlevel=int(upper) + 1,
             A=A,
             coll_str=-1,
         )
-        for A, lower, upper in zip(A_ul, lowerlevels, upperlevels, strict=False)
+        # for A, lower, upper in zip(A_ul, lowerlevels, upperlevels, strict=False)
+        for A, lower, upper in df_transitions[["A_ul", "lowerlevels", "upperlevels"]].to_numpy()
     ]
 
     transition_count_of_level_name = defaultdict(int)
@@ -181,9 +209,11 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         transition_count_of_level_name[energy_levels[lower + 1].levelname] += 1
         transition_count_of_level_name[energy_levels[upper + 1].levelname] += 1
 
-    assert len(transitions) == len(
-        energy_levels_lower_1000percm
-    )  # check number of transitions is the same as the number read in
+    if cut_on_log_gf:
+        assert len(transitions) == n_new_transitions
+    else:
+        assert len(transitions) == n_old_transitions
+        # check number of transitions is the same as the number read in
 
     return ionization_energy_in_ev, energy_levels, transitions, transition_count_of_level_name
 
