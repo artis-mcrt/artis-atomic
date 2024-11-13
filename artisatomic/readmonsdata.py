@@ -205,9 +205,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         artisatomic.log_and_print(
             flog, f"Energies do not match -- using NIST value of {ionization_energy_in_ev_nist} eV"
         )
-        if abs(ionization_energy_in_ev - ionization_energy_in_ev_nist) > 5:
-            print("Energies really do not match -- check using correct parquet file")
-            quit()
 
     df_transitions = pl.from_pandas(df_transitions)
 
