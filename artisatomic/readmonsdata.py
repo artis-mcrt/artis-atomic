@@ -6,6 +6,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import polars as pl
 from astropy import constants as const
 from astropy import units as u
 
@@ -173,19 +174,25 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         "g_lower": [g_arr[lower] for lower in lowerlevels],
         "A_ul": A_ul,
     }
-    df_transitions = pd.DataFrame.from_dict(dict_transitions)
-    n_transitions = len(df_transitions)
+    # df_transitions = pd.DataFrame.from_dict(dict_transitions)
+    df_transitions = pl.DataFrame(dict_transitions)
+    # n_transitions = len(df_transitions)
+    n_transitions = df_transitions.shape[0]
     assert n_transitions == len(
         energy_levels_lower_1000percm
     )  # check number of transitions is the same as the number read in
 
     cut_on_log_gf = True
     if cut_on_log_gf:
-        df_transitions["log(gf)"] = np.log10(df_transitions["oscillator_strength"] * df_transitions["g_lower"])
-
+        # df_transitions["log(gf)"] = np.log10(df_transitions["oscillator_strength"] * df_transitions["g_lower"])
+        df_transitions = df_transitions.with_columns(
+            (pl.col("oscillator_strength") * pl.col("g_lower")).log10().alias("log(gf)")
+        )
         cut_value = -3
-        df_transitions = df_transitions[df_transitions["log(gf)"] >= cut_value]
-        n_new_transitions = len(df_transitions)
+        # df_transitions = df_transitions[df_transitions["log(gf)"] >= cut_value]
+        df_transitions = df_transitions.filter(pl.col("log(gf)") >= cut_value)
+        # n_new_transitions = len(df_transitions)
+        n_new_transitions = df_transitions.shape[0]
         artisatomic.log_and_print(
             flog,
             f"Cut placed to reduce number of transitions: log(gf) > {cut_value} \n"
@@ -193,14 +200,24 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             f" (removed {n_transitions-n_new_transitions})",
         )
 
+    # transitions = [
+    #     TransitionTuple(
+    #         lowerlevel=int(lower) + 1,
+    #         upperlevel=int(upper) + 1,
+    #         A=A,
+    #         coll_str=-1,
+    #     )
+    #     for A, lower, upper in df_transitions[["A_ul", "lowerlevels", "upperlevels"]].to_numpy()
+    # ]
+
     transitions = [
         TransitionTuple(
-            lowerlevel=int(lower) + 1,
-            upperlevel=int(upper) + 1,
-            A=A,
+            lowerlevel=int(row["lowerlevels"]) + 1,
+            upperlevel=int(row["upperlevels"]) + 1,
+            A=row["A_ul"],
             coll_str=-1,
         )
-        for A, lower, upper in df_transitions[["A_ul", "lowerlevels", "upperlevels"]].to_numpy()
+        for row in df_transitions.to_dicts()
     ]
 
     transition_count_of_level_name = defaultdict(int)
