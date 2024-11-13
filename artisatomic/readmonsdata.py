@@ -200,7 +200,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             A=A,
             coll_str=-1,
         )
-        # for A, lower, upper in zip(A_ul, lowerlevels, upperlevels, strict=False)
         for A, lower, upper in df_transitions[["A_ul", "lowerlevels", "upperlevels"]].to_numpy()
     ]
 
