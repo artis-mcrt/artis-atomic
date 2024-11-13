@@ -212,7 +212,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         assert len(transitions) == n_new_transitions
     else:
         assert len(transitions) == n_old_transitions
-        # check number of transitions is the same as the number read in
+    # check number of transitions is what we expect
 
     return ionization_energy_in_ev, energy_levels, transitions, transition_count_of_level_name
 
