@@ -208,16 +208,13 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
 
     df_transitions = pl.from_pandas(df_transitions)
 
-    cut_on_log_gf = True
+    cut_on_log_gf = False
     if cut_on_log_gf:
-        # df_transitions["log(gf)"] = np.log10(df_transitions["oscillator_strength"] * df_transitions["g_lower"])
         df_transitions = df_transitions.with_columns(
             (pl.col("oscillator_strength") * pl.col("g_lower")).log10().alias("log(gf)")
         )
         cut_value = -3
-        # df_transitions = df_transitions[df_transitions["log(gf)"] >= cut_value]
         df_transitions = df_transitions.filter(pl.col("log(gf)") >= cut_value)
-        # n_new_transitions = len(df_transitions)
         n_new_transitions = df_transitions.shape[0]
         artisatomic.log_and_print(
             flog,
@@ -226,15 +223,14 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             f" (removed {n_transitions-n_new_transitions})",
         )
 
-    cut_on_excitation_energy = True
+    cut_on_excitation_energy = False
     if cut_on_excitation_energy:
-        cut_temperature = 50000  # K
+        cut_temperature = 150000  # K
 
         KB = 8.617e-5  # /// Boltzmann constant eV/K
         thermal_energy = KB * cut_temperature
 
         n_old_transitions = df_transitions.shape[0]
-        # df_transitions = df_transitions[df_transitions["energy_lower_level_ev"] < thermal_energy]
         df_transitions = df_transitions.filter(pl.col("energy_lower_level_ev") < thermal_energy)
         n_new_transitions = df_transitions.shape[0]
         artisatomic.log_and_print(
@@ -244,16 +240,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             f"{n_old_transitions} transitions reduced to {n_new_transitions} transitions"
             f" (removed {n_old_transitions - n_new_transitions})",
         )
-
-    # transitions = [
-    #     TransitionTuple(
-    #         lowerlevel=int(lower) + 1,
-    #         upperlevel=int(upper) + 1,
-    #         A=A,
-    #         coll_str=-1,
-    #     )
-    #     for A, lower, upper in df_transitions[["A_ul", "lowerlevels", "upperlevels"]].to_numpy()
-    # ]
 
     transitions = [
         TransitionTuple(
@@ -266,9 +252,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     ]
 
     transition_count_of_level_name = defaultdict(int)
-    # for lower, upper in zip(lowerlevels, upperlevels, strict=True):
-    #     transition_count_of_level_name[energy_levels[lower + 1].levelname] += 1
-    #     transition_count_of_level_name[energy_levels[upper + 1].levelname] += 1
     for row in df_transitions.iter_rows(named=True):
         lower = row["lowerlevels"]
         upper = row["upperlevels"]
@@ -282,6 +265,3 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     # check number of transitions is what we expect
 
     return ionization_energy_in_ev, energy_levels, transitions, transition_count_of_level_name
-
-
-# read_levels_and_transitions(atomic_number=57, ion_stage=5, flog=None)
