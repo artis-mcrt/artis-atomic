@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 import io
+import math
 from pathlib import Path
 
 import artistools as at
+import numpy as np
 import pandas as pd
+import polars as pl
 import requests
 
 
@@ -17,21 +20,34 @@ def main():
     pd.options.display.max_rows = 999
     pd.options.display.max_columns = 999
 
-    nuclist = [
-        # (27, 56),
-        # (27, 57),
-        # (28, 56),
-        # (28, 57),
-        # (30, 71),
-        # (92, 238)
-        # (47, 104),
-    ]
+    dfbetaminus = pl.read_csv(
+        at.get_config()["path_datadir"] / "betaminusdecays.txt",
+        separator=" ",
+        comment_prefix="#",
+        has_header=False,
+        new_columns=["A", "Z", "Q[MeV]", "E_gamma[MeV]", "E_elec[MeV]", "E_neutrino[MeV]", "tau[s]"],
+    ).filter(pl.col("Q[MeV]") > 0.0)
 
-    dfmodel, _, _ = at.inputmodel.get_modeldata(
-        "/Volumes/GoogleDrive/My"
-        " Drive/Archive/Mergers/SFHo_long/SFHo_long_snapshot/artismodel_SFHo_long-radius-entropy_0p05d"
+    dfalpha = pl.read_csv(
+        at.get_config()["path_datadir"] / "alphadecays.txt",
+        separator=" ",
+        comment_prefix="#",
+        has_header=False,
+        new_columns=[
+            "A",
+            "Z",
+            "branch_alpha",
+            "branch_beta",
+            "halflife_s",
+            "Q_total_alphadec[MeV]",
+            "Q_total_betadec[MeV]",
+            "E_alpha[MeV]",
+            "E_gamma[MeV]",
+            "E_beta[MeV]",
+        ],
     )
-    nuclist = [at.get_z_a_nucname(c) for c in dfmodel.columns if c.startswith("X_") and not c.endswith("Fegroup")]
+
+    nuclist = sorted(list(dfbetaminus.select(["Z", "A"]).iter_rows()) + list(dfalpha.select(["Z", "A"]).iter_rows()))
 
     colreplacements = {
         "Rad Int.": "intensity",
@@ -43,10 +59,11 @@ def main():
     for z, a in nuclist:
         strnuclide = elsymbols[z].lower() + str(a)
         print(f"\n(Z={z}) {strnuclide}")
-        outpath = outfolder / f"{strnuclide}_lines.txt"
-        if outpath.is_file():
-            print(f"  {outpath} already exists. skipping...")
-            continue
+        filename = f"{strnuclide}_lines.txt"
+        outpath = outfolder / filename
+        # if outpath.is_file():
+        #     print(f"  {filename} already exists. skipping...")
+        #     continue
 
         url = f"https://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc={strnuclide}&unc=standard&out=file"
 
@@ -72,6 +89,7 @@ def main():
             )
             # dfnuclide = pd.read_fwf(io.StringIO(strtable))
             dfnuclide = pd.read_csv(io.StringIO(strtable), delimiter="\t", dtype={"Par. Elevel": str})
+
             newcols = []
             for colname in dfnuclide.columns:
                 colname = colname.strip()
@@ -96,37 +114,50 @@ def main():
                 if not is_groundlevel:
                     continue
                 found_groundlevel = True
-                dfgammadecays = dfnuclide.query(
+                dfgammadecays = dfdecay.query(
                     "Radiation == 'G' and (radsubtype == '' or radsubtype == 'Annihil.') and intensity >= 0.15",
                     inplace=False,
                 )
-                # print(dfgammadecays)
 
-                dfout = pd.DataFrame()
-                dfout["energy_mev"] = dfgammadecays.radiationenergy_kev.to_numpy() / 1000.0
-                dfout["intensity"] = dfgammadecays.intensity.to_numpy() / 100.0
+                maybedfbetaminusrow = dfbetaminus.filter(pl.col("Z") == z).filter(pl.col("A") == a)
+                maybedfalpharow = dfalpha.filter(pl.col("Z") == z).filter(pl.col("A") == a)
+                if not dfgammadecays.empty:
+                    print(f"                     NNDC half-life: {dfgammadecays.iloc[0]['T1/2 (num)']:7.1e} s")
 
-                # if positrons are emitted, there are two 511 keV gamma rays per positron decay
-                # dfannihil = dfnuclide.query("Radiation == 'G' and radsubtype == 'Annihil.'", inplace=False)
-                # posbranchfrac = 0. if dfannihil.empty else dfannihil.intensity.sum() / 100. / 2.
-                # endecay_positrons_mev = 0.
-                # dfrad_e = dfnuclide.query("Radiation == 'BP' or Radiation == 'E'")
-                # endecay_positrons_mev = (dfrad_e.radiationenergy_kev * dfrad_e.intensity).sum() / 100.
+                if maybedfbetaminusrow.height > 0:
+                    halflife = maybedfbetaminusrow["tau[s]"].item() * math.log(2)
+                    print(f"      betaminusdecays.txt half-life: {halflife:7.1e} s")
+                if maybedfalpharow.height > 0:
+                    print(f"          alphadecays.txt half-life: {maybedfalpharow['halflife_s'].item():7.1e} s")
 
-                dfout = dfout.sort_values(by="energy_mev", ascending=True, ignore_index=True)
+                e_gamma = (dfgammadecays["radiationenergy_kev"] * dfgammadecays["intensity"] / 100.0).sum()
+                print(f"                   NNDC Egamma: {e_gamma:7.1f} keV")
 
-                # combine identical energy gamma ray intensities
-                # aggregation_functions = {'energy_mev': 'first', 'intensity': 'sum'}
-                # dfout = dfout.groupby(dfout['energy_mev']).aggregate(aggregation_functions)
+                if maybedfbetaminusrow.height > 0:
+                    file_e_gamma = maybedfbetaminusrow["E_gamma[MeV]"].item() * 1000
+                    print(f"    betaminusdecays.txt Egamma: {file_e_gamma:7.1f} keV")
+                    if not np.isclose(e_gamma, file_e_gamma, rtol=0.1):
+                        print("WARNING!!!!!!")
 
-                # print(dfout)
+                elif maybedfalpharow.height > 0:
+                    file_e_gamma = maybedfalpharow["E_gamma[MeV]"].item() * 1000
+                    print(f"        alphadecays.txt Egamma: {file_e_gamma:7.1f} keV")
+                    if not np.isclose(e_gamma, file_e_gamma, rtol=0.1):
+                        print("WARNING!!!!!!")
+
+                dfout = pl.DataFrame(
+                    {
+                        "energy_mev": dfgammadecays.radiationenergy_kev.to_numpy() / 1000.0,
+                        "intensity": dfgammadecays.intensity.to_numpy() / 100.0,
+                    }
+                ).sort("energy_mev")
                 if len(dfout) > 0:
                     with outpath.open("w", encoding="utf-8") as fout:
-                        # fout.write(f'{len(dfout)}  {posbranchfrac:.3f}  {endecay_positrons_mev:.3f}\n')
                         fout.write(f"{len(dfout)}\n")
-                        for _, row in dfout.iterrows():
-                            fout.write(f"{row.energy_mev:5.3f}  {row.intensity:6.4f}\n")
-                        print(f"Saved {outpath}")
+                        for energy_mev, intensity in dfout[["energy_mev", "intensity"]].iter_rows():
+                            fout.write(f"{energy_mev:5.3f}  {intensity:6.4f}\n")
+
+                        print(f"Saved {filename}")
                 else:
                     print("empty DataFrame")
             if not found_groundlevel:
