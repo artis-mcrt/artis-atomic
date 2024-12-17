@@ -99,18 +99,6 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
         for config in dflevels["Configuration"]
     }
 
-    # energy_levels_zerodindexed = [
-    #     FloersEnergyLevel(
-    #         levelname=row["Configuration"],
-    #         parity=row["Parity"],
-    #         g=row["g"],
-    #         energyabovegsinpercm=float(row["Energy"]),
-    #     )
-    #     for row in dflevels.iter_rows(named=True)
-    # ]
-
-    # energy_levels = [None, *energy_levels_zerodindexed]
-
     # use standard artisatomic column names and convert to 1-indexed levels
 
     dflevels = artisatomic.add_dummy_zero_level(
