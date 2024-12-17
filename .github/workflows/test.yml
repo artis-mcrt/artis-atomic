@@ -155,6 +155,7 @@ jobs:
               run: |
                   cat compositiondata.txt
                   cat *.json
+                  echo
                   md5sum *.txt
                   md5sum -c ../checksums.txt
 
