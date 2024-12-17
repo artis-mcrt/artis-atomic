@@ -1564,7 +1564,7 @@ def write_output_files(
                 [dftransitions_ion, pl.DataFrame(upsilon_only_transitions)], how="diagonal_relaxed"
             )
 
-        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")[1:]
+        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")
         dftransitions_ion = dftransitions_ion.sort(by=("lowerlevel", "upperlevel"))
         with open(os.path.join(args.output_folder, "adata.txt"), "a") as fatommodels:
             write_adata(
@@ -1626,10 +1626,10 @@ def write_adata(
     args,
     flog,
 ):
-    log_and_print(flog, f"Writing {dfenergylevels.height} levels to 'adata.txt'")
-    fatommodels.write(f"{atomic_number:12d}{ion_stage:12d}{dfenergylevels.height:12d}{ionization_energy:15.7f}\n")
+    log_and_print(flog, f"Writing {dfenergylevels.height-1} levels to 'adata.txt'")
+    fatommodels.write(f"{atomic_number:12d}{ion_stage:12d}{dfenergylevels.height-1:12d}{ionization_energy:15.7f}\n")
 
-    for energylevel in dfenergylevels.iter_rows(named=True):
+    for energylevel in dfenergylevels[1:].iter_rows(named=True):
         transitioncount = (
             transition_count_of_level_name.get(energylevel["levelname"], 0) if "levelname" in energylevel else 0
         )
