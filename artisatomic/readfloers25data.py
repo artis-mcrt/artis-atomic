@@ -85,6 +85,20 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
 
     dflevels = dflevels.with_columns(pl.col("J").str.strip_suffix("/2").cast(pl.Float32).alias("2J"))
 
+    artisatomic.log_and_print(flog, f"Read {dflevels.height:d} levels")
+
+    dftransitions = pl.from_pandas(pd.read_csv(lines_file, sep=r"\s+", skiprows=28, dtype_backend="pyarrow"))
+
+    artisatomic.log_and_print(flog, f"Read {dftransitions.height} transitions")
+
+    transition_count_of_level_name = {
+        config: (
+            dftransitions.filter(pl.col("Config_Lower") == config).height
+            + dftransitions.filter(pl.col("Config_Upper") == config).height
+        )
+        for config in dflevels["Configuration"]
+    }
+
     energy_levels_zerodindexed = [
         FloersEnergyLevel(
             levelname=row["Configuration"],
@@ -97,27 +111,23 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
 
     energy_levels = [None, *energy_levels_zerodindexed]
 
-    artisatomic.log_and_print(flog, f"Read {len(energy_levels[1:]):d} levels")
-
-    dftransitions = pl.from_pandas(pd.read_csv(lines_file, sep=r"\s+", skiprows=28, dtype_backend="pyarrow"))
-
-    transition_count_of_level_name = {
-        config: (
-            dftransitions.filter(pl.col("Config_Lower") == config).height
-            + dftransitions.filter(pl.col("Config_Upper") == config).height
-        )
-        for config in dflevels["Configuration"]
-    }
-
     # use standard artisatomic column names and convert to 1-indexed levels
+
+    # dflevels = artisatomic.add_dummy_zero_level(
+    #     dflevels.select(
+    #         levelname=pl.col("Configuration"),
+    #         parity=pl.col("Parity"),
+    #         g=pl.col("g"),
+    #         energyabovegsinpercm=pl.col("Energy"),
+    #     )
+    # )
+
     dftransitions = dftransitions.select(
         lowerlevel=pl.col("Lower") + 1, upperlevel=pl.col("Upper") + 1, A=pl.col("A"), forbidden=pl.lit(False)
     )
 
     # this check is slow
     # assert sum(transition_count_of_level_name.values()) == len(transitions) * 2
-
-    artisatomic.log_and_print(flog, f"Read {len(dftransitions)} transitions")
 
     return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
 
