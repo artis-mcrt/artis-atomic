@@ -1469,34 +1469,6 @@ def write_output_files(
             if hasattr(energy_levels[i][levelid], "levelname")
         }
 
-        # for transitionid, transition in enumerate(transitions[i]):
-        #     updaterequired = False
-        #     if hasattr(transition, "upperlevel") and transition.upperlevel >= 0:
-        #         id_lower = transition.lowerlevel
-        #         id_upper = transition.upperlevel
-        #     else:
-        #         id_upper = level_id_of_level_name[transition.nameto]
-        #         id_lower = level_id_of_level_name[transition.namefrom]
-        #         updaterequired = True
-
-        #     coll_str = transition.coll_str
-        #     if coll_str < 5:
-        #         if (id_lower, id_upper) in upsilondict:
-        #             coll_str = upsilondict[(id_lower, id_upper)]
-        #         else:
-        #             forbidden = (
-        #                 transition.Forbidden
-        #                 if hasattr(transition, "forbidden")
-        #                 else check_forbidden(energy_levels[i][id_lower], energy_levels[i][id_upper])
-        #             )
-
-        #             coll_str = -2.0 if forbidden else -1.0
-        #         updaterequired = True
-
-        #     if updaterequired:
-        #         transitions[i][transitionid] = transition._replace(
-        #             lowerlevel=id_lower, upperlevel=id_upper, coll_str=coll_str
-        #         )
         dftransitions_ion = pl.DataFrame(transitions[i])
         if "upperlevel" not in dftransitions_ion.columns:
             dftransitions_ion = dftransitions_ion.with_columns(
