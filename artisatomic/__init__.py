@@ -228,7 +228,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
         # in Rydberg, cross section in Mb) tuples
         nahar_phixs_tables: list[dict[tuple, list[tuple]]] = [{} for _ in listions]
 
-        ionization_energy_ev = [0.0 for x in listions]
+        ionization_energy_ev = [0.0 for _ in listions]
         thresholds_ev_dict: list[dict] = [{} for _ in listions]
 
         # list of named tuples (hillier_transition_row)
@@ -748,7 +748,7 @@ def combine_hillier_nahar(
                         hillier_energy_levels, hillier_level_ids_matching_this_nahar_state
                     )
                     sumhillierstatweights = sum(
-                        [hillier_energy_levels[levelid].g for levelid in hillier_level_ids_matching_this_nahar_state]
+                        hillier_energy_levels[levelid].g for levelid in hillier_level_ids_matching_this_nahar_state
                     )
                     flog.write(f"<E> = {avghillierenergyabovegsinev:.3f} eV, g_sum = {sumhillierstatweights:.1f}: \n")
                     if abs(nahar_energyabovegsinev / avghillierenergyabovegsinev - 1) > 0.5:
