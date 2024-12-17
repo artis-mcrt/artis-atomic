@@ -117,6 +117,7 @@ jobs:
                   python -m pip install -e .
 
             - name: Cache CMFGEN atomic data
+              if: matrix.testname == 'cmfgen'
               uses: actions/cache@v4
               id: cache-cmfgendata
               with:
