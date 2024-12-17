@@ -78,9 +78,7 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
     )
 
     ionization_energy_in_ev = artisatomic.get_nist_ionization_energies_ev()[(atomic_number, ion_stage)]
-    print(levels_file)
-    print(list(levels_file.parent.glob("*")))
-    assert Path(levels_file).exists()
+
     dflevels = pl.from_pandas(
         pd.read_csv(levels_file, sep=r"\s+", skiprows=18, dtype_backend="pyarrow", dtype={"J": str})
     ).with_columns(
