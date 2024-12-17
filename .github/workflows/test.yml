@@ -139,10 +139,6 @@ jobs:
               if: matrix.testname == 'jplt'
               working-directory: atomic-data-tanaka-jplt/
               run: source ./setup_jplt_data.sh
-            - name: Generate artis atomic data files
-              run: |
-                  cp tests/${{ matrix.testname }}/artisatomicionhandlers.json .
-                  makeartisatomicfiles -output_folder tests/${{ matrix.testname }}/output
 
             - name: Extract Floers25 atomic data
               if: matrix.testname == 'floers25'
