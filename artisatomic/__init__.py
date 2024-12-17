@@ -1469,7 +1469,6 @@ def write_output_files(
             if hasattr(energy_levels[i][levelid], "levelname")
         }
 
-        unused_upsilon_transitions = set(upsilondicts[i].keys())  # start with the full set and remove used ones
         for transitionid, transition in enumerate(transitions[i]):
             updaterequired = False
             if hasattr(transition, "upperlevel") and transition.upperlevel >= 0:
@@ -1479,7 +1478,6 @@ def write_output_files(
                 id_upper = level_id_of_level_name[transition.nameto]
                 id_lower = level_id_of_level_name[transition.namefrom]
                 updaterequired = True
-            unused_upsilon_transitions.discard((id_lower, id_upper))
 
             coll_str = transition.coll_str
             if coll_str < 5:
@@ -1501,6 +1499,9 @@ def write_output_files(
                 )
 
         dftransitions_ion = pl.DataFrame(transitions[i])
+        unused_upsilon_transitions = set(upsilondicts[i].keys()).difference(
+            dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
+        )
 
         upsilon_transition_row = namedtuple(
             "transition", "lowerlevel upperlevel A nameto namefrom lambdaangstrom coll_str"
