@@ -1469,36 +1469,72 @@ def write_output_files(
             if hasattr(energy_levels[i][levelid], "levelname")
         }
 
-        for transitionid, transition in enumerate(transitions[i]):
-            updaterequired = False
-            if hasattr(transition, "upperlevel") and transition.upperlevel >= 0:
-                id_lower = transition.lowerlevel
-                id_upper = transition.upperlevel
-            else:
-                id_upper = level_id_of_level_name[transition.nameto]
-                id_lower = level_id_of_level_name[transition.namefrom]
-                updaterequired = True
+        # for transitionid, transition in enumerate(transitions[i]):
+        #     updaterequired = False
+        #     if hasattr(transition, "upperlevel") and transition.upperlevel >= 0:
+        #         id_lower = transition.lowerlevel
+        #         id_upper = transition.upperlevel
+        #     else:
+        #         id_upper = level_id_of_level_name[transition.nameto]
+        #         id_lower = level_id_of_level_name[transition.namefrom]
+        #         updaterequired = True
 
-            coll_str = transition.coll_str
-            if coll_str < 5:
-                if (id_lower, id_upper) in upsilondict:
-                    coll_str = upsilondict[(id_lower, id_upper)]
-                else:
-                    forbidden = (
-                        transition.Forbidden
-                        if hasattr(transition, "forbidden")
-                        else check_forbidden(energy_levels[i][id_lower], energy_levels[i][id_upper])
-                    )
+        #     coll_str = transition.coll_str
+        #     if coll_str < 5:
+        #         if (id_lower, id_upper) in upsilondict:
+        #             coll_str = upsilondict[(id_lower, id_upper)]
+        #         else:
+        #             forbidden = (
+        #                 transition.Forbidden
+        #                 if hasattr(transition, "forbidden")
+        #                 else check_forbidden(energy_levels[i][id_lower], energy_levels[i][id_upper])
+        #             )
 
-                    coll_str = -2.0 if forbidden else -1.0
-                updaterequired = True
+        #             coll_str = -2.0 if forbidden else -1.0
+        #         updaterequired = True
 
-            if updaterequired:
-                transitions[i][transitionid] = transition._replace(
-                    lowerlevel=id_lower, upperlevel=id_upper, coll_str=coll_str
-                )
-
+        #     if updaterequired:
+        #         transitions[i][transitionid] = transition._replace(
+        #             lowerlevel=id_lower, upperlevel=id_upper, coll_str=coll_str
+        #         )
         dftransitions_ion = pl.DataFrame(transitions[i])
+        if "upperlevel" not in dftransitions_ion.columns:
+            dftransitions_ion = dftransitions_ion.with_columns(
+                upperlevel=pl.col("nameto").map_elements(
+                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],
+                    return_dtype=pl.Int64,
+                )
+            )
+        if "lowerlevel" not in dftransitions_ion.columns:
+            dftransitions_ion = dftransitions_ion.with_columns(
+                lowerlevel=pl.col("namefrom").map_elements(
+                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],
+                    return_dtype=pl.Int64,
+                )
+            )
+
+        if "forbidden" not in dftransitions_ion.columns:
+            dftransitions_ion = dftransitions_ion.with_columns(
+                forbidden=pl.struct(["lowerlevel", "upperlevel"]).map_elements(
+                    lambda r, i=i: check_forbidden(
+                        energy_levels[i][r["lowerlevel"]], energy_levels[i][r["upperlevel"]]
+                    ),
+                    return_dtype=pl.Boolean,
+                )
+            )
+
+        dftransitions_ion = dftransitions_ion.with_columns(
+            pl.struct(["lowerlevel", "upperlevel", "forbidden"])
+            .map_elements(
+                lambda row, upsilondict=upsilondict: upsilondict.get(
+                    (row["lowerlevel"], row["upperlevel"]),
+                    -2.0 if row["forbidden"] else -1.0,
+                ),
+                return_dtype=pl.Float64,
+            )
+            .alias("coll_str")
+        )
+
         unused_upsilon_transitions = set(upsilondicts[i].keys()).difference(
             dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
         )

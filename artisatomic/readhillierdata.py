@@ -270,7 +270,7 @@ def read_levels_and_transitions(
     artisatomic.log_and_print(flog, "Reading " + filename)
     hillier_transition_row = namedtuple(
         "hillier_transition_row",
-        "namefrom nameto f A lambdaangstrom i j hilliertransitionid lowerlevel upperlevel coll_str",
+        "namefrom nameto f A lambdaangstrom i j hilliertransitionid",
     )
 
     prev_line = ""
@@ -397,9 +397,6 @@ def read_levels_and_transitions(
                     i=int(row[5].rstrip("-")),
                     j=int(row[6]),
                     hilliertransitionid=hilliertransitionid,
-                    lowerlevel=-1,
-                    upperlevel=-1,
-                    coll_str=-99,
                 )
 
                 if True:  # or int(transition.hilliertransitionid) not in defined_transition_ids: #checking for duplicates massively slows down the code
