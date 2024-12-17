@@ -1626,8 +1626,8 @@ def write_adata(
     args,
     flog,
 ):
-    log_and_print(flog, f"Writing {dfenergylevels.height-1} levels to 'adata.txt'")
-    fatommodels.write(f"{atomic_number:12d}{ion_stage:12d}{dfenergylevels.height-1:12d}{ionization_energy:15.7f}\n")
+    log_and_print(flog, f"Writing {dfenergylevels.height} levels to 'adata.txt'")
+    fatommodels.write(f"{atomic_number:12d}{ion_stage:12d}{dfenergylevels.height:12d}{ionization_energy:15.7f}\n")
 
     for energylevel in dfenergylevels.iter_rows(named=True):
         transitioncount = (
@@ -1658,8 +1658,6 @@ def write_adata(
                 level_comment += f" '{config}'"
             else:
                 level_comment += " (no config)"
-        else:
-            level_comment = level_comment.rstrip()
 
         fatommodels.write(
             f"{energylevel["levelid"]:5d} {hc_in_ev_cm * float(energylevel["energyabovegsinpercm"]):19.16f} {float(energylevel["g"]):8.3f} {transitioncount:4d} {level_comment:}\n"
