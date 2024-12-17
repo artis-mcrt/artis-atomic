@@ -127,6 +127,28 @@ def drop_handlers(list_ions: list[int | tuple[int, str]]) -> list[int]:
     return list_out
 
 
+def add_dummy_zero_level(dflevels: pl.DataFrame) -> pl.DataFrame:
+    # keep the zero index as null since we use 1-index level indicies
+    anycolname = dflevels.columns[0]
+    return pl.concat(
+        [
+            pl.DataFrame({anycolname: [None]}, schema={anycolname: dflevels.schema[anycolname]}),
+            dflevels,
+        ],
+        how="diagonal",
+    )
+
+
+def leveltuples_to_pldataframe(energy_levels) -> pl.DataFrame:
+    if isinstance(energy_levels, pl.DataFrame):
+        print(energy_levels[:10])
+        assert energy_levels["energyabovegsinpercm"].item(0) is None
+
+    return add_dummy_zero_level(
+        pl.DataFrame(energy_levels[1:]),
+    )
+
+
 def main(args=None, argsraw=None, **kwargs):
     if args is None:
         parser = argparse.ArgumentParser(
