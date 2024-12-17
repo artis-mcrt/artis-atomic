@@ -19,6 +19,7 @@ from pathlib import Path
 import argcomplete
 import numpy as np
 import pandas as pd
+import polars as pl
 from astropy import constants as const
 from astropy import units as u
 from scipy import integrate
@@ -232,7 +233,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
         thresholds_ev_dict: list[dict] = [{} for _ in listions]
 
         # list of named tuples (hillier_transition_row)
-        transitions: list = [[] for x in listions]
+        transitions: list = [[] for _ in listions]
         transition_count_of_level_name: list[dict] = [{} for _ in listions]
         upsilondicts: list[dict] = [{} for x in listions]
 
@@ -1445,7 +1446,6 @@ def write_output_files(
     args,
 ):
     atomic_number, listions = ion_handlers[elementindex]
-    upsilon_transition_row = namedtuple("transition", "lowerlevel upperlevel A nameto namefrom lambdaangstrom coll_str")
 
     for i, ion_stage in enumerate(listions):
         with contextlib.suppress(TypeError):
@@ -1500,6 +1500,12 @@ def write_output_files(
                     lowerlevel=id_lower, upperlevel=id_upper, coll_str=coll_str
                 )
 
+        dftransitions_ion = pl.DataFrame(transitions[i])
+
+        upsilon_transition_row = namedtuple(
+            "transition", "lowerlevel upperlevel A nameto namefrom lambdaangstrom coll_str"
+        )
+        upsilon_only_transitions = []
         log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
         for id_lower, id_upper in unused_upsilon_transitions:
             namefrom = energy_levels[i][id_upper].levelname
@@ -1511,15 +1517,19 @@ def write_output_files(
                 )
             except ZeroDivisionError:
                 lamdaangstrom = -1
-            # upsilon = upsilondict[(id_lower, id_upper)]
+
             transition_count_of_level_name[i][namefrom] += 1
             transition_count_of_level_name[i][nameto] += 1
             coll_str = upsilondict[(id_lower, id_upper)]
 
             transition = upsilon_transition_row(id_lower, id_upper, A, namefrom, nameto, lamdaangstrom, coll_str)
-            transitions[i].append(transition)
+            upsilon_only_transitions.append(transition)
 
-        transitions[i].sort(key=lambda x: (getattr(x, "lowerlevel", -99), getattr(x, "upperlevel", -99)))
+        if upsilon_only_transitions:
+            dftransitions_ion = pl.concat(
+                [dftransitions_ion, pl.DataFrame(upsilon_only_transitions)], how="diagonal_relaxed"
+            )
+        dftransitions_ion = dftransitions_ion.sort(by=("lowerlevel", "upperlevel"))
 
         with open(os.path.join(args.output_folder, "adata.txt"), "a") as fatommodels:
             write_adata(
@@ -1535,7 +1545,14 @@ def write_output_files(
 
         with open(os.path.join(args.output_folder, "transitiondata.txt"), "a") as ftransitiondata:
             write_transition_data(
-                ftransitiondata, atomic_number, ion_stage, energy_levels[i], transitions[i], upsilondicts[i], args, flog
+                ftransitiondata,
+                atomic_number,
+                ion_stage,
+                energy_levels[i],
+                dftransitions_ion,
+                upsilondicts[i],
+                args,
+                flog,
             )
 
         if i < len(listions) - 1 and not args.nophixs:  # ignore the top ion
@@ -1612,28 +1629,32 @@ def write_adata(
 
 
 def write_transition_data(
-    ftransitiondata, atomic_number, ion_stage, energy_levels, transitions, upsilondict, args, flog
+    ftransitiondata,
+    atomic_number: int,
+    ion_stage: int,
+    energy_levels,
+    dftransitions_ion: pl.DataFrame,
+    upsilondict,
+    args,
+    flog,
 ):
-    log_and_print(flog, f"Writing {len(transitions)} transitions to 'transitiondata.txt'")
+    log_and_print(flog, f"Writing {dftransitions_ion.height} transitions to 'transitiondata.txt'")
 
     num_forbidden_transitions = 0
     num_collision_strengths_applied = 0
-    ftransitiondata.write(f"{atomic_number:7d}{ion_stage:7d}{len(transitions):12d}\n")
+    ftransitiondata.write(f"{atomic_number:7d}{ion_stage:7d}{dftransitions_ion.height:12d}\n")
 
     level_ids_with_permitted_down_transitions = set()
-    for transition in transitions:
-        levelid_lower = transition.lowerlevel
-        levelid_upper = transition.upperlevel
+    for levelid_lower, levelid_upper in dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows():
         forbidden = energy_levels[levelid_lower].parity == energy_levels[levelid_upper].parity
 
         if not forbidden:
             level_ids_with_permitted_down_transitions.add(levelid_upper)
 
-    for transition in transitions:
-        levelid_lower = transition.lowerlevel
-        levelid_upper = transition.upperlevel
+    for levelid_lower, levelid_upper, A, coll_str in dftransitions_ion[
+        ["lowerlevel", "upperlevel", "A", "coll_str"]
+    ].iter_rows():
         assert levelid_lower < levelid_upper
-        coll_str = transition.coll_str
 
         if coll_str > 0:
             num_collision_strengths_applied += 1
@@ -1642,19 +1663,14 @@ def write_transition_data(
 
         if forbidden:
             num_forbidden_transitions += 1
-            # flog.write(f'Forbidden transition: lambda_angstrom= {float(transition.lambdaangstrom):7.1f}, {transition.namefrom:25s} to {transition.nameto:25s}\n')
 
-        # ftransitiondata.write('{0:4d} {1:4d} {2:16.10E} {3:9.2e} {4:d}\n'.format(
-        #     levelid_lower, levelid_upper, float(transition.A), coll_str, forbidden))
-        ftransitiondata.write(
-            f"{levelid_lower:4d} {levelid_upper:4d} {float(transition.A):11.5e} {coll_str:9.2e} {forbidden:d}\n"
-        )
+        ftransitiondata.write(f"{levelid_lower:4d} {levelid_upper:4d} {float(A):11.5e} {coll_str:9.2e} {forbidden:d}\n")
 
     ftransitiondata.write("\n")
 
     log_and_print(
         flog,
-        f"  output {len(transitions):d} transitions of which {num_forbidden_transitions:d} are forbidden and"
+        f"  output {dftransitions_ion.height:d} transitions of which {num_forbidden_transitions:d} are forbidden and"
         f" {num_collision_strengths_applied:d} have collision strengths",
     )
 
