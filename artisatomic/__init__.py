@@ -533,10 +533,11 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                     atomic_number, ion_stage, energy_levels[i], ionization_energy_ev[i], handler, args, flog
                 )
 
+        dftransitions_allions = [pl.DataFrame(t) if not isinstance(t, pl.DataFrame) else t for t in transitions]
         write_output_files(
             elementindex,
             energy_levels,
-            transitions,
+            dftransitions_allions,
             upsilondicts,
             ionization_energy_ev,
             transition_count_of_level_name,
@@ -1432,7 +1433,7 @@ def score_config_match(config_a, config_b):
 def write_output_files(
     elementindex,
     energy_levels,
-    transitions,
+    dftransitions_allions: list[pl.DataFrame],
     upsilondicts,
     ionization_energies,
     transition_count_of_level_name,
@@ -1469,7 +1470,7 @@ def write_output_files(
             if hasattr(energy_levels[i][levelid], "levelname")
         }
 
-        dftransitions_ion = pl.DataFrame(transitions[i])
+        dftransitions_ion = dftransitions_allions[i]
         if "upperlevel" not in dftransitions_ion.columns:
             dftransitions_ion = dftransitions_ion.with_columns(
                 upperlevel=pl.col("nameto").map_elements(
@@ -1512,7 +1513,7 @@ def write_output_files(
         )
 
         upsilon_transition_row = namedtuple(
-            "transition", "lowerlevel upperlevel A nameto namefrom lambdaangstrom coll_str"
+            "upsilon_transition_row", "lowerlevel upperlevel A nameto namefrom lambdaangstrom coll_str"
         )
         upsilon_only_transitions = []
         log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
