@@ -99,28 +99,28 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
         for config in dflevels["Configuration"]
     }
 
-    energy_levels_zerodindexed = [
-        FloersEnergyLevel(
-            levelname=row["Configuration"],
-            parity=row["Parity"],
-            g=row["g"],
-            energyabovegsinpercm=float(row["Energy"]),
-        )
-        for row in dflevels.iter_rows(named=True)
-    ]
+    # energy_levels_zerodindexed = [
+    #     FloersEnergyLevel(
+    #         levelname=row["Configuration"],
+    #         parity=row["Parity"],
+    #         g=row["g"],
+    #         energyabovegsinpercm=float(row["Energy"]),
+    #     )
+    #     for row in dflevels.iter_rows(named=True)
+    # ]
 
-    energy_levels = [None, *energy_levels_zerodindexed]
+    # energy_levels = [None, *energy_levels_zerodindexed]
 
     # use standard artisatomic column names and convert to 1-indexed levels
 
-    # dflevels = artisatomic.add_dummy_zero_level(
-    #     dflevels.select(
-    #         levelname=pl.col("Configuration"),
-    #         parity=pl.col("Parity"),
-    #         g=pl.col("g"),
-    #         energyabovegsinpercm=pl.col("Energy"),
-    #     )
-    # )
+    dflevels = artisatomic.add_dummy_zero_level(
+        dflevels.select(
+            levelname=pl.col("Configuration"),
+            parity=pl.col("Parity"),
+            g=pl.col("g"),
+            energyabovegsinpercm=pl.col("Energy"),
+        )
+    )
 
     dftransitions = dftransitions.select(
         lowerlevel=pl.col("Lower") + 1, upperlevel=pl.col("Upper") + 1, A=pl.col("A"), forbidden=pl.lit(False)
@@ -129,7 +129,7 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
     # this check is slow
     # assert sum(transition_count_of_level_name.values()) == len(transitions) * 2
 
-    return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
+    return ionization_energy_in_ev, dflevels, dftransitions, transition_count_of_level_name
 
 
 def get_level_valence_n(levelname: str):
