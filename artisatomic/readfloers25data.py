@@ -54,13 +54,6 @@ class FloersEnergyLevel(t.NamedTuple):
     parity: int
 
 
-class FloersTransition(t.NamedTuple):
-    lowerlevel: int
-    upperlevel: int
-    A: float
-    coll_str: float
-
-
 def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibrated: bool):
     # ion_charge = ion_stage - 1
     elsym = artisatomic.elsymbols[atomic_number]
@@ -106,13 +99,7 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
 
     artisatomic.log_and_print(flog, f"Read {len(energy_levels[1:]):d} levels")
 
-    transitions = []
     dftransitions = pl.from_pandas(pd.read_csv(lines_file, sep=r"\s+", skiprows=28, dtype_backend="pyarrow"))
-
-    transitions = [
-        FloersTransition(lowerlevel=lowerindex + 1, upperlevel=upperindex + 1, A=A, coll_str=-1)
-        for lowerindex, upperindex, A in dftransitions[["Lower", "Upper", "A"]].iter_rows()
-    ]
 
     transition_count_of_level_name = {
         config: (
@@ -122,12 +109,17 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
         for config in dflevels["Configuration"]
     }
 
+    # use standard artisatomic column names and convert to 1-indexed levels
+    dftransitions = dftransitions.select(
+        lowerlevel=pl.col("Lower") + 1, upperlevel=pl.col("Upper") + 1, A=pl.col("A"), forbidden=pl.lit(False)
+    )
+
     # this check is slow
     # assert sum(transition_count_of_level_name.values()) == len(transitions) * 2
 
-    artisatomic.log_and_print(flog, f"Read {len(transitions)} transitions")
+    artisatomic.log_and_print(flog, f"Read {len(dftransitions)} transitions")
 
-    return ionization_energy_in_ev, energy_levels, transitions, transition_count_of_level_name
+    return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
 
 
 def get_level_valence_n(levelname: str):
