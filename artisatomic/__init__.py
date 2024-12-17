@@ -1624,7 +1624,7 @@ def write_adata(
 
     for energylevel in dfenergylevels.iter_rows(named=True):
         transitioncount = (
-            transition_count_of_level_name.get(energylevel.levelname, 0) if hasattr(energylevel, "levelname") else 0
+            transition_count_of_level_name.get(energylevel["levelname"], 0) if "levelname" in energylevel else 0
         )
 
         level_comment = ""
