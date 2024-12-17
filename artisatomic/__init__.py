@@ -1565,7 +1565,6 @@ def write_output_files(
             )
 
         dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")
-        dftransitions_ion = dftransitions_ion.sort(by=("lowerlevel", "upperlevel"))
         with open(os.path.join(args.output_folder, "adata.txt"), "a") as fatommodels:
             write_adata(
                 fatommodels,
@@ -1574,10 +1573,10 @@ def write_output_files(
                 dfenergylevels_ion,
                 ionization_energies[i],
                 transition_count_of_level_name[i],
-                args,
                 flog,
             )
 
+        dftransitions_ion = dftransitions_ion.sort(by=("lowerlevel", "upperlevel"))
         with open(os.path.join(args.output_folder, "transitiondata.txt"), "a") as ftransitiondata:
             write_transition_data(
                 ftransitiondata,
@@ -1618,12 +1617,11 @@ def write_output_files(
 
 def write_adata(
     fatommodels,
-    atomic_number,
-    ion_stage,
+    atomic_number: int,
+    ion_stage: int,
     dfenergylevels: pl.DataFrame,
-    ionization_energy,
+    ionization_energy: float,
     transition_count_of_level_name,
-    args,
     flog,
 ):
     log_and_print(flog, f"Writing {dfenergylevels.height-1} levels to 'adata.txt'")
