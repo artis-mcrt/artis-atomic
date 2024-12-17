@@ -141,7 +141,6 @@ def add_dummy_zero_level(dflevels: pl.DataFrame) -> pl.DataFrame:
 
 def leveltuples_to_pldataframe(energy_levels) -> pl.DataFrame:
     if isinstance(energy_levels, pl.DataFrame):
-        print(energy_levels[:10])
         assert energy_levels["energyabovegsinpercm"].item(0) is None
 
     return add_dummy_zero_level(
@@ -1621,42 +1620,42 @@ def write_adata(
 ):
     log_and_print(flog, f"Writing {len(energy_levels[1:])} levels to 'adata.txt'")
     fatommodels.write(f"{atomic_number:12d}{ion_stage:12d}{len(energy_levels) - 1:12d}{ionization_energy:15.7f}\n")
+    dfenergylevels = leveltuples_to_pldataframe(energy_levels).with_row_index(name="levelid")[1:]
 
-    for levelid, energylevel in enumerate(energy_levels[1:], 1):
+    for energylevel in dfenergylevels.iter_rows(named=True):
         transitioncount = (
             transition_count_of_level_name.get(energylevel.levelname, 0) if hasattr(energylevel, "levelname") else 0
         )
 
         level_comment = ""
-        try:
-            hlevelname = energylevel.levelname
+        if "levelname" in energylevel:
+            hlevelname = energylevel["levelname"]
             if hlevelname in hillier_name_replacements:
                 # hlevelname += ' replaced by {0}'.format(hillier_name_replacements[hlevelname])
                 hlevelname = hillier_name_replacements[hlevelname]
             level_comment = hlevelname.ljust(27)
-        except AttributeError:
+        else:
             level_comment = " " * 27
 
-        try:
-            if energylevel.indexinsymmetry >= 0:
-                level_comment += (
-                    f'Nahar: {energylevel.twosplusone:d}{lchars[energylevel.l]:}{["e", "o"][energylevel.parity]:} index'
-                    f" {energylevel.indexinsymmetry:}"
-                )
-                try:
-                    config = energylevel.naharconfiguration
-                    if energylevel.naharconfiguration.strip() in nahar_configuration_replacements:
-                        config += (
-                            f" replaced by {nahar_configuration_replacements[energylevel.naharconfiguration.strip()]}"
-                        )
-                    level_comment += f" '{config}'"
-                except AttributeError:
-                    level_comment += " (no config)"
-        except AttributeError:
+        if energylevel.get("indexinsymmetry", -1) >= 0:
+            level_comment += (
+                f'Nahar: {energylevel["twosplusone"]:d}{lchars[energylevel["l"]]:}{["e", "o"][energylevel["parity"]]:} index'
+                f" {energylevel["indexinsymmetry"]:}"
+            )
+            if "naharconfiguration" in energylevel:
+                config = energylevel["naharconfiguration"]
+                if energylevel["naharconfiguration"].strip() in nahar_configuration_replacements:
+                    config += (
+                        f" replaced by {nahar_configuration_replacements[energylevel["naharconfiguration"].strip()]}"
+                    )
+                level_comment += f" '{config}'"
+            else:
+                level_comment += " (no config)"
+        else:
             level_comment = level_comment.rstrip()
 
         fatommodels.write(
-            f"{levelid:5d} {hc_in_ev_cm * float(energylevel.energyabovegsinpercm):19.16f} {float(energylevel.g):8.3f} {transitioncount:4d} {level_comment:}\n"
+            f"{energylevel["levelid"]:5d} {hc_in_ev_cm * float(energylevel["energyabovegsinpercm"]):19.16f} {float(energylevel["g"]):8.3f} {transitioncount:4d} {level_comment:}\n"
         )
 
     fatommodels.write("\n")
