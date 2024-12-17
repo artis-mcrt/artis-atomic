@@ -1644,20 +1644,21 @@ def write_adata(
         else:
             level_comment = " " * 27
 
-        if energylevel.get("indexinsymmetry", -1) >= 0:
-            level_comment += (
-                f'Nahar: {energylevel["twosplusone"]:d}{lchars[energylevel["l"]]:}{["e", "o"][energylevel["parity"]]:} index'
-                f" {energylevel["indexinsymmetry"]:}"
-            )
-            if "naharconfiguration" in energylevel:
-                config = energylevel["naharconfiguration"]
-                if energylevel["naharconfiguration"].strip() in nahar_configuration_replacements:
-                    config += (
-                        f" replaced by {nahar_configuration_replacements[energylevel["naharconfiguration"].strip()]}"
-                    )
-                level_comment += f" '{config}'"
-            else:
-                level_comment += " (no config)"
+        if "indexinsymmetry" in energylevel:
+            if energylevel["indexinsymmetry"] >= 0:
+                level_comment += (
+                    f'Nahar: {energylevel["twosplusone"]:d}{lchars[energylevel["l"]]:}{["e", "o"][energylevel["parity"]]:} index'
+                    f" {energylevel["indexinsymmetry"]:}"
+                )
+                if "naharconfiguration" in energylevel:
+                    config = energylevel["naharconfiguration"]
+                    if energylevel["naharconfiguration"].strip() in nahar_configuration_replacements:
+                        config += f" replaced by {nahar_configuration_replacements[energylevel["naharconfiguration"].strip()]}"
+                    level_comment += f" '{config}'"
+                else:
+                    level_comment += " (no config)"
+        else:
+            level_comment = level_comment.rstrip()
 
         fatommodels.write(
             f"{energylevel["levelid"]:5d} {hc_in_ev_cm * float(energylevel["energyabovegsinpercm"]):19.16f} {float(energylevel["g"]):8.3f} {transitioncount:4d} {level_comment:}\n"
