@@ -1514,7 +1514,9 @@ def write_output_files(
             dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
         )
 
-        upsilon_transition_row = namedtuple("upsilon_transition_row", "lowerlevel upperlevel A lambdaangstrom coll_str")
+        upsilon_transition_row = namedtuple(
+            "upsilon_transition_row", "lowerlevel upperlevel A lambdaangstrom coll_str forbidden"
+        )
         upsilon_only_transitions = []
         log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
         for id_lower, id_upper in unused_upsilon_transitions:
@@ -1531,8 +1533,9 @@ def write_output_files(
             transition_count_of_level_name[i][namefrom] += 1
             transition_count_of_level_name[i][nameto] += 1
             coll_str = upsilondict[(id_lower, id_upper)]
+            forbidden = check_forbidden(energy_levels[i][id_lower], energy_levels[i][id_upper])
 
-            transition = upsilon_transition_row(id_lower, id_upper, A, lamdaangstrom, coll_str)
+            transition = upsilon_transition_row(id_lower, id_upper, A, lamdaangstrom, coll_str, forbidden)
             upsilon_only_transitions.append(transition)
 
         if upsilon_only_transitions:
@@ -1558,7 +1561,6 @@ def write_output_files(
                 ftransitiondata,
                 atomic_number,
                 ion_stage,
-                energy_levels[i],
                 dftransitions_ion,
                 upsilondicts[i],
                 args,
@@ -1642,7 +1644,6 @@ def write_transition_data(
     ftransitiondata,
     atomic_number: int,
     ion_stage: int,
-    energy_levels,
     dftransitions_ion: pl.DataFrame,
     upsilondict,
     args,
@@ -1650,26 +1651,20 @@ def write_transition_data(
 ):
     log_and_print(flog, f"Writing {dftransitions_ion.height} transitions to 'transitiondata.txt'")
 
-    num_forbidden_transitions = 0
-    num_collision_strengths_applied = 0
     ftransitiondata.write(f"{atomic_number:7d}{ion_stage:7d}{dftransitions_ion.height:12d}\n")
 
-    for levelid_lower, levelid_upper, A, coll_str in dftransitions_ion[
-        ["lowerlevel", "upperlevel", "A", "coll_str"]
+    for levelid_lower, levelid_upper, A, coll_str, forbidden in dftransitions_ion[
+        ["lowerlevel", "upperlevel", "A", "coll_str", "forbidden"]
     ].iter_rows():
         assert levelid_lower < levelid_upper
-
-        if coll_str > 0:
-            num_collision_strengths_applied += 1
-
-        forbidden = energy_levels[levelid_lower].parity == energy_levels[levelid_upper].parity
-
-        if forbidden:
-            num_forbidden_transitions += 1
 
         ftransitiondata.write(f"{levelid_lower:4d} {levelid_upper:4d} {float(A):11.5e} {coll_str:9.2e} {forbidden:d}\n")
 
     ftransitiondata.write("\n")
+
+    num_forbidden_transitions = dftransitions_ion.filter(pl.col("forbidden")).height
+
+    num_collision_strengths_applied = dftransitions_ion.filter(pl.col("coll_str") > 0).height
 
     log_and_print(
         flog,
