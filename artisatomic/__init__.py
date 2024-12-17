@@ -1464,24 +1464,26 @@ def write_output_files(
 
         log_and_print(flog, f"\n===========> Z={atomic_number} {ionstr} output:")
 
-        level_id_of_level_name = {
+        level_id_of_level_name: dict[str, int] = {
             energy_levels[i][levelid].levelname: levelid
             for levelid in range(1, len(energy_levels[i]))
             if hasattr(energy_levels[i][levelid], "levelname")
         }
 
         dftransitions_ion = dftransitions_allions[i]
+
         if "upperlevel" not in dftransitions_ion.columns:
             dftransitions_ion = dftransitions_ion.with_columns(
                 upperlevel=pl.col("nameto").map_elements(
-                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],
+                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],  # type: ignore[misc]
                     return_dtype=pl.Int64,
                 )
             )
+
         if "lowerlevel" not in dftransitions_ion.columns:
             dftransitions_ion = dftransitions_ion.with_columns(
                 lowerlevel=pl.col("namefrom").map_elements(
-                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],
+                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],  # type: ignore[misc]
                     return_dtype=pl.Int64,
                 )
             )
@@ -1489,7 +1491,7 @@ def write_output_files(
         if "forbidden" not in dftransitions_ion.columns:
             dftransitions_ion = dftransitions_ion.with_columns(
                 forbidden=pl.struct(["lowerlevel", "upperlevel"]).map_elements(
-                    lambda r, i=i: check_forbidden(
+                    lambda r, i=i: check_forbidden(  # type: ignore[misc]
                         energy_levels[i][r["lowerlevel"]], energy_levels[i][r["upperlevel"]]
                     ),
                     return_dtype=pl.Boolean,
@@ -1499,7 +1501,7 @@ def write_output_files(
         dftransitions_ion = dftransitions_ion.with_columns(
             pl.struct(["lowerlevel", "upperlevel", "forbidden"])
             .map_elements(
-                lambda row, upsilondict=upsilondict: upsilondict.get(
+                lambda row, upsilondict=upsilondict: upsilondict.get(  # type: ignore[misc]
                     (row["lowerlevel"], row["upperlevel"]),
                     -2.0 if row["forbidden"] else -1.0,
                 ),
@@ -1512,9 +1514,7 @@ def write_output_files(
             dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
         )
 
-        upsilon_transition_row = namedtuple(
-            "upsilon_transition_row", "lowerlevel upperlevel A nameto namefrom lambdaangstrom coll_str"
-        )
+        upsilon_transition_row = namedtuple("upsilon_transition_row", "lowerlevel upperlevel A lambdaangstrom coll_str")
         upsilon_only_transitions = []
         log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
         for id_lower, id_upper in unused_upsilon_transitions:
@@ -1532,7 +1532,7 @@ def write_output_files(
             transition_count_of_level_name[i][nameto] += 1
             coll_str = upsilondict[(id_lower, id_upper)]
 
-            transition = upsilon_transition_row(id_lower, id_upper, A, namefrom, nameto, lamdaangstrom, coll_str)
+            transition = upsilon_transition_row(id_lower, id_upper, A, lamdaangstrom, coll_str)
             upsilon_only_transitions.append(transition)
 
         if upsilon_only_transitions:
