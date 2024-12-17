@@ -6,41 +6,44 @@ import polars as pl
 
 import artisatomic
 
-# from astropy import units as u
-# import os.path
-# import pandas as pd
-# from carsus.util import parse_selected_species
 
-BASEPATH = Path(Path.home() / "Google Drive/Shared drives/Atomic Data Group/FloersOpacityPaper/OutputFiles")
+def get_basepath() -> Path:
+    return artisatomic.PYDIR / ".." / "atomic-data-floers25" / "OutputFiles"
 
 
 def extend_ion_list(ion_handlers, calibrated=True):
+    BASEPATH = get_basepath()
     assert BASEPATH.is_dir()
-    handlername = "floers25" + "calib" if calibrated else "uncalib"
-    for s in BASEPATH.glob("*_levels_calib.txt"):
-        ionstr = s.name.lstrip("0123456789").split("_")[0]
-        elsym = ionstr.rstrip("IVX")
-        ion_stage_roman = ionstr.removeprefix(elsym)
-        atomic_number = artisatomic.elsymbols.index(elsym)
+    # if calibrated is requested, also add uncalibrated data where calibrated data is not available
+    calibflags = [True, False] if calibrated else [False]
+    for searchcalib in calibflags:
+        calibstr = "calib" if searchcalib else "uncalib"
+        handlername = f"floers25{calibstr}"
+        for s in BASEPATH.glob(f"*_levels_{calibstr}.txt*"):
+            ionstr = s.name.lstrip("0123456789").split("_")[0]
+            elsym = ionstr.rstrip("IVX")
+            ion_stage_roman = ionstr.removeprefix(elsym)
+            atomic_number = artisatomic.elsymbols.index(elsym)
 
-        ion_stage = artisatomic.roman_numerals.index(ion_stage_roman)
+            ion_stage = artisatomic.roman_numerals.index(ion_stage_roman)
 
-        found_element = False
-        for tmp_atomic_number, list_ions in ion_handlers:
-            if tmp_atomic_number == atomic_number:
-                if ion_stage not in [x[0] if len(x) > 0 else x for x in list_ions]:
-                    list_ions.append((ion_stage, handlername))
-                    list_ions.sort()
-                found_element = True
-        if not found_element:
-            ion_handlers.append(
-                (
-                    atomic_number,
-                    [(ion_stage, handlername)],
+            found_element = False
+            for tmp_atomic_number, list_ions in ion_handlers:
+                if tmp_atomic_number == atomic_number:
+                    if ion_stage not in [x[0] if len(x) > 0 else x for x in list_ions]:
+                        list_ions.append((ion_stage, handlername))
+                        list_ions.sort()
+                    found_element = True
+            if not found_element:
+                ion_handlers.append(
+                    (
+                        atomic_number,
+                        [(ion_stage, handlername)],
+                    )
                 )
-            )
 
     ion_handlers.sort(key=lambda x: x[0])
+
     return ion_handlers
 
 
@@ -64,13 +67,14 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
     ion_stage_roman = artisatomic.roman_numerals[ion_stage]
     calibstr = "calib" if calibrated else "uncalib"
 
+    BASEPATH = get_basepath()
     ionstr = f"{atomic_number}{elsym}{ion_stage_roman}"
     levels_file = BASEPATH / f"{ionstr}_levels_{calibstr}.txt"
     lines_file = BASEPATH / f"{ionstr}_transitions_{calibstr}.txt"
 
     artisatomic.log_and_print(
         flog,
-        f"Reading Floers+25 {calibstr}rated data for Z={atomic_number} ion_stage {ion_stage} ({elsym} {ion_stage_roman})",
+        f"Reading Floers+25 {calibstr}rated data for Z={atomic_number} ion_stage {ion_stage} ({elsym} {ion_stage_roman}) from {levels_file.name} and {lines_file.name}",
     )
 
     ionization_energy_in_ev = artisatomic.get_nist_ionization_energies_ev()[(atomic_number, ion_stage)]
