@@ -94,11 +94,10 @@ def read_lines_data(atomic_number, ion_stage, dfiondata, energy_levels):
     transitiontuple = namedtuple("transition", "lowerlevel upperlevel A coll_str")
 
     for index, row in dfiondata.iterrows():
-        coll_str = -1  # TODO
         lowerindex = row["Lower_index"]
         upperindex = row["Upper_index"]
         A = row["gA"] / row["Upper_g"]  # TODO: is this correct?
-        transtuple = transitiontuple(lowerlevel=lowerindex, upperlevel=upperindex, A=A, coll_str=coll_str)
+        transtuple = transitiontuple(lowerlevel=lowerindex, upperlevel=upperindex, A=A, coll_str=-1)
 
         # print(line)
         transition_count_of_level_name[energy_levels[lowerindex].levelname] += 1
