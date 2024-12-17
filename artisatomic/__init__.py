@@ -1654,13 +1654,6 @@ def write_transition_data(
     num_collision_strengths_applied = 0
     ftransitiondata.write(f"{atomic_number:7d}{ion_stage:7d}{dftransitions_ion.height:12d}\n")
 
-    level_ids_with_permitted_down_transitions = set()
-    for levelid_lower, levelid_upper in dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows():
-        forbidden = energy_levels[levelid_lower].parity == energy_levels[levelid_upper].parity
-
-        if not forbidden:
-            level_ids_with_permitted_down_transitions.add(levelid_upper)
-
     for levelid_lower, levelid_upper, A, coll_str in dftransitions_ion[
         ["lowerlevel", "upperlevel", "A", "coll_str"]
     ].iter_rows():
