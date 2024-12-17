@@ -125,6 +125,7 @@ jobs:
                   key: atomic-data-hillier/atomic_data_15nov16.tar.xz
 
             - name: Download/extract CMFGEN atomic data
+              if: matrix.testname == 'cmfgen'
               working-directory: atomic-data-hillier/
               run: source ./setup_cmfgen_data.sh
 
