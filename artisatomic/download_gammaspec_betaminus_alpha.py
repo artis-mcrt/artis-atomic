@@ -128,8 +128,6 @@ def process_table(z: int, a: int, outpath: Path, textdata, dfbetaminus: pl.DataF
 
 
 def main():
-    PYDIR = Path(__file__).parent.resolve()
-    atomicdata = pl.read_csv(PYDIR / "atomic_properties.txt", separator=" ", comment_prefix="#", null_values="NA")
     elsymbols = at.get_elsymbolslist()
 
     outfolder = Path(__file__).parent.parent.absolute() / "artis_files" / "data"
