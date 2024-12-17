@@ -110,9 +110,7 @@ def read_levels_and_transitions(atomic_number: int, ion_stage: int, flog, calibr
         )
     )
 
-    dftransitions = dftransitions.select(
-        lowerlevel=pl.col("Lower") + 1, upperlevel=pl.col("Upper") + 1, A=pl.col("A"), forbidden=pl.lit(False)
-    )
+    dftransitions = dftransitions.select(lowerlevel=pl.col("Lower") + 1, upperlevel=pl.col("Upper") + 1, A=pl.col("A"))
 
     # this check is slow
     # assert sum(transition_count_of_level_name.values()) == len(transitions) * 2
