@@ -1496,19 +1496,15 @@ def write_output_files(
         dftransitions_ion = dftransitions_allions[i]
 
         if "upperlevel" not in dftransitions_ion.columns:
-            dftransitions_ion = dftransitions_ion.with_columns(
-                upperlevel=pl.col("nameto").map_elements(
-                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],  # type: ignore[misc]
-                    return_dtype=pl.Int64,
-                )
+            dftransitions_ion = dftransitions_ion.join(
+                dfenergylevels_ion.select(pl.col("levelid").alias("upperlevel"), pl.col("levelname").alias("nameto")),
+                on="nameto",
             )
 
         if "lowerlevel" not in dftransitions_ion.columns:
-            dftransitions_ion = dftransitions_ion.with_columns(
-                lowerlevel=pl.col("namefrom").map_elements(
-                    lambda name, level_id_of_level_name=level_id_of_level_name: level_id_of_level_name[name],  # type: ignore[misc]
-                    return_dtype=pl.Int64,
-                )
+            dftransitions_ion = dftransitions_ion.join(
+                dfenergylevels_ion.select(pl.col("levelid").alias("lowerlevel"), pl.col("levelname").alias("namefrom")),
+                on="namefrom",
             )
 
         if "forbidden" not in dftransitions_ion.columns:
