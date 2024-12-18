@@ -3,7 +3,6 @@ from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
-from astropy import constants as const
 from xopen import xopen
 
 import artisatomic
@@ -12,7 +11,7 @@ import artisatomic
 
 # the h5 file comes from Andreas Floers's DREAM parser
 jpltpath = (Path(__file__).parent.resolve() / ".." / "atomic-data-tanaka-jplt" / "data_v1.1").resolve()
-hc_in_ev_cm = (const.h * const.c).to("eV cm").value
+hc_in_ev_cm = 0.0001239841984332003
 
 
 class EnergyLevel(t.NamedTuple):

@@ -4,11 +4,10 @@ from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
-from astropy import constants as const
 
 import artisatomic
 
-hc_in_ev_cm = (const.h * const.c).to("eV cm").value
+hc_in_ev_cm = 0.0001239841984332003
 
 
 class EnergyLevel(t.NamedTuple):

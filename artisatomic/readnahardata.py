@@ -11,7 +11,7 @@ import artisatomic
 
 ryd_to_ev = u.rydberg.to("eV")
 
-hc_in_ev_cm = (const.h * const.c).to("eV cm").value
+hc_in_ev_cm = 0.0001239841984332003
 hc_in_ev_angstrom = (const.h * const.c).to("eV angstrom").value
 h_in_ev_seconds = const.h.to("eV s").value
 
