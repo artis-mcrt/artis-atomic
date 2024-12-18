@@ -1450,6 +1450,38 @@ def score_config_match(config_a, config_b):
     return -1
 
 
+def add_level_ids_forbidden(dfenergylevels_ion: pl.DataFrame, dftransitions_ion: pl.DataFrame) -> pl.DataFrame:
+    if "upperlevel" not in dftransitions_ion.columns:
+        dftransitions_ion = dftransitions_ion.join(
+            dfenergylevels_ion.select(pl.col("levelid").alias("upperlevel"), pl.col("levelname").alias("nameto")),
+            on="nameto",
+        )
+
+    if "lowerlevel" not in dftransitions_ion.columns:
+        dftransitions_ion = dftransitions_ion.join(
+            dfenergylevels_ion.select(pl.col("levelid").alias("lowerlevel"), pl.col("levelname").alias("namefrom")),
+            on="namefrom",
+        )
+
+    if "forbidden" not in dftransitions_ion.columns:
+        dftransitions_ion = (
+            dftransitions_ion.join(
+                dfenergylevels_ion.select(
+                    pl.col("levelid").alias("lowerlevel"), pl.col("parity").alias("lower_parity")
+                ),
+                on="lowerlevel",
+            )
+            .join(
+                dfenergylevels_ion.select(
+                    pl.col("levelid").alias("upperlevel"), pl.col("parity").alias("upper_parity")
+                ),
+                on="upperlevel",
+            )
+            .with_columns(forbidden=pl.col("lower_parity") == pl.col("upper_parity"))
+        )
+    return dftransitions_ion
+
+
 def write_output_files(
     elementindex,
     energy_levels,
@@ -1488,34 +1520,27 @@ def write_output_files(
 
         dftransitions_ion = dftransitions_allions[i]
 
-        if "upperlevel" not in dftransitions_ion.columns:
-            dftransitions_ion = dftransitions_ion.join(
-                dfenergylevels_ion.select(pl.col("levelid").alias("upperlevel"), pl.col("levelname").alias("nameto")),
-                on="nameto",
-            )
+        dftransitions_ion = add_level_ids_forbidden(dfenergylevels_ion, dftransitions_ion)
 
-        if "lowerlevel" not in dftransitions_ion.columns:
-            dftransitions_ion = dftransitions_ion.join(
-                dfenergylevels_ion.select(pl.col("levelid").alias("lowerlevel"), pl.col("levelname").alias("namefrom")),
-                on="namefrom",
-            )
+        unused_upsilon_transitions = set(upsilondicts[i].keys()).difference(
+            dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
+        )
 
-        if "forbidden" not in dftransitions_ion.columns:
-            dftransitions_ion = (
-                dftransitions_ion.join(
-                    dfenergylevels_ion.select(
-                        pl.col("levelid").alias("lowerlevel"), pl.col("parity").alias("lower_parity")
-                    ),
-                    on="lowerlevel",
-                )
-                .join(
-                    dfenergylevels_ion.select(
-                        pl.col("levelid").alias("upperlevel"), pl.col("parity").alias("upper_parity")
-                    ),
-                    on="upperlevel",
-                )
-                .with_columns(forbidden=pl.col("lower_parity") == pl.col("upper_parity"))
-            )
+        log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
+
+        if unused_upsilon_transitions:
+            dfupsilon_only_transitions = pl.DataFrame(
+                list(unused_upsilon_transitions), schema={"lowerlevel": pl.Int64, "upperlevel": pl.Int64}, orient="row"
+            ).with_columns(A=0.0)
+            for id_lower, id_upper in dfupsilon_only_transitions[["lowerlevel", "upperlevel"]].iter_rows(named=False):
+                namefrom = dfenergylevels_ion["levelname"][id_upper]
+                nameto = dfenergylevels_ion["levelname"][id_lower]
+
+                transition_count_of_level_name[i][namefrom] += 1
+                transition_count_of_level_name[i][nameto] += 1
+
+            dfupsilon_only_transitions = add_level_ids_forbidden(dfenergylevels_ion, dfupsilon_only_transitions)
+            dftransitions_ion = pl.concat([dftransitions_ion, dfupsilon_only_transitions], how="diagonal_relaxed")
 
         dftransitions_ion = dftransitions_ion.with_columns(
             pl.struct(["lowerlevel", "upperlevel", "forbidden"])
@@ -1528,44 +1553,6 @@ def write_output_files(
             )
             .alias("coll_str")
         )
-
-        unused_upsilon_transitions = set(upsilondicts[i].keys()).difference(
-            dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
-        )
-
-        upsilon_only_transitions = []
-        log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
-        for id_lower, id_upper in unused_upsilon_transitions:
-            namefrom = dfenergylevels_ion["levelname"][id_upper]
-            nameto = dfenergylevels_ion["levelname"][id_lower]
-            try:
-                lamdaangstrom = 1.0e8 / (
-                    dfenergylevels_ion["energyabovegsinpercm"][id_upper]
-                    - dfenergylevels_ion["energyabovegsinpercm"][id_lower]
-                )
-            except ZeroDivisionError:
-                lamdaangstrom = -1
-
-            transition_count_of_level_name[i][namefrom] += 1
-            transition_count_of_level_name[i][nameto] += 1
-            coll_str = upsilondict[(id_lower, id_upper)]
-            # WARNING replace with correct selection rules!
-            forbidden = dfenergylevels_ion["parity"][id_lower] == dfenergylevels_ion["parity"][id_upper]
-
-            upsilon_only_transitions.append(
-                {
-                    "lowerlevel": id_lower,
-                    "upperlevel": id_upper,
-                    "A": 0.0,
-                    "coll_str": coll_str,
-                    "forbidden": forbidden,
-                }
-            )
-
-        if upsilon_only_transitions:
-            dftransitions_ion = pl.concat(
-                [dftransitions_ion, pl.DataFrame(upsilon_only_transitions)], how="diagonal_relaxed"
-            )
 
         with open(os.path.join(args.output_folder, "adata.txt"), "a") as fatommodels:
             write_adata(
