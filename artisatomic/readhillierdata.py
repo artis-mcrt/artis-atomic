@@ -1159,7 +1159,7 @@ def read_coldata(atomic_number, ion_stage, energy_levels, flog, args):
     return upsilondict
 
 
-def get_photoiontargetfractions(dfenergy_levels, energy_levels_upperion, hillier_photoion_targetconfigs):
+def get_photoiontargetfractions(dfenergy_levels, dfenergy_levels_upperion, hillier_photoion_targetconfigs):
     targetlist = [[] for _ in range(dfenergy_levels.height)]
     targetlist_of_targetconfig = defaultdict(list)
 
@@ -1176,17 +1176,19 @@ def get_photoiontargetfractions(dfenergy_levels, energy_levels_upperion, hillier
                 # so split on the slash and match all parts
                 targetconfiglist = targetconfig.split("/")
                 upperionlevelids = []
-                for upperlevelid, upper_energy_level in enumerate(energy_levels_upperion[1:], 1):
-                    upperlevelnamenoj = upper_energy_level.levelname.split("[")[0]
+                for upperlevelid, levelname in dfenergy_levels_upperion[["levelid", "levelname"]][1:].iter_rows():
+                    upperlevelnamenoj = levelname.split("[")[0]
                     if upperlevelnamenoj in targetconfiglist:
                         upperionlevelids.append(upperlevelid)
                 if not upperionlevelids:
                     upperionlevelids = [1]
                 targetlist_of_targetconfig[targetconfig] = []
 
-                summed_statistical_weights = sum(float(energy_levels_upperion[index].g) for index in upperionlevelids)
+                summed_statistical_weights = sum(
+                    float(dfenergy_levels_upperion["g"][index]) for index in upperionlevelids
+                )
                 for upperionlevelid in sorted(upperionlevelids):
-                    statweight_fraction = energy_levels_upperion[upperionlevelid].g / summed_statistical_weights
+                    statweight_fraction = dfenergy_levels_upperion["g"][upperionlevelid] / summed_statistical_weights
                     targetlist_of_targetconfig[targetconfig].append((upperionlevelid, statweight_fraction))
 
             for upperlevelid, statweight_fraction in targetlist_of_targetconfig[targetconfig]:
