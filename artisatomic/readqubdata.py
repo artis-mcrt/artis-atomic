@@ -72,7 +72,7 @@ def read_adf04(filepath, flog):
             skip_blank_lines=True,
             keep_default_na=False,
         )
-        qubupsilondf_alltemps.query("upper!=-1", inplace=True)
+        qubupsilondf_alltemps = qubupsilondf_alltemps.query("upper!=-1")
         for _, row in qubupsilondf_alltemps.iterrows():
             lower = int(row["lower"])
             upper = int(row["upper"])

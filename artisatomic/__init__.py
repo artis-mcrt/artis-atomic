@@ -546,6 +546,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                     raise ValueError(f"Unknown handler: {handler}")
 
             dfenergylevels_allions[i] = leveltuples_to_pldataframe(energy_levels[i])
+
             if (
                 i < len(listions) - 1
                 and not args.nophixs
@@ -564,7 +565,6 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
 
         write_output_files(
             elementindex,
-            energy_levels,
             dfenergylevels_allions,
             dftransitions_allions,
             upsilondicts,
@@ -1488,7 +1488,6 @@ def add_level_ids_forbidden(dfenergylevels_ion: pl.DataFrame, dftransitions_ion:
 
 def write_output_files(
     elementindex,
-    energy_levels,
     dfenergylevels_allions,
     dftransitions_allions: list[pl.DataFrame],
     upsilondicts,
@@ -1586,7 +1585,7 @@ def write_output_files(
                 if len(nahar_core_states[i]) > 1:
                     photoionization_targetfractions[i] = readnahardata.get_photoiontargetfractions(
                         dfenergylevels_allions[i],
-                        energy_levels[i + 1],
+                        dfenergylevels_allions[i + 1],
                         nahar_core_states[i],
                         nahar_configurations[i + 1],
                         flog,

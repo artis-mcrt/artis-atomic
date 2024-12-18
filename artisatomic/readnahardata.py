@@ -345,7 +345,7 @@ def get_naharphotoion_upperlevelids(
 
 
 def get_photoiontargetfractions(
-    dfenergy_levels, energy_levels_upperion, nahar_core_states, nahar_configurations_upperion, flog
+    dfenergy_levels, dfenergy_levels_upperion, nahar_core_states, nahar_configurations_upperion, flog
 ):
     targetlist = [() for _ in range(dfenergy_levels.height)]
     upper_level_ids_of_core_state_id = defaultdict(list)
@@ -353,16 +353,16 @@ def get_photoiontargetfractions(
         lowerlevelid = energy_level["levelid"]
         # find the upper level ids from the Nahar core state
         upperionlevelids = get_naharphotoion_upperlevelids(
-            energy_levels_upperion,
+            dfenergy_levels_upperion,
             nahar_core_states,
             nahar_configurations_upperion,
             upper_level_ids_of_core_state_id,
             flog,
         )
 
-        summed_statistical_weights = sum(float(energy_levels_upperion[levelid].g) for levelid in upperionlevelids)
+        summed_statistical_weights = sum(float(dfenergy_levels_upperion["g"][levelid]) for levelid in upperionlevelids)
         for upperionlevelid in sorted(upperionlevelids):
-            phixsprobability = energy_levels_upperion[upperionlevelid].g / summed_statistical_weights
+            phixsprobability = dfenergy_levels_upperion["g"][upperionlevelid] / summed_statistical_weights
             targetlist[lowerlevelid].append((upperionlevelid, phixsprobability))
 
     return targetlist
