@@ -337,7 +337,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                         energy_levels[i],
                         transitions[i],
                         transition_count_of_level_name[i],
-                    ) = readboyledata.read_levels_and_transitions(atomic_number, ion_stage, flog)
+                    ) = readboyledata.read_levels_and_transitions(atomic_number, ion_stage)
 
                 elif handler == "qub_cobalt":
                     if ion_stage in [3, 4]:  # QUB levels and transitions, or single-level Co IV

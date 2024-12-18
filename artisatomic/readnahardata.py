@@ -269,7 +269,6 @@ def read_nahar_configurations(fenlist, flog):
 
 
 def get_naharphotoion_upperlevelids(
-    energy_level,
     energy_levels_upperion,
     nahar_core_states,
     nahar_configurations_upperion,
@@ -354,7 +353,6 @@ def get_photoiontargetfractions(
     for lowerlevelid, energy_level in enumerate(energy_levels[1:], 1):
         # find the upper level ids from the Nahar core state
         upperionlevelids = get_naharphotoion_upperlevelids(
-            energy_level,
             energy_levels_upperion,
             nahar_core_states,
             nahar_configurations_upperion,

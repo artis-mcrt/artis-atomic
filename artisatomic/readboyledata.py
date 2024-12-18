@@ -94,7 +94,7 @@ def read_lines_data(atomic_number, ion_stage):
     return transitions, transition_count_of_level_name
 
 
-def read_levels_and_transitions(atomic_number, ion_stage, flog):
+def read_levels_and_transitions(atomic_number, ion_stage):
     assert atomic_number == 2
     # energy_levels = ['IGNORE']
     # artisatomic.log_and_print(flog, 'Reading atomic-data-He')
