@@ -1487,12 +1487,6 @@ def write_output_files(
 
         dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")
 
-        level_id_of_level_name: dict[str, int] = {
-            energy_levels[i][levelid].levelname: levelid
-            for levelid in range(1, len(energy_levels[i]))
-            if hasattr(energy_levels[i][levelid], "levelname")
-        }
-
         dftransitions_ion = dftransitions_allions[i]
 
         if "upperlevel" not in dftransitions_ion.columns:
