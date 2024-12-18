@@ -553,9 +553,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                     photoionization_crosssections[i],
                     photoionization_targetfractions[i],
                     photoionization_thresholds_ev[i],
-                ) = match_hydrogenic_phixs(
-                    atomic_number, ion_stage, energy_levels[i], ionization_energy_ev[i], handler, args, flog
-                )
+                ) = match_hydrogenic_phixs(atomic_number, energy_levels[i], ionization_energy_ev[i], handler, args)
 
         dftransitions_allions = [pl.DataFrame(t) if not isinstance(t, pl.DataFrame) else t for t in transitions]
         write_output_files(
@@ -879,9 +877,7 @@ def get_nist_ionization_energies_ev() -> dict[tuple[int, int], float]:
     return dictioniz
 
 
-def match_hydrogenic_phixs(
-    atomic_number: int, ion_stage: int, energy_levels, ionization_energy_ev: float, ion_handler: str, args, flog
-):
+def match_hydrogenic_phixs(atomic_number: int, energy_levels, ionization_energy_ev: float, ion_handler: str, args):
     dict_get_n_func = {
         "tanakajplt": readtanakajpltdata.get_level_valence_n,
         "carsus": readcarsusdata.get_level_valence_n,
@@ -1600,7 +1596,7 @@ def write_output_files(
                     )
                 else:
                     photoionization_targetfractions[i] = readhillierdata.get_photoiontargetfractions(
-                        energy_levels[i], energy_levels[i + 1], hillier_photoion_targetconfigs[i], flog
+                        energy_levels[i], energy_levels[i + 1], hillier_photoion_targetconfigs[i]
                     )
 
             with open(os.path.join(args.output_folder, "phixsdata_v2.txt"), "a") as fphixs:

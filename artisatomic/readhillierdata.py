@@ -961,7 +961,7 @@ def get_opproject_phixstable(lambda_angstrom, a, b, c, d, e):
 # only applies to helium
 # the threshold cross sections seems ok, but energy dependence could be slightly wrong
 # what is the h parameter that is not used??
-def get_hummer_phixstable(lambda_angstrom, a, b, c, d, e, f, g, h):
+def get_hummer_phixstable(lambda_angstrom, a, b, c, d, e, f, g, h):  # noqa: ARG001
     energygrid = np.arange(0, 1.0, 0.001)
     phixstable = np.empty((len(energygrid), 2))
 
@@ -1161,7 +1161,7 @@ def read_coldata(atomic_number, ion_stage, energy_levels, flog, args):
     return upsilondict
 
 
-def get_photoiontargetfractions(energy_levels, energy_levels_upperion, hillier_photoion_targetconfigs, flog):
+def get_photoiontargetfractions(energy_levels, energy_levels_upperion, hillier_photoion_targetconfigs):
     targetlist = [[] for _ in energy_levels]
     targetlist_of_targetconfig = defaultdict(list)
 

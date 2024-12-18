@@ -61,7 +61,6 @@ extend-exclude = ["_version.py"]
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    "ARG001",  # ignored because variables in df.eval() are not detected
     "ANN001",  # missing-type-function-argument
     "ANN201",  # missing-return-type-undocumented-public-function
     "ANN204",
