@@ -1589,8 +1589,6 @@ def write_output_files(
                 atomic_number,
                 ion_stage,
                 dftransitions_ion,
-                upsilondicts[i],
-                args,
                 flog,
             )
 
@@ -1675,8 +1673,6 @@ def write_transition_data(
     atomic_number: int,
     ion_stage: int,
     dftransitions_ion: pl.DataFrame,
-    upsilondict,
-    args,
     flog,
 ) -> None:
     log_and_print(flog, f"Writing {dftransitions_ion.height} transitions to 'transitiondata.txt'")
