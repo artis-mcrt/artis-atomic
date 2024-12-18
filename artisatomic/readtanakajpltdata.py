@@ -111,7 +111,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
 
     transition_count_of_level_name = defaultdict(int)
 
-    for row in dftransitions.itertuples(index=False):
+    for row in dftransitions.iter_rows(named=True):
         A = float(row.g_u_times_A) / energy_levels[row.num_u].g
 
         transition_count_of_level_name[energy_levels[row.num_u].levelname] += 1
