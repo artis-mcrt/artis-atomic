@@ -3,6 +3,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
+import polars as pl
 from xopen import xopen
 
 import artisatomic
@@ -105,31 +106,29 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         assert line in ("# Transitions", "# num_u   num_l   wavelength(nm)     g_u*A      log(g_l*f)")
         if line == "# Transitions":
             assert fin.readline().strip() == "# num_u   num_l   wavelength(nm)     g_u*A      log(g_l*f)"
-        dftransitions = pd.read_fwf(
-            fin,
-            colspecs=[(0, 7), (7, 15), (15, 30), (30, 43), (43, None)],
-            names=["num_u", "num_l", "wavelength", "g_u_times_A", "log(g_l*f)"],
+        dftransitions = pl.from_pandas(
+            pd.read_fwf(
+                fin,
+                colspecs=[(0, 7), (7, 15), (15, 30), (30, 43), (43, None)],
+                names=["num_u", "num_l", "wavelength", "g_u_times_A", "log(g_l*f)"],
+                dtype_backend="pyarrow",
+            )
         )
-        # dftransitions = reader.get_chunk(transitioncount)
 
-        # print(dftransitions)
-        transitions = []
-        transition_count_of_level_name = defaultdict(int)
+    transitions = []
+    transition_count_of_level_name = defaultdict(int)
 
-        for row in dftransitions.itertuples(index=False):
-            A = float(row.g_u_times_A) / energy_levels[row.num_u].g
-            transitions.append(TransitionTuple(lowerlevel=row.num_l, upperlevel=row.num_u, A=A))
+    for row in dftransitions.itertuples(index=False):
+        A = float(row.g_u_times_A) / energy_levels[row.num_u].g
+        transitions.append(TransitionTuple(lowerlevel=row.num_l, upperlevel=row.num_u, A=A))
 
-            transition_count_of_level_name[energy_levels[row.num_u].levelname] += 1
-            transition_count_of_level_name[energy_levels[row.num_l].levelname] += 1
+        transition_count_of_level_name[energy_levels[row.num_u].levelname] += 1
+        transition_count_of_level_name[energy_levels[row.num_l].levelname] += 1
 
-            # print(transitions[-1])
+    assert len(transitions) == transitioncount
+    dftransitions = dftransitions.select(["lowerlevel", "upperlevel", "A"])
 
-        assert len(transitions) == transitioncount
-
-    # artisatomic.log_and_print(flog, f'Read {len(energy_levels[1:]):d} levels')
-
-    return ionization_energy_in_ev, energy_levels, transitions, transition_count_of_level_name
+    return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
 
 
 def get_level_valence_n(levelname: str):
