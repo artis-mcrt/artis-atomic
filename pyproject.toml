@@ -49,7 +49,7 @@ max-line-length = 120
 errors-only = true
 
 [tool.pylint.typecheck]
-ignored-modules = ["astropy", "extinction"]
+ignored-modules = ["extinction"]
 
 [tool.ruff]
 line-length = 120

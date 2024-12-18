@@ -1,5 +1,4 @@
 argcomplete>=3.5.1
-astropy>=6.1.4
 ChiantiPy>=0.15.1
 h5py>=3.10.0
 matplotlib>=3.9.2
