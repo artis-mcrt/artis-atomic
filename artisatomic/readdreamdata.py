@@ -88,7 +88,7 @@ def read_levels_data(dflines):
     return [None, *energy_levels]
 
 
-def read_lines_data(atomic_number, ion_stage, dfiondata, energy_levels):
+def read_lines_data(dfiondata, energy_levels):
     transitions = []
     transition_count_of_level_name = defaultdict(int)
     transitiontuple = namedtuple("transition", "lowerlevel upperlevel A coll_str")
@@ -149,7 +149,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
         allow_duplicates=True,
     )
 
-    transitions, transition_count_of_level_name = read_lines_data(atomic_number, ion_stage, dfiondata, energy_levels)
+    transitions, transition_count_of_level_name = read_lines_data(dfiondata, energy_levels)
 
     # ionization_energy_in_ev = read_ionization_data(atomic_number, ion_stage)
     ionization_energy_in_ev = -1
