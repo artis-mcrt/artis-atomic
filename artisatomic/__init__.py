@@ -1485,7 +1485,11 @@ def write_output_files(
 
         log_and_print(flog, f"\n===========> Z={atomic_number} {ionstr} output:")
 
-        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")
+        dfenergylevels_ion = (
+            leveltuples_to_pldataframe(energy_levels[i])
+            .with_row_index(name="levelid")
+            .with_columns(pl.col("levelid").cast(pl.Int64))
+        )
 
         dftransitions_ion = dftransitions_allions[i]
 
