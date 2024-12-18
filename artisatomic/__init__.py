@@ -263,6 +263,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
         upsilondicts: list[dict] = [{} for _ in listions]
 
         energy_levels: list = [[] for _ in listions]
+        dfenergylevels_allions: list = [pl.DataFrame() for _ in listions]
         # index matches level id
         photoionization_thresholds_ev: list = [[] for _ in listions]
         photoionization_crosssections: list = [[] for _ in listions]  # list of cross section in Mb
@@ -544,6 +545,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                 else:
                     raise ValueError(f"Unknown handler: {handler}")
 
+            dfenergylevels_allions[i] = leveltuples_to_pldataframe(energy_levels[i])
             if (
                 i < len(listions) - 1
                 and not args.nophixs
@@ -554,12 +556,16 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                     photoionization_crosssections[i],
                     photoionization_targetfractions[i],
                     photoionization_thresholds_ev[i],
-                ) = match_hydrogenic_phixs(atomic_number, energy_levels[i], ionization_energy_ev[i], handler, args)
+                ) = match_hydrogenic_phixs(
+                    atomic_number, dfenergylevels_allions[i], ionization_energy_ev[i], handler, args
+                )
 
         dftransitions_allions = [t if isinstance(t, pl.DataFrame) else pl.DataFrame(t) for t in transitions]
+
         write_output_files(
             elementindex,
             energy_levels,
+            dfenergylevels_allions,
             dftransitions_allions,
             upsilondicts,
             ionization_energy_ev,
@@ -1483,6 +1489,7 @@ def add_level_ids_forbidden(dfenergylevels_ion: pl.DataFrame, dftransitions_ion:
 def write_output_files(
     elementindex,
     energy_levels,
+    dfenergylevels_allions,
     dftransitions_allions: list[pl.DataFrame],
     upsilondicts,
     ionization_energies,
@@ -1514,8 +1521,7 @@ def write_output_files(
 
         log_and_print(flog, f"\n===========> Z={atomic_number} {ionstr} output:")
 
-        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i])
-
+        dfenergylevels_ion = dfenergylevels_allions[i]
         dftransitions_ion = dftransitions_allions[i]
 
         dftransitions_ion = add_level_ids_forbidden(dfenergylevels_ion, dftransitions_ion)
@@ -1559,7 +1565,7 @@ def write_output_files(
                 fatommodels,
                 atomic_number,
                 ion_stage,
-                dfenergylevels_ion,
+                dfenergylevels_allions[i],
                 ionization_energies[i],
                 transition_count_of_level_name[i],
                 flog,
