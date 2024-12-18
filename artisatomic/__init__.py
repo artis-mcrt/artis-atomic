@@ -1585,11 +1585,15 @@ def write_output_files(
             if len(photoionization_targetfractions[i]) < 1:
                 if len(nahar_core_states[i]) > 1:
                     photoionization_targetfractions[i] = readnahardata.get_photoiontargetfractions(
-                        energy_levels[i], energy_levels[i + 1], nahar_core_states[i], nahar_configurations[i + 1], flog
+                        dfenergylevels_allions[i],
+                        energy_levels[i + 1],
+                        nahar_core_states[i],
+                        nahar_configurations[i + 1],
+                        flog,
                     )
                 else:
                     photoionization_targetfractions[i] = readhillierdata.get_photoiontargetfractions(
-                        energy_levels[i], energy_levels[i + 1], hillier_photoion_targetconfigs[i]
+                        dfenergylevels_allions[i], energy_levels[i + 1], hillier_photoion_targetconfigs[i]
                     )
 
             with open(os.path.join(args.output_folder, "phixsdata_v2.txt"), "a") as fphixs:

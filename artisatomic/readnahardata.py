@@ -344,11 +344,12 @@ def get_naharphotoion_upperlevelids(
 
 
 def get_photoiontargetfractions(
-    energy_levels, energy_levels_upperion, nahar_core_states, nahar_configurations_upperion, flog
+    dfenergy_levels, energy_levels_upperion, nahar_core_states, nahar_configurations_upperion, flog
 ):
-    targetlist = [[] for _ in energy_levels]
+    targetlist = [() for _ in range(dfenergy_levels.height)]
     upper_level_ids_of_core_state_id = defaultdict(list)
-    for lowerlevelid, energy_level in enumerate(energy_levels[1:], 1):
+    for energy_level in dfenergy_levels[1:].iter_rows(named=True):
+        lowerlevelid = energy_level["levelid"]
         # find the upper level ids from the Nahar core state
         upperionlevelids = get_naharphotoion_upperlevelids(
             energy_levels_upperion,

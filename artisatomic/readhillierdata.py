@@ -1159,11 +1159,12 @@ def read_coldata(atomic_number, ion_stage, energy_levels, flog, args):
     return upsilondict
 
 
-def get_photoiontargetfractions(energy_levels, energy_levels_upperion, hillier_photoion_targetconfigs):
-    targetlist = [[] for _ in energy_levels]
+def get_photoiontargetfractions(dfenergy_levels, energy_levels_upperion, hillier_photoion_targetconfigs):
+    targetlist = [[] for _ in range(dfenergy_levels.height)]
     targetlist_of_targetconfig = defaultdict(list)
 
-    for lowerlevelid, energy_level in enumerate(energy_levels[1:], 1):
+    for energy_level in dfenergy_levels[1:].iter_rows(named=True):
+        lowerlevelid = energy_level["levelid"]
         if hillier_photoion_targetconfigs is None:
             continue
         if lowerlevelid in hillier_photoion_targetconfigs and hillier_photoion_targetconfigs[lowerlevelid] is None:
