@@ -1,4 +1,3 @@
-from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
@@ -66,7 +65,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             chunksize=levelcount,
             nrows=levelcount,
             colspecs=[(0, 7), (7, 15), (15, 19), (19, 34), (34, None)],
-            names=["num", "g", "parity", "energy_ev", "configuration"],
+            names=["levelid", "g", "parity", "energy_ev", "configuration"],
         ) as reader:
             # dflevels = pd.concat(reader, ignore_index=True)
 
@@ -76,8 +75,9 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
                     parity=pl.when(pl.col("parity").str.strip_chars() == "odd").then(1).otherwise(0),
                     g=pl.col("g").cast(pl.Float64),
                     levelname=pl.format(
-                        "{},{},{}", pl.col("num"), pl.col("parity"), pl.col("configuration").str.strip_chars()
+                        "{},{},{}", pl.col("levelid"), pl.col("parity"), pl.col("configuration").str.strip_chars()
                     ),
+                    levelid=pl.col("levelid").cast(pl.Int64),
                 )
             )
 
@@ -100,13 +100,15 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             pl.col("g_u_times_A").cast(pl.Float64),
         )
 
-    transition_count_of_level_name = defaultdict(int)
-
-    for upperlevel, lowerlevel in dftransitions[["upperlevel", "lowerlevel"]].iter_rows(named=False):
-        transition_count_of_level_name[dflevels["levelname"][upperlevel]] += 1
-        transition_count_of_level_name[dflevels["levelname"][lowerlevel]] += 1
-
+    transition_count_of_level_name = {
+        dflevels["levelname"][levelid]: (
+            dftransitions.filter(pl.col("lowerlevel") == levelid).height
+            + dftransitions.filter(pl.col("upperlevel") == levelid).height
+        )
+        for levelid in dflevels["levelid"][1:]
+    }
     assert dftransitions.height == transitioncount
+
     dftransitions = dftransitions.with_columns(
         g_u=pl.col("upperlevel").map_elements(lambda upperlevel: dflevels["g"][upperlevel], return_dtype=pl.Float64)
     ).with_columns(A=pl.col("g_u_times_A") / pl.col("g_u"))
