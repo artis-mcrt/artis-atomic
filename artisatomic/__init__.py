@@ -12,7 +12,6 @@ import queue
 import sys
 import typing as t
 from collections import defaultdict
-from collections import namedtuple
 from functools import lru_cache
 from pathlib import Path
 
@@ -141,11 +140,15 @@ def add_dummy_zero_level(dflevels: pl.DataFrame) -> pl.DataFrame:
 
 def leveltuples_to_pldataframe(energy_levels) -> pl.DataFrame:
     if isinstance(energy_levels, pl.DataFrame):
+        dflevels = energy_levels
         assert energy_levels["energyabovegsinpercm"].item(0) is None
 
-    return add_dummy_zero_level(
-        pl.DataFrame(energy_levels[1:]),
-    )
+    else:
+        dflevels = add_dummy_zero_level(
+            pl.DataFrame(energy_levels[1:]),
+        )
+
+    return dflevels.with_row_index(name="levelid").with_columns(pl.col("levelid").cast(pl.Int64))
 
 
 def main(args=None, argsraw=None, **kwargs):
@@ -256,9 +259,9 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
         # list of named tuples (hillier_transition_row)
         transitions: list = [[] for _ in listions]
         transition_count_of_level_name: list[dict] = [{} for _ in listions]
-        upsilondicts: list[dict] = [{} for x in listions]
+        upsilondicts: list[dict] = [{} for _ in listions]
 
-        energy_levels: list = [[] for x in listions]
+        energy_levels: list = [[] for _ in listions]
         # index matches level id
         photoionization_thresholds_ev: list = [[] for _ in listions]
         photoionization_crosssections: list = [[] for _ in listions]  # list of cross section in Mb
@@ -1485,11 +1488,7 @@ def write_output_files(
 
         log_and_print(flog, f"\n===========> Z={atomic_number} {ionstr} output:")
 
-        dfenergylevels_ion = (
-            leveltuples_to_pldataframe(energy_levels[i])
-            .with_row_index(name="levelid")
-            .with_columns(pl.col("levelid").cast(pl.Int64))
-        )
+        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i])
 
         dftransitions_ion = dftransitions_allions[i]
 
@@ -1538,18 +1537,15 @@ def write_output_files(
             dftransitions_ion[["lowerlevel", "upperlevel"]].iter_rows(named=False)
         )
 
-        upsilon_transition_row = namedtuple(
-            "upsilon_transition_row", "lowerlevel upperlevel A lambdaangstrom coll_str forbidden"
-        )
         upsilon_only_transitions = []
         log_and_print(flog, f"Adding in {len(unused_upsilon_transitions):d} extra transitions with only upsilon values")
         for id_lower, id_upper in unused_upsilon_transitions:
-            namefrom = energy_levels[i][id_upper].levelname
-            nameto = energy_levels[i][id_lower].levelname
-            A = 0.0
+            namefrom = dfenergylevels_ion["levelname"][id_upper]
+            nameto = dfenergylevels_ion["levelname"][id_lower]
             try:
                 lamdaangstrom = 1.0e8 / (
-                    energy_levels[i][id_upper].energyabovegsinpercm - energy_levels[i][id_lower].energyabovegsinpercm
+                    dfenergylevels_ion["energyabovegsinpercm"][id_upper]
+                    - dfenergylevels_ion["energyabovegsinpercm"][id_lower]
                 )
             except ZeroDivisionError:
                 lamdaangstrom = -1
@@ -1558,10 +1554,17 @@ def write_output_files(
             transition_count_of_level_name[i][nameto] += 1
             coll_str = upsilondict[(id_lower, id_upper)]
             # WARNING replace with correct selection rules!
-            forbidden = energy_levels[i][id_lower].parity == energy_levels[i][id_upper].parity
+            forbidden = dfenergylevels_ion["parity"][id_lower] == dfenergylevels_ion["parity"][id_upper]
 
-            transition = upsilon_transition_row(id_lower, id_upper, A, lamdaangstrom, coll_str, forbidden)
-            upsilon_only_transitions.append(transition)
+            upsilon_only_transitions.append(
+                {
+                    "lowerlevel": id_lower,
+                    "upperlevel": id_upper,
+                    "A": 0.0,
+                    "coll_str": coll_str,
+                    "forbidden": forbidden,
+                }
+            )
 
         if upsilon_only_transitions:
             dftransitions_ion = pl.concat(
