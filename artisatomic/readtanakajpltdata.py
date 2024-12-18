@@ -26,7 +26,6 @@ class TransitionTuple(t.NamedTuple):
     lowerlevel: int
     upperlevel: int
     A: float
-    coll_str: float
 
 
 def extend_ion_list(ion_handlers):
@@ -120,8 +119,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
 
         for row in dftransitions.itertuples(index=False):
             A = float(row.g_u_times_A) / energy_levels[row.num_u].g
-            coll_str = -1 if (energy_levels[row.num_u].parity != energy_levels[row.num_l].parity) else -2
-            transitions.append(TransitionTuple(lowerlevel=row.num_l, upperlevel=row.num_u, A=A, coll_str=coll_str))
+            transitions.append(TransitionTuple(lowerlevel=row.num_l, upperlevel=row.num_u, A=A))
 
             transition_count_of_level_name[energy_levels[row.num_u].levelname] += 1
             transition_count_of_level_name[energy_levels[row.num_l].levelname] += 1
