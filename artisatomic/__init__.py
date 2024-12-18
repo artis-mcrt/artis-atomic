@@ -1610,7 +1610,6 @@ def write_output_files(
                     fphixs,
                     atomic_number,
                     ion_stage,
-                    energy_levels[i],
                     photoionization_crosssections[i],
                     photoionization_targetfractions[i],
                     photoionization_thresholds_ev[i],
@@ -1629,7 +1628,7 @@ def write_adata(
     ionization_energy: float,
     transition_count_of_level_name,
     flog,
-):
+) -> None:
     log_and_print(flog, f"Writing {dfenergylevels.height-1} levels to 'adata.txt'")
     fatommodels.write(f"{atomic_number:12d}{ion_stage:12d}{dfenergylevels.height-1:12d}{ionization_energy:15.7f}\n")
 
@@ -1679,7 +1678,7 @@ def write_transition_data(
     upsilondict,
     args,
     flog,
-):
+) -> None:
     log_and_print(flog, f"Writing {dftransitions_ion.height} transitions to 'transitiondata.txt'")
 
     ftransitiondata.write(f"{atomic_number:7d}{ion_stage:7d}{dftransitions_ion.height:12d}\n")
@@ -1706,15 +1705,14 @@ def write_transition_data(
 
 def write_phixs_data(
     fphixs,
-    atomic_number,
-    ion_stage,
-    energy_levels,
+    atomic_number: int,
+    ion_stage: int,
     photoionization_crosssections,
     photoionization_targetfractions,
     photoionization_thresholds_ev,
     args,
     flog,
-):
+) -> None:
     log_and_print(flog, f"Writing {len(photoionization_crosssections)} phixs tables to 'phixsdata2.txt'")
     flog.write(
         f"Downsampling cross sections assuming T={args.optimaltemperature} Kelvin, "
@@ -1747,7 +1745,7 @@ def write_phixs_data(
             if abs(probability_sum - 1.0) > 0.00001:
                 print(f"STOP! phixs fractions sum to {probability_sum:.5f} != 1.0")
                 print(targetlist)
-                print(f"level id {lowerlevelid} {energy_levels[lowerlevelid].levelname}")
+                print(f"level id {lowerlevelid}")
                 sys.exit()
 
         for crosssection in photoionization_crosssections[lowerlevelid]:
