@@ -74,25 +74,28 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             chunksize=levelcount,
             nrows=levelcount,
             colspecs=[(0, 7), (7, 15), (15, 19), (19, 34), (34, None)],
-            names=["num", "weight", "parity", "energy_ev", "configuration"],
+            names=["num", "g", "parity", "energy_ev", "configuration"],
         ) as reader:
             # dflevels = pd.concat(reader, ignore_index=True)
 
-            dflevels = reader.get_chunk(levelcount)
+            dflevels = artisatomic.add_dummy_zero_level(
+                pl.from_pandas(reader.get_chunk(levelcount)).with_columns(pl.col("g").cast(pl.Float64))
+            )
             # print(dflevels)
 
             energy_levels = [None]
-            for row in dflevels.itertuples(index=False):
-                parity = 1 if row.parity.strip() == "odd" else 0
-                energyabovegsinpercm = float(row.energy_ev / hc_in_ev_cm)
-                g = float(row.weight)
+            for row in dflevels[1:].iter_rows(named=True):
+                parity = 1 if row["parity"].strip() == "odd" else 0
+                energyabovegsinpercm = float(row["energy_ev"] / hc_in_ev_cm)
 
-                levelname = f"{row.num},{row.parity},{row.configuration.strip()}"
+                levelname = f"{row['num']},{row['parity']},{row['configuration'].strip()}"
                 energy_levels.append(
-                    EnergyLevel(levelname=levelname, parity=parity, g=g, energyabovegsinpercm=energyabovegsinpercm)
+                    EnergyLevel(
+                        levelname=levelname, parity=parity, g=row["g"], energyabovegsinpercm=energyabovegsinpercm
+                    )
                 )
-                # print(energy_levels[-1])
-        assert len(energy_levels[1:]) == levelcount
+
+        assert (dflevels.height - 1) == levelcount
 
         line = fin.readline().strip()
         assert line in ("# Transitions", "# num_u   num_l   wavelength(nm)     g_u*A      log(g_l*f)")
