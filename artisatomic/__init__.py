@@ -146,7 +146,10 @@ def leveltuples_to_pldataframe(energy_levels) -> pl.DataFrame:
             pl.DataFrame(energy_levels[1:]),
         )
 
-    return dflevels.with_row_index(name="levelid").with_columns(pl.col("levelid").cast(pl.Int64))
+    if "levelid" not in dflevels.columns:
+        dflevels = dflevels.with_row_index(name="levelid")
+
+    return dflevels.with_columns(pl.col("levelid").cast(pl.Int64))
 
 
 def main(args=None, argsraw=None, **kwargs):
