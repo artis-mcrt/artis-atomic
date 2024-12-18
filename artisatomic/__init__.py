@@ -556,7 +556,7 @@ def process_files(ion_handlers: list[tuple[int, list[int | tuple[int, str]]]], a
                     photoionization_thresholds_ev[i],
                 ) = match_hydrogenic_phixs(atomic_number, energy_levels[i], ionization_energy_ev[i], handler, args)
 
-        dftransitions_allions = [pl.DataFrame(t) if not isinstance(t, pl.DataFrame) else t for t in transitions]
+        dftransitions_allions = [t if isinstance(t, pl.DataFrame) else pl.DataFrame(t) for t in transitions]
         write_output_files(
             elementindex,
             energy_levels,
@@ -1445,10 +1445,6 @@ def score_config_match(config_a, config_b):
         return score
 
     return 5  # term matches but no electron config available or it's an Eqv state...0s type
-
-    print("WHAT?")
-    sys.exit()
-    return -1
 
 
 def add_level_ids_forbidden(dfenergylevels_ion: pl.DataFrame, dftransitions_ion: pl.DataFrame) -> pl.DataFrame:
