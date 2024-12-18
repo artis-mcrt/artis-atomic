@@ -1530,7 +1530,9 @@ def write_output_files(
 
         if unused_upsilon_transitions:
             dfupsilon_only_transitions = pl.DataFrame(
-                list(unused_upsilon_transitions), schema={"lowerlevel": pl.Int64, "upperlevel": pl.Int64}, orient="row"
+                list(unused_upsilon_transitions),
+                schema=(("lowerlevel", pl.Int64), ("upperlevel", pl.Int64)),
+                orient="row",
             ).with_columns(A=0.0)
             for id_lower, id_upper in dfupsilon_only_transitions[["lowerlevel", "upperlevel"]].iter_rows(named=False):
                 namefrom = dfenergylevels_ion["levelname"][id_upper]
