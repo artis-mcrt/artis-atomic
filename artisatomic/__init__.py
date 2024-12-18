@@ -19,8 +19,6 @@ import argcomplete
 import numpy as np
 import pandas as pd
 import polars as pl
-from astropy import constants as const
-from astropy import units as u
 from scipy import integrate
 from scipy import interpolate
 
@@ -108,10 +106,10 @@ def get_ion_handlers() -> list[tuple[int, list[int | tuple[int, str]]]]:
 
 USE_QUB_COBALT = False
 
-ryd_to_ev = u.rydberg.to("eV")
-hc_in_ev_cm = (const.h * const.c).to("eV cm").value
-hc_in_ev_angstrom = (const.h * const.c).to("eV angstrom").value
-h_in_ev_seconds = const.h.to("eV s").value
+ryd_to_ev = 13.605693122994232
+hc_in_ev_cm = 0.0001239841984332003
+hc_in_ev_angstrom = 12398.419843320025
+h_in_ev_seconds = 4.135667696923859e-15
 
 
 def drop_handlers(list_ions: list[int | tuple[int, str]]) -> list[int]:
@@ -978,8 +976,8 @@ def reduce_phixs_tables_worker(
 ) -> None:
     dictout = {}
 
-    ryd_to_hz = (u.rydberg / const.h).to("Hz").value
-    h_over_kb_in_K_sec = (const.h / const.k_B).to("K s").value
+    ryd_to_hz = 3289841960250880.5
+    h_over_kb_in_K_sec = 4.799243073366221e-11
 
     # proportional to recombination rate
     # nu0 = 1e16
