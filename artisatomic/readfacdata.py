@@ -215,7 +215,7 @@ class FACTransition(t.NamedTuple):
     coll_str: float
 
 
-def read_lines_data(energy_levels, dflines, ilev_enlevelindex_map, flog):
+def read_lines_data(energy_levels, dflines, ilev_enlevelindex_map):
     transitions = []
     transition_count_of_level_name = defaultdict(int)
 
@@ -275,7 +275,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     assert Path(lines_file).exists()
     dflines = GetLines(filename=lines_file, Z=atomic_number)
 
-    transitions, transition_count_of_level_name = read_lines_data(energy_levels, dflines, ilev_enlevelindex_map, flog)
+    transitions, transition_count_of_level_name = read_lines_data(energy_levels, dflines, ilev_enlevelindex_map)
 
     artisatomic.log_and_print(flog, f"Read {len(transitions)} transitions")
 
