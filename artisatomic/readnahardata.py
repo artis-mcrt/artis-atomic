@@ -267,7 +267,7 @@ def read_nahar_configurations(fenlist, flog):
 
 
 def get_naharphotoion_upperlevelids(
-    energy_levels_upperion,
+    dfenergy_levels_upperion,
     nahar_core_states,
     nahar_configurations_upperion,
     upper_level_ids_of_core_state_id,
@@ -290,18 +290,19 @@ def get_naharphotoion_upperlevelids(
             )
 
             candidate_upper_levels = {}
-            for upperlevelid, upperlevel in enumerate(energy_levels_upperion[1:], 1):
-                if hasattr(upperlevel, "levelname"):
-                    upperlevelconfig = upperlevel.levelname
+            for upperlevel in dfenergy_levels_upperion[1:].iter_rows(named=True):
+                upperlevelid = upperlevel["levelid"]
+                if "levelname" in upperlevel:
+                    upperlevelconfig = upperlevel["levelname"]
                 else:
                     state_tuple = (
-                        int(upperlevel.twosplusone),
-                        int(upperlevel.l),
-                        int(upperlevel.parity),
-                        int(upperlevel.indexinsymmetry),
+                        int(upperlevel["twosplusone"]),
+                        int(upperlevel["l"]),
+                        int(upperlevel["parity"]),
+                        int(upperlevel["indexinsymmetry"]),
                     )
                     upperlevelconfig = nahar_configurations_upperion.get(state_tuple, "-1")
-                energyev = upperlevel.energyabovegsinpercm * hc_in_ev_cm
+                energyev = upperlevel["energyabovegsinpercm"] * hc_in_ev_cm
 
                 # this ignores parent term
                 if artisatomic.reduce_configuration(upperlevelconfig) == nahar_core_state_reduced_configuration:
