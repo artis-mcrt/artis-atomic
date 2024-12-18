@@ -7,8 +7,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from astropy import constants as const
-from astropy import units as u
 
 import artisatomic
 from artisatomic.manual_matches import hillier_name_replacements
@@ -200,10 +198,10 @@ elsymboltohilliercode = {
     "Ba": "BAR",
 }
 
-ryd_to_ev = u.rydberg.to("eV")
+ryd_to_ev = 13.605693122994232
 hc_in_ev_cm = 0.0001239841984332003
-hc_in_ev_angstrom = (const.h * const.c).to("eV angstrom").value
-h_in_ev_seconds = const.h.to("eV s").value
+hc_in_ev_angstrom = 12398.419843320025
+h_in_ev_seconds = 4.135667696923859e-15
 lchars = "SPDFGHIKLMNOPQRSTUVWXYZ"
 PYDIR = Path(__file__).parent.absolute()
 atomicdata = pd.read_csv(os.path.join(PYDIR, "atomic_properties.txt"), sep=r"\s+", comment="#")
