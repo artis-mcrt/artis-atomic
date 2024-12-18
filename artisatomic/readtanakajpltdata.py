@@ -102,20 +102,21 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             pd.read_fwf(
                 fin,
                 colspecs=[(0, 7), (7, 15), (15, 30), (30, 43), (43, None)],
-                names=["num_u", "num_l", "wavelength", "g_u_times_A", "log(g_l*f)"],
+                names=["upperlevel", "lowerlevel", "wavelength", "g_u_times_A", "log(g_l*f)"],
                 dtype_backend="pyarrow",
             )
         )
 
     transition_count_of_level_name = defaultdict(int)
 
-    for row in dftransitions.iter_rows(named=True):
-        A = float(row.g_u_times_A) / energy_levels[row.num_u].g
-
-        transition_count_of_level_name[energy_levels[row.num_u].levelname] += 1
-        transition_count_of_level_name[energy_levels[row.num_l].levelname] += 1
+    for upperlevel, lowerlevel in dftransitions[["upperlevel", "lowerlevel"]].iter_rows(named=False):
+        transition_count_of_level_name[energy_levels[upperlevel].levelname] += 1
+        transition_count_of_level_name[energy_levels[lowerlevel].levelname] += 1
 
     assert dftransitions.height == transitioncount
+    dftransitions = dftransitions.with_columns(
+        g_u=pl.col("upperlevel").map_elements(lambda upperlevel: energy_levels[upperlevel].g, return_dtype=pl.Float64)
+    ).with_columns(A=pl.col("g_u_times_A") / pl.col("g_u"))
     dftransitions = dftransitions.select(["lowerlevel", "upperlevel", "A"])
 
     return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
