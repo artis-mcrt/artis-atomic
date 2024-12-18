@@ -105,11 +105,10 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
                 names=["upperlevel", "lowerlevel", "wavelength", "g_u_times_A", "log(g_l*f)"],
                 dtype_backend="pyarrow",
             )
-        ).with_columns(
-            pl.col("g_u_times_A").cast(pl.Float64),
-            pl.col("wavelength").cast(pl.Float64),
+        ).select(
             pl.col("lowerlevel").cast(pl.Int64),
             pl.col("upperlevel").cast(pl.Int64),
+            pl.col("g_u_times_A").cast(pl.Float64),
         )
 
     transition_count_of_level_name = defaultdict(int)
