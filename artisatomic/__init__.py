@@ -1485,6 +1485,8 @@ def write_output_files(
 
         log_and_print(flog, f"\n===========> Z={atomic_number} {ionstr} output:")
 
+        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")
+
         level_id_of_level_name: dict[str, int] = {
             energy_levels[i][levelid].levelname: levelid
             for levelid in range(1, len(energy_levels[i]))
@@ -1564,7 +1566,6 @@ def write_output_files(
                 [dftransitions_ion, pl.DataFrame(upsilon_only_transitions)], how="diagonal_relaxed"
             )
 
-        dfenergylevels_ion = leveltuples_to_pldataframe(energy_levels[i]).with_row_index(name="levelid")
         with open(os.path.join(args.output_folder, "adata.txt"), "a") as fatommodels:
             write_adata(
                 fatommodels,
