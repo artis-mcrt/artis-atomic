@@ -1,4 +1,3 @@
-import typing as t
 from collections import defaultdict
 from pathlib import Path
 
@@ -11,13 +10,6 @@ import artisatomic
 # the h5 file comes from Andreas Floers's DREAM parser
 jpltpath = (Path(__file__).parent.resolve() / ".." / "atomic-data-tanaka-jplt" / "data_v1.1").resolve()
 hc_in_ev_cm = 0.0001239841984332003
-
-
-class EnergyLevel(t.NamedTuple):
-    levelname: str
-    energyabovegsinpercm: float
-    g: float
-    parity: float
 
 
 def extend_ion_list(ion_handlers):
@@ -88,18 +80,6 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
                     ),
                 )
             )
-            # print(dflevels)
-
-            energy_levels = [None]
-            for row in dflevels[1:].iter_rows(named=True):
-                energy_levels.append(  # noqa: PERF401
-                    EnergyLevel(
-                        levelname=row["levelname"],
-                        parity=row["parity"],
-                        g=row["g"],
-                        energyabovegsinpercm=row["energyabovegsinpercm"],
-                    )
-                )
 
         assert (dflevels.height - 1) == levelcount
 
@@ -123,16 +103,16 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
     transition_count_of_level_name = defaultdict(int)
 
     for upperlevel, lowerlevel in dftransitions[["upperlevel", "lowerlevel"]].iter_rows(named=False):
-        transition_count_of_level_name[energy_levels[upperlevel].levelname] += 1
-        transition_count_of_level_name[energy_levels[lowerlevel].levelname] += 1
+        transition_count_of_level_name[dflevels["levelname"][upperlevel]] += 1
+        transition_count_of_level_name[dflevels["levelname"][lowerlevel]] += 1
 
     assert dftransitions.height == transitioncount
     dftransitions = dftransitions.with_columns(
-        g_u=pl.col("upperlevel").map_elements(lambda upperlevel: energy_levels[upperlevel].g, return_dtype=pl.Float64)
+        g_u=pl.col("upperlevel").map_elements(lambda upperlevel: dflevels["g"][upperlevel], return_dtype=pl.Float64)
     ).with_columns(A=pl.col("g_u_times_A") / pl.col("g_u"))
     dftransitions = dftransitions.select(["lowerlevel", "upperlevel", "A"])
 
-    return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
+    return ionization_energy_in_ev, dflevels, dftransitions, transition_count_of_level_name
 
 
 def get_level_valence_n(levelname: str):
