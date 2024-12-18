@@ -22,12 +22,6 @@ class EnergyLevel(t.NamedTuple):
     parity: float
 
 
-class TransitionTuple(t.NamedTuple):
-    lowerlevel: int
-    upperlevel: int
-    A: float
-
-
 def extend_ion_list(ion_handlers):
     tanakaions = sorted(
         [tuple(int(x) for x in f.parts[-1].split(".")[0].split("_")) for f in jpltpath.glob("*_*.txt*")]
@@ -115,17 +109,15 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             )
         )
 
-    transitions = []
     transition_count_of_level_name = defaultdict(int)
 
     for row in dftransitions.itertuples(index=False):
         A = float(row.g_u_times_A) / energy_levels[row.num_u].g
-        transitions.append(TransitionTuple(lowerlevel=row.num_l, upperlevel=row.num_u, A=A))
 
         transition_count_of_level_name[energy_levels[row.num_u].levelname] += 1
         transition_count_of_level_name[energy_levels[row.num_l].levelname] += 1
 
-    assert len(transitions) == transitioncount
+    assert dftransitions.height == transitioncount
     dftransitions = dftransitions.select(["lowerlevel", "upperlevel", "A"])
 
     return ionization_energy_in_ev, energy_levels, dftransitions, transition_count_of_level_name
