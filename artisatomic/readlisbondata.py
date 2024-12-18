@@ -5,9 +5,6 @@ import pandas as pd
 
 import artisatomic
 
-# from astropy import units as u
-
-
 hc_in_ev_cm = 0.0001239841984332003
 
 

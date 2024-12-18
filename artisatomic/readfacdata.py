@@ -7,11 +7,6 @@ import pandas as pd
 
 import artisatomic
 
-# from astropy import units as u
-# import os.path
-# import pandas as pd
-# from carsus.util import parse_selected_species
-
 USE_CALIBRATED = True
 
 BASEPATH = str(

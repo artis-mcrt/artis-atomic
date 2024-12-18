@@ -8,8 +8,6 @@ from xopen import xopen
 
 import artisatomic
 
-# from astropy import units as u
-
 # the h5 file comes from Andreas Floers's DREAM parser
 jpltpath = (Path(__file__).parent.resolve() / ".." / "atomic-data-tanaka-jplt" / "data_v1.1").resolve()
 hc_in_ev_cm = 0.0001239841984332003

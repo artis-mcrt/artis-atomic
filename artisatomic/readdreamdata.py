@@ -8,8 +8,6 @@ import pandas as pd
 
 import artisatomic
 
-# from astropy import units as u
-
 # the h5 file comes from Andreas Floers's DREAM parser
 dreamdatapath = Path(
     os.path.dirname(os.path.abspath(__file__)), "..", "atomic-data-dream", "DREAM_atomic_data_20241106-1325.h5"
