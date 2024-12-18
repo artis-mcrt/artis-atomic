@@ -112,7 +112,8 @@ def read_qub_levels_and_transitions(atomic_number, ion_stage, flog):
                 if A > 2e-30:
                     namefrom = qub_energylevels[id_upper].levelname
                     nameto = qub_energylevels[id_lower].levelname
-                    forbidden = artisatomic.check_forbidden(qub_energylevels[id_upper], qub_energylevels[id_lower])
+                    # WARNING replace with correct selection rules!
+                    forbidden = qub_energylevels[id_upper].parity == qub_energylevels[id_lower].parity
                     transition_count_of_level_name[namefrom] += 1
                     transition_count_of_level_name[nameto] += 1
                     lamdaangstrom = 1.0e8 / (

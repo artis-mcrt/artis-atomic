@@ -1508,13 +1508,20 @@ def write_output_files(
             )
 
         if "forbidden" not in dftransitions_ion.columns:
-            dftransitions_ion = dftransitions_ion.with_columns(
-                forbidden=pl.struct(["lowerlevel", "upperlevel"]).map_elements(
-                    lambda r, i=i: check_forbidden(  # type: ignore[misc]
-                        energy_levels[i][r["lowerlevel"]], energy_levels[i][r["upperlevel"]]
+            dftransitions_ion = (
+                dftransitions_ion.join(
+                    dfenergylevels_ion.select(
+                        pl.col("levelid").alias("lowerlevel"), pl.col("parity").alias("lower_parity")
                     ),
-                    return_dtype=pl.Boolean,
+                    on="lowerlevel",
                 )
+                .join(
+                    dfenergylevels_ion.select(
+                        pl.col("levelid").alias("upperlevel"), pl.col("parity").alias("upper_parity")
+                    ),
+                    on="upperlevel",
+                )
+                .with_columns(forbidden=pl.col("lower_parity") == pl.col("upper_parity"))
             )
 
         dftransitions_ion = dftransitions_ion.with_columns(
@@ -1552,7 +1559,8 @@ def write_output_files(
             transition_count_of_level_name[i][namefrom] += 1
             transition_count_of_level_name[i][nameto] += 1
             coll_str = upsilondict[(id_lower, id_upper)]
-            forbidden = check_forbidden(energy_levels[i][id_lower], energy_levels[i][id_upper])
+            # WARNING replace with correct selection rules!
+            forbidden = energy_levels[i][id_lower].parity == energy_levels[i][id_upper].parity
 
             transition = upsilon_transition_row(id_lower, id_upper, A, lamdaangstrom, coll_str, forbidden)
             upsilon_only_transitions.append(transition)
