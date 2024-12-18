@@ -79,7 +79,12 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             # dflevels = pd.concat(reader, ignore_index=True)
 
             dflevels = artisatomic.add_dummy_zero_level(
-                pl.from_pandas(reader.get_chunk(levelcount)).with_columns(pl.col("g").cast(pl.Float64))
+                pl.from_pandas(reader.get_chunk(levelcount)).with_columns(
+                    pl.col("g").cast(pl.Float64),
+                    levelname=pl.format(
+                        "{},{},{}", pl.col("num"), pl.col("parity"), pl.col("configuration").str.strip_chars()
+                    ),
+                )
             )
             # print(dflevels)
 
@@ -88,10 +93,9 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
                 parity = 1 if row["parity"].strip() == "odd" else 0
                 energyabovegsinpercm = float(row["energy_ev"] / hc_in_ev_cm)
 
-                levelname = f"{row['num']},{row['parity']},{row['configuration'].strip()}"
                 energy_levels.append(
                     EnergyLevel(
-                        levelname=levelname, parity=parity, g=row["g"], energyabovegsinpercm=energyabovegsinpercm
+                        levelname=row["levelname"], parity=parity, g=row["g"], energyabovegsinpercm=energyabovegsinpercm
                     )
                 )
 
