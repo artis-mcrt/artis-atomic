@@ -8,7 +8,6 @@ import artisatomic
 
 # the h5 file comes from Andreas Floers's DREAM parser
 jpltpath = (Path(__file__).parent.resolve() / ".." / "atomic-data-tanaka-jplt" / "data_v1.1").resolve()
-hc_in_ev_cm = 0.0001239841984332003
 
 
 def extend_ion_list(ion_handlers):
@@ -67,7 +66,7 @@ def read_levels_and_transitions(atomic_number, ion_stage, flog):
             colspecs=[(0, 7), (7, 15), (15, 19), (19, 34), (34, None)],
             names=["levelid", "g", "parity", "energy_ev", "configuration"],
         ) as reader:
-            # dflevels = pd.concat(reader, ignore_index=True)
+            hc_in_ev_cm = 0.0001239841984332003
 
             dflevels = artisatomic.add_dummy_zero_level(
                 pl.from_pandas(reader.get_chunk(levelcount)).select(
