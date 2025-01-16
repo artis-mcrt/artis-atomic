@@ -48,31 +48,17 @@ jobs:
               run: |
                   uv run --frozen mypy --install-types --non-interactive
 
-    pre-commit:
-        runs-on: macos-15
-        steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
-
-            - name: Set up Python
-              uses: actions/setup-python@v5
-
-            - name: Install the latest version of uv
-              uses: astral-sh/setup-uv@v5
-
-            - uses: actions/cache@v4
+            - name: Cache pre-commit
+              uses: actions/cache@v4
               with:
                   path: ~/.cache/pre-commit
                   key: pre-commit-3|${{ hashFiles('.pre-commit-config.yaml') }}
 
-            - name: Install artisatomic and run pre-commit
+            - name: Run pre-commit
               run: |
-                  uv sync --frozen
                   source .venv/bin/activate
-                  uv pip install --editable .[dev]
                   uv run --frozen -- pre-commit run --all-files --show-diff-on-failure --color=always
+
     pytest:
         runs-on: macos-15
         steps:
