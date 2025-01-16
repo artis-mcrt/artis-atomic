@@ -12,6 +12,7 @@ cd artistatomic
 To use a uv project virtual environment with locked dependency versions run:
 ```sh
 uv sync --frozen
+source .venv/bin/activate
 uv pip install -e .[dev]
 ```
 
