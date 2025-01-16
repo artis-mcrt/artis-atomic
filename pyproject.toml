@@ -39,7 +39,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["mypy>=1.13.0", "pre-commit>=4.0.1", "pytest>=8.3.3", "ruff>=0.8.3"]
+dev = [
+    "mypy>=1.13.0",
+    "pre-commit>=4.0.1",
+    "pytest>=8.3.3",
+    "ruff>=0.8.3",
+    "types-requests>=2.32.0.20241016",
+]
 
 [project.urls]
 Repository = "https://www.github.com/artis-mcrt/artisatomic"
